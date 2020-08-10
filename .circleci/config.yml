@@ -1,42 +1,75 @@
-# Java Gradle CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
-version: 2
-jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/openjdk:8-jdk
+description: 'An example of how to build, test, and release the Android app'
+usage:
+  # Orb support is from version >= 2.1
+  version: 2.1
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
+  # Make sure you use the latest version of the Orb
+  orbs:
+    rn: react-native-community/react-native@1.0.0
 
-    working_directory: ~/repo
+  # Custom jobs which are not part of the Orb
+  jobs:
+    # A job to checkout and persist the code to the workspace
+    checkout_code:
+      executor: rn/linux_js
+      steps:
+        - checkout
+        - persist_to_workspace:
+            root: .
+            paths: .
+    # A job to test the JavaScript part of the app
+    analyse_js:
+      executor: rn/linux_js
+      steps:
+        - attach_workspace:
+            at: .
+        - rn/yarn_install
+        - run:
+            name: Run ESLint
+            command: yarn eslint
+        - run:
+            name: Flow
+            command: yarn flow
+        - run:
+            name: Jest
+            command: yarn jest
+    # A job to release the app through Fastlane
+    fastlane_release:
+      executor: rn/linux_js
+      steps:
+        - attach_workspace:
+            at: .
+        - rn/yarn_install
+        - run:
+            name: Run Fastlane
+            # Your Fastlane command goes here
+            command: bundle exec fastlane android release
 
-    environment:
-      # Customize the JVM maximum heap limit
-      JVM_OPTS: -Xmx3200m
-      TERM: dumb
+  workflows:
+    test:
+      jobs:
+        # Checkout the code and persist to the Workspace
+        # Note: This is a job which is defined above and not part of the Orb
+        - checkout_code
 
-    steps:
-      - checkout
+        # Analyze the Javascript using ESLint, Flow, and Jest
+        # Note: This is a job which is defined above and not part of the Orb
+        - analyse_js:
+            requires:
+              - checkout_code
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+        # Build and test the Android app in release mode
+        # Note: We split these into seperate jobs because we can build the Android app on a Linux machine and preserve the expensive MacOS executor minutes for when it's required
+        - rn/android_build:
+            build_type: release
+            requires:
+              - analyse_js
+        - rn/android_test:
+            requires:
+              - rn/android_build
 
-      - run: gradle dependencies
-
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
-
-      # run tests!
-      - run: gradle test
+        # Release the app using our Fastlane job
+        # Note: This is a job which is defined above and not part of the Orb
+        - fastlane_release:
+            requires:
+              - rn/android_test
