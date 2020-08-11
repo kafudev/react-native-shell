@@ -27,6 +27,9 @@ jobs:
       - run:
           name: Run ESLint
           command: yarn eslint
+      # - run:
+      #     name: Flow
+      #     command: yarn flow
       - run:
           name: Jest
           command: yarn jest
@@ -44,13 +47,13 @@ workflows:
           requires:
             - checkout_code
 
-      # Build the Android app in debug mode
-      - rn/android_build:
-          name: build_android_debug
-          project_path: "android"
-          build_type: debug
-          requires:
-            - analyse_js
+      # # Build the Android app in debug mode
+      # - rn/android_build:
+      #     name: build_android_debug
+      #     project_path: "android"
+      #     build_type: debug
+      #     requires:
+      #       - analyse_js
 
       # Build and test the Android app in release mode
       # Note: We split these into seperate jobs because we can build the Android app on a Linux machine and preserve the expensive MacOS executor minutes for when it's required
@@ -60,10 +63,10 @@ workflows:
           build_type: release
           requires:
             - analyse_js
-      - rn/android_test:
-          detox_configuration: "android.emu.release"
-          requires:
-            - build_android_release
+      # - rn/android_test:
+      #     detox_configuration: "android.emu.release"
+      #     requires:
+      #       - build_android_release
 
 
       # Build the iOS app in release mode and do not run tests
@@ -76,12 +79,12 @@ workflows:
           requires:
             - analyse_js
 
-      # Build and test the iOS app in release mode
-      - rn/ios_build_and_test:
-          project_path: "ios/Example.xcodeproj"
-          device: "iPhone X"
-          build_configuration: "Release"
-          scheme: "Example"
-          detox_configuration: "ios.sim.release"
-          requires:
-            - analyse_js
+      # # Build and test the iOS app in release mode
+      # - rn/ios_build_and_test:
+      #     project_path: "ios/Example.xcodeproj"
+      #     device: "iPhone X"
+      #     build_configuration: "Release"
+      #     scheme: "Example"
+      #     detox_configuration: "ios.sim.release"
+      #     requires:
+      #       - analyse_js
