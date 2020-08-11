@@ -58,12 +58,12 @@ workflows:
 
       # Build and test the Android app in release mode
       # Note: We split these into seperate jobs because we can build the Android app on a Linux machine and preserve the expensive MacOS executor minutes for when it's required
-      # - rn/android_build:
-      #     name: build_android_release
-      #     project_path: "android"
-      #     build_type: release
-      #     requires:
-      #       - analyse_js
+      - rn/android_build:
+          name: build_android_release
+          project_path: "android"
+          build_type: release
+          requires:
+            - analyse_js
       # - rn/android_test:
       #     detox_configuration: "android.emu.release"
       #     requires:
