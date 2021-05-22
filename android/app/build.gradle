@@ -182,8 +182,8 @@ android {
             JPUSH_CHANNEL: "",
 
             // 开发工具
-            DOKIT_APPID: "",
-            BUGLY_APPID: "",
+            DOKIT_APPID: "967e1cbecaa545de3a97d48567e57b3d",
+            BUGLY_APPID: "9fd3bc9ea0",
 
             // 七鱼客服
             QIYU_APPKEY: "",

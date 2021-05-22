@@ -2373,10 +2373,10 @@
   resolved "https://registry.npm.taobao.org/@kafudev/jpush-react-native/download/@kafudev/jpush-react-native-2.0.5.tgz#837a29ce0d13c014bbf5b8edaaffe9be2213fd1d"
   integrity sha1-g3opzg0TwBS79bjtqv/pviIT/R0=
 
-"@kafudev/react-native-bugly@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.npm.taobao.org/@kafudev/react-native-bugly/download/@kafudev/react-native-bugly-0.1.11.tgz#0a04c3cf4db6c5b88cb627659bef8f57aa1c8220"
-  integrity sha1-CgTDz022xbiMtidlm++PV6ocgiA=
+"@kafudev/react-native-bugly@^0.1.12":
+  version "0.1.12"
+  resolved "https://registry.nlark.com/@kafudev/react-native-bugly/download/@kafudev/react-native-bugly-0.1.12.tgz#187a39b3b2cec5a1f9c8b06ebaabf33e314105e3"
+  integrity sha1-GHo5s7LOxaH5yLBuuqvzPjFBBeM=
 
 "@kafudev/react-native-orientation@^0.1.7":
   version "0.1.7"
@@ -6636,6 +6636,11 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   resolved "https://registry.npm.taobao.org/event-target-shim/download/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha1-XU0+vflYPWOlMzzi3rdICrKwV4k=
 
+events@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/events/download/events-1.0.1.tgz?cache=0&sync_timestamp=1614444838320&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fevents%2Fdownload%2Fevents-1.0.1.tgz#386f6471cbb609e7925e7bfe7468634b9e069ac2"
+  integrity sha1-OG9kccu2CeeSXnv+dGhjS54GmsI=
+
 exec-sh@^0.3.2:
   version "0.3.6"
   resolved "https://registry.nlark.com/exec-sh/download/exec-sh-0.3.6.tgz#ff264f9e325519a60cb5e273692943483cca63bc"
@@ -7333,7 +7338,7 @@ formidable@^1.2.1, formidable@^1.2.2:
   resolved "https://registry.npm.taobao.org/formidable/download/formidable-1.2.2.tgz#bf69aea2972982675f00865342b982986f6b8dd9"
   integrity sha1-v2muopcpgmdfAIZTQrmCmG9rjdk=
 
-formik@^2.2.7:
+formik@^2.2.8:
   version "2.2.8"
   resolved "https://registry.nlark.com/formik/download/formik-2.2.8.tgz#986c3cd73849dde7c5154e5f6093a5568e482854"
   integrity sha1-mGw81zhJ3efFFU5fYJOlVo5IKFQ=
@@ -8093,14 +8098,14 @@ i18n-js@^3.8.0:
 
 i18next@19.8.7:
   version "19.8.7"
-  resolved "https://registry.nlark.com/i18next/download/i18next-19.8.7.tgz#ef023e353974d1b1453e8b6331bd9fb7cba427df"
+  resolved "https://registry.nlark.com/i18next/download/i18next-19.8.7.tgz?cache=0&sync_timestamp=1621671218971&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fi18next%2Fdownload%2Fi18next-19.8.7.tgz#ef023e353974d1b1453e8b6331bd9fb7cba427df"
   integrity sha1-7wI+NTl00bFFPotjMb2ft8ukJ98=
   dependencies:
     "@babel/runtime" "^7.12.0"
 
 i18next@^19.3.4:
   version "19.9.2"
-  resolved "https://registry.nlark.com/i18next/download/i18next-19.9.2.tgz#ea5a124416e3c5ab85fddca2c8e3c3669a8da397"
+  resolved "https://registry.nlark.com/i18next/download/i18next-19.9.2.tgz?cache=0&sync_timestamp=1621671218971&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fi18next%2Fdownload%2Fi18next-19.9.2.tgz#ea5a124416e3c5ab85fddca2c8e3c3669a8da397"
   integrity sha1-6loSRBbjxauF/dyiyOPDZpqNo5c=
   dependencies:
     "@babel/runtime" "^7.12.0"
@@ -8864,11 +8869,6 @@ istanbul-reports@^3.0.2:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jcore-react-native@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.npm.taobao.org/jcore-react-native/download/jcore-react-native-1.9.0.tgz#a0f518377686a3d599ac732d48adf9530891b2ab"
-  integrity sha1-oPUYN3aGo9WZrHMtSK35UwiRsqs=
-
 jest-changed-files@^26.6.2:
   version "26.6.2"
   resolved "https://registry.nlark.com/jest-changed-files/download/jest-changed-files-26.6.2.tgz?cache=0&sync_timestamp=1621519891863&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fjest-changed-files%2Fdownload%2Fjest-changed-files-26.6.2.tgz#f6198479e1cc66f22f9ae1e22acaa0b429c042d0"
@@ -9294,11 +9294,6 @@ jpeg-js@^0.4.0:
   version "0.4.3"
   resolved "https://registry.npm.taobao.org/jpeg-js/download/jpeg-js-0.4.3.tgz#6158e09f1983ad773813704be80680550eff977b"
   integrity sha1-YVjgnxmDrXc4E3BL6AaAVQ7/l3s=
-
-jpush-react-native@^2.8.2:
-  version "2.8.2"
-  resolved "https://registry.npm.taobao.org/jpush-react-native/download/jpush-react-native-2.8.2.tgz#db7e91811ab5395a7d60a08d0092c780f8c14d3d"
-  integrity sha1-236RgRq1OVp9YKCNAJLHgPjBTT0=
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -12143,7 +12138,7 @@ react-fast-compare@^2.0.0, react-fast-compare@^2.0.1:
   resolved "https://registry.nlark.com/react-fast-compare/download/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
 
-react-hook-form@^7.6.2:
+react-hook-form@^7.6.4:
   version "7.6.4"
   resolved "https://registry.nlark.com/react-hook-form/download/react-hook-form-7.6.4.tgz#f450654af23fee65f8b948397805830099346c0d"
   integrity sha1-9FBlSvI/7mX4uUg5eAWDAJk0bA0=
@@ -12228,7 +12223,7 @@ react-native-bootsplash@^3.2.3:
     fs-extra "^9.1.0"
     jimp "^0.16.1"
 
-react-native-calendars@^1.1260.0:
+react-native-calendars@^1.1261.0:
   version "1.1261.0"
   resolved "https://registry.nlark.com/react-native-calendars/download/react-native-calendars-1.1261.0.tgz#0358203e0f22790087a9b833e11aa0a6d74c4686"
   integrity sha1-A1ggPg8ieQCHqbgz4RqgptdMRoY=
@@ -12636,7 +12631,7 @@ react-native-shadow-cards@^1.0.2:
   resolved "https://registry.npm.taobao.org/react-native-shadow-cards/download/react-native-shadow-cards-1.0.2.tgz#7c0f899ffa2f9143cee48d646ef87fd5c1384357"
   integrity sha1-fA+Jn/ovkUPO5I1kbvh/1cE4Q1c=
 
-react-native-share@^6.0.1:
+react-native-share@^6.1.0:
   version "6.1.0"
   resolved "https://registry.nlark.com/react-native-share/download/react-native-share-6.1.0.tgz#b576461104ed0e5b3b974b679de66999ec15d63a"
   integrity sha1-tXZGEQTtDls7l0tnneZpmewV1jo=
@@ -12782,13 +12777,20 @@ react-native-video@^5.1.1:
     prop-types "^15.7.2"
     shaka-player "^2.5.9"
 
-react-native-webview@^11.4.6:
-  version "11.6.1"
-  resolved "https://registry.nlark.com/react-native-webview/download/react-native-webview-11.6.1.tgz#e2a3a025761d78547579fc0426dbb993efd9e85a"
-  integrity sha1-4qOgJXYdeFR1efwEJtu5k+/Z6Fo=
+react-native-webview@11.4.5:
+  version "11.4.5"
+  resolved "https://registry.nlark.com/react-native-webview/download/react-native-webview-11.4.5.tgz#a264ac2f9146b23b10dcea1a12b9ce3ec0df9db8"
+  integrity sha1-omSsL5FGsjsQ3OoaErnOPsDfnbg=
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
+
+react-native-wechat-lib@^1.1.26:
+  version "1.1.26"
+  resolved "https://registry.npm.taobao.org/react-native-wechat-lib/download/react-native-wechat-lib-1.1.26.tgz#60be6ba92399a38c9df5ca0fc4c1353b089f7210"
+  integrity sha1-YL5rqSOZo4yd9coPxME1OwifchA=
+  dependencies:
+    events "1.0.1"
 
 react-native@0.64.1:
   version "0.64.1"
@@ -14955,12 +14957,12 @@ typedarray@^0.0.6:
 
 typescript@^3.7.2:
   version "3.9.9"
-  resolved "https://registry.nlark.com/typescript/download/typescript-3.9.9.tgz?cache=0&sync_timestamp=1621581792911&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-3.9.9.tgz#e69905c54bc0681d0518bd4d587cc6f2d0b1a674"
+  resolved "https://registry.nlark.com/typescript/download/typescript-3.9.9.tgz?cache=0&sync_timestamp=1621668244762&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-3.9.9.tgz#e69905c54bc0681d0518bd4d587cc6f2d0b1a674"
   integrity sha1-5pkFxUvAaB0FGL1NWHzG8tCxpnQ=
 
 typescript@^4.1.3:
   version "4.2.4"
-  resolved "https://registry.nlark.com/typescript/download/typescript-4.2.4.tgz?cache=0&sync_timestamp=1621581792911&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
+  resolved "https://registry.nlark.com/typescript/download/typescript-4.2.4.tgz?cache=0&sync_timestamp=1621668244762&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
   integrity sha1-hhC1l0feAo/aiYqK7w4QPxVtCWE=
 
 ua-parser-js@^0.7.18:
