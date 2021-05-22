@@ -7,7 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import com.kafuapp.generated.BasePackageList;
+import com.rnshell.app.generated.BasePackageList;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;

@@ -385,6 +385,8 @@ dependencies {
     implementation 'com.tencent.bugly:crashreport:latest.release'
     implementation 'com.tencent.bugly:nativecrashreport:latest.release'
 
+    implementation 'com.qiyukf.unicorn:unicorn:5.14.1'
+
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
 
     implementation 'androidx.annotation:annotation:1.0.0'
