@@ -1,6 +1,6 @@
 {
   "name": "rnshell",
-  "version": "0.64.2",
+  "version": "0.64.3-0",
   "description": "react-native-shell壳应用",
   "main": "index.js",
   "files": [
