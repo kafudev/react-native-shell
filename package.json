@@ -1,6 +1,6 @@
 {
   "name": "rnshell",
-  "version": "0.64.1",
+  "version": "0.64.2",
   "description": "react-native-shell壳应用",
   "main": "index.js",
   "files": [
@@ -46,8 +46,8 @@
     "log": "adb logcat | findstr com.rnshell.app",
     "test": "jest",
     "lint": "eslint .",
-    "release": "dotenv -- release-it",
-    "release-ci": "dotenv -- release-it --ci",
+    "release": "dotenv -- release-it prepatch",
+    "release-ci": "dotenv -- release-it prepatch --ci",
     "postinstall": "patch-package",
     "prepare": "husky install"
   },
