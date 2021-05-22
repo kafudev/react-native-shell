@@ -1,4 +1,8 @@
 apply plugin: "com.android.application"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.didi.dokit'
+apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 import com.android.build.OutputFile
 
@@ -82,6 +86,8 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -120,6 +126,38 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+//getTimeZone(id)这个id可以是GMT+8：北京时间
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("Asia/BeiJing"))
+}
+
+// 自增版本号
+def increasedVersionCode() {
+    def propFile = file('../code.properties')
+    def Properties props = new Properties()
+    props.load(new FileInputStream(propFile))
+    // 读取gradle.properties文件中定义的VERSION_CODE属性
+    def code = props['VERSION_CODE']
+    if (!code){
+        code = 100
+    }
+    code = code.toInteger()
+    def isRelease = true
+    if (isRelease) {
+        code++
+        props['VERSION_CODE'] = code.toString()
+        // 将最新的versionCode写入gradle.properties文件中
+        props.store(propFile.newWriter(), null)
+    }
+    return code
+}
+
+// // 读取package.json的包版本
+// String versionName
+// def jsonFile = file('../../package.json')
+// def json = new JsonSlurper().parseText(jsonFile.text)
+// versionName = json.dependencies["version"]
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -131,11 +169,60 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rnshell"
+        resValue "string", "app_name", "rnshell"
+        applicationId "com.rnshell.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode increasedVersionCode()
         versionName "1.0"
+
+        manifestPlaceholders = [
+            JPUSH_PKGNAME : applicationId,
+            JPUSH_APPKEY: "",
+            JPUSH_CHANNEL: "",
+
+            // 开发工具
+            DOKIT_APPID: "",
+            BUGLY_APPID: "",
+
+            // 七鱼客服
+            QIYU_APPKEY: "",
+
+            // 腾讯直播
+            TXLIVE_LICENCE_KEY: "",
+            TXLIVE_LICENCE_URL: "",
+
+            //xiaomi_config_start
+            XIAOMI_APPID  : "",
+            XIAOMI_APPKEY : "",
+            //xiaomi_config_end
+            //oppo_config_start
+            OPPO_APPKEY   : "",
+            OPPO_APPID    : "",
+            OPPO_APPSECRET: "",
+            //oppo_config_end
+            //vivo_config_start
+            VIVO_APPKEY   : "",
+            VIVO_APPID    : "",
+            //vivo_config_end
+
+            UMENG_APPKEY: "",
+            QQ_APPID: "",
+            QQ_APPKEY: "",
+            WECHAT_APPID: "",
+            WECHAT_APPKEY: "",
+            WEIBO_APPID: "",
+            WEIBO_APPKEY: "",
+        ]
+
+        vectorDrawables.useSupportLibrary  true
+        multiDexEnabled true
+        missingDimensionStrategy 'react-native-camera', 'general'
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a' //, 'x86',  'x86_64',
+        }
     }
     splits {
         abi {
@@ -147,9 +234,15 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
+            storeFile file('../keystores/debug.keystore')
             storePassword 'android'
-            keyAlias 'androiddebugkey'
+            keyAlias 'android.keystore'
+            keyPassword 'android'
+        }
+        release {
+            storeFile file('../keystores/release.keystore')
+            storePassword 'android'
+            keyAlias 'android.keystore'
             keyPassword 'android'
         }
     }
@@ -166,24 +259,94 @@ android {
         }
     }
 
+    dexOptions{
+        javaMaxHeapSize "2048m"
+        // 忽略方法数限制的检查
+        jumboMode true
+        // 是否对依赖的库进行dex 预处理来使你的增量构建更快速，
+        // 因为这个特性可能会使你的clean 构建变慢，
+        // 因此在你的持续集成服务器上你可能想关闭这个特性
+        preDexLibraries true
+        //设置最大的线程数量使用当运行 dex-in-process时,默认值是4，如果不确定，还是用默认值吧
+        maxProcessCount 8
+    }
+
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            // For each separate APK per architecture, set a unique version code as described here:
-            // https://developer.android.com/studio/build/configure-apk-splits.html
-            // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
-            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
-            def abi = output.getFilter(OutputFile.ABI)
-            if (abi != null) {  // null for the universal-debug, universal-release variants
-                output.versionCodeOverride =
-                        defaultConfig.versionCode * 1000 + versionCodes.get(abi)
-            }
+        // variant.outputs.each { output ->
+        //     // For each separate APK per architecture, set a unique version code as described here:
+        //     // https://developer.android.com/studio/build/configure-apk-splits.html
+        //     // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
+        //     def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
+        //     def abi = output.getFilter(OutputFile.ABI)
+        //     if (abi != null) {  // null for the universal-debug, universal-release variants
+        //         output.versionCodeOverride =
+        //                 defaultConfig.versionCode * 1000 + versionCodes.get(abi)
+        //     }
 
+        // }
+
+        //确定输出文件名
+        def today = new Date()
+        def path = ((project.name != "app") ? project.name : rootProject.name.replace(" ","")) + "_" +
+                variant.flavorName + "_" +
+                variant.buildType.name + "_"+
+                variant.versionName + "_" +
+                today.format('yyyyMMddhhmm') +
+                ".apk"
+        // 输出文件
+        variant.outputs.each { output ->
+            def outputFileDir = "${project.projectDir.absolutePath}/../../build/android/${variant.buildType.name}/${variant.flavorName}/${variant.versionName}"
+            variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
+            output.outputFileName = path
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs "$rootDir/../node_modules/@0x5e/react-native-alipay/android/libs"
+        }
+    }
+}
+
+dokitExt {
+    //通用设置
+    comm {
+        //地图经纬度开关
+        gpsSwitch true
+        //网络开关
+        networkSwitch true
+        //大图开关
+        bigImgSwitch true
+        //webView js 抓包
+        webViewSwitch true
+    }
+
+    slowMethod {
+        //调用栈模式配置
+        stackMethod {
+            //默认值为 5ms 小于该值的函数在调用栈中不显示
+            thresholdTime 10
+            //调用栈函数入口
+            enterMethods = ["com.didichuxing.doraemondemo.MainDebugActivity.test1"]
+            //黑名单 粒度最小到类 暂不支持到方法
+            methodBlacklist = ["com.facebook.drawee.backends.pipeline.Fresco"]
+        }
+        //普通模式配置
+        normalMethod {
+            //默认值为 500ms 小于该值的函数在运行时不会在控制台中被打印
+            thresholdTime 500
+            //需要针对函数插装的包名
+            packageNames = ["com.didichuxing.doraemondemo"]
+            //不需要针对函数插装的包名&类名
+            methodBlacklist = ["com.didichuxing.doraemondemo.dokit"]
         }
     }
 }
 
 dependencies {
+    implementation project(':jcore-react-native')
+    implementation project(':jpush-react-native')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -210,7 +373,36 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    //oppo_dependencies_start
+    // oppo 厂商 aar 需要单独引入
+    implementation files('./libs/com.heytap.msp-push-2.1.0.aar')
+    //oppo_dependencies_end
+
+    debugImplementation 'com.didichuxing.doraemonkit:dokitx:3.3.5'
+    releaseImplementation 'com.didichuxing.doraemonkit:dokitx-no-op:3.3.5'
+
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
 }
+
+//huawei_plugin_start
+//华为请按照厂商文档配置根 gradle 华为镜像依赖和添加 agconnect-services.json 后再打开此插件依赖
+// apply plugin: 'com.huawei.agconnect'
+//huawei_plugin_end
 
 // Run this once to be able to run the application with BUCK
 // puts all compile dependencies into folder libs for BUCK to use

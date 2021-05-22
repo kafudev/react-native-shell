@@ -1,0 +1,19 @@
+*.log
+._*
+
+# Android/IntelliJ
+#
+build/
+release/
+.idea
+.gradle
+reports/
+.settings/
+local.properties
+*.iml
+*.hprof
+*.apk
+.project
+.classpath
+
+local.properties

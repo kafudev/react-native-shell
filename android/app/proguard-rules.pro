@@ -8,3 +8,34 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+-keep class com.umeng.** {*;}
+-keep class com.alipay.** { *; }
+-keep class com.tencent.mm.sdk.** {
+   *;
+}
+
+-keep public class com.dylanvann.fastimage.* {*;}
+-keep public class com.dylanvann.fastimage.** {*;}
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+-keep public class net.time4j.android.ApplicationStarter
+-keep public class net.time4j.PrettyTime
+
+-dontwarn java.lang.invoke.*
+-dontwarn **$$Lambda$*
+
+-dontwarn com.qiyukf.**
+-keep class com.qiyukf.** {*;}
+-dontwarn com.netease.**
+-keep class com.netease.** {*;}
+
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+
+-keep class com.tencent.** { *; }

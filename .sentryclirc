@@ -1,0 +1,6 @@
+[defaults]
+project=rnshell
+org=kafudev
+url=https://sentry.io/
+[log]
+level=info
