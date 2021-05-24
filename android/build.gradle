@@ -14,7 +14,7 @@ buildscript {
         excludeAppGlideModule = true
         glideVersion = "4.11.0"
         pictureVersion = "2.6.1"
-        ucropVersion = "2.2.4-native"
+        ucropVersion = "2.2.4"
     }
     repositories {
         maven { url 'https://maven.aliyun.com/repository/public' }
