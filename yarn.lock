@@ -12195,13 +12195,6 @@ react-native-calendars@^1.1261.0:
   optionalDependencies:
     moment "^2.24.0"
 
-react-native-camera@^3.43.9:
-  version "3.43.9"
-  resolved "https://registry.nlark.com/react-native-camera/download/react-native-camera-3.43.9.tgz#026322b0a5143da1b6e622bba217713be8b830b2"
-  integrity sha1-AmMisKUUPaG25iK7ohdxO+i4MLI=
-  dependencies:
-    prop-types "^15.6.2"
-
 react-native-code-push@^7.0.1:
   version "7.0.1"
   resolved "https://registry.npm.taobao.org/react-native-code-push/download/react-native-code-push-7.0.1.tgz#f82619ed2aa7da14633073876f3d4b8ee34d93c5"
