@@ -1,3 +1,22 @@
+diff --git a/node_modules/react-native-image-crop-picker/android/build.gradle b/node_modules/react-native-image-crop-picker/android/build.gradle
+index 48443cc..feb56af 100644
+--- a/node_modules/react-native-image-crop-picker/android/build.gradle
++++ b/node_modules/react-native-image-crop-picker/android/build.gradle
+@@ -4,6 +4,7 @@ def DEFAULT_COMPILE_SDK_VERSION   = 30
+ def DEFAULT_BUILD_TOOLS_VERSION   = "29.0.3"
+ def DEFAULT_TARGET_SDK_VERSION    = 30
+ def DEFAULT_MIN_SDK_VERSION       = 16
++def UCROP_VERSION = rootProject.hasProperty('ucropVersion') ? rootProject.ucropVersion : "2.2.6-native"
+ 
+ android {
+         compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
+@@ -22,5 +23,5 @@ android {
+ dependencies {
+     implementation 'com.facebook.react:react-native:+'
+     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+-    implementation 'com.github.yalantis:ucrop:2.2.6-native'
++    implementation "com.github.yalantis:ucrop:${UCROP_VERSION}"
+ }
 diff --git a/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml b/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml
 index d9b32ba..29eccf8 100644
 --- a/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml
