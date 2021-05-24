@@ -47,7 +47,7 @@
     "test": "jest",
     "lint": "eslint .",
     "release": "dotenv -- release-it prepatch",
-    "release-ci": "dotenv -- release-it prepatch --ci",
+    "release-ci": "dotenv -- release-it prepatch --preRelease=rc --ci",
     "postinstall": "patch-package",
     "prepare": "husky install"
   },
