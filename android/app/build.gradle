@@ -303,16 +303,16 @@ android {
         main {
             // 指定资源，原来的资源也需要指定
             java {
-                srcDirs 'src/main/java'
                 srcDirs "$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/java"
+                srcDirs 'src/main/java'
             }
             assets {
-                srcDirs 'src/main/assets'
                 srcDirs "$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/assets"
+                srcDirs 'src/main/assets'
             }
             res {
-                srcDirs 'src/main/res'
                 srcDirs "$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/res"
+                srcDirs 'src/main/res'
             }
         }
     }
