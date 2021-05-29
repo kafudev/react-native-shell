@@ -11,8 +11,16 @@
 
 -keep class com.umeng.** {*;}
 -keep class com.alipay.** { *; }
+-keep class com.tencent.mm.opensdk.** {
+    *;
+}
+
+-keep class com.tencent.wxop.** {
+    *;
+}
+
 -keep class com.tencent.mm.sdk.** {
-   *;
+    *;
 }
 
 -keep public class com.dylanvann.fastimage.* {*;}
