@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.didi.dokit'
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
+
 import com.android.build.OutputFile
 
 /**
@@ -89,6 +90,9 @@ apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
+// 2nd line, add a new apply:
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 /**
  * Set this to true to create two separate APKs instead of one:
  *   - An APK that only works on ARM devices
@@ -158,6 +162,22 @@ def increasedVersionCode() {
 // def json = new JsonSlurper().parseText(jsonFile.text)
 // versionName = json.dependencies["version"]
 
+// 设置APPCENTER配置文件
+def setAppcenterConfig() {
+    def APPCENTER_KEY_ANDROID = project.env.get("APPCENTER_KEY_ANDROID")
+    if(APPCENTER_KEY_ANDROID){
+      def con = {
+          app_secret APPCENTER_KEY_ANDROID
+      }
+      def jsonStr = JsonOutput.toJson(con)
+      def conPath = './src/main/assets/appcenter-config.json'
+      new File(project.projectDir, conPath).withWriter('utf-8') { writer ->
+          writer.write jsonStr
+      }
+    }
+}
+setAppcenterConfig()
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -169,50 +189,52 @@ android {
     }
 
     defaultConfig {
-        resValue "string", "app_name", "rnshell"
-        applicationId "com.rnshell.app"
+        resValue "string", "app_name", project.env.get("APP_NAME")
+        resValue "string", "build_config_package", project.env.get("APP_PACKAGE")   // react-native-config配置用
+        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID")
+        applicationId project.env.get("APP_PACKAGE")
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode increasedVersionCode()
-        versionName "1.0"
+        versionName project.env.get("versionName")
 
         manifestPlaceholders = [
             JPUSH_PKGNAME : applicationId,
-            JPUSH_APPKEY: "",
-            JPUSH_CHANNEL: "",
+            JPUSH_APPKEY: project.env.get("JPUSH_APPKEY"),
+            JPUSH_CHANNEL: project.env.get("JPUSH_CHANNEL"),
 
             // 开发工具
-            DOKIT_APPID: "967e1cbecaa545de3a97d48567e57b3d",
-            BUGLY_APPID: "9fd3bc9ea0",
+            DOKIT_APPID: project.env.get("DOKIT_APPID"),
+            BUGLY_APPID: project.env.get("BUGLY_APPID"),
 
             // 七鱼客服
-            QIYU_APPKEY: "",
+            QIYU_APPKEY: project.env.get("QIYU_APPKEY"),
 
             // 腾讯直播
-            TXLIVE_LICENCE_KEY: "",
-            TXLIVE_LICENCE_URL: "",
+            TXLIVE_LICENCE_KEY: project.env.get("TXLIVE_LICENCE_KEY"),
+            TXLIVE_LICENCE_URL: project.env.get("TXLIVE_LICENCE_URL"),
 
             //xiaomi_config_start
-            XIAOMI_APPID  : "",
-            XIAOMI_APPKEY : "",
+            XIAOMI_APPID  : project.env.get("XIAOMI_APPID"),
+            XIAOMI_APPKEY : project.env.get("XIAOMI_APPKEY"),
             //xiaomi_config_end
             //oppo_config_start
-            OPPO_APPKEY   : "",
-            OPPO_APPID    : "",
-            OPPO_APPSECRET: "",
+            OPPO_APPKEY   : project.env.get("OPPO_APPKEY"),
+            OPPO_APPID    : project.env.get("OPPO_APPID"),
+            OPPO_APPSECRET: project.env.get("OPPO_APPSECRET"),
             //oppo_config_end
             //vivo_config_start
-            VIVO_APPKEY   : "",
-            VIVO_APPID    : "",
+            VIVO_APPKEY   : project.env.get("VIVO_APPKEY"),
+            VIVO_APPID    : project.env.get("VIVO_APPID"),
             //vivo_config_end
 
-            UMENG_APPKEY: "",
-            QQ_APPID: "",
-            QQ_APPKEY: "",
-            WECHAT_APPID: "",
-            WECHAT_APPKEY: "",
-            WEIBO_APPID: "",
-            WEIBO_APPKEY: "",
+            UMENG_APPKEY: project.env.get("UMENG_APPKEY"),
+            QQ_APPID: project.env.get("QQ_APPID"),
+            QQ_APPKEY: project.env.get("QQ_APPKEY"),
+            WECHAT_APPID: project.env.get("WECHAT_APPID"),
+            WECHAT_APPKEY: project.env.get("WECHAT_APPKEY"),
+            WEIBO_APPID: project.env.get("WEIBO_APPID"),
+            WEIBO_APPKEY: project.env.get("WEIBO_APPKEY"),
         ]
 
         vectorDrawables.useSupportLibrary  true
@@ -234,16 +256,16 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('../keystores/debug.keystore')
-            storePassword 'android'
-            keyAlias 'android.keystore'
-            keyPassword 'android'
+            storeFile file(project.env.get("debug_storeFile"))
+            storePassword project.env.get("debug_storePassword")
+            keyAlias project.env.get("debug_keyAlias")
+            keyPassword project.env.get("debug_keyPassword")
         }
         release {
-            storeFile file('../keystores/release.keystore')
-            storePassword 'android'
-            keyAlias 'android.keystore'
-            keyPassword 'android'
+            storeFile file(project.env.get("release_storeFile"))
+            storePassword project.env.get("release_storePassword")
+            keyAlias project.env.get("release_keyAlias")
+            keyPassword project.env.get("release_keyPassword")
         }
     }
     buildTypes {
@@ -256,6 +278,25 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    // 资源文件合并
+    sourceSets {
+        main {
+            // 指定资源，原来的资源也需要指定
+            java {
+                srcDirs 'src/main/java'
+                srcDirs "$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/java"
+            }
+            assets {
+                srcDirs 'src/main/assets'
+                srcDirs "$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/assets"
+            }
+            res {
+                srcDirs 'src/main/res'
+                srcDirs "$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/res"
+            }
         }
     }
 
