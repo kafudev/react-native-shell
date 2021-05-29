@@ -273,13 +273,13 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file(project.env.get("debug_storeFile"))
+            storeFile file("$rootDir/"+project.env.get("debug_storeFile"))
             storePassword project.env.get("debug_storePassword")
             keyAlias project.env.get("debug_keyAlias")
             keyPassword project.env.get("debug_keyPassword")
         }
         release {
-            storeFile file(project.env.get("release_storeFile"))
+            storeFile file("$rootDir/"+project.env.get("release_storeFile"))
             storePassword project.env.get("release_storePassword")
             keyAlias project.env.get("release_keyAlias")
             keyPassword project.env.get("release_keyPassword")
