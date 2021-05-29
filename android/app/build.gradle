@@ -137,23 +137,35 @@ def releaseTime() {
 
 // 自增版本号
 def increasedVersionCode() {
-    def propFile = file('../code.properties')
-    def Properties props = new Properties()
-    props.load(new FileInputStream(propFile))
-    // 读取gradle.properties文件中定义的VERSION_CODE属性
-    def code = props['VERSION_CODE']
-    if (!code){
-        code = 100
-    }
-    code = code.toInteger()
-    def isRelease = true
-    if (isRelease) {
-        code++
-        props['VERSION_CODE'] = code.toString()
-        // 将最新的versionCode写入gradle.properties文件中
-        props.store(propFile.newWriter(), null)
-    }
-    return code
+
+    // 通过时间戳打包
+    def ttime = new Date().getTime();
+    def versionCode = "$ttime".substring(2,7)
+    println "APP_NAME:" + project.env.get("APP_NAME")
+    println "applicationId:" + project.env.get("APP_PACKAGE")
+    println "versionCode:" + versionCode
+    println "versionName:" + project.env.get("versionName")
+    println "timestamp:" + ttime
+    return versionCode.toInteger()
+
+    // // 通过版本文件控制打包
+    // def propFile = file('../code.properties')
+    // def Properties props = new Properties()
+    // props.load(new FileInputStream(propFile))
+    // // 读取gradle.properties文件中定义的VERSION_CODE属性
+    // def code = props['VERSION_CODE']
+    // if (!code){
+    //     code = 100
+    // }
+    // code = code.toInteger()
+    // def isRelease = true
+    // if (isRelease) {
+    //     code++
+    //     props['VERSION_CODE'] = code.toString()
+    //     // 将最新的versionCode写入gradle.properties文件中
+    //     props.store(propFile.newWriter(), null)
+    // }
+    // return code
 }
 
 // // 读取package.json的包版本
