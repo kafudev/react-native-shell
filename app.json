@@ -8,13 +8,13 @@
     "description": "Debug Application",
     "githubUrl": "https://github.com/kafudev/react-native-shell",
     "ios": {
-      "bundleIdentifier": "com.akveo.kittentricks",
+      "bundleIdentifier": "com.rnshell.app",
       "appStoreUrl": "https://itunes.apple.com/us/app/kitten-tricks/id1246143230",
       "buildNumber": "3"
     },
     "android": {
-      "package": "com.akveo.kittenTricks",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.akveo.kittenTricks",
+      "package": "com.rnshell.app",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.rnshell.app",
       "versionCode": 3
     },
     "privacy": "public",
