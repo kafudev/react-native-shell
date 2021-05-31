@@ -298,22 +298,6 @@ android {
         }
     }
 
-    // 资源文件合并
-    sourceSets {
-        main {
-            // 指定资源，原来的资源也需要指定
-            java {
-                srcDirs ["$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/java",'src/main/java']
-            }
-            assets {
-                srcDirs ["$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/assets",'src/main/assets']
-            }
-            res {
-                srcDirs ["$rootDir/"+ project.env.get("sourceBasePath") +"/android/src/main/res",'src/main/res']
-            }
-        }
-    }
-
     dexOptions{
         javaMaxHeapSize "2048m"
         // 忽略方法数限制的检查
