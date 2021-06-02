@@ -2374,6 +2374,13 @@
   resolved "https://registry.npm.taobao.org/@kafudev/jpush-react-native/download/@kafudev/jpush-react-native-2.0.5.tgz#837a29ce0d13c014bbf5b8edaaffe9be2213fd1d"
   integrity sha1-g3opzg0TwBS79bjtqv/pviIT/R0=
 
+"@kafudev/react-native-alibc@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.npmjs.org/@kafudev/react-native-alibc/-/react-native-alibc-0.1.6.tgz#2c35e970761b5c76bb647966d6673a61665487ba"
+  integrity sha512-ORIzeK0IFjEBid/K9sNhp5u/bQAl0GgAxHMmi/ImlUIaMg9QfnxRgd9FohDxRsguTY0+79F/o/ita7MYEqJ1+g==
+  dependencies:
+    dotenv-cli "^4.0.0"
+
 "@kafudev/react-native-bugly@^0.1.12":
   version "0.1.12"
   resolved "https://registry.nlark.com/@kafudev/react-native-bugly/download/@kafudev/react-native-bugly-0.1.12.tgz#187a39b3b2cec5a1f9c8b06ebaabf33e314105e3"
