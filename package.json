@@ -82,7 +82,7 @@
     "@eva-design/material": "^2.1.0",
     "@kafudev/jcore-react-native": "^2.0.5",
     "@kafudev/jpush-react-native": "^2.0.5",
-    "@kafudev/react-native-alibc": "^0.1.6",
+    "@kafudev/react-native-alibc": "^0.1.7",
     "@kafudev/react-native-bugly": "^0.1.12",
     "@kafudev/react-native-orientation": "^0.1.7",
     "@kafudev/react-native-qiyu": "^0.1.43",

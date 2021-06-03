@@ -1,0 +1,15 @@
+diff --git a/node_modules/appcenter-crashes/android/build.gradle b/node_modules/appcenter-crashes/android/build.gradle
+index 61cf7e0..d18cc4e 100644
+--- a/node_modules/appcenter-crashes/android/build.gradle
++++ b/node_modules/appcenter-crashes/android/build.gradle
+@@ -20,6 +20,10 @@ android {
+     }
+ }
+ 
++repositories {
++    maven { url "https://repo.maven.apache.org/maven2" }
++}
++
+ dependencies {
+     implementation fileTree(include: ['*.jar'], dir: 'libs')
+     //noinspection GradleDynamicVersion

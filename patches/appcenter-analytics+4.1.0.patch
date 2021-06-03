@@ -1,0 +1,15 @@
+diff --git a/node_modules/appcenter-analytics/android/build.gradle b/node_modules/appcenter-analytics/android/build.gradle
+index a2b6e8d..3c1c7a4 100644
+--- a/node_modules/appcenter-analytics/android/build.gradle
++++ b/node_modules/appcenter-analytics/android/build.gradle
+@@ -20,6 +20,10 @@ android {
+     }
+ }
+ 
++repositories {
++    maven { url "https://repo.maven.apache.org/maven2" }
++}
++
+ dependencies {
+     implementation fileTree(include: ['*.jar'], dir: 'libs')
+     //noinspection GradleDynamicVersion
