@@ -2414,10 +2414,10 @@
   dependencies:
     dotenv-cli "^4.0.0"
 
-"@kafudev/react-native-alipay@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/@kafudev/react-native-alipay/-/react-native-alipay-0.1.2.tgz#d453346c526f1b7763b375b25f36c26ecc3cf40b"
-  integrity sha512-TvGLWGffyv+VWqU+b2EUO7LQLeuC/VDutu0eYKpyPyKoG7CqdMT1Sg6vP63K2ObMUlCAk1+zSLZesxsjmCbneA==
+"@kafudev/react-native-alipay@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.npmjs.org/@kafudev/react-native-alipay/-/react-native-alipay-0.1.6.tgz#ae583c74e5e13fc7ad1715f6536de72f17f807cb"
+  integrity sha512-/U8ZWmWHRICDA8FdEDJ1RWDfRqkXKjh5aHxamyZekGzskjBeouxoJZ6/8CQK8K7hSesUZkMwmF9GunN4+MH7JQ==
   dependencies:
     buffer "^6.0.3"
     jsrsasign "^10.3.0"
