@@ -341,11 +341,6 @@ android {
         }
     }
 
-    repositories {
-        flatDir {
-            dirs "$rootDir/../node_modules/@0x5e/react-native-alipay/android/libs"
-        }
-    }
 }
 
 dokitExt {
