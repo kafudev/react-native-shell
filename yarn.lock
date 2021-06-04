@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@0x5e/react-native-alipay@^0.2.7-beta.2":
-  version "0.2.7-beta.2"
-  resolved "https://registry.npmjs.org/@0x5e/react-native-alipay/-/react-native-alipay-0.2.7-beta.2.tgz#dea3e8c09ebffd4516fdd24c943e7e44034eb9ff"
-  integrity sha512-vcEXhmsi75cudoiJI2ZhTWeSgzG7Yq92kLMfAbhu6iJw11xhBYLbNRsC68DLPv7sefo0SbskzaRf36fZ6HiwgQ==
-  dependencies:
-    buffer "^5.0.8"
-    jsrsasign "^8.0.4"
-
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -2422,6 +2414,14 @@
   dependencies:
     dotenv-cli "^4.0.0"
 
+"@kafudev/react-native-alipay@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/@kafudev/react-native-alipay/-/react-native-alipay-0.1.2.tgz#d453346c526f1b7763b375b25f36c26ecc3cf40b"
+  integrity sha512-TvGLWGffyv+VWqU+b2EUO7LQLeuC/VDutu0eYKpyPyKoG7CqdMT1Sg6vP63K2ObMUlCAk1+zSLZesxsjmCbneA==
+  dependencies:
+    buffer "^6.0.3"
+    jsrsasign "^10.3.0"
+
 "@kafudev/react-native-bugly@^0.1.12":
   version "0.1.12"
   resolved "https://registry.npmjs.org/@kafudev/react-native-bugly/-/react-native-bugly-0.1.12.tgz#187a39b3b2cec5a1f9c8b06ebaabf33e314105e3"
@@ -4572,13 +4572,21 @@ buffer-from@^1.0.0:
   resolved "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
 
-buffer@^5.0.8, buffer@^5.2.0, buffer@^5.5.0:
+buffer@^5.2.0, buffer@^5.5.0:
   version "5.7.1"
   resolved "https://registry.npmjs.org/buffer/-/buffer-5.7.1.tgz#ba62e7c13133053582197160851a8f648e99eed0"
   integrity sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
+
+buffer@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
+  integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
+  dependencies:
+    base64-js "^1.3.1"
+    ieee754 "^1.2.1"
 
 bytes@3.0.0:
   version "3.0.0"
@@ -8189,7 +8197,7 @@ iconv-lite@^0.6.2:
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
 
-ieee754@^1.1.13:
+ieee754@^1.1.13, ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
@@ -9597,10 +9605,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jsrsasign@^8.0.4:
-  version "8.0.24"
-  resolved "https://registry.npmjs.org/jsrsasign/-/jsrsasign-8.0.24.tgz#fc26bac45494caac3dd8f69c1f95847c4bda6c83"
-  integrity sha512-u45jAyusqUpyGbFc2IbHoeE4rSkoBWQgLe/w99temHenX+GyCz4nflU5sjK7ajU1ffZTezl6le7u43Yjr/lkQg==
+jsrsasign@^10.3.0:
+  version "10.3.0"
+  resolved "https://registry.npmjs.org/jsrsasign/-/jsrsasign-10.3.0.tgz#540d7c6937da1d5b01699d5091e56378a33e246e"
+  integrity sha512-irDIKKFW++EAELgP3fjFi5/Fn0XEyfuQTTgpbeFwCGkV6tRIYZl3uraRea2HTXWCstcSZuDaCbdAhU1n+075Bg==
 
 "jsx-ast-utils@^2.4.1 || ^3.0.0":
   version "3.2.0"
