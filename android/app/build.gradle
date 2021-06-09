@@ -327,23 +327,32 @@ android {
 
         //确定输出文件名
         def today = new Date()
-        def path = ((project.name != "app") ? project.name : rootProject.name.replace(" ","")) + "_" +
+        def filename = ((project.name != "app") ? project.name : rootProject.name.replace(" ","")) + "_" +
                 variant.flavorName + "_" +
                 variant.buildType.name + "_"+
                 variant.versionName + "_" +
                 today.format('yyyyMMddhhmm') +
                 ".apk"
-        // 输出文件-build
         variant.outputs.each { output ->
-            def outputFileDir = "${project.projectDir.absolutePath}/../../build/android/${variant.buildType.name}/${variant.flavorName}/${variant.versionName}"
-            variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
-            output.outputFileName = path
-        }
-        // 输出文件-outputs
-        variant.outputs.each { output ->
+            // 输出文件-outputs
             def outputFileDir = "${project.projectDir.absolutePath}/build/outputs/apk/${variant.buildType.name}/${variant.flavorName}"
             variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
-            output.outputFileName = path
+            output.outputFileName = filename
+
+            // 输出文件-build
+            def outputFileDir2 = "${project.projectDir.absolutePath}/../../build/android/${variant.buildType.name}/${variant.flavorName}/${variant.versionName}"
+            // variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
+            // output.outputFileName = filename
+
+            // 复制outputs到build文件夹
+            task "copy ${variant.buildType.name}"(type:Copy){
+                println("${variant.buildType.name}")
+                dependsOn app:assembleDebug
+                copy {
+                    from outputFileDir + "/" + filename
+                    into outputFileDir2 + "/" + filename
+                }
+            }
         }
     }
 
