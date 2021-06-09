@@ -71,14 +71,14 @@ workflows:
 
 
       # Build the iOS app in release mode and do not run tests
-      - rn/ios_build:
-          name: build_ios_release
-          project_path: ios/rnshell.xcodeproj
-          device: "iPhone X"
-          build_configuration: Release
-          scheme: rnshell
-          requires:
-            - analyse_js
+      # - rn/ios_build:
+      #     name: build_ios_release
+      #     project_path: ios/rnshell.xcodeproj
+      #     device: "iPhone X"
+      #     build_configuration: Release
+      #     scheme: rnshell
+      #     requires:
+      #       - analyse_js
 
       # # Build and test the iOS app in release mode
       # - rn/ios_build_and_test:
