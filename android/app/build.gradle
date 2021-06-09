@@ -346,8 +346,8 @@ android {
 
             // 复制outputs到build文件夹
             task "copy ${variant.buildType.name}"(type:Copy){
-                println("${variant.buildType.name}")
-                dependsOn app:assembleDebug
+                println("task copy ${variant.buildType.name}")
+                dependsOn app:assembleRelease
                 copy {
                     from outputFileDir + "/" + filename
                     into outputFileDir2 + "/" + filename
