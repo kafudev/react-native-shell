@@ -333,9 +333,15 @@ android {
                 variant.versionName + "_" +
                 today.format('yyyyMMddhhmm') +
                 ".apk"
-        // 输出文件
+        // 输出文件-build
         variant.outputs.each { output ->
             def outputFileDir = "${project.projectDir.absolutePath}/../../build/android/${variant.buildType.name}/${variant.flavorName}/${variant.versionName}"
+            variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
+            output.outputFileName = path
+        }
+        // 输出文件-outputs
+        variant.outputs.each { output ->
+            def outputFileDir = "${project.projectDir.absolutePath}/build/outputs/apk/${variant.buildType.name}/${variant.flavorName}"
             variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
             output.outputFileName = path
         }
