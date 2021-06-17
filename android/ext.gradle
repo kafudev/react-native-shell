@@ -1,0 +1,39 @@
+// 扩展通用方法
+// 获取最新提交id
+def getGitCommitId() {
+    def file = new File(".git/HEAD")
+    if (file.exists()) {
+        def strings = file.getText("UTF-8").split(" ")
+        println "gitConfig = ${strings}"
+        if (strings.size() > 1) {
+            def branch = strings[1]
+            String refFilePath = ".git/${branch}"
+            def refFile = new File(refFilePath.replace("\n", ""))
+            if (refFile.exists()) {
+                def commitId = refFile.getText('UTF-8')
+                println "git commit id = $commitId"
+                //取提交id前六位
+                return commitId.substring(0,6)
+            }
+        }
+    }
+}
+//git的分支
+def getGitBranch() {
+    def file = new File(".git/HEAD")
+    if (file.exists()) {
+        def strings = file.getText("UTF-8").split(" ")
+        println "gitConfig = ${strings}"
+        if (strings.size() > 1) {
+            def branch = strings[1].replace("\n","")
+            println "branch = $branch"
+            return branch.substring(branch.lastIndexOf("/") + 1)
+        }
+    }
+}
+//为了能使其他的gradle文件中能够调用这些方法，定义额外属性
+//使用时直接调用这个额外属性就可以了
+ext{
+    getGitCommitId = this.&getGitCommitId //调用方法需要使用&符号
+    getGitBranch = this.&getGitBranch
+}

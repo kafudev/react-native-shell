@@ -350,12 +350,12 @@ android {
             // output.outputFileName = filename
 
             // 复制outputs到build文件夹
-            task "copy ${variant.buildType.name}"(type:Copy){
+            task "copy ${variant.buildType.name}"(type:Copy) {
                 println("task copy ${variant.buildType.name}")
                 dependsOn app:assembleRelease
                 copy {
-                    from outputFileDir + "/" + filename
-                    into outputFileDir2 + "/" + filename
+                    from outputFileDir
+                    into outputFileDir2
                 }
             }
         }
