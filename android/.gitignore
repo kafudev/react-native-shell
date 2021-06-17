@@ -17,3 +17,8 @@ local.properties
 .classpath
 
 local.properties
+
+*.keystore
+*.keystore.properties
+!debug.keystore
+!debug.keystore.properties

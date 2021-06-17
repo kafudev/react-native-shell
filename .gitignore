@@ -45,7 +45,9 @@ yarn-error.log
 buck-out/
 \.buckd/
 *.keystore
+*.keystore.properties
 !debug.keystore
+!debug.keystore.properties
 
 # window 中显示macos的._文件
 ._*

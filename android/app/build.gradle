@@ -92,7 +92,7 @@ apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
-// 2nd line, add a new apply:
+// react-native-config 2nd line, add a new apply:
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
@@ -204,7 +204,7 @@ android {
 
     defaultConfig {
         resValue "string", "app_name", project.env.get("APP_NAME")
-        resValue "string", "build_config_package", project.env.get("APP_PACKAGE")   // react-native-config配置用
+        resValue "string", "build_config_package", 'com.rnshell.app'   // react-native-config配置用,跟AndroidManifest包名保持一致
         resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID")
         applicationId project.env.get("APP_PACKAGE")
         minSdkVersion rootProject.ext.minSdkVersion
@@ -271,6 +271,9 @@ android {
             include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
     }
+    productFlavors {
+
+    }
     signingConfigs {
         debug {
             storeFile file("$rootDir/"+project.env.get("debug_storeFile"))
@@ -288,6 +291,8 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            resValue "string", "app_name", project.env.get("APP_NAME")+"dev"
+            applicationIdSuffix ".dev"
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
