@@ -1,8 +1,8 @@
 diff --git a/node_modules/react-native-fast-image/android/build.gradle b/node_modules/react-native-fast-image/android/build.gradle
-index cdbdbf3..5c4d6ef 100644
+index cdbdbf3..6735b51 100644
 --- a/node_modules/react-native-fast-image/android/build.gradle
 +++ b/node_modules/react-native-fast-image/android/build.gradle
-@@ -48,13 +48,6 @@ android {
+@@ -48,13 +48,13 @@ android {
      }
  }
  
@@ -13,6 +13,13 @@ index cdbdbf3..5c4d6ef 100644
 -        url "https://maven.google.com"
 -    }
 -}
++// repositories {
++//     mavenCentral()
++//     google()
++//     maven {
++//         url "https://maven.google.com"
++//     }
++// }
  
  dependencies {
      //noinspection GradleDynamicVersion
