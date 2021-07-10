@@ -85,7 +85,7 @@ import groovy.json.JsonSlurper
  */
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -401,6 +401,7 @@ dokitExt {
 dependencies {
     implementation project(':jcore-react-native')
     implementation project(':jpush-react-native')
+    implementation project(':react-native-mmkv')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules

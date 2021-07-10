@@ -9,6 +9,8 @@
 
 # Add any project specific keep options here:
 
+-keep class com.facebook.react.turbomodule.** { *; }
+
 -keep class com.umeng.** {*;}
 -keep class com.alipay.** { *; }
 -keep class com.tencent.mm.opensdk.** {

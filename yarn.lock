@@ -2474,7 +2474,7 @@
   resolved "https://registry.npmjs.org/@kafudev/jpush-react-native/-/jpush-react-native-2.0.5.tgz#837a29ce0d13c014bbf5b8edaaffe9be2213fd1d"
   integrity sha512-XR9A6dZ5Mz1Tdn5ldhkCGMYuw3vKSFdcr2yh9lP8evv4Ztu2JBYgzRnHA1LrqGBKhgVum/3CiEfuBGhi0YqiZA==
 
-"@kafudev/react-native-alibc@^0.1.8":
+"@kafudev/react-native-alibc@^0.1.13":
   version "0.1.13"
   resolved "https://registry.npmjs.org/@kafudev/react-native-alibc/-/react-native-alibc-0.1.13.tgz#b35a0b1df20549d37c181976da9819e28dc3bf27"
   integrity sha512-J3lFf07Ns9jOcKrf9vk3m480NXpRqsi2zc+hB6qGnDX3MqOBFMRmXjeg5GtIzhcJ03oIADxjXpwY4bUYrpuVKQ==
@@ -4092,10 +4092,17 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*", "@types/react-native@0.64.10":
+"@types/react-native@*":
   version "0.64.10"
   resolved "https://registry.npmjs.org/@types/react-native/-/react-native-0.64.10.tgz#5eb6a72c77ce0f7e6e14b19c61a6bc585975eef5"
   integrity sha512-3Kb9QM5/WZ6p58yZ7VPbvjvi6Wc/ZkESgJhKso1gKkNuHBe/4WL6586R2JRDiz9Tsxal9lMnbj3fligBVGl8PA==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-native@0.64.11":
+  version "0.64.11"
+  resolved "https://registry.npmjs.org/@types/react-native/-/react-native-0.64.11.tgz#c40264c5bd916e589b6c914982df324f5107960a"
+  integrity sha512-WgOJtQpFyH063MHZugOHq8Qr0J0UnASmz0NvSNRXEOd8ySkuNvLmlkiITr+L85o2BPj3hB/wx8IiK16dW/uVkQ==
   dependencies:
     "@types/react" "*"
 
@@ -4109,10 +4116,19 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react@*", "@types/react@>=16.0.0", "@types/react@^17.0.13":
+"@types/react@*", "@types/react@>=16.0.0":
   version "17.0.13"
   resolved "https://registry.npmjs.org/@types/react/-/react-17.0.13.tgz#6b7c9a8f2868586ad87d941c02337c6888fb874f"
   integrity sha512-D/G3PiuqTfE3IMNjLn/DCp6umjVCSvtZTPdtAFy5+Ved6CsdRvivfKeCzw79W4AatShtU4nGqgvOv5Gro534vQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.14":
+  version "17.0.14"
+  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.14.tgz#f0629761ca02945c4e8fea99b8177f4c5c61fb0f"
+  integrity sha512-0WwKHUbWuQWOce61UexYuWTGuGY/8JvtUe/dtQ6lR4sZ3UiylHotJeWpf3ArP9+DSGUoLY3wbU59VyMrJps5VQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -4272,12 +4288,12 @@
   dependencies:
     compare-versions "^3.4.0"
 
-"@unimodules/react-native-adapter@~6.3.1":
-  version "6.3.2"
-  resolved "https://registry.npmjs.org/@unimodules/react-native-adapter/-/react-native-adapter-6.3.2.tgz#6dd549704d3fc7c729d657beff998f27a34f62a2"
-  integrity sha512-jHrlGfIfs2GiPoDS6HttS5VZ4UmRSGiH1wArAJo7msAe0EACt6b9AR+CuxUPpK0d+DXv31iJzJxh9PYBzyA9Ag==
+"@unimodules/react-native-adapter@~6.3.3", "@unimodules/react-native-adapter@~6.3.4":
+  version "6.3.4"
+  resolved "https://registry.npmjs.org/@unimodules/react-native-adapter/-/react-native-adapter-6.3.4.tgz#b21e1750b9f2d6e3031dafba890c97586e428f4b"
+  integrity sha512-o2sX+QrYo2hmK0vNbxlULy319IxjgTWVraGxatrXeYPCbFEDM/u+nCLlCgGTz6ZrYN7dHnA0Xq3uoerhUPE0gg==
   dependencies:
-    expo-modules-autolinking "^0.0.2"
+    expo-modules-autolinking "^0.0.3"
     invariant "^2.2.4"
 
 "@yarnpkg/lockfile@^1.1.0":
@@ -4530,19 +4546,19 @@ anymatch@^3.0.3:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-appcenter-analytics@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/appcenter-analytics/-/appcenter-analytics-4.1.0.tgz#eb3270a6894bcf3d14e1772c4ccf21d7fb88fa85"
-  integrity sha512-pEsz08wer7J3+zjNV78eSB0FY1bjMxmFHukV6PimAoMpIm8E+X7saGP0QQw2cQTUFiexMujHRvZfM259ksg6hg==
+appcenter-analytics@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/appcenter-analytics/-/appcenter-analytics-4.2.0.tgz#2d30dbbfd3cf77f6427962c25e00c281e143ac93"
+  integrity sha512-bUOXtoqFuiXm4ngXJHlhvGt72/HX6hV0VTRekzy7VrA6kA28LRrp78wqJE2G0Vl175USmuCLdka5jkAbHsbpAA==
   dependencies:
-    appcenter "4.1.0"
+    appcenter "4.2.0"
 
-appcenter-crashes@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/appcenter-crashes/-/appcenter-crashes-4.1.0.tgz#1d7a1a27c61f6a37d904f3d435de2f30ee0454e5"
-  integrity sha512-erl7387yAPRKa7d8L7KxNd82OAZ+EQwThpsu7tZLQYn3iuIT4P98dNFCnJKO6y64li4dn4B9rCF3s0PN7tPb1A==
+appcenter-crashes@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/appcenter-crashes/-/appcenter-crashes-4.2.0.tgz#2ce288787e48f40c049c34ff003fb5ca1a28d255"
+  integrity sha512-fcAud3b7nqRvO8KZb9BbRj9ejLeIEvxnM9yxio9MTZ9Un5BrvI4r0ywLh7R6UzwHs8E7bOX4nijug24rq5ixEA==
   dependencies:
-    appcenter "4.1.0"
+    appcenter "4.2.0"
 
 appcenter-file-upload-client@0.0.24:
   version "0.0.24"
@@ -4553,25 +4569,25 @@ appcenter-file-upload-client@0.0.24:
     superagent "5.1.0"
     url-parse "^1.4.7"
 
-appcenter-link-scripts@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/appcenter-link-scripts/-/appcenter-link-scripts-4.1.0.tgz#ff9d337fb7841c2cbf86cd5f34bd7310e945d0f5"
-  integrity sha512-sTd8H4H9wNwBkUKHasvDGNBln34+dHEFlaT/P6O0gvs6TWU3JxlY8uXpB/IqAi2lSWPs3TMgQ7NGXTjvC6oZig==
+appcenter-link-scripts@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/appcenter-link-scripts/-/appcenter-link-scripts-4.2.0.tgz#c23cad144328391112111d334bc32a0a50b8d02c"
+  integrity sha512-E/pUZBkHmbyCYs9pDBdkEOufl95emHsWTTmLv8t+dLE4QkbGxupc+oQa/Lgjzr/AyWmGs6XXkXFWM1uW7OZ8Fw==
   dependencies:
     debug "4.1.1"
     glob "5.0.15"
     minimist "1.2.5"
     mkdirp "0.5.3"
-    plist "3.0.1"
+    plist "^3.0.2"
     which "1.2.11"
     xcode "2.0.0"
 
-appcenter@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/appcenter/-/appcenter-4.1.0.tgz#d4c9b43adcaac32a328dc8e9f9f0607e0a7d5691"
-  integrity sha512-JUwb/4sMw68CN2AlJEp1G5iVl/Rzv8fg8t9CzeRaEcnOku42h6+vlYbYe3P5YW18kAIA/hCH0uoDaa0kc9qfDA==
+appcenter@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/appcenter/-/appcenter-4.2.0.tgz#be1436d475a44fd10943f4142cca3ef7c632aea7"
+  integrity sha512-6zChX+RLrMXAJumaSZ2OYLpSrJU6OIPGGJMWNhXO/FgvqxE9mZqAH3cHsOJBz7Wz8YzIcf1n75PIHMfnz3euQA==
   dependencies:
-    appcenter-link-scripts "4.1.0"
+    appcenter-link-scripts "4.2.0"
 
 appdirsjs@^1.2.4:
   version "1.2.5"
@@ -7635,10 +7651,10 @@ expo-location@^12.1.2:
     "@expo/config-plugins" "^3.0.0"
     expo-modules-core "~0.2.0"
 
-expo-modules-autolinking@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/expo-modules-autolinking/-/expo-modules-autolinking-0.0.2.tgz#6015c4e0ba995144145ad29fb2a4b34deba73955"
-  integrity sha512-+tEosOIwQ1MlLbHoWNq9fu5C5itSbmrwzIX3KOoBCgEsHlE/xFJ1NoZCWIxCJ0K49Z4Gzab1wCpT0PhdidImnA==
+expo-modules-autolinking@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/expo-modules-autolinking/-/expo-modules-autolinking-0.0.3.tgz#45ba8cb1798f9339347ae35e96e9cc70eafb3727"
+  integrity sha512-azkCRYj/DxbK4udDuDxA9beYzQTwpJ5a9QA0bBgha2jHtWdFGF4ZZWSY+zNA5mtU3KqzYt8jWHfoqgSvKyu1Aw==
   dependencies:
     chalk "^4.1.0"
     commander "^7.2.0"
@@ -7682,16 +7698,16 @@ expo-web-browser@^9.2.0:
   dependencies:
     compare-urls "^2.0.0"
 
-expo@^42.0.0:
-  version "42.0.0"
-  resolved "https://registry.npmjs.org/expo/-/expo-42.0.0.tgz#edf55d1bab197aa6e6883b4b593de2bb87f18e14"
-  integrity sha512-m1/rPzh/Jgmy2Kx8I2wK7bjhMhwcp6oNJcYr3JqUphYYW4k+UgoKw/O5Dztt/Sy+vYAUH1tFAd+wLcMCmPUJbg==
+expo@^42.0.1:
+  version "42.0.1"
+  resolved "https://registry.npmjs.org/expo/-/expo-42.0.1.tgz#f0f9301951113055e2c501578bf4e12239e3750a"
+  integrity sha512-8IDYZXZcauRn8dlMAdxkZCmlnYhvqqqdgIBQhnoBSQbi/fpiHwXcbm5bzF+/o9bpBTWa0fyv3WY++0XDigh5Ag==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@expo/metro-config" "^0.1.70"
     "@expo/vector-icons" "^12.0.4"
     "@unimodules/core" "~7.1.1"
-    "@unimodules/react-native-adapter" "~6.3.1"
+    "@unimodules/react-native-adapter" "~6.3.3"
     babel-preset-expo "~8.4.0"
     cross-spawn "^6.0.5"
     expo-application "~3.2.0"
@@ -12539,15 +12555,6 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plist@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/plist/-/plist-3.0.1.tgz#a9b931d17c304e8912ef0ba3bdd6182baf2e1f8c"
-  integrity sha512-GpgvHHocGRyQm74b6FWEZZVRroHKE1I0/BTjAmySaohK+cUn+hZpbqXkc3KWgW3gQYkqcQej35FohcT0FRlkRQ==
-  dependencies:
-    base64-js "^1.2.3"
-    xmlbuilder "^9.0.7"
-    xmldom "0.1.x"
-
 plist@^3.0.1, plist@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/plist/-/plist-3.0.2.tgz#74bbf011124b90421c22d15779cee60060ba95bc"
@@ -13280,10 +13287,10 @@ react-native-markdown-package@1.8.1:
     react-native-lightbox "^0.7.0"
     simple-markdown "^0.7.1"
 
-react-native-mmkv@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/react-native-mmkv/-/react-native-mmkv-1.1.6.tgz#562699c57fc55ec84b17ef675f6f609339096dfd"
-  integrity sha512-mvpnGLkXsEwlhGc2IoiqwI+7F9PwkcoJdt3PZOMtSCrt1ngDPJXXfyIxJ4/Ia8vd/gm7K3G+/mfusjEoiOsjxw==
+react-native-mmkv@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/react-native-mmkv/-/react-native-mmkv-1.2.0.tgz#27fc51ce448ed775f5debd8539dd2ba0f41334c2"
+  integrity sha512-UCEhaD/pdGmLTBPeVRGseRIu/Ye8h3EMzVCJr1SSyHTIQpJIb3GI3Z07UWoojRVubrd+nTCFTw5JhU52VrW6+Q==
 
 react-native-modal@^12.0.2:
   version "12.0.2"
@@ -13441,10 +13448,10 @@ react-native-shadow-cards@^1.0.2:
   resolved "https://registry.npmjs.org/react-native-shadow-cards/-/react-native-shadow-cards-1.0.2.tgz#7c0f899ffa2f9143cee48d646ef87fd5c1384357"
   integrity sha512-cUk9+4T8XTwWPKJzLxmnFia9i0m5PWdLPrtGiShVH5vVH48TZ/8JLBzsUe50tfzTxvMWPvQM1vZE8Sytfj1mjw==
 
-react-native-share@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.npmjs.org/react-native-share/-/react-native-share-6.2.2.tgz#88efb205f99553be69eebf168ca8b03d3f7ff04a"
-  integrity sha512-Ekjd9kUHGZIGiC/kSs4hQ93Hghych5aOTLBQgV9YP2sfZyXbjDmKAR8cKyiuK/3BjLusqt3R9h0gvj11DKxfbw==
+react-native-share@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.npmjs.org/react-native-share/-/react-native-share-6.2.3.tgz#12d0396b8332687dc5fcc82ddf82f11ad7e671c7"
+  integrity sha512-dVWCQLPF3B64/XNuCjQx/hnq8Hz+llQ17srrsO3QdguChi1FRnfVfv2wcfr3hgL8whEWCz9CyDDvbqsmhUagDQ==
 
 react-native-size-matters@^0.3.1:
   version "0.3.1"
@@ -13524,13 +13531,13 @@ react-native-tree-select@^2.0.9:
   resolved "https://registry.npmjs.org/react-native-tree-select/-/react-native-tree-select-2.0.9.tgz#6c3aa9c0acbdcd273d9602dcaaf681cf08354f3c"
   integrity sha512-UmFsXh1cpg/Wlmr297mJTkdJdQnToPGB65FnfLS/bxX8rlVrouypPYK0fC5obKCKwiW3k4NFiEMnj5k2YdkOPw==
 
-react-native-unimodules@^0.14.3:
-  version "0.14.3"
-  resolved "https://registry.npmjs.org/react-native-unimodules/-/react-native-unimodules-0.14.3.tgz#b84d050b554a790b9f79aeb534b8a8bbd27fbb2d"
-  integrity sha512-FhAqztCacYvQwsx8FAOU+x3eywSFy3Tc9U86YovVWp86vz6066XU1SB/HPbAD+oiBJsB02yRPKxtYQT3CrOqnQ==
+react-native-unimodules@^0.14.5:
+  version "0.14.5"
+  resolved "https://registry.npmjs.org/react-native-unimodules/-/react-native-unimodules-0.14.5.tgz#5dcc7ba00ec018caf5d93225c30132b8222e55e1"
+  integrity sha512-AfgbkFUHIkpCytxd2UsNbE0cAmzKpgiQ+ma5iGlzK7fZelMJIv7XEuqFfKT4CZhYgetg5ZHf+ZNr140B/N1RgA==
   dependencies:
     "@unimodules/core" "~7.1.1"
-    "@unimodules/react-native-adapter" "~6.3.1"
+    "@unimodules/react-native-adapter" "~6.3.4"
     chalk "^2.4.2"
     expo-asset "~8.3.2"
     expo-constants "~11.0.1"
@@ -13564,10 +13571,10 @@ react-native-video@^5.1.1:
     prop-types "^15.7.2"
     shaka-player "^2.5.9"
 
-react-native-webview@11.4.5:
-  version "11.4.5"
-  resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-11.4.5.tgz#a264ac2f9146b23b10dcea1a12b9ce3ec0df9db8"
-  integrity sha512-hH+0QjetQ8A6TpXdXba7QLeEX1mi7fVClu+CVjj+PwKCirl1GPPhYMeq6/qR+zEifh6KnQINLFifOb651lOuhA==
+react-native-webview@^11.6.5:
+  version "11.6.5"
+  resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-11.6.5.tgz#34e86a342c6a2cbcf109db98f639f7bb8f055da2"
+  integrity sha512-5U+hI8snkCrFeDy+bUTszwhzcJIenaaOy3ubhY77HZq7R0pFIZzRYWkT0YXe1ymRYW9mSU96nr6S0AVDk8qkMw==
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
@@ -14908,10 +14915,10 @@ stream-buffers@~2.2.0:
   resolved "https://registry.npmjs.org/stream-buffers/-/stream-buffers-2.2.0.tgz#91d5f5130d1cef96dcfa7f726945188741d09ee4"
   integrity sha1-kdX1Ew0c75bc+n9yaUUYh0HQnuQ=
 
-stream-chat-react-native-core@v3.6.0:
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/stream-chat-react-native-core/-/stream-chat-react-native-core-3.6.0.tgz#f14dc837d9eb9b0a04bb3492e0d03ca43ac0ead9"
-  integrity sha512-9XnKSloJIc2+SoGaePIAHpFh0K7PTEN78tjiQGOf4ChGCjTWamLVcKGe9uhXR93DI7mvCl4aVjGf3ZUvjfOiuA==
+stream-chat-react-native-core@v3.6.1:
+  version "3.6.1"
+  resolved "https://registry.npmjs.org/stream-chat-react-native-core/-/stream-chat-react-native-core-3.6.1.tgz#969d350112b565a4a2ebec3b0c370053a5b00226"
+  integrity sha512-iSUQd2bTb1Q4V11gEPXJ6wCuCEpC2/6HgKKh6OzA5v98MAB3hPBo6oOCDH2gBbZdhfERHZKnLF6JV+T1WYPhBg==
   dependencies:
     "@babel/runtime" "7.13.10"
     "@gorhom/bottom-sheet" "3.6.4"
@@ -14927,13 +14934,13 @@ stream-chat-react-native-core@v3.6.0:
     react-native-markdown-package "1.8.1"
     stream-chat "3.9.0"
 
-stream-chat-react-native@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/stream-chat-react-native/-/stream-chat-react-native-3.6.0.tgz#cad2dea6ed23c86a86ed37175e18caa30195d775"
-  integrity sha512-C2+0ILevALe3LtoNd9Bi0iPlPQIlMtbVO3SIGmNl++rFaW9rDqeqqg64qtjkR8WwAHXQBVUEswrleUuuqHJlIw==
+stream-chat-react-native@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.npmjs.org/stream-chat-react-native/-/stream-chat-react-native-3.6.1.tgz#50136d6a2de39c87b8c0d58cd3cc2b9ec608e67f"
+  integrity sha512-lrJ+RnOFD7pF+A4+50Xv3xI18xsxPZI68czKln9lh4TTh4phZ2rWURplgA5fxKDMb0oBjjIqBw7QookYpmLjZw==
   dependencies:
     es6-symbol "^3.1.3"
-    stream-chat-react-native-core v3.6.0
+    stream-chat-react-native-core v3.6.1
 
 stream-chat@3.9.0:
   version "3.9.0"
@@ -16714,11 +16721,6 @@ xmldoc@^1.1.2:
   integrity sha512-ruPC/fyPNck2BD1dpz0AZZyrEwMOrWTO5lDdIXS91rs3wtm4j+T8Rp2o+zoOYkkAxJTZRPOSnOGei1egoRmKMQ==
   dependencies:
     sax "^1.2.1"
-
-xmldom@0.1.x:
-  version "0.1.31"
-  resolved "https://registry.npmjs.org/xmldom/-/xmldom-0.1.31.tgz#b76c9a1bd9f0a9737e5a72dc37231cf38375e2ff"
-  integrity sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==
 
 xmldom@^0.5.0, xmldom@~0.5.0:
   version "0.5.0"
