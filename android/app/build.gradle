@@ -401,7 +401,6 @@ dokitExt {
 dependencies {
     implementation project(':jcore-react-native')
     implementation project(':jpush-react-native')
-    implementation project(':react-native-mmkv')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules

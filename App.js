@@ -9,6 +9,7 @@
 import React from 'react';
 import type { Node } from 'react';
 import RNBootSplash from 'react-native-bootsplash';
+import { useBackHandler } from '@react-native-community/hooks';
 import {
   SafeAreaView,
   ScrollView,
@@ -16,6 +17,7 @@ import {
   StyleSheet,
   Text,
   useColorScheme,
+  BackHandler,
   View,
 } from 'react-native';
 
@@ -58,11 +60,30 @@ const Section = ({ children, title }): Node => {
   );
 };
 
+let bfirstTime = Date.parse(new Date());
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  // android双击退出
+  useBackHandler(() => {
+    console.log('BackHandler onBackKeyDown');
+    let nt = Date.parse(new Date());
+    let xt = nt - bfirstTime;
+    if (xt > 1.2 * 1000) {
+      bfirstTime = Date.parse(new Date());
+      console.log('BackHandler 再次点击退出');
+      return true;
+    } else {
+      console.log('BackHandler 退出APP');
+      BackHandler.exitApp();
+    }
+    // let the default thing happen
+    return false;
+  });
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    paddingTop: 10,
   };
 
   return (

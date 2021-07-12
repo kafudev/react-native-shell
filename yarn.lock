@@ -13287,10 +13287,10 @@ react-native-markdown-package@1.8.1:
     react-native-lightbox "^0.7.0"
     simple-markdown "^0.7.1"
 
-react-native-mmkv@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/react-native-mmkv/-/react-native-mmkv-1.2.0.tgz#27fc51ce448ed775f5debd8539dd2ba0f41334c2"
-  integrity sha512-UCEhaD/pdGmLTBPeVRGseRIu/Ye8h3EMzVCJr1SSyHTIQpJIb3GI3Z07UWoojRVubrd+nTCFTw5JhU52VrW6+Q==
+react-native-mmkv-storage@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.npmjs.org/react-native-mmkv-storage/-/react-native-mmkv-storage-0.6.0.tgz#d197d059668f7bd4b86052f9d702eb421c83b0eb"
+  integrity sha512-FqmxwOMiL7AnjCBOEa/IABLWcHLcHXAjA52lKjD8Ajj2gPtY7zT+lSoppv8oN1pKfrAviwljrbtLylFXImu1fw==
 
 react-native-modal@^12.0.2:
   version "12.0.2"
