@@ -8,7 +8,6 @@
 
 import React from 'react';
 import type { Node } from 'react';
-import RNBootSplash from 'react-native-bootsplash';
 import { useBackHandler } from '@react-native-community/hooks';
 import {
   SafeAreaView,
@@ -18,6 +17,7 @@ import {
   Text,
   useColorScheme,
   BackHandler,
+  NativeModules,
   View,
 } from 'react-native';
 
@@ -29,11 +29,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+StatusBar.setBackgroundColor('rgba(0,0,0,0.3)');
+StatusBar.setTranslucent(true);
+StatusBar.setHidden(false);
+
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
-  setTimeout(() => {
-    RNBootSplash.hide({ duration: 550 }); // 隐藏启动屏
-  }, 2500);
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -63,6 +64,10 @@ const Section = ({ children, title }): Node => {
 let bfirstTime = Date.parse(new Date());
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  setTimeout(() => {
+    NativeModules.RNBootSplash.hide(true); // 隐藏启动屏
+  }, 1500);
 
   // android双击退出
   useBackHandler(() => {
