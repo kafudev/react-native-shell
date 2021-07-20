@@ -18,21 +18,17 @@ buildscript {
         ucropVersion = "2.2.6"
     }
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/spring' }
-        maven { url 'https://maven.aliyun.com/repository/spring-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/grails-core' }
-        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'https://dl.bintray.com/android/android-tools/' }
+        maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://www.jitpack.io" }
         mavenLocal()
-        jcenter()
-        google()
         mavenCentral()
+        google()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.1.0")
@@ -60,20 +56,16 @@ allprojects {
             // expo-camera bundles a custom com.google.android:cameraview
             url "$rootDir/../node_modules/expo-camera/android/maven"
         }
-        maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/spring' }
-        maven { url 'https://maven.aliyun.com/repository/spring-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/grails-core' }
-        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'https://dl.bintray.com/android/android-tools/' }
+        maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://www.jitpack.io" }
         mavenLocal()
-        jcenter()
-        google()
         mavenCentral()
+        google()
     }
 }
