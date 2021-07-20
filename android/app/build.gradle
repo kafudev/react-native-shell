@@ -399,8 +399,8 @@ dokitExt {
 }
 
 dependencies {
-    implementation project(':jcore-react-native')
-    implementation project(':jpush-react-native')
+    implementation project(':@kafudev/jcore-react-native')
+    implementation project(':@kafudev/jpush-react-native')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -438,8 +438,8 @@ dependencies {
     debugImplementation 'com.didichuxing.doraemonkit:dokitx:3.3.5'
     releaseImplementation 'com.didichuxing.doraemonkit:dokitx-no-op:3.3.5'
 
-    implementation 'com.tencent.bugly:crashreport:latest.release'
-    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    implementation 'com.tencent.bugly:crashreport:3.3.9'
+    implementation 'com.tencent.bugly:nativecrashreport:3.9.0'
 
     implementation 'com.qiyukf.unicorn:unicorn:5.14.1'
 

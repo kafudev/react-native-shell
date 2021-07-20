@@ -1,10 +1,10 @@
 rootProject.name = 'rnshell'
 
-include ':jcore-react-native'
-project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jcore-react-native/android')
+include ':@kafudev/jcore-react-native'
+project(':@kafudev/jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jcore-react-native/android')
 
-include ':jpush-react-native'
-project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jpush-react-native/android')
+include ':@kafudev/jpush-react-native'
+project(':@kafudev/jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jpush-react-native/android')
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'; includeUnimodulesProjects()
 
