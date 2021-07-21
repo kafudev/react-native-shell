@@ -17,7 +17,9 @@ import {
   Text,
   useColorScheme,
   BackHandler,
+  Button,
   NativeModules,
+  TextInput,
   View,
 } from 'react-native';
 
@@ -65,6 +67,9 @@ let bfirstTime = Date.parse(new Date());
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  let [bundleName, setBundleName] = React.useState('');
+  let [bundleUrl, setBundleUrl] = React.useState('');
+
   setTimeout(() => {
     NativeModules.RNBootSplash.hide(true); // 隐藏启动屏
   }, 1500);
@@ -100,6 +105,36 @@ const App: () => Node = () => {
         style={backgroundStyle}
       >
         <Header />
+        <Button
+          title="显示toast"
+          onPress={() => {
+            NativeModules.Common &&
+              NativeModules.Common.toast('显示toast', 1000);
+          }}
+        />
+        <TextInput
+          defaultValue={bundleName}
+          style={{ backgroundColor: '#fff' }}
+          placeholder="请输入bundle名称"
+          onChangeText={(v) => {
+            setBundleName(v);
+          }}
+        />
+        <TextInput
+          defaultValue={bundleUrl}
+          style={{ backgroundColor: '#fff' }}
+          placeholder="请输入bundle地址"
+          onChangeText={(v) => {
+            setBundleUrl(v);
+          }}
+        />
+        <Button
+          title="打开远程bundle页面"
+          onPress={() => {
+            NativeModules.Common &&
+              NativeModules.Common.toast(bundleName + ' ' + bundleUrl, 1000);
+          }}
+        />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,

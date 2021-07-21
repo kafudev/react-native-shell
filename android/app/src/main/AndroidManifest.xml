@@ -46,6 +46,12 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+      <activity
+        android:name=".PageActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+      />
 
       <meta-data android:name="JPUSH_PKGNAME" android:value="${JPUSH_PKGNAME}"/>
       <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}"/>

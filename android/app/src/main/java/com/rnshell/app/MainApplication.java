@@ -27,7 +27,7 @@ import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.SingletonModule;
 
-import com.didichuxing.doraemonkit.DoraemonKit;
+import com.didichuxing.doraemonkit.DoKit;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.microsoft.codepush.react.CodePush;
 import cn.jiguang.plugins.push.JPushModule;
@@ -52,6 +52,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
+          packages.add(new CommonPackage());  // 加载通用模块
           // Add unimodules
           List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
             new ModuleRegistryAdapter(mModuleRegistryProvider)
@@ -102,7 +103,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     // dokit开发工具
     if(BuildConfig.DEBUG){
-      DoraemonKit.install(this, dokit_appid);
+      new DoKit.Builder(this).productId(dokit_appid).build();
     }
 
     // bugly异常上报
