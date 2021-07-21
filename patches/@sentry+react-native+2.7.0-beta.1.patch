@@ -1,0 +1,11 @@
+diff --git a/node_modules/@sentry/react-native/android/build.gradle b/node_modules/@sentry/react-native/android/build.gradle
+index 6d40645..48efd57 100644
+--- a/node_modules/@sentry/react-native/android/build.gradle
++++ b/node_modules/@sentry/react-native/android/build.gradle
+@@ -26,5 +26,5 @@ android {
+ 
+ dependencies {
+     implementation 'com.facebook.react:react-native:+'
+-    api 'io.sentry:sentry-android:5.1.0-beta.2'
++    api 'io.sentry:sentry-android:5.1.0-beta.6'
+ }

@@ -114,7 +114,7 @@
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
     "@rescript/react": "^0.10.3",
-    "@sentry/react-native": "^2.6.0",
+    "@sentry/react-native": "^2.7.0-beta.1",
     "@stream-io/flat-list-mvcp": "^0.10.1",
     "@stripe/stripe-react-native": "^0.1.5",
     "@ui-kitten/components": "^5.1.0",
