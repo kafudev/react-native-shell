@@ -27,6 +27,7 @@ buildscript {
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://www.jitpack.io" }
         mavenLocal()
+        jcenter()
         mavenCentral()
         google()
     }
@@ -57,7 +58,6 @@ allprojects {
             // expo-camera bundles a custom com.google.android:cameraview
             url "$rootDir/../node_modules/expo-camera/android/maven"
         }
-        mavenCentral()
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -67,6 +67,8 @@ allprojects {
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://www.jitpack.io" }
         mavenLocal()
+        jcenter()
+        mavenCentral()
         google()
     }
 }
