@@ -126,6 +126,9 @@ public class MainApplication extends Application implements ReactApplication {
       TXLiveBase.setConsoleEnabled(true);
       TXLiveBase.getInstance().setLicence(this, txlive_licence_url, txlive_licence_key);
     }
+
+    // 初始化文件下载器
+    Aria.init(this);
   }
 
   /**

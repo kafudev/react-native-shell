@@ -109,7 +109,7 @@ const App: () => Node = () => {
           title="显示toast"
           onPress={() => {
             NativeModules.Common &&
-              NativeModules.Common.toast('显示toast', 1000);
+              NativeModules.Common.toast('显示toast内容', 0);
           }}
         />
         <TextInput
@@ -132,7 +132,7 @@ const App: () => Node = () => {
           title="打开远程bundle页面"
           onPress={() => {
             NativeModules.Common &&
-              NativeModules.Common.toast(bundleName + ' ' + bundleUrl, 1000);
+              NativeModules.Common.openPageActivity(bundleName, bundleUrl);
           }}
         />
         <View

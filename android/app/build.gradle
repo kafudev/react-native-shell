@@ -449,7 +449,8 @@ dependencies {
 
     implementation 'com.qiyukf.unicorn:unicorn:5.14.1'
 
-    implementation 'com.liulishuo.okdownload:okdownload:1.0.7'
+    implementation 'me.laoyuyu.aria:core:3.8.16'
+    annotationProcessor 'me.laoyuyu.aria:compiler:3.8.16'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.google.code.gson:gson:2.8.5'
 
