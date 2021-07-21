@@ -7,6 +7,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
+
+import com.arialyy.aria.core.Aria;
 import com.rnshell.app.generated.BasePackageList;
 
 import com.facebook.react.PackageList;
@@ -127,7 +129,7 @@ public class MainApplication extends Application implements ReactApplication {
       TXLiveBase.getInstance().setLicence(this, txlive_licence_url, txlive_licence_key);
     }
 
-    // 初始化文件下载器
+    // 下载器初始化
     Aria.init(this);
   }
 

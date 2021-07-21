@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.arialyy.annotations.Download;
+import com.arialyy.aria.core.Aria;
+import com.arialyy.aria.core.task.DownloadTask;
+import com.arialyy.aria.util.CommonUtil;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.Promise;
@@ -22,16 +26,6 @@ import com.facebook.react.bridge.Arguments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.IOException;
@@ -152,7 +146,7 @@ public class CommonModule extends ReactContextBaseJavaModule {
 //    }
     int p = task.getPercent(); // 任务进度百分比
     String speed = task.getConvertSpeed(); // 转换单位后的下载速度，单位转换需要在配置文件中打开
-    String speed1 = task.getSpeed(); // 原始byte长度速度
+    long speed1 = task.getSpeed(); // 原始byte长度速度
     Toast.makeText(getReactApplicationContext(), "模块加载进度" + p + "%", Toast.LENGTH_SHORT).show();
   }
 
@@ -178,10 +172,10 @@ public class CommonModule extends ReactContextBaseJavaModule {
 
   @Download.onTaskComplete
   void taskComplete(DownloadTask task) {
-    String bundleName = task.getDownloadEntity().getExtendField();
-    Log.d(TAG + " file DownloadTask", "ExtendField ==> " + task.getDownloadEntity().getExtendField());
-    Log.d(TAG + " file DownloadTask", "path ==> " + task.getDownloadEntity().getDownloadPath());
-    Log.d(TAG + " file DownloadTask", "md5Code ==> " + CommonUtil.getFileMD5(new File(task.getDownloadPath())));
+    String bundleName = task.getExtendField();
+    Log.d(TAG + " file DownloadTask", "ExtendField ==> " + task.getExtendField());
+    Log.d(TAG + " file DownloadTask", "path ==> " + task.getFilePath());
+    Log.d(TAG + " file DownloadTask", "md5Code ==> " + CommonUtil.getFileMD5(new File(task.getFilePath())));
     Toast.makeText(getReactApplicationContext(), "模块加载完成", Toast.LENGTH_SHORT).show();
     openActivity(bundleName);
   }
