@@ -265,7 +265,7 @@ android {
 
         ndk {
             // 设置支持的SO库架构
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a' //, 'x86',  'x86_64',
+            abiFilters 'armeabi-v7a', 'arm64-v8a' //'armeabi', 'x86',  'x86_64',
         }
     }
     splits {
@@ -273,7 +273,7 @@ android {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+            include "armeabi-v7a", "arm64-v8a" // , "x86", "x86_64"
         }
     }
     productFlavors {
@@ -463,7 +463,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     implementation 'com.google.android.material:material:1.0.0'
 
-    implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
+    // implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
 }
 
 //huawei_plugin_start

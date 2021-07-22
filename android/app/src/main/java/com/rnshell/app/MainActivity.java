@@ -53,4 +53,8 @@ public class MainActivity extends ReactActivity {
     this.sendBroadcast(intent);
   }
 
+  @Override
+  public void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+  }
 }

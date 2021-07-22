@@ -1,7 +1,9 @@
 package com.rnshell.app;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -104,10 +106,16 @@ public class CommonModule extends ReactContextBaseJavaModule {
    * @param bundleName
    */
   private void openActivity(String bundleName) {
-    Intent starter = new Intent(getReactApplicationContext(), PageActivity.class);
-    starter.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    PageActivity.bundleName = bundleName;
-    getReactApplicationContext().startActivity(starter);
+    try{
+      PageActivity.start(getCurrentActivity(), bundleName);
+//      PageActivity.bundleName = bundleName;
+//      Activity activity = getCurrentActivity();
+//      Intent intent = new Intent(activity, PageActivity.class);
+//      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//      activity.startActivity(intent);
+    } catch (Exception e) {
+      Toast.makeText(getReactApplicationContext(), "无法加载模块页面"+e.getMessage(), Toast.LENGTH_SHORT).show();
+    }
   }
 
   /**
@@ -117,8 +125,13 @@ public class CommonModule extends ReactContextBaseJavaModule {
    */
   private void downloadBundle(final String bundleName, final String bundleUrl) {
     Log.v("PageActivity", bundleName + " " + bundleUrl);
-    long mTaskId = Aria.download(this).load(bundleUrl).setFilePath(
-        getReactApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName + ".bundle")
+    String filepath = getReactApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName;
+    String filename = filepath + "/" + bundleName + ".bundle";
+    File destDir = new File(filepath);
+    if (!destDir.exists()) {
+      destDir.mkdirs();
+    }
+    long mTaskId = Aria.download(this).load(bundleUrl).setFilePath(filename).ignoreFilePathOccupy().ignoreCheckPermissions()
         .setExtendField(bundleName).resetState().create();
   }
 

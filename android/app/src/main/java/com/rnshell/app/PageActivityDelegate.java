@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.util.Log;
 import androidx.annotation.Nullable;
 
+import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactApplication;
 import com.rnshell.app.generated.BasePackageList;
 
 import com.facebook.react.PackageList;
@@ -28,21 +30,27 @@ import org.unimodules.core.interfaces.SingletonModule;
  */
 public class PageActivityDelegate extends ReactActivityDelegate {
 
-  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
+  private final @Nullable Activity mActivity;
+  private final @Nullable String mMainComponentName;
 
-  private Activity activity;
+//  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
+
+  private ReactActivity activity;
   private String bundleName;
 
   public PageActivityDelegate(Activity activity, @Nullable String bundleName) {
     super(activity, bundleName);
-    this.activity = activity;
-    this.bundleName = bundleName;
+    activity = activity;
+    bundleName = bundleName;
+    mActivity = activity;
+    mMainComponentName = bundleName;
+    Log.i("PageActivityDelegate", "bundleName: " + bundleName);
   }
 
   @Override
   protected ReactNativeHost getReactNativeHost() {
 
-    ReactNativeHost mReactNativeHost = new ReactNativeHost(activity.getApplication()) {
+    ReactNativeHost mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
       @Override
       public boolean getUseDeveloperSupport() {
         return BuildConfig.DEBUG;
@@ -51,29 +59,30 @@ public class PageActivityDelegate extends ReactActivityDelegate {
       // 注册原生模块
       @Override
       protected List<ReactPackage> getPackages() {
-        @SuppressWarnings("UnnecessaryLocalVariable")
+        // @SuppressWarnings("UnnecessaryLocalVariable")
         List<ReactPackage> packages = new PackageList(this).getPackages();
         // Packages that cannot be autolinked yet can be added manually here, for
         // example:
         packages.add(new MainReactPackage());
-        packages.add(new CommonPackage()); // 加载通用模块
-        // Add unimodules
-        List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
-        packages.addAll(unimodules);
+        // packages.add(new CommonPackage()); // 加载通用模块
+        // // Add unimodules
+        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
+        // packages.addAll(unimodules);
         return packages;
       }
 
-      @Override
-      protected JSIModulePackage getJSIModulePackage() {
-        // return new ReanimatedJSIModulePackage(); // <- add
-        return new CommonJSIModulePackage(); // <- add
-      }
+      // @Override
+      // protected JSIModulePackage getJSIModulePackage() {
+      //   // return new ReanimatedJSIModulePackage(); // <- add
+      //   return new CommonJSIModulePackage(); // <- add
+      // }
 
       @Nullable
       @Override
       protected String getJSBundleFile() {
         // 读取已经解压的bundle文件
-        String file = activity.getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName + ".bundle";
+        String file = getPlainActivity().getApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName + ".bundle";
+        Log.i("PageActivityDelegate", "getJSBundleFile:"+file);
         return file;
       }
 
@@ -85,7 +94,7 @@ public class PageActivityDelegate extends ReactActivityDelegate {
 
       @Override
       protected String getJSMainModuleName() {
-        return "index";
+        return "index.android";
       }
     };
     return mReactNativeHost;

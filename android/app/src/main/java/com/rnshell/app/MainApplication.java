@@ -33,7 +33,7 @@ import com.didichuxing.doraemonkit.DoKit;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.microsoft.codepush.react.CodePush;
 import cn.jiguang.plugins.push.JPushModule;
-import com.tencent.rtmp.TXLiveBase;
+// import com.tencent.rtmp.TXLiveBase;
 import com.qiyukf.unicorn.api.Unicorn;
 import com.qiyukf.unicorn.api.YSFOptions;
 
@@ -123,11 +123,11 @@ public class MainApplication extends Application implements ReactApplication {
       Unicorn.init(this, qiyu_appkey, new YSFOptions(), null);
     }
 
-    // 腾讯直播
-    if(!txlive_licence_key.isEmpty()){
-      TXLiveBase.setConsoleEnabled(true);
-      TXLiveBase.getInstance().setLicence(this, txlive_licence_url, txlive_licence_key);
-    }
+    // // 腾讯直播
+    // if(!txlive_licence_key.isEmpty()){
+    //   TXLiveBase.setConsoleEnabled(true);
+    //   TXLiveBase.getInstance().setLicence(this, txlive_licence_url, txlive_licence_key);
+    // }
 
     // 下载器初始化
     Aria.init(this);
