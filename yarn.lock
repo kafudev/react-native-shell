@@ -50,7 +50,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.14.0", "@babel/core@^7.14.6", "@babel/core@^7.7.2", "@babel/core@^7.7.5":
+"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.14.0", "@babel/core@^7.14.8", "@babel/core@^7.7.2", "@babel/core@^7.7.5":
   version "7.14.8"
   resolved "https://registry.nlark.com/@babel/core/download/@babel/core-7.14.8.tgz?cache=0&sync_timestamp=1626806498726&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.14.8.tgz#20cdf7c84b5d86d83fac8710a8bc605a7ba3f010"
   integrity sha1-IM33yEtdhtg/rIcQqLxgWnuj8BA=
@@ -1140,7 +1140,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.14.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.14.5", "@babel/runtime@^7.14.8", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.14.8"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.8.tgz?cache=0&sync_timestamp=1626806459168&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
   integrity sha1-cRmlb0IQGIUmlCkLn5FICXORtEY=
@@ -3166,15 +3166,6 @@
   resolved "https://registry.nlark.com/@react-native-clipboard/clipboard/download/@react-native-clipboard/clipboard-1.8.4.tgz#4bc1fb00643688e489d8220cd635844ab5c066f9"
   integrity sha1-S8H7AGQ2iOSJ2CIM1jWESrXAZvk=
 
-"@react-native-community/art@^1.1.2":
-  version "1.2.0"
-  resolved "https://registry.npm.taobao.org/@react-native-community/art/download/@react-native-community/art-1.2.0.tgz#386d95393f6042d9006f9d4bc6063fb898794460"
-  integrity sha1-OG2VOT9gQtkAb51LxgY/uJh5RGA=
-  dependencies:
-    art "^0.10.3"
-    invariant "^2.2.4"
-    prop-types "^15.7.2"
-
 "@react-native-community/blur@^3.6.0":
   version "3.6.0"
   resolved "https://registry.npm.taobao.org/@react-native-community/blur/download/@react-native-community/blur-3.6.0.tgz#31c9e0f2770519c9b5c4f99418f192246f0d4db8"
@@ -3382,10 +3373,10 @@
   resolved "https://registry.npm.taobao.org/@react-native-community/viewpager/download/@react-native-community/viewpager-2.0.2.tgz#622b190294b1310c4825c98daeaee1c8443f7124"
   integrity sha1-YisZApSxMQxIJcmNrq7hyEQ/cSQ=
 
-"@react-native-firebase/app@^12.2.0":
-  version "12.2.0"
-  resolved "https://registry.nlark.com/@react-native-firebase/app/download/@react-native-firebase/app-12.2.0.tgz#03b1e11b0d2fb90db368f2b331002e4733908951"
-  integrity sha1-A7HhGw0vuQ2zaPKzMQAuRzOQiVE=
+"@react-native-firebase/app@^12.3.0":
+  version "12.3.0"
+  resolved "https://registry.nlark.com/@react-native-firebase/app/download/@react-native-firebase/app-12.3.0.tgz#b21fb4bf89b7df4a80a4818dc2cf5e5be019459d"
+  integrity sha1-sh+0v4m330qApIGNws9eW+AZRZ0=
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
@@ -3859,10 +3850,10 @@
     "@sentry/types" "6.7.1"
     tslib "^1.9.3"
 
-"@sentry/react-native@^2.7.0-beta.1":
-  version "2.7.0-beta.1"
-  resolved "https://registry.nlark.com/@sentry/react-native/download/@sentry/react-native-2.7.0-beta.1.tgz#d4b3a10f7abe37399dfcfe150be8f22d39edc9a3"
-  integrity sha1-1LOhD3q+Nzmd/P4VC+jyLTntyaM=
+"@sentry/react-native@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.nlark.com/@sentry/react-native/download/@sentry/react-native-2.6.0.tgz#1674ffa8c447581cde5e3566841841aa2bbbc25b"
+  integrity sha1-FnT/qMRHWBzeXjVmhBhBqiu7wls=
   dependencies:
     "@sentry/browser" "6.7.1"
     "@sentry/core" "6.7.1"
@@ -4358,7 +4349,7 @@
     "@typescript-eslint/types" "4.28.4"
     eslint-visitor-keys "^2.0.0"
 
-"@ui-kitten/components@^5.1.0":
+"@ui-kitten/components@^5.1.1":
   version "5.1.1"
   resolved "https://registry.nlark.com/@ui-kitten/components/download/@ui-kitten/components-5.1.1.tgz#7e23b1995579778c86a2a04efab9a9750e759a33"
   integrity sha1-fiOxmVV5d4yGoqBO+rmpdQ51mjM=
@@ -4369,19 +4360,19 @@
     hoist-non-react-statics "^3.2.1"
     lodash.merge "^4.6.1"
 
-"@ui-kitten/date-fns@^5.1.0":
+"@ui-kitten/date-fns@^5.1.1":
   version "5.1.1"
   resolved "https://registry.nlark.com/@ui-kitten/date-fns/download/@ui-kitten/date-fns-5.1.1.tgz#ad79e30870e94e16305cd4e37504220bda6cf57a"
   integrity sha1-rXnjCHDpThYwXNTjdQQiC9ps9Xo=
 
-"@ui-kitten/eva-icons@^5.1.0":
+"@ui-kitten/eva-icons@^5.1.1":
   version "5.1.1"
   resolved "https://registry.nlark.com/@ui-kitten/eva-icons/download/@ui-kitten/eva-icons-5.1.1.tgz#5aadaa58b203d3d02192dc3be3086a1eded53b12"
   integrity sha1-Wq2qWLID09Ahktw74whqHt7VOxI=
   dependencies:
     react-native-eva-icons "^1.3.1"
 
-"@ui-kitten/moment@^5.1.0":
+"@ui-kitten/moment@^5.1.1":
   version "5.1.1"
   resolved "https://registry.nlark.com/@ui-kitten/moment/download/@ui-kitten/moment-5.1.1.tgz#f2bb640a130942cd0e994b532d0372664cfdc76c"
   integrity sha1-8rtkChMJQs0OmUtTLQNyZkz9x2w=
@@ -4830,7 +4821,7 @@ arrify@^1.0.1:
   resolved "https://registry.nlark.com/arrify/download/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
-art@^0.10.1, art@^0.10.3:
+art@^0.10.1:
   version "0.10.3"
   resolved "https://registry.npm.taobao.org/art/download/art-0.10.3.tgz#b01d84a968ccce6208df55a733838c96caeeaea2"
   integrity sha1-sB2EqWjMzmII31WnM4OMlsrurqI=
@@ -7720,7 +7711,7 @@ expo-application@^3.2.0, expo-application@~3.2.0:
   resolved "https://registry.nlark.com/expo-application/download/expo-application-3.2.0.tgz#d029445cbc486b66f31ec3b8d556334119cebf48"
   integrity sha1-0ClEXLxIa2bzHsO41VYzQRnOv0g=
 
-expo-asset@^8.3.2, expo-asset@~8.3.3:
+expo-asset@^8.3.3, expo-asset@~8.3.3:
   version "8.3.3"
   resolved "https://registry.nlark.com/expo-asset/download/expo-asset-8.3.3.tgz#b54ab9999efb3d2086329fc5b1bed04fede8f682"
   integrity sha1-tUq5mZ77PSCGMp/Fsb7QT+3o9oI=
@@ -7777,7 +7768,7 @@ expo-brightness@^9.2.2:
     "@expo/config-plugins" "^3.0.0"
     expo-modules-core "~0.2.0"
 
-expo-camera@^11.2.1:
+expo-camera@^11.2.2:
   version "11.2.2"
   resolved "https://registry.nlark.com/expo-camera/download/expo-camera-11.2.2.tgz#4df9e97e533c084caf8d88255def784c568d76f4"
   integrity sha1-TfnpflM8CEyvjYglXe94TFaNdvQ=
@@ -7960,7 +7951,7 @@ expo-web-browser@^9.2.0, expo-web-browser@~9.2.0:
   dependencies:
     compare-urls "^2.0.0"
 
-expo@^42.0.1:
+expo@^42.0.3:
   version "42.0.3"
   resolved "https://registry.nlark.com/expo/download/expo-42.0.3.tgz#b92278bcac5c42def707cd1bab8ea2ef077f3120"
   integrity sha1-uSJ4vKxcQt73B80bq46i7wd/MSA=
@@ -9153,7 +9144,7 @@ i18next@^19.3.4:
   dependencies:
     "@babel/runtime" "^7.12.0"
 
-i18next@^20.3.3:
+i18next@^20.3.4:
   version "20.3.4"
   resolved "https://registry.nlark.com/i18next/download/i18next-20.3.4.tgz?cache=0&sync_timestamp=1626795393026&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fi18next%2Fdownload%2Fi18next-20.3.4.tgz#5e05524a8baa17bbf99b89cdb427d3a68406aa64"
   integrity sha1-XgVSSouqF7v5m4nNtCfTpoQGqmQ=
@@ -11435,9 +11426,9 @@ metro-react-native-babel-preset@0.66.0:
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"
 
-metro-react-native-babel-preset@^0.66.1:
+metro-react-native-babel-preset@^0.66.2:
   version "0.66.2"
-  resolved "https://registry.nlark.com/metro-react-native-babel-preset/download/metro-react-native-babel-preset-0.66.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmetro-react-native-babel-preset%2Fdownload%2Fmetro-react-native-babel-preset-0.66.2.tgz#fddebcf413ad4ea617d4f47f7c1da401052de734"
+  resolved "https://registry.nlark.com/metro-react-native-babel-preset/download/metro-react-native-babel-preset-0.66.2.tgz?cache=0&sync_timestamp=1626784205130&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmetro-react-native-babel-preset%2Fdownload%2Fmetro-react-native-babel-preset-0.66.2.tgz#fddebcf413ad4ea617d4f47f7c1da401052de734"
   integrity sha1-/d689BOtTqYX1PR/fB2kAQUt5zQ=
   dependencies:
     "@babel/core" "^7.14.0"
@@ -13076,7 +13067,7 @@ q@^1.5.1:
   resolved "https://registry.npm.taobao.org/q/download/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-qiniu-js@^3.3.1:
+qiniu-js@^3.3.2:
   version "3.3.2"
   resolved "https://registry.nlark.com/qiniu-js/download/qiniu-js-3.3.2.tgz#6e956dd1c5508918d05104f605cd59eb34d3f4b7"
   integrity sha1-bpVt0cVQiRjQUQT2Bc1Z6zTT9Lc=
@@ -13405,10 +13396,10 @@ react-native-color@0.0.10:
     react-native-slider "^0.11.0"
     tinycolor2 "^1.4.1"
 
-react-native-config@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.npm.taobao.org/react-native-config/download/react-native-config-1.4.2.tgz#cc39f22ed72c5cb06af1adf0ba70ef01593900b4"
-  integrity sha1-zDnyLtcsXLBq8a3wunDvAVk5ALQ=
+react-native-config@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.nlark.com/react-native-config/download/react-native-config-1.4.3.tgz#22de798ffea621c2683abfa3fc054e17dd2cf1cc"
+  integrity sha1-It55j/6mIcJoOr+j/AVOF90s8cw=
 
 react-native-contacts@^7.0.0:
   version "7.0.0"
@@ -13432,10 +13423,10 @@ react-native-date-picker@^3.3.2:
   resolved "https://registry.nlark.com/react-native-date-picker/download/react-native-date-picker-3.3.2.tgz#1e08ae1793112510cd19eaca900b3be3b21c7339"
   integrity sha1-HgiuF5MRJRDNGerKkAs747Icczk=
 
-react-native-device-info@^8.1.3:
-  version "8.1.3"
-  resolved "https://registry.nlark.com/react-native-device-info/download/react-native-device-info-8.1.3.tgz#022fc01372632bf80c0a6d201aab53344efc715f"
-  integrity sha1-Ai/AE3JjK/gMCm0gGqtTNE78cV8=
+react-native-device-info@^8.1.4:
+  version "8.1.4"
+  resolved "https://registry.nlark.com/react-native-device-info/download/react-native-device-info-8.1.4.tgz#709a424b64cd01b26e91000e9b7e2c36e8b832f0"
+  integrity sha1-cJpCS2TNAbJukQAOm34sNui4MvA=
 
 react-native-document-picker@^5.2.0:
   version "5.2.0"
@@ -13485,7 +13476,7 @@ react-native-ezswiper@^1.3.0:
   resolved "https://registry.npm.taobao.org/react-native-ezswiper/download/react-native-ezswiper-1.3.0.tgz#706865e3caf67bdc190e4127583a4d4bec372f05"
   integrity sha1-cGhl48r2e9wZDkEnWDpNS+w3LwU=
 
-react-native-fast-image@^8.3.5:
+react-native-fast-image@^8.3.6:
   version "8.3.6"
   resolved "https://registry.nlark.com/react-native-fast-image/download/react-native-fast-image-8.3.6.tgz#b9f2d2e615919fd46ccbc9f8ad85d372196b0f0c"
   integrity sha1-ufLS5hWRn9Rsy8n4rYXTchlrDww=
@@ -13633,10 +13624,10 @@ react-native-modal@^12.0.2:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
-react-native-pager-view@^5.2.1:
-  version "5.3.0"
-  resolved "https://registry.nlark.com/react-native-pager-view/download/react-native-pager-view-5.3.0.tgz#75cd02ee51b6583a8101964ea630a2b937d167e6"
-  integrity sha1-dc0C7lG2WDqBAZZOpjCiuTfRZ+Y=
+react-native-pager-view@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.nlark.com/react-native-pager-view/download/react-native-pager-view-5.3.1.tgz#23a8a6c5ddd71403c14137cfdfe3f1189f19a3d0"
+  integrity sha1-I6imxd3XFAPBQTfP3+PxGJ8Zo9A=
 
 react-native-paper@^4.9.2:
   version "4.9.2"
@@ -13665,12 +13656,11 @@ react-native-pose@^0.9.1:
     animated-pose "^1.2.0"
     react-pose-core "^0.5.0"
 
-react-native-progress@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.nlark.com/react-native-progress/download/react-native-progress-4.1.2.tgz#ffb2264ddfeba409c730e36a9791bb7bbe07a00d"
-  integrity sha1-/7ImTd/rpAnHMONql5G7e74HoA0=
+react-native-progress@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.nlark.com/react-native-progress/download/react-native-progress-5.0.0.tgz#f5ac6ceaeee27f184c660b00f29419e82a9d0ab0"
+  integrity sha1-9axs6u7ifxhMZgsA8pQZ6CqdCrA=
   dependencies:
-    "@react-native-community/art" "^1.1.2"
     prop-types "^15.7.2"
 
 react-native-qrcode@^0.2.7:
@@ -13796,7 +13786,7 @@ react-native-shadow-cards@^1.0.2:
   resolved "https://registry.npm.taobao.org/react-native-shadow-cards/download/react-native-shadow-cards-1.0.2.tgz#7c0f899ffa2f9143cee48d646ef87fd5c1384357"
   integrity sha1-fA+Jn/ovkUPO5I1kbvh/1cE4Q1c=
 
-react-native-share@^6.3.0:
+react-native-share@^6.4.0:
   version "6.4.0"
   resolved "https://registry.nlark.com/react-native-share/download/react-native-share-6.4.0.tgz#6caf77151b321b01861b9e10cdf953a2886f7dbd"
   integrity sha1-bK93FRsyGwGGG54QzflToohvfb0=
@@ -13911,7 +13901,7 @@ react-native-ui-lib@^5.27.0:
     semver "^5.5.0"
     url-parse "^1.2.0"
 
-react-native-unimodules@^0.14.5:
+react-native-unimodules@^0.14.6:
   version "0.14.6"
   resolved "https://registry.nlark.com/react-native-unimodules/download/react-native-unimodules-0.14.6.tgz#5460a34d44e880909cb63d9bb4c4d77ff158bf0a"
   integrity sha1-VGCjTUTogJCctj2btMTXf/FYvwo=
@@ -15332,7 +15322,7 @@ stream-chat-react-native-core@3.6.7:
     react-native-markdown-package "1.8.1"
     stream-chat "3.9.0"
 
-stream-chat-react-native@^3.6.6:
+stream-chat-react-native@^3.6.7:
   version "3.6.7"
   resolved "https://registry.nlark.com/stream-chat-react-native/download/stream-chat-react-native-3.6.7.tgz#78799a79fdf78953539dfe0435d27a9768a8b36b"
   integrity sha1-eHmaef33iVNTnf4ENdJ6l2ios2s=

@@ -141,9 +141,9 @@ public class CommonModule extends ReactContextBaseJavaModule {
   @Download.onTaskRunning
   protected void running(DownloadTask task) {
     Log.d(TAG + " file DownloadTask", "running");
-//    if (task.getKey().eques(url)) {
-//      // 可以通过url判断是否是指定任务的回调
-//    }
+    //    if (task.getKey().eques(url)) {
+    //      // 可以通过url判断是否是指定任务的回调
+    //    }
     int p = task.getPercent(); // 任务进度百分比
     String speed = task.getConvertSpeed(); // 转换单位后的下载速度，单位转换需要在配置文件中打开
     long speed1 = task.getSpeed(); // 原始byte长度速度
