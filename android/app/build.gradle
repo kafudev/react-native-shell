@@ -277,6 +277,12 @@ android {
     productFlavors {
 
     }
+
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
     signingConfigs {
         debug {
             storeFile file("$rootDir/"+project.env.get("debug_storeFile"))
@@ -291,17 +297,21 @@ android {
             keyPassword project.env.get("release_keyPassword")
         }
     }
+
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
             resValue "string", "app_name", project.env.get("APP_NAME")+"dev"
             applicationIdSuffix ".dev"
+            minifyEnabled false
+            zipAlignEnabled true
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
@@ -341,7 +351,7 @@ android {
                 variant.versionName + "_" +
                 today.format('yyyyMMddhhmm') +
                 ".apk"
-        variant.outputs.each { output ->
+        variant.outputs.eachWithIndex { output, index ->
             // 输出文件-outputs
             def outputFileDir = "${project.projectDir.absolutePath}/build/outputs/apk/${variant.buildType.name}/${variant.flavorName}"
             variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
@@ -352,15 +362,15 @@ android {
             // variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
             // output.outputFileName = filename
 
-            // 复制outputs到build文件夹
-            task "copy ${variant.buildType.name}"(type:Copy) {
-                println("task copy ${variant.buildType.name}")
-                dependsOn app:assembleRelease
-                copy {
-                    from outputFileDir
-                    into outputFileDir2
-                }
-            }
+            // // 复制outputs到build文件夹
+            // task "copy${index}${variant.buildType.name}ApkTask"(type:Copy) {
+            //     println("task copy ${variant.buildType.name}")
+            //     dependsOn app:assembleRelease
+            //     copy {
+            //         from outputFileDir
+            //         into outputFileDir2
+            //     }
+            // }
         }
     }
 
@@ -460,7 +470,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     implementation 'com.google.android.material:material:1.0.0'
 
-    // implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
+    implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
 }
 
 //huawei_plugin_start
