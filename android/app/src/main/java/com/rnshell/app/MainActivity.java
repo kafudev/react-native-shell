@@ -1,6 +1,7 @@
 package com.rnshell.app;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -28,6 +29,8 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+    StrictMode.setThreadPolicy(policy);
     super.onCreate(savedInstanceState);
     // 启动页全屏，状态栏覆盖启动页
     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);

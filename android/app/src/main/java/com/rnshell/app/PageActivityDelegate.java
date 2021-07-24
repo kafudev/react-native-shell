@@ -3,6 +3,7 @@ package com.rnshell.app;
 import android.app.Activity;
 import android.util.Log;
 import androidx.annotation.Nullable;
+import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactApplication;
@@ -44,6 +45,7 @@ public class PageActivityDelegate extends ReactActivityDelegate {
     bundleName = bundleName;
     mActivity = activity;
     mMainComponentName = bundleName;
+    Toast.makeText(activity, "模块"+bundleName+"委托", Toast.LENGTH_SHORT).show();
     Log.i("PageActivityDelegate", "bundleName: " + bundleName);
   }
 
@@ -53,23 +55,29 @@ public class PageActivityDelegate extends ReactActivityDelegate {
     ReactNativeHost mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
       @Override
       public boolean getUseDeveloperSupport() {
-        return BuildConfig.DEBUG;
+        // return BuildConfig.DEBUG;
+        return false;
       }
 
-      // 注册原生模块
       @Override
       protected List<ReactPackage> getPackages() {
-        // @SuppressWarnings("UnnecessaryLocalVariable")
-        List<ReactPackage> packages = new PackageList(this).getPackages();
-        // Packages that cannot be autolinked yet can be added manually here, for
-        // example:
-        packages.add(new MainReactPackage());
-        // packages.add(new CommonPackage()); // 加载通用模块
-        // // Add unimodules
-        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
-        // packages.addAll(unimodules);
-        return packages;
+        return null;
       }
+
+//      // 注册原生模块
+//      @Override
+//      protected List<ReactPackage> getPackages() {
+//        // @SuppressWarnings("UnnecessaryLocalVariable")
+//        List<ReactPackage> packages = new PackageList(this).getPackages();
+//        // Packages that cannot be autolinked yet can be added manually here, for
+//        // example:
+//        packages.add(new MainReactPackage());
+//        // packages.add(new CommonPackage()); // 加载通用模块
+//        // // Add unimodules
+//        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
+//        // packages.addAll(unimodules);
+//        return packages;
+//      }
 
       // @Override
       // protected JSIModulePackage getJSIModulePackage() {

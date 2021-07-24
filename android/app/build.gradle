@@ -4,8 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.didi.dokit'
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
-
-import com.android.build.OutputFile
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 
@@ -440,9 +438,8 @@ dependencies {
     implementation files('./libs/com.heytap.msp-push-2.1.0.aar')
     //oppo_dependencies_end
 
-    debugImplementation 'io.github.didi.dokit:dokitx:3.4.2'
-    debugImplementation "io.github.didi.dokit:dokitx-mc:3.4.2"
-    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.4.2'
+    debugImplementation 'io.github.didi.dokit:dokitx:3.4.2.1'
+    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.4.2.1'
 
     implementation 'com.tencent.bugly:crashreport:3.3.9'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.0'

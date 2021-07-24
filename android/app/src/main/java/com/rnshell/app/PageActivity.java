@@ -24,7 +24,7 @@ public class PageActivity extends ReactActivity {
   public static void start(Activity activity, String moduleName){
     PageActivity.bundleName = moduleName;
     Intent intent = new Intent(activity, PageActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     activity.startActivity(intent);
   }
 
