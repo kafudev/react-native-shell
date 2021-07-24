@@ -249,6 +249,7 @@
     "react-native-wechat-lib": "^1.1.26",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
+    "redux-flipper": "^1.4.2",
     "redux-form": "^8.3.7",
     "redux-logger": "^3.0.6",
     "rescript-react-native": "^0.64.3",
