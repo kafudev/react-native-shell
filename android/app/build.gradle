@@ -317,7 +317,7 @@ android {
     }
 
     dexOptions{
-        javaMaxHeapSize "2048m"
+        javaMaxHeapSize "4096m"
         // 忽略方法数限制的检查
         jumboMode true
         // 是否对依赖的库进行dex 预处理来使你的增量构建更快速，
@@ -325,7 +325,7 @@ android {
         // 因此在你的持续集成服务器上你可能想关闭这个特性
         preDexLibraries true
         //设置最大的线程数量使用当运行 dex-in-process时,默认值是4，如果不确定，还是用默认值吧
-        maxProcessCount 8
+        maxProcessCount 4
     }
 
     // applicationVariants are e.g. debug, release
