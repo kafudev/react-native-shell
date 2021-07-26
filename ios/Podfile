@@ -12,6 +12,49 @@ target 'rnshell' do
     :hermes_enabled => false
   )
 
+  # 权限控制
+  permissions_path = '../node_modules/react-native-permissions/ios'
+
+  # pod 'Permission-AppTrackingTransparency', :path => "#{permissions_path}/AppTrackingTransparency"
+  pod 'Permission-BluetoothPeripheral', :path => "#{permissions_path}/BluetoothPeripheral"
+  # pod 'Permission-Calendars', :path => "#{permissions_path}/Calendars"
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts"
+  # pod 'Permission-FaceID', :path => "#{permissions_path}/FaceID"
+  pod 'Permission-LocationAccuracy', :path => "#{permissions_path}/LocationAccuracy"
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+  pod 'Permission-MediaLibrary', :path => "#{permissions_path}/MediaLibrary"
+  # pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
+  # pod 'Permission-Motion', :path => "#{permissions_path}/Motion"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
+  pod 'Permission-PhotoLibraryAddOnly', :path => "#{permissions_path}/PhotoLibraryAddOnly"
+  # pod 'Permission-Reminders', :path => "#{permissions_path}/Reminders"
+  # pod 'Permission-Siri', :path => "#{permissions_path}/Siri"
+  # pod 'Permission-SpeechRecognition', :path => "#{permissions_path}/SpeechRecognition"
+  pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit"
+
+  pod 'JPush', :path => '../node_modules/@kafudev/jpush-react-native/JPush.podspec'
+  pod 'JCore', :path => '../node_modules/@kafudev/jcore-react-native/JCore.podspec'
+
+  pod 'CodePush', :path => '../node_modules/react-native-code-push/CodePush.podspec'
+
+  pod 'QY_iOS_SDK', '~> 5.14.0'
+
+  pod 'Bugly'
+
+  pod 'DoraemonKit/Core', '~> 3.0.4', :configurations => ['Debug'] #必选
+  pod 'DoraemonKit/WithGPS', '~> 3.0.4', :configurations => ['Debug'] #可选
+  pod 'DoraemonKit/WithLoad', '~> 3.0.4', :configurations => ['Debug'] #可选
+  pod 'DoraemonKit/WithLogger', '~> 3.0.4', :configurations => ['Debug'] #可选
+  pod 'DoraemonKit/WithDatabase', '~> 3.0.4', :configurations => ['Debug'] #可选
+  pod 'DoraemonKit/WithMLeaksFinder', '~> 3.0.4', :configurations => ['Debug'] #可选
+
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+  # For extensions without React dependencies
+  pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
+
   target 'rnshellTests' do
     inherit! :complete
     # Pods for testing
