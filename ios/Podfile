@@ -1,7 +1,9 @@
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'rnshell' do
   config = use_native_modules!
@@ -35,10 +37,10 @@ target 'rnshell' do
   # pod 'Permission-SpeechRecognition', :path => "#{permissions_path}/SpeechRecognition"
   pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit"
 
-  pod 'JPush', :path => '../node_modules/@kafudev/jpush-react-native/JPush.podspec'
-  pod 'JCore', :path => '../node_modules/@kafudev/jcore-react-native/JCore.podspec'
+  # pod 'JPush', :path => '../node_modules/@kafudev/jpush-react-native/JPush.podspec'
+  # pod 'JCore', :path => '../node_modules/@kafudev/jcore-react-native/JCore.podspec'
 
-  pod 'CodePush', :path => '../node_modules/react-native-code-push/CodePush.podspec'
+  # pod 'CodePush', :path => '../node_modules/react-native-code-push/CodePush.podspec'
 
   pod 'QY_iOS_SDK', '~> 5.14.0'
 
