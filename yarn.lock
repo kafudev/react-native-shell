@@ -7814,39 +7814,6 @@ expo-crypto@^9.2.0, expo-crypto@~9.2.0:
   resolved "https://registry.nlark.com/expo-crypto/download/expo-crypto-9.2.0.tgz#5d124539836767c019297816f050b8bb73056297"
   integrity sha1-XRJFOYNnZ8AZKXgW8FC4u3MFYpc=
 
-expo-dev-client@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.nlark.com/expo-dev-client/download/expo-dev-client-0.4.5.tgz#c335f2ef6e76e95affb82d68eb55caa7404a4c67"
-  integrity sha1-wzXy72526Vr/uC1o61XKp0BKTGc=
-  dependencies:
-    "@expo/config-plugins" "^3.0.0"
-    expo-dev-launcher "0.6.5"
-    expo-dev-menu "0.7.5"
-    expo-dev-menu-interface "0.3.2"
-    expo-updates-interface "~0.2.2"
-
-expo-dev-launcher@0.6.5:
-  version "0.6.5"
-  resolved "https://registry.nlark.com/expo-dev-launcher/download/expo-dev-launcher-0.6.5.tgz#10640dd70c8371651f83627908856cb0cb9ab2ab"
-  integrity sha1-EGQN1wyDcWUfg2J5CIVssMuasqs=
-  dependencies:
-    "@expo/config-plugins" "^3.0.0"
-    resolve-from "^5.0.0"
-    semver "^7.3.5"
-
-expo-dev-menu-interface@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.nlark.com/expo-dev-menu-interface/download/expo-dev-menu-interface-0.3.2.tgz#f13338e00d13502b86a0c127980b7ce64d79b32b"
-  integrity sha1-8TM44A0TUCuGoMEnmAt85k15sys=
-
-expo-dev-menu@0.7.5:
-  version "0.7.5"
-  resolved "https://registry.nlark.com/expo-dev-menu/download/expo-dev-menu-0.7.5.tgz#ebf0f3df238cab06902dfe6c510fd83e2df169c2"
-  integrity sha1-6/Dz3yOMqwaQLf5sUQ/YPi3xacI=
-  dependencies:
-    "@expo/config-plugins" "^3.0.0"
-    expo-dev-menu-interface "0.3.2"
-
 expo-device@^3.3.0:
   version "3.3.0"
   resolved "https://registry.nlark.com/expo-device/download/expo-device-3.3.0.tgz#81d14d2b243a7582a279d3c95ea436642892173b"
@@ -7960,11 +7927,6 @@ expo-splash-screen@^0.11.2, expo-splash-screen@~0.11.2:
   dependencies:
     "@expo/configure-splash-screen" "0.5.0"
     "@expo/prebuild-config" "^2.0.0"
-
-expo-updates-interface@~0.2.2:
-  version "0.2.2"
-  resolved "https://registry.nlark.com/expo-updates-interface/download/expo-updates-interface-0.2.2.tgz#f754ce2c562f427d87893a9d22a4cbab39e0defd"
-  integrity sha1-91TOLFYvQn2HiTqdIqTLqzng3v0=
 
 expo-web-browser@^9.2.0, expo-web-browser@~9.2.0:
   version "9.2.0"

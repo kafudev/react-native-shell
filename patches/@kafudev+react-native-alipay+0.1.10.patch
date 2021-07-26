@@ -1,0 +1,33 @@
+diff --git a/node_modules/@kafudev/react-native-alipay/android/build.gradle b/node_modules/@kafudev/react-native-alipay/android/build.gradle
+index 33407a0..4869cee 100644
+--- a/node_modules/@kafudev/react-native-alipay/android/build.gradle
++++ b/node_modules/@kafudev/react-native-alipay/android/build.gradle
+@@ -57,7 +57,7 @@ dependencies {
+     //noinspection GradleDynamicVersion
+     implementation "com.facebook.react:react-native:+"  // From node_modules
+ 
+-    compile files('libs/alipaysdk-15.8.03.210428205839.aar')
++    // compile files('libs/alipaysdk-15.8.03.210428205839.aar')
+     // utdid冲突，如果集成阿里百川，则需要用不含utdid的包
+-    // compile files('libs/alipaysdk-noutdid-15.8.03.210428205839.aar')
++    compile files('libs/alipaysdk-noutdid-15.8.03.210428205839.aar')
+ }
+diff --git a/node_modules/@kafudev/react-native-alipay/react-native-alipay.podspec b/node_modules/@kafudev/react-native-alipay/react-native-alipay.podspec
+index 692338a..24ded8e 100644
+--- a/node_modules/@kafudev/react-native-alipay/react-native-alipay.podspec
++++ b/node_modules/@kafudev/react-native-alipay/react-native-alipay.podspec
+@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
+   s.source_files = "ios/**/*.{h,m,mm}"
+ 
+   s.dependency "React-Core"
+-  s.vendored_frameworks = "ios/AlipaySDK/AlipaySDK.framework"
+-  s.resource = 'ios/AlipaySDK/AlipaySDK.bundle'
+-  # s.vendored_frameworks = "ios/AlipaySDK_noutdid/AlipaySDK.framework"
+-  # s.resource = 'ios/AlipaySDK_noutdid/AlipaySDK.bundle'
++  # s.vendored_frameworks = "ios/AlipaySDK/AlipaySDK.framework"
++  # s.resource = 'ios/AlipaySDK/AlipaySDK.bundle'
++  s.vendored_frameworks = "ios/AlipaySDK_noutdid/AlipaySDK.framework"
++  s.resource = 'ios/AlipaySDK_noutdid/AlipaySDK.bundle'
+   s.frameworks = "SystemConfiguration", "CoreTelephony", "QuartzCore", "CoreText", "CoreGraphics", "UIKit", "Foundation", "CFNetwork", "CoreMotion"
+   s.library = "c++", "z"
+ end
