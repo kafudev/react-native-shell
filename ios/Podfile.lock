@@ -638,6 +638,7 @@ PODS:
   - Sentry (7.0.0):
     - Sentry/Core (= 7.0.0)
   - Sentry/Core (7.0.0)
+  - simdjson (0.9.6-fix2)
   - SSZipArchive (2.2.3)
   - Stripe (21.7.0):
     - Stripe/Stripe3DS2 (= 21.7.0)
@@ -807,8 +808,10 @@ DEPENDENCIES:
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNSyanImagePicker (from `../node_modules/react-native-syan-image-picker`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - "simdjson (from `../node_modules/@nozbe/simdjson`)"
   - "stripe-react-native (from `../node_modules/@stripe/stripe-react-native`)"
   - "toolbar-android (from `../node_modules/@react-native-community/toolbar-android`)"
+  - TXLiteAVSDK_Professional
   - "WatermelonDB (from `../node_modules/@nozbe/watermelondb`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -1079,6 +1082,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-syan-image-picker"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  simdjson:
+    :path: "../node_modules/@nozbe/simdjson"
   stripe-react-native:
     :path: "../node_modules/@stripe/stripe-react-native"
   toolbar-android:
@@ -1236,6 +1241,7 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   securityGuard: 9c04c44a3b663f36e15064042abfc107fa07133c
   Sentry: 89d26e036063b9cb9caa59b6951dd2f8277aa13b
+  simdjson: 85016870cd17207312b718ef6652eb6a1cd6a2b0
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   Stripe: 90596971ef49bade169f68bc59369a796b30a045
   stripe-react-native: f1b034cb702aa214078d9441b0a4313ac00c020d
@@ -1251,6 +1257,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
 
-PODFILE CHECKSUM: a0b859bcfc2aa8dcf9c99b9b8b8fbf689d8f124d
+PODFILE CHECKSUM: 9410cd62d83b0f6ae29296ee91f4ac3ea007f32d
 
 COCOAPODS: 1.10.1

@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 
+#import <React/RCTLinkingManager.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -23,6 +24,8 @@
 
 #import <Bugly/Bugly.h>
 #import <QYSDK/QYSDK.h>
+#import "TXLiteAVSDK_Professional/TXLiteAVSDK.h"
+#import "TXLiteAVSDK_Professional/TXLiveBase.h"
 
 #import "ReactNativeConfig.h"
 #import "RNBootSplash.h"
@@ -73,9 +76,19 @@ static void InitializeFlipper(UIApplication *application) {
 
   //七鱼推荐在程序启动的时候初始化 SDK
   NSString *QIYU_APPKEY = [ReactNativeConfig envFor:@"QIYU_APPKEY"];
-  QYSDKOption *option = [QYSDKOption optionWithAppKey:QIYU_APPKEY];
-  option.appName = @"rnshell";
-  [[QYSDK sharedSDK] registerWithOption:option];
+  if(QIYU_APPKEY != nil) {
+    QYSDKOption *option = [QYSDKOption optionWithAppKey:QIYU_APPKEY];
+    option.appName = @"rnshell";
+    [[QYSDK sharedSDK] registerWithOption:option];
+  }
+
+  // TXLive初始化 SDK
+  NSString *TXLIVE_LICENCE_KEY = [ReactNativeConfig envFor:@"TXLIVE_LICENCE_KEY"];
+  NSString *TXLIVE_LICENCE_URL = [ReactNativeConfig envFor:@"TXLIVE_LICENCE_URL"];
+  if(TXLIVE_LICENCE_KEY != nil && TXLIVE_LICENCE_URL != nil) {
+    [TXLiveBase setLicenceURL:TXLIVE_LICENCE_URL key:TXLIVE_LICENCE_KEY];
+  }
+
 
   // JPush初始化配置
   NSString *JPUSH_APPKEY = [ReactNativeConfig envFor:@"JPUSH_APPKEY"];

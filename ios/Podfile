@@ -16,6 +16,10 @@ target 'rnshell' do
 
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi', :modular_headers => true
 
+  # NOTE: This is required as of v0.23
+  pod 'simdjson', path: '../node_modules/@nozbe/simdjson'
+
+
   # 权限控制
   permissions_path = '../node_modules/react-native-permissions/ios'
 
@@ -48,6 +52,8 @@ target 'rnshell' do
 
   pod 'Bugly'
 
+  pod 'TXLiteAVSDK_Professional'
+
   pod 'DoraemonKit/Core', '~> 3.0.4', :configurations => ['Debug'] #必选
   pod 'DoraemonKit/WithGPS', '~> 3.0.4', :configurations => ['Debug'] #可选
   pod 'DoraemonKit/WithLoad', '~> 3.0.4', :configurations => ['Debug'] #可选
@@ -70,12 +76,20 @@ target 'rnshell' do
   # you should disable the next line.
   use_flipper!()
 
+  ENVFILES = {
+    'Debug' => '$(PODS_ROOT)/../../.env',
+    'Release' => '$(PODS_ROOT)/../../.env',
+  }
+  
   post_install do |installer|
     react_native_post_install(installer)
 
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|
           config.build_settings['OTHER_CPLUSPLUSFLAGS'] = '-DDONT_AUTOINSTALL_REANIMATED'
+          if target.name == 'react-native-config'
+             config.build_settings['ENVFILE'] = ENVFILES[config.name]
+          end
       end
     end
   end

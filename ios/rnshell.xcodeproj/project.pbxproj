@@ -17,6 +17,12 @@
 		85284B3926AEC8CC0017E1FB /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85284B3526AEC8CC0017E1FB /* BootSplash.storyboard */; };
 		85284B3A26AEC8CC0017E1FB /* yw_1222_baichuan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */; };
 		85284B4226AECAFE0017E1FB /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85284B4126AECAFE0017E1FB /* AppCenter-Config.plist */; };
+		85B370A726AF0D2000FB7257 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370A626AF0D2000FB7257 /* UserNotifications.framework */; };
+		85B370A926AF0D2F00FB7257 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370A826AF0D2F00FB7257 /* Photos.framework */; };
+		85B370AB26AF0D4700FB7257 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370AA26AF0D4700FB7257 /* libz.tbd */; };
+		85B370AF26AF0D5600FB7257 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370AE26AF0D5600FB7257 /* libresolv.tbd */; };
+		85B370B926AF12B100FB7257 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85B370B826AF12B100FB7257 /* Config.xcconfig */; };
+		85C4417226AEDAEF009844B4 /* Fix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4417126AEDAEF009844B4 /* Fix.swift */; };
 		B25F4C977469FEA95A135FE5 /* libPods-rnshell-rnshellTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +55,13 @@
 		85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = yw_1222_baichuan.jpg; path = rnshell/yw_1222_baichuan.jpg; sourceTree = "<group>"; };
 		85284B3726AEC8CC0017E1FB /* rnshell.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = rnshell.entitlements; path = rnshell/rnshell.entitlements; sourceTree = "<group>"; };
 		85284B4126AECAFE0017E1FB /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
+		85B370A626AF0D2000FB7257 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		85B370A826AF0D2F00FB7257 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		85B370AA26AF0D4700FB7257 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		85B370AE26AF0D5600FB7257 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		85B370B826AF12B100FB7257 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = rnshell/Config.xcconfig; sourceTree = "<group>"; };
+		85C4417126AEDAEF009844B4 /* Fix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Fix.swift; path = rnshell/Fix.swift; sourceTree = "<group>"; };
+		85C4417526AEDC4D009844B4 /* rnshell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "rnshell-Bridging-Header.h"; path = "rnshell/rnshell-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DA09CCA0DFF1181D8CA5117 /* Pods-rnshell-rnshellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnshell-rnshellTests.release.xcconfig"; path = "Target Support Files/Pods-rnshell-rnshellTests/Pods-rnshell-rnshellTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE3719B742112D7D629377D3 /* libPods-rnshell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnshell.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnshell-rnshellTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B370AF26AF0D5600FB7257 /* libresolv.tbd in Frameworks */,
+				85B370AB26AF0D4700FB7257 /* libz.tbd in Frameworks */,
+				85B370A926AF0D2F00FB7257 /* Photos.framework in Frameworks */,
+				85B370A726AF0D2000FB7257 /* UserNotifications.framework in Frameworks */,
 				5A749EF66945CCECA9311583 /* libPods-rnshell.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +112,7 @@
 		13B07FAE1A68108700A75B9A /* rnshell */ = {
 			isa = PBXGroup;
 			children = (
+				85B370B826AF12B100FB7257 /* Config.xcconfig */,
 				85284B4126AECAFE0017E1FB /* AppCenter-Config.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -106,6 +124,8 @@
 				85284B3726AEC8CC0017E1FB /* rnshell.entitlements */,
 				85284B3426AEC8CC0017E1FB /* mtopsdk_configuration.plist */,
 				85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */,
+				85C4417126AEDAEF009844B4 /* Fix.swift */,
+				85C4417526AEDC4D009844B4 /* rnshell-Bridging-Header.h */,
 			);
 			name = rnshell;
 			sourceTree = "<group>";
@@ -113,6 +133,10 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85B370AE26AF0D5600FB7257 /* libresolv.tbd */,
+				85B370AA26AF0D4700FB7257 /* libz.tbd */,
+				85B370A826AF0D2F00FB7257 /* Photos.framework */,
+				85B370A626AF0D2000FB7257 /* UserNotifications.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				BE3719B742112D7D629377D3 /* libPods-rnshell.a */,
 				CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */,
@@ -222,7 +246,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -262,6 +286,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				85284B3826AEC8CC0017E1FB /* mtopsdk_configuration.plist in Resources */,
+				85B370B926AF12B100FB7257 /* Config.xcconfig in Resources */,
 				85284B4226AECAFE0017E1FB /* AppCenter-Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\n\nexport SENTRY_PROPERTIES=sentry.properties\nexport EXTRA_PACKAGER_ARGS=\"--sourcemap-output $DERIVED_FILE_DIR/main.jsbundle.map\"\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		3E93C57F1BD41D99819585E5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -443,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				85C4417226AEDAEF009844B4 /* Fix.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 74E498C69759417ACF91BFCB /* Pods-rnshell-rnshellTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -489,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DA09CCA0DFF1181D8CA5117 /* Pods-rnshell-rnshellTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = rnshellTests/Info.plist;
@@ -519,6 +547,7 @@
 				DEVELOPMENT_TEAM = ZAPY43R5FB;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = rnshell/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,8 +559,10 @@
 					"-lc++",
 					"-lstdc++",
 				);
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
 				PRODUCT_NAME = rnshell;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -547,6 +578,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZAPY43R5FB;
 				INFOPLIST_FILE = rnshell/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,8 +590,10 @@
 					"-lc++",
 					"-lstdc++",
 				);
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
 				PRODUCT_NAME = rnshell;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -614,14 +648,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -672,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
