@@ -3,7 +3,4 @@
  */
 module.exports = {
   assets: ['src/assets/images/*', 'src/assets/fonts'],
-  dependencies: {
-    ...require('expo-dev-client/dependencies'),
-  },
 };

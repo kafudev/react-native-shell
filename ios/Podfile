@@ -14,6 +14,8 @@ target 'rnshell' do
     :hermes_enabled => false
   )
 
+  pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi', :modular_headers => true
+
   # 权限控制
   permissions_path = '../node_modules/react-native-permissions/ios'
 

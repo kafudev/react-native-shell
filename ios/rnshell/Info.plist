@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
-	<string>rnshell</string>
+	<string>APP开发</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,28 +17,146 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weixin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string></string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>qq</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string></string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>alipay</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string></string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>taobao</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string></string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CodePushDeploymentKey</key>
+	<string>iVdvgGrK2WmwNeKLkQS-0bns__F3oloGsyFD0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>wechat</string>
+		<string>weixin</string>
+		<string>weixinULAPI</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
+		<string>mqqapi</string>
+		<string>mqq</string>
+		<string>mqqOpensdkSSoLogin</string>
+		<string>mqqconnect</string>
+		<string>mqzoneopensdk</string>
+		<string>mqzone</string>
+		<string>mqzonev2</string>
+		<string>mqzoneshare</string>
+		<string>alipay</string>
+		<string>alipayshare</string>
+		<string>baidumap</string>
+		<string>iosamap</string>
+		<string>taobao</string>
+		<string>tbopen</string>
+		<string>tmall</string>
+		<string>pinduoduo</string>
+		<string>jd</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>需要访问您的媒体资料库</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>需要访问您的蓝牙来识别设备</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>需要访问您的蓝牙来识别设备</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>需要访问您的日历来设置任务</string>
+	<key>NSCameraUsageDescription</key>
+	<string>需要访问您的相机来选择/保存图像</string>
+	<key>NSContactsUsageDescription</key>
+	<string>需要访问您的通讯录进行联系人查询</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>需要访问您的位置查看社区周边信息</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>需要访问您的位置查看社区周边信息</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>需要访问您的位置查看社区周边信息</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>需要访问您的麦克风进行声音识别</string>
+	<key>NSMotionUsageDescription</key>
+	<string>需要访问您的运动信息进行统计</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要访问您的相册来选择/保存图像</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要访问您的相册来选择/保存图像</string>
+	<key>NSSiriUsageDescription</key>
+	<string>需要访问您的Siri应用信息</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>需要访问您的语音进行转文字</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>Fontisto.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>BootSplash</string>
+	<key>UIMainStoryboardFile</key>
+	<string>BootSplash</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -46,8 +164,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
