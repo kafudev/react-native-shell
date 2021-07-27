@@ -2563,10 +2563,10 @@
   resolved "https://registry.nlark.com/@kafudev/jpush-react-native/download/@kafudev/jpush-react-native-2.0.5.tgz#837a29ce0d13c014bbf5b8edaaffe9be2213fd1d"
   integrity sha1-g3opzg0TwBS79bjtqv/pviIT/R0=
 
-"@kafudev/react-native-alibc@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.nlark.com/@kafudev/react-native-alibc/download/@kafudev/react-native-alibc-0.1.14.tgz?cache=0&sync_timestamp=1627275538693&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40kafudev%2Freact-native-alibc%2Fdownload%2F%40kafudev%2Freact-native-alibc-0.1.14.tgz#9a1892a19e0b98266bb951f576cb8ebad4646f9e"
-  integrity sha1-mhiSoZ4LmCZruVH1dsuOutRkb54=
+"@kafudev/react-native-alibc@^0.1.17":
+  version "0.1.17"
+  resolved "https://registry.npmjs.org/@kafudev/react-native-alibc/-/react-native-alibc-0.1.17.tgz#7f8352853da1ba8fdea197b9e5a71e1ca3a502a8"
+  integrity sha512-qlFdJECRaRsUZclQf7t+JLly/jA9+mMY5A5zLyYYgx7stkga4HAKPwoQyqRtrLSMXfHoWtC3FHwR1k1xGXlQew==
   dependencies:
     dotenv-cli "^4.0.0"
 
