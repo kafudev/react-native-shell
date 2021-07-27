@@ -2,6 +2,7 @@ apply plugin: "com.android.application"
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.didi.dokit'
+apply plugin: 'bugly'
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 import groovy.json.JsonOutput
@@ -92,6 +93,12 @@ apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 // react-native-config 2nd line, add a new apply:
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+bugly {
+    debug = true
+    appId = project.env.get("BUGLY_APPID_ANDROID") // 注册时分配的App ID
+    appKey = project.env.get("BUGLY_APPKEY_ANDROID") // 注册时分配的App Key
+}
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -225,7 +232,7 @@ android {
 
             // 开发工具
             DOKIT_APPID: project.env.get("DOKIT_APPID"),
-            BUGLY_APPID: project.env.get("BUGLY_APPID"),
+            BUGLY_APPID: project.env.get("BUGLY_APPID_ANDROID"),
 
             // 七鱼客服
             QIYU_APPKEY: project.env.get("QIYU_APPKEY"),
