@@ -95,7 +95,7 @@ apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 bugly {
-    debug = true
+    debug = false
     appId = project.env.get("BUGLY_APPID_ANDROID") // 注册时分配的App ID
     appKey = project.env.get("BUGLY_APPKEY_ANDROID") // 注册时分配的App Key
 }
