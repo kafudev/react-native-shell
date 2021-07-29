@@ -22,3 +22,5 @@ local.properties
 *.keystore.properties
 !debug.keystore
 !debug.keystore.properties
+
+app/bugly/
