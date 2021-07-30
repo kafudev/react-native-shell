@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java b/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java
+index 923dd15..338f4fc 100644
+--- a/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java
++++ b/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java
+@@ -202,6 +202,9 @@ public class CodePush implements ReactPackage {
+             // replace double quotes needed for correct restoration of long value from strings.xml
+             // https://github.com/microsoft/cordova-plugin-code-push/issues/264
+             String codePushApkBuildTime = this.mContext.getResources().getString(codePushApkBuildTimeId).replaceAll("\"","");
++            if(codePushApkBuildTime.isEmpty()){
++                codePushApkBuildTime = System.currentTimeMillis()+"";
++            }
+             return Long.parseLong(codePushApkBuildTime);
+         } catch (Exception e) {
+             throw new CodePushUnknownException("Error in getting binary resources modified time", e);

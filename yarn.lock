@@ -7897,14 +7897,6 @@ expo-linking@^2.3.1, expo-linking@~2.3.1:
     qs "^6.5.0"
     url-parse "^1.4.4"
 
-expo-location@^12.1.2:
-  version "12.1.2"
-  resolved "https://registry.nlark.com/expo-location/download/expo-location-12.1.2.tgz#66641a087f1aa4231c9e49ea9d520438d3e35f33"
-  integrity sha1-ZmQaCH8apCMcnknqnVIEONPjXzM=
-  dependencies:
-    "@expo/config-plugins" "^3.0.0"
-    expo-modules-core "~0.2.0"
-
 expo-modules-autolinking@^0.0.3:
   version "0.0.3"
   resolved "https://registry.nlark.com/expo-modules-autolinking/download/expo-modules-autolinking-0.0.3.tgz#45ba8cb1798f9339347ae35e96e9cc70eafb3727"
@@ -13130,14 +13122,7 @@ qs@6.9.1:
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.9.1.tgz?cache=0&sync_timestamp=1616385328325&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9"
   integrity sha1-IAgsZct4IjY1qxqerKiHWim/jsk=
 
-qs@^6.10.1:
-  version "6.10.1"
-  resolved "https://registry.npmjs.org/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
-  integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
-  dependencies:
-    side-channel "^1.0.4"
-
-qs@^6.5.0, qs@^6.7.0, qs@^6.9.4, qs@^6.9.6:
+qs@^6.10.1, qs@^6.5.0, qs@^6.7.0, qs@^6.9.4, qs@^6.9.6:
   version "6.10.1"
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.10.1.tgz?cache=0&sync_timestamp=1616385328325&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
   integrity sha1-STFIL6jWR6Wqt5nFJx0hM7mB+2o=
