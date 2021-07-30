@@ -48,6 +48,8 @@ target 'rnshell' do
 
   # pod 'CodePush', :path => '../node_modules/react-native-code-push/CodePush.podspec'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   pod 'QY_iOS_SDK', '~> 5.14.0'
 
   pod 'Bugly'
@@ -80,7 +82,7 @@ target 'rnshell' do
     'Debug' => '$(PODS_ROOT)/../../.env',
     'Release' => '$(PODS_ROOT)/../../.env',
   }
-  
+
   post_install do |installer|
     react_native_post_install(installer)
 
