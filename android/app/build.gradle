@@ -310,7 +310,7 @@ android {
         debug {
             signingConfig signingConfigs.debug
             resValue "string", "app_name", project.env.get("APP_NAME")+"dev"
-            applicationIdSuffix ".dev"
+            applicationIdSuffix "dev"
             minifyEnabled false
             zipAlignEnabled true
         }
