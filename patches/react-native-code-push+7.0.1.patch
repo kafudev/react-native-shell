@@ -1,5 +1,5 @@
 diff --git a/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java b/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java
-index 923dd15..8bf9512 100644
+index 923dd15..f7f8767 100644
 --- a/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java
 +++ b/node_modules/react-native-code-push/android/app/src/main/java/com/microsoft/codepush/react/CodePush.java
 @@ -4,6 +4,7 @@ import android.content.Context;
@@ -10,16 +10,26 @@ index 923dd15..8bf9512 100644
  
  import com.facebook.react.ReactInstanceManager;
  import com.facebook.react.ReactPackage;
-@@ -201,7 +202,11 @@ public class CodePush implements ReactPackage {
+@@ -201,7 +202,8 @@ public class CodePush implements ReactPackage {
              int codePushApkBuildTimeId = this.mContext.getResources().getIdentifier(CodePushConstants.CODE_PUSH_APK_BUILD_TIME_KEY, "string", packageName);
              // replace double quotes needed for correct restoration of long value from strings.xml
              // https://github.com/microsoft/cordova-plugin-code-push/issues/264
 -            String codePushApkBuildTime = this.mContext.getResources().getString(codePushApkBuildTimeId).replaceAll("\"","");
 +            // String codePushApkBuildTime = this.mContext.getResources().getString(codePushApkBuildTimeId).replaceAll("\"","");
-+            String codePushApkBuildTime = "";
-+            if(codePushApkBuildTime.isEmpty()){
-+                codePushApkBuildTime = ""+System.currentTimeMillis()+"";
-+            }
++            String codePushApkBuildTime = this.mContext.getResources().getString(codePushApkBuildTimeId);
              return Long.parseLong(codePushApkBuildTime);
          } catch (Exception e) {
              throw new CodePushUnknownException("Error in getting binary resources modified time", e);
+diff --git a/node_modules/react-native-code-push/android/codepush.gradle b/node_modules/react-native-code-push/android/codepush.gradle
+index 51e2af3..17ab5e4 100644
+--- a/node_modules/react-native-code-push/android/codepush.gradle
++++ b/node_modules/react-native-code-push/android/codepush.gradle
+@@ -21,7 +21,7 @@ gradle.projectsEvaluated {
+     android.buildTypes.each {
+         // to prevent incorrect long value restoration from strings.xml we need to wrap it with double quotes
+         // https://github.com/microsoft/cordova-plugin-code-push/issues/264
+-        it.resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
++        it.resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("%d", System.currentTimeMillis())
+     }
+ 
+     android.applicationVariants.all { variant ->
