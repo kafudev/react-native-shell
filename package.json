@@ -57,8 +57,8 @@
     "log": "adb logcat | findstr com.rnshell.app",
     "test": "jest",
     "lint": "eslint .",
-    "release": "dotenv -- release-it prepatch",
-    "release-ci": "dotenv -- release-it patch --preRelease=beta --npm.tag=latest --github.preRelease --ci",
+    "release": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease",
+    "release-ci": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease --ci",
     "postinstall": "patch-package"
   },
   "keywords": [
