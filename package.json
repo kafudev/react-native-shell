@@ -58,7 +58,7 @@
     "test": "jest",
     "lint": "eslint .",
     "release": "dotenv -- release-it prepatch",
-    "release-ci": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease --ci",
+    "release-ci": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=latest --github.preRelease --ci",
     "postinstall": "patch-package"
   },
   "keywords": [
