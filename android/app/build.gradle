@@ -482,6 +482,11 @@ dependencies {
     implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
 }
 
+//fcm_plugin_start
+//谷歌请按照厂商文档配置根 gradle 谷歌镜像依赖和添加 google-services.json 后再打开此插件依赖
+//apply plugin: 'com.google.gms.google-services'
+//fcm_plugin_end
+
 //huawei_plugin_start
 //华为请按照厂商文档配置根 gradle 华为镜像依赖和添加 agconnect-services.json 后再打开此插件依赖
 // apply plugin: 'com.huawei.agconnect'

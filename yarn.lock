@@ -2581,15 +2581,15 @@
   resolved "https://registry.nlark.com/@jsamr/react-native-li/download/@jsamr/react-native-li-2.2.1.tgz#77a737e82899916a25c59fec441595286c7016e5"
   integrity sha1-d6c36CiZkWolxZ/sRBWVKGxwFuU=
 
-"@kafudev/jcore-react-native@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.nlark.com/@kafudev/jcore-react-native/download/@kafudev/jcore-react-native-2.0.5.tgz#76ebe74e3e99339d1d5881b21e3e44d8ee032929"
-  integrity sha1-duvnTj6ZM50dWIGyHj5E2O4DKSk=
+"@kafudev/jcore-react-native@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.npmjs.org/@kafudev/jcore-react-native/-/jcore-react-native-2.0.7.tgz#fd8e21bdc6e6bbb772025d107f10c8c41c8f0aa6"
+  integrity sha512-F3g3lMXbFLVdG+8JOVXhvqE80ngRladEXBx4kBI0s2Y7Cju2oxpgs5cL5yBWSTgfy7GlYhReQoydaFGdyRe2Wg==
 
-"@kafudev/jpush-react-native@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.nlark.com/@kafudev/jpush-react-native/download/@kafudev/jpush-react-native-2.0.5.tgz#837a29ce0d13c014bbf5b8edaaffe9be2213fd1d"
-  integrity sha1-g3opzg0TwBS79bjtqv/pviIT/R0=
+"@kafudev/jpush-react-native@^2.8.5":
+  version "2.8.5"
+  resolved "https://registry.npmjs.org/@kafudev/jpush-react-native/-/jpush-react-native-2.8.5.tgz#9b3d0274da2cfac8385784520b5ef057812a525e"
+  integrity sha512-c0+KHAsCVPaQ0dfMVJiCYpHyhn48JruoF5QdzCK8M0XvMfWhZqQ6Fuys2uVmi654tBb5gn5TjT6l3+zNg8TzEQ==
 
 "@kafudev/react-native-alibc@^0.1.17":
   version "0.1.17"
@@ -11958,10 +11958,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.nlark.com/native-base/download/native-base-3.0.6.tgz#b8df193eba1e700389acb82caa418506522b5edf"
-  integrity sha1-uN8ZProecAOJrLgsqkGFBlIrXt8=
+native-base@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.npmjs.org/native-base/-/native-base-3.0.7.tgz#21069be0b3c32e151f3e4b5183a05f33615159c6"
+  integrity sha512-Ee4FHAmy7mIkT3UjDGRKEC2neAPIBMZ3AI7F5WIJ7vFSNvuw2zs1OPV8aluuA2O/kRGY/3m1+Scs1GJFP/fwOw==
   dependencies:
     "@react-aria/visually-hidden" "^3.2.1"
     "@react-native-aria/button" "^0.2.4"
