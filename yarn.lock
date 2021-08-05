@@ -2635,15 +2635,15 @@
   resolved "https://registry.nlark.com/@jsamr/react-native-li/download/@jsamr/react-native-li-2.2.1.tgz#77a737e82899916a25c59fec441595286c7016e5"
   integrity sha1-d6c36CiZkWolxZ/sRBWVKGxwFuU=
 
-"@kafudev/jcore-react-native@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.npmjs.org/@kafudev/jcore-react-native/-/jcore-react-native-2.0.7.tgz#fd8e21bdc6e6bbb772025d107f10c8c41c8f0aa6"
-  integrity sha512-F3g3lMXbFLVdG+8JOVXhvqE80ngRladEXBx4kBI0s2Y7Cju2oxpgs5cL5yBWSTgfy7GlYhReQoydaFGdyRe2Wg==
+"@kafudev/jcore-react-native@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/@kafudev/jcore-react-native/-/jcore-react-native-2.0.8.tgz#03be07d51f01ecc7a3ce5d7fe8b087f65cc0d30a"
+  integrity sha512-T+JtgOWWAHXdh0Xx57IiRYEdoRcynpNfvCb9xDHHVrqNMoIdF3my7sJ69RRVtomJNkg5Yb7ZL+P8EdWDT2D/xw==
 
-"@kafudev/jpush-react-native@^2.8.5":
-  version "2.8.5"
-  resolved "https://registry.npmjs.org/@kafudev/jpush-react-native/-/jpush-react-native-2.8.5.tgz#9b3d0274da2cfac8385784520b5ef057812a525e"
-  integrity sha512-c0+KHAsCVPaQ0dfMVJiCYpHyhn48JruoF5QdzCK8M0XvMfWhZqQ6Fuys2uVmi654tBb5gn5TjT6l3+zNg8TzEQ==
+"@kafudev/jpush-react-native@^2.8.6":
+  version "2.8.6"
+  resolved "https://registry.npmjs.org/@kafudev/jpush-react-native/-/jpush-react-native-2.8.6.tgz#f13b3be9fc96be192a7e4ed8687e5b0253ad51e9"
+  integrity sha512-ThItriPs6LV9L+hOQFiMcKk7p87JXayqBjvM6rX2mzAggo3DXH3X9FWjU1Kp1I6JsTkpvwRmKcYzaTwlP+DmuQ==
 
 "@kafudev/react-native-alibc@^0.1.17":
   version "0.1.17"

@@ -81,8 +81,8 @@
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
     "@eva-design/material": "^2.1.1",
-    "@kafudev/jcore-react-native": "^2.0.7",
-    "@kafudev/jpush-react-native": "^2.8.5",
+    "@kafudev/jcore-react-native": "^2.0.8",
+    "@kafudev/jpush-react-native": "^2.8.6",
     "@kafudev/react-native-alibc": "^0.1.17",
     "@kafudev/react-native-alipay": "^0.1.10",
     "@kafudev/react-native-bugly": "^0.1.13",
