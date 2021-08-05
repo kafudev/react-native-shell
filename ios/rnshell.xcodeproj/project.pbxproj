@@ -22,7 +22,6 @@
 		85B370AB26AF0D4700FB7257 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370AA26AF0D4700FB7257 /* libz.tbd */; };
 		85B370AF26AF0D5600FB7257 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370AE26AF0D5600FB7257 /* libresolv.tbd */; };
 		85B370B926AF12B100FB7257 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85B370B826AF12B100FB7257 /* Config.xcconfig */; };
-		85C4417226AEDAEF009844B4 /* Fix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4417126AEDAEF009844B4 /* Fix.swift */; };
 		B25F4C977469FEA95A135FE5 /* libPods-rnshell-rnshellTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +59,6 @@
 		85B370AA26AF0D4700FB7257 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		85B370AE26AF0D5600FB7257 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		85B370B826AF12B100FB7257 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = rnshell/Config.xcconfig; sourceTree = "<group>"; };
-		85C4417126AEDAEF009844B4 /* Fix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Fix.swift; path = rnshell/Fix.swift; sourceTree = "<group>"; };
-		85C4417526AEDC4D009844B4 /* rnshell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "rnshell-Bridging-Header.h"; path = "rnshell/rnshell-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DA09CCA0DFF1181D8CA5117 /* Pods-rnshell-rnshellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnshell-rnshellTests.release.xcconfig"; path = "Target Support Files/Pods-rnshell-rnshellTests/Pods-rnshell-rnshellTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE3719B742112D7D629377D3 /* libPods-rnshell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnshell.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnshell-rnshellTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,8 +121,6 @@
 				85284B3726AEC8CC0017E1FB /* rnshell.entitlements */,
 				85284B3426AEC8CC0017E1FB /* mtopsdk_configuration.plist */,
 				85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */,
-				85C4417126AEDAEF009844B4 /* Fix.swift */,
-				85C4417526AEDC4D009844B4 /* rnshell-Bridging-Header.h */,
 			);
 			name = rnshell;
 			sourceTree = "<group>";
@@ -468,7 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				85C4417226AEDAEF009844B4 /* Fix.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +482,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 74E498C69759417ACF91BFCB /* Pods-rnshell-rnshellTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -516,7 +509,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DA09CCA0DFF1181D8CA5117 /* Pods-rnshell-rnshellTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = rnshellTests/Info.plist;
@@ -562,7 +554,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
 				PRODUCT_NAME = rnshell;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -593,7 +585,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
 				PRODUCT_NAME = rnshell;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

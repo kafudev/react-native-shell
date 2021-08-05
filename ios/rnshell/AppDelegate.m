@@ -1,5 +1,4 @@
 #import "AppDelegate.h"
-#import "rnshell-Bridging-Header.h"
 
 #import <React/RCTLinkingManager.h>
 #import <React/RCTBridge.h>
