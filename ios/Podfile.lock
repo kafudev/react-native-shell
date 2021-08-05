@@ -142,9 +142,9 @@ PODS:
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.5.0):
     - GoogleUtilities/Environment
-  - JCore (2.0.5):
+  - JCore (2.0.7):
     - React
-  - JPush (2.0.5):
+  - JPush (2.8.5):
     - React
   - JWT (3.0.0-beta.14):
     - Base64 (~> 1.1.2)
@@ -158,6 +158,10 @@ PODS:
   - libwebp/mux (1.2.0):
     - libwebp/demux
   - libwebp/webp (1.2.0)
+  - lottie-ios (3.2.3)
+  - lottie-react-native (4.0.3):
+    - lottie-ios (~> 3.2.3)
+    - React-Core
   - MMKV (1.2.7):
     - MMKVCore (~> 1.2.7)
   - MMKVCore (1.2.10)
@@ -389,7 +393,7 @@ PODS:
     - React-jsi (= 0.64.1)
     - React-perflogger (= 0.64.1)
   - React-jsinspector (0.64.1)
-  - react-native-alibc (0.1.14):
+  - react-native-alibc (0.1.17):
     - AliAuthSDK (= 1.1.0.42-BC3)
     - AlibcTradeSDK (= 4.0.1.15)
     - AliLinkPartnerSDK (= 4.0.0.24)
@@ -423,7 +427,7 @@ PODS:
     - React-Core
   - react-native-document-picker (5.2.0):
     - React-Core
-  - react-native-flipper (0.99.0):
+  - react-native-flipper (0.100.0):
     - React-Core
   - react-native-geolocation (2.0.2):
     - React
@@ -445,7 +449,7 @@ PODS:
     - React-Core
   - react-native-orientation (0.1.7):
     - React
-  - react-native-pager-view (5.3.2):
+  - react-native-pager-view (5.4.0):
     - React-Core
   - react-native-qiyu (0.1.43):
     - QY_iOS_SDK (~> 5.14.0)
@@ -458,7 +462,7 @@ PODS:
     - React-Core
   - react-native-slider (3.0.3):
     - React
-  - react-native-txlive (0.1.37):
+  - react-native-txlive (0.1.38):
     - React
     - TXLiteAVSDK_Professional
   - react-native-video (5.1.1):
@@ -550,17 +554,17 @@ PODS:
     - React-Core
   - RNCMaskedView (0.2.6):
     - React-Core
-  - RNCPicker (1.16.3):
+  - RNCPicker (1.16.4):
     - React-Core
   - RNDateTimePicker (3.5.2):
     - React-Core
-  - RNDeviceInfo (8.1.4):
+  - RNDeviceInfo (8.1.5):
     - React-Core
   - RNFastImage (8.3.7):
     - React-Core
     - SDWebImage (~> 5.8)
     - SDWebImageWebPCoder (~> 0.6.1)
-  - RNFBApp (12.3.0):
+  - RNFBApp (12.4.0):
     - Firebase/CoreOnly (= 8.4.0)
     - React-Core
   - RNFS (2.18.0):
@@ -616,10 +620,10 @@ PODS:
   - RNScreens (3.4.0):
     - React-Core
     - React-RCTImage
-  - RNSentry (2.6.0):
+  - RNSentry (2.6.1):
     - React-Core
-    - Sentry (= 7.0.0)
-  - RNShare (6.4.0):
+    - Sentry (= 7.1.4)
+  - RNShare (7.0.0):
     - React-Core
   - RNSVG (12.1.1):
     - React
@@ -635,9 +639,9 @@ PODS:
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.7)
   - securityGuard (5.4.191)
-  - Sentry (7.0.0):
-    - Sentry/Core (= 7.0.0)
-  - Sentry/Core (7.0.0)
+  - Sentry (7.1.4):
+    - Sentry/Core (= 7.1.4)
+  - Sentry/Core (7.1.4)
   - simdjson (0.9.6-fix2)
   - SSZipArchive (2.2.3)
   - Stripe (21.7.0):
@@ -652,7 +656,7 @@ PODS:
   - TOCropViewController (2.6.0)
   - toolbar-android (0.1.0-rc.2):
     - React
-  - TXLiteAVSDK_Professional (8.9.10361)
+  - TXLiteAVSDK_Professional (8.9.10378)
   - TZImagePickerController (3.6.2)
   - UTDID (1.5.0.91)
   - WatermelonDB (0.23.0):
@@ -711,6 +715,8 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - "JCore (from `../node_modules/@kafudev/jcore-react-native`)"
   - "JPush (from `../node_modules/@kafudev/jpush-react-native`)"
+  - lottie-ios (from `../node_modules/lottie-ios`)
+  - lottie-react-native (from `../node_modules/lottie-react-native`)
   - Permission-BluetoothPeripheral (from `../node_modules/react-native-permissions/ios/BluetoothPeripheral`)
   - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera`)
   - Permission-Contacts (from `../node_modules/react-native-permissions/ios/Contacts`)
@@ -896,6 +902,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@kafudev/jcore-react-native"
   JPush:
     :path: "../node_modules/@kafudev/jpush-react-native"
+  lottie-ios:
+    :path: "../node_modules/lottie-ios"
+  lottie-react-native:
+    :path: "../node_modules/lottie-react-native"
   Permission-BluetoothPeripheral:
     :path: "../node_modules/react-native-permissions/ios/BluetoothPeripheral"
   Permission-Camera:
@@ -1131,11 +1141,13 @@ SPEC CHECKSUMS:
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
-  JCore: b95df9840c945ea37c323f9863c9e370254ece83
-  JPush: bb517479e8240059fc0bcd5df8d69af7627e53d2
+  JCore: 39b5bc9d616b74996865dab34d6f9af89b6c438e
+  JPush: cb7c427e51ad293a4c916a21571a90f015d4d716
   JWT: ef71dfb03e1f842081e64dc42eef0e164f35d251
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   libwebp: 6bac0a99ba5a6bb7449a951ff22c484201985f68
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  lottie-react-native: 96361a9891cf651534ea35c4f85f33d4cf14ed13
   MMKV: 22e5136f7d00197bc0fc9694b7f71519f0d1ca12
   MMKVCore: b00e7a09ec77a1b916aef336eedd3b99ec249978
   mtopSDK: d6fdf81730342a69be920b576541c7bb81a683d5
@@ -1167,7 +1179,7 @@ SPEC CHECKSUMS:
   React-jsi: 5de8204706bd872b78ea646aee5d2561ca1214b6
   React-jsiexecutor: 124e8f99992490d0d13e0649d950d3e1aae06fe9
   React-jsinspector: 500a59626037be5b3b3d89c5151bc3baa9abf1a9
-  react-native-alibc: 1d2a86d1ffd50d08363702cf00e840f9070662f4
+  react-native-alibc: 30f41b164fd8a9880548a669408f4f2c5a956637
   react-native-alipay: a802456f05e5e71d369418b08bb026807210cc7a
   react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
   react-native-ble-manager: fe313716f5edd2f406ec2a48a2c2ef5a0daeb5f3
@@ -1178,7 +1190,7 @@ SPEC CHECKSUMS:
   react-native-contacts: bc424db19c3384e44e6a9d9da9a78ee51b0aa7a1
   react-native-date-picker: 96a07ca27a6225da8a3935324d85046028456b0f
   react-native-document-picker: f1b5398801b332c77bc62ae0eae2116f49bdff26
-  react-native-flipper: 351d392aad3404f0a964054e544be1e0c215969e
+  react-native-flipper: 1943b82f2e494c77b741eb1ed257b6734a334b83
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-get-random-values: 237bffb1c7e05fb142092681531810a29ba53015
   react-native-image-editor: 9361a215c3991cafbe5e7f28cbbad6e72c9c2705
@@ -1188,13 +1200,13 @@ SPEC CHECKSUMS:
   react-native-mmkv-storage: 684f1adf671592c18fb023e0cf1305a84108b59d
   react-native-netinfo: e849fc21ca2f4128a5726c801a82fc6f4a6db50d
   react-native-orientation: 5ceb16f5a0c6d4b991285dc23ccc2bdfaf713d53
-  react-native-pager-view: d641c8b97ffd120b9e8e06c80e008ac22735e6aa
+  react-native-pager-view: 54970cc27fdef14db2dcfedadb091d711e88065d
   react-native-qiyu: d04eae2a899bb3ab4a4b11d9f059503e229898fd
   react-native-safari-view: 955d7160d159241b8e9395d12d10ea0ef863dcdd
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-segmented-control: 06607462630512ff8eef652ec560e6235a30cc3e
   react-native-slider: e99fc201cefe81270fc9d81714a7a0f5e566b168
-  react-native-txlive: 3ef546ccc73216e4f47f0057704112a9bb1629f5
+  react-native-txlive: f78588ca7f3363f22373b9469da508a3ff7c9ced
   react-native-video: 0bb76b6d6b77da3009611586c7dbf817b947f30e
   react-native-view-shot: 4475fde003fe8a210053d1f98fb9e06c1d834e1c
   react-native-webview: 2e8fe70dc32b50d3231c23043f8e8b5a5525d346
@@ -1218,11 +1230,11 @@ SPEC CHECKSUMS:
   RNCCheckbox: 6bd119c26c6eb8264a29d59ff66cb70a14de3349
   RNCClipboard: ddd4d291537f1667209c9c405aaa4307297e252e
   RNCMaskedView: c298b644a10c0c142055b3ae24d83879ecb13ccd
-  RNCPicker: 6724ab5fcca83c34fe1f18a89baa13e9885f0393
+  RNCPicker: c620feabdfb8b131fc1be42b407be5bacc147fea
   RNDateTimePicker: 7658208086d86d09e1627b5c34ba0cf237c60140
-  RNDeviceInfo: 0b3e0154c1c659ea9779cb3e883e66ece92326a9
+  RNDeviceInfo: b7b76016bf0d89c0446365dde551273195e0f525
   RNFastImage: a7384db75df352500261e8e8f1ac2026def26102
-  RNFBApp: 64c90ab78b6010ed5c3ade026dfe5ff6442c21fd
+  RNFBApp: 97b2da195d4606716b284a7c8a988dd8ed5cec41
   RNFS: 3ab21fa6c56d65566d1fb26c2228e2b6132e5e32
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNImageCropPicker: 35a3ceb837446fa11547704709bb22b5fac6d584
@@ -1232,15 +1244,15 @@ SPEC CHECKSUMS:
   RNReactNativeHapticFeedback: 653a8c126a0f5e88ce15ffe280b3ff37e1fbb285
   RNReanimated: 9c13c86454bfd54dab7505c1a054470bfecd2563
   RNScreens: 21b73c94c9117e1110a79ee0ee80c93ccefed8ce
-  RNSentry: a2b02b326ae4fce91ce7c57d3f7dcf8df4f72269
-  RNShare: 129b187a54301c9f32ec7249fb4431e30a8d6ab8
+  RNSentry: af7873b080a0beb74c020644644d247ef4771644
+  RNShare: 00e7409201e3cab13e0febc41fd4465a83ae8225
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNSyanImagePicker: 8599c74c349b199bae111d6b0a48c8f6279bb01b
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   securityGuard: 9c04c44a3b663f36e15064042abfc107fa07133c
-  Sentry: 89d26e036063b9cb9caa59b6951dd2f8277aa13b
+  Sentry: 1d3eb1a25f8c5333c88dd5603904a6d461cd9fcf
   simdjson: 85016870cd17207312b718ef6652eb6a1cd6a2b0
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   Stripe: 90596971ef49bade169f68bc59369a796b30a045
@@ -1248,7 +1260,7 @@ SPEC CHECKSUMS:
   StripeCore: c09b492efc3b269a6ff875ad738ca366db97e03b
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   toolbar-android: 85f3ef4d691469f2d304e7dee4bca013aa1ba1ff
-  TXLiteAVSDK_Professional: 91a6b31cb567596b2f1e8a212b2d40560c91f983
+  TXLiteAVSDK_Professional: 6856734bc57223b8c1824f2dca4fc493a2d4a333
   TZImagePickerController: e1775fedb4058b78000fb00d9f6eeaedb445a1ed
   UTDID: 7860884a89209c8f1306740ff22cf117d72b6d8a
   WatermelonDB: 577c61fceff16e9f9103b59d14aee4850c0307b6
@@ -1257,6 +1269,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
 
-PODFILE CHECKSUM: 9410cd62d83b0f6ae29296ee91f4ac3ea007f32d
+PODFILE CHECKSUM: 12206332977009fff36e52a3b10cfb7147c65b53
 
 COCOAPODS: 1.10.1
