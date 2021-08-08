@@ -5,14 +5,6 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#ifdef FB_SONARKIT_ENABLED
-#import <FlipperKit/FlipperClient.h>
-#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
-#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
-#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
-#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
-#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
-
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
@@ -24,8 +16,8 @@
 
 #import <Bugly/Bugly.h>
 #import <QYSDK/QYSDK.h>
-#import "TXLiteAVSDK_Professional/TXLiteAVSDK.h"
-#import "TXLiteAVSDK_Professional/TXLiveBase.h"
+#import <TXLiteAVSDK_Professional/TXLiteAVSDK.h>
+#import <TXLiteAVSDK_Professional/TXLiveBase.h>
 
 #import "ReactNativeConfig.h"
 #import "RNBootSplash.h"
@@ -37,6 +29,14 @@
 #ifdef DEBUG
 #import <DoraemonKit/DoraemonManager.h>
 #endif
+
+#ifdef FB_SONARKIT_ENABLED
+#import <FlipperKit/FlipperClient.h>
+#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
+#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
+#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
+#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
+#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];

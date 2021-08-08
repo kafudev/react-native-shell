@@ -17,6 +17,7 @@
 		85284B3926AEC8CC0017E1FB /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85284B3526AEC8CC0017E1FB /* BootSplash.storyboard */; };
 		85284B3A26AEC8CC0017E1FB /* yw_1222_baichuan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */; };
 		85284B4226AECAFE0017E1FB /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85284B4126AECAFE0017E1FB /* AppCenter-Config.plist */; };
+		85435A0126BFDCED00B4C3BC /* Fix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85435A0026BFDCED00B4C3BC /* Fix.swift */; };
 		85B370A726AF0D2000FB7257 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370A626AF0D2000FB7257 /* UserNotifications.framework */; };
 		85B370A926AF0D2F00FB7257 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370A826AF0D2F00FB7257 /* Photos.framework */; };
 		85B370AB26AF0D4700FB7257 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370AA26AF0D4700FB7257 /* libz.tbd */; };
@@ -54,6 +55,8 @@
 		85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = yw_1222_baichuan.jpg; path = rnshell/yw_1222_baichuan.jpg; sourceTree = "<group>"; };
 		85284B3726AEC8CC0017E1FB /* rnshell.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = rnshell.entitlements; path = rnshell/rnshell.entitlements; sourceTree = "<group>"; };
 		85284B4126AECAFE0017E1FB /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
+		85435A0026BFDCED00B4C3BC /* Fix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Fix.swift; path = rnshell/Fix.swift; sourceTree = "<group>"; };
+		85435B6726BFE46100B4C3BC /* rnshell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "rnshell-Bridging-Header.h"; path = "rnshell/rnshell-Bridging-Header.h"; sourceTree = "<group>"; };
 		85B370A626AF0D2000FB7257 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		85B370A826AF0D2F00FB7257 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		85B370AA26AF0D4700FB7257 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -109,6 +112,7 @@
 		13B07FAE1A68108700A75B9A /* rnshell */ = {
 			isa = PBXGroup;
 			children = (
+				85435B6726BFE46100B4C3BC /* rnshell-Bridging-Header.h */,
 				85B370B826AF12B100FB7257 /* Config.xcconfig */,
 				85284B4126AECAFE0017E1FB /* AppCenter-Config.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -121,6 +125,7 @@
 				85284B3726AEC8CC0017E1FB /* rnshell.entitlements */,
 				85284B3426AEC8CC0017E1FB /* mtopsdk_configuration.plist */,
 				85284B3626AEC8CC0017E1FB /* yw_1222_baichuan.jpg */,
+				85435A0026BFDCED00B4C3BC /* Fix.swift */,
 			);
 			name = rnshell;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				85435A0126BFDCED00B4C3BC /* Fix.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 74E498C69759417ACF91BFCB /* Pods-rnshell-rnshellTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -509,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DA09CCA0DFF1181D8CA5117 /* Pods-rnshell-rnshellTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = rnshellTests/Info.plist;
@@ -554,7 +562,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
 				PRODUCT_NAME = rnshell;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -585,7 +593,7 @@
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
 				PRODUCT_NAME = rnshell;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
