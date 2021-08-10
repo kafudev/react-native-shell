@@ -383,6 +383,9 @@ android {
         }
     }
 
+    packagingOptions {
+     pickFirst '**/libc++_shared.so' // ⬅️ This (if missing)
+    }
 }
 
 dokitExt {
@@ -423,6 +426,7 @@ dokitExt {
 dependencies {
     implementation project(':jcore-react-native')
     implementation project(':jpush-react-native')
+    implementation project(':watermelondb-jsi') // ⬅️ This!
     implementation fileTree(dir: "libs", include: ["*.jar","*.aar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
