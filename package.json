@@ -83,7 +83,7 @@
     "@eva-design/material": "^2.1.1",
     "@kafudev/jcore-react-native": "^2.0.9",
     "@kafudev/jpush-react-native": "^2.8.7",
-    "@kafudev/react-native-alibc": "^0.1.18",
+    "@kafudev/react-native-alibc": "^0.1.19",
     "@kafudev/react-native-alipay": "0.1.10",
     "@kafudev/react-native-bugly": "^0.1.13",
     "@kafudev/react-native-orientation": "^0.1.7",
