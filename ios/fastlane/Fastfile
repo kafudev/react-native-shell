@@ -15,18 +15,40 @@
 
 default_platform(:ios)
 
+# 获取当前的时间
+today = Time.new;
+now_time = today.strftime("%Y%m%d%H%M%S");
+
 platform :ios do
   desc "To a new beta build"
   lane :beta do
-    build_type "Release"
+    build_type = "Release"
+    version_name = "1.1.0"
     increment_build_number(xcodeproj: "rnshell.xcodeproj")
     build_app(
       configuration: build_type,
       clean: true,
       include_symbols: true,
       include_bitcode: false,
-      output_directory: "../build/ios", # Destination directory. Defaults to current directory.
-      output_name: "rnshell_"+build_type+"_app.ipa",
+      output_directory: "../build/ios/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
+      output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
+      export_method: "development", # app-store, package, ad-hoc, enterprise, development
+      workspace: "rnshell.xcworkspace",
+      scheme: "rnshell")
+  end
+
+  desc "To a new dev build"
+  lane :dev do
+    build_type = "Debug"
+    version_name = "1.1.0"
+    increment_build_number(xcodeproj: "rnshell.xcodeproj")
+    build_app(
+      configuration: build_type,
+      clean: true,
+      include_symbols: true,
+      include_bitcode: false,
+      output_directory: "../build/ios/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
+      output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
