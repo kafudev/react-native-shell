@@ -11,6 +11,7 @@ import com.nozbe.watermelondb.jsi.WatermelonDBJSIPackage; // ⬅️ This!
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Arrays;
 
 // TODO: Remove all of this when MMKV and Reanimated can be autoinstalled (maybe RN 0.65)
 public class CommonJSIModulePackage extends  ReanimatedJSIModulePackage {
