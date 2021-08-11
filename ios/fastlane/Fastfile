@@ -19,25 +19,28 @@ default_platform(:ios)
 today = Time.new;
 now_time = today.strftime("%Y%m%d%H%M%S");
 # 通过时间戳截取获取版本code
-ttime = Time.now.getutc
-build_number = ttime[2,8]
+ttime = Time.now.to_i.to_s
+build_number = ttime[2,7]
 # 版本号
 version_name = "1.1.0"
 
 # 当前APP信息
-app_name = get_info_plist_value(path: "../rnshell/Info.plist", key: "CFBundleDisplayName")
-identifier = get_info_plist_value(path: "../rnshell/Info.plist", key: "CFBundleIdentifier")
+app_name = get_info_plist_value(path: "./rnshell/Info.plist", key: "CFBundleDisplayName")
+identifier = get_info_plist_value(path: "./rnshell/Info.plist", key: "CFBundleIdentifier")
 puts "APP_NAME: #{app_name}"
 puts "applicationId: #{identifier}"
 puts "versionCode: #{build_number}"
 puts "versionName: #{version_name}"
-puts "timestamp: #{Time.now.getutc}"
+puts "timestamp: #{ttime}"
+puts "nowtime: #{now_time}"
+
+# 原构建号信息
+o_build_number =  get_build_number(xcodeproj: "rnshell.xcodeproj")
 
 platform :ios do
-  desc "To a new beta build"
+  desc "To a new beta Release build"
   lane :beta do
     build_type = "Release"
-    version_name = "1.1.0"
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     build_app(
       configuration: build_type,
@@ -49,13 +52,21 @@ platform :ios do
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
+    # 还原构建号
+    increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
   end
 
-  desc "To a new dev build"
+  desc "To a new dev Debug build"
   lane :dev do
     build_type = "Debug"
-    version_name = "1.1.0"
+    obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
+    # 设置开发信息
+    update_info_plist(
+      plist_path: "./rnshell/Info.plist",
+      display_name: "#{app_name}dev",
+      app_identifier: "#{identifier}dev"
+    )
     build_app(
       configuration: build_type,
       clean: true,
@@ -66,6 +77,14 @@ platform :ios do
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
+    # 还原构建号
+    increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
+    # 设置开发信息
+    update_info_plist(
+      plist_path: "./rnshell/Info.plist",
+      display_name: "#{app_name}",
+      app_identifier: "#{identifier}"
+    )
   end
 
   desc "Push a new beta build to TestFlight"
