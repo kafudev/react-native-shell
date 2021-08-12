@@ -31,16 +31,6 @@ Submit a new Beta Build to Beta
 fastlane android debug
 ```
 
-### android gofir
-```
-fastlane android gofir
-```
-
-### android gopgyer
-```
-fastlane android gopgyer
-```
-
 ### android deploy
 ```
 fastlane android deploy

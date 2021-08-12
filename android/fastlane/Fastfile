@@ -27,24 +27,14 @@ platform :android do
     # crashlytics
     # sh "your_script.sh"
     # You can also use other beta testing services here
+    firim(firim_api_token:"644fa3d8f235883fc8a62a6e66a2edbf")
     pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
   end
 
   lane :debug do
     gradle(task: "app:assembleDebug --profile")
     # 多个参数 可以使用逗号(, )分离
-    # fir_cli api_token: "644fa3d8f235883fc8a62a6e66a2edbf"
-    pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
-  end
-
-  lane :gofir do
-    gradle(task: "app:assembleRelease --profile")
-    # 多个参数 可以使用逗号(, )分离
-    fir_cli api_token: "644fa3d8f235883fc8a62a6e66a2edbf"
-  end
-
-  lane :gopgyer do
-    gradle(task: "app:assembleRelease --profile")
+    firim(firim_api_token:"644fa3d8f235883fc8a62a6e66a2edbf")
     pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
   end
 
