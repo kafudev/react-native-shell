@@ -39,7 +39,7 @@
     "ios": "yarn react-native run-ios --simulator 'iPhone Xr'",
     "ipad": "yarn react-native run-ios --simulator 'iPad Air 2'",
     "bundle-ios": "yarn react-native bundle --entry-file index.js --platform ios --dev false --bundle-output build/ios/bundle/index.jsbundle --sourcemap-output build/ios/bundle/index.jsbundle.map --assets-dest build/ios/bundle/",
-    "build-ios": "bundle exec fastlane ios beta",
+    "build-ios": "cd ios && bundle exec fastlane ios beta",
     "bundle-android": "yarn react-native bundle --entry-file index.js --platform android --dev false --bundle-output build/android/bundle/index.android.bundle --sourcemap-output build/android/bundle/index.android.bundle.map --assets-dest build/android/bundle/",
     "build-android": "cd android && ./gradlew app:assembleRelease --profile && cd ../",
     "install-android": "cd android && ./gradlew app:installRelease --info --profile && cd ../",
