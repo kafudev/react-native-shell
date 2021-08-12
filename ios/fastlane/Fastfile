@@ -67,10 +67,13 @@ platform :ios do
       display_name: "#{app_name}dev",
       app_identifier: "#{identifier}dev"
     )
+
     build_app(
       configuration: build_type,
       clean: true,
-      include_symbols: true,
+      skip_build_archive: false,
+      skip_archive: false,
+      include_symbols: false,
       include_bitcode: false,
       output_directory: "../build/ios/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
       output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
