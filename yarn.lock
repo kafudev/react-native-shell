@@ -2226,10 +2226,10 @@
   resolved "https://registry.nlark.com/@kafudev/jpush-react-native/download/@kafudev/jpush-react-native-2.8.7.tgz#5f718e216466c27f49df9c2ce3b11ad80e08dd9b"
   integrity sha1-X3GOIWRmwn9J35ws47Ea2A4I3Zs=
 
-"@kafudev/react-native-alibc@^0.1.18":
+"@kafudev/react-native-alibc@^0.1.19":
   version "0.1.19"
-  resolved "https://registry.nlark.com/@kafudev/react-native-alibc/download/@kafudev/react-native-alibc-0.1.19.tgz#d444b5779515e2e052911e69469529ef0d68f2ba"
-  integrity sha1-1ES1d5UV4uBSkR5pRpUp7w1o8ro=
+  resolved "https://registry.npmjs.org/@kafudev/react-native-alibc/-/react-native-alibc-0.1.19.tgz#d444b5779515e2e052911e69469529ef0d68f2ba"
+  integrity sha512-KA6Ny041oQp6TEi32Bi8tMX8NGGqiqrjYbuAbLHDAcclNTzP5ASCzSM8d/4CwLAbm/oECOLo7liFIS5bPg9fWQ==
   dependencies:
     dotenv-cli "^4.0.0"
 
