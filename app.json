@@ -1,6 +1,68 @@
 {
   "name": "rnshell",
-  "displayName": "rnshell",
+  "displayName": "APP开发",
+  "config": {
+    "framework": "react-native",
+    "platform": [
+      "ios",
+      "android",
+      "web",
+      "miniapp"
+    ],
+    "info": {
+      "ios": {
+        "bundleId": "com.rnshell.app",
+        "versionCode": "1",
+        "versionName": "1.1.0"
+      },
+      "android": {
+        "package": "com.rnshell.app",
+        "versionCode": "1",
+        "versionName": "1.1.0"
+      }
+    },
+    "build": {
+      "ios": {
+        "build-ios": "react-native build ios"
+      },
+      "android": {
+        "build-android": "react-native build android"
+      }
+    },
+    "account":{
+      "ios": {
+        "DOKIT_APPID": "",
+        "BUGLY_APPID": "",
+        "BUGLY_APPKEY": "",
+        "JPUSH_APPKEY": "",
+        "JPUSH_CHANNEL": "",
+        "QIYU_APPKEY": "",
+        "TXLIVE_LICENCE_KEY": "",
+        "TXLIVE_LICENCE_URL": "",
+        "CODEPUSH_KEY": "",
+        "APPCENTER_KEY": ""
+      },
+      "android": {
+        "DOKIT_APPID": "",
+        "BUGLY_APPID": "",
+        "BUGLY_APPKEY": "",
+        "JPUSH_APPKEY": "",
+        "JPUSH_CHANNEL": "",
+        "QIYU_APPKEY": "",
+        "TXLIVE_LICENCE_KEY": "",
+        "TXLIVE_LICENCE_URL": "",
+        "CODEPUSH_KEY": "",
+        "APPCENTER_KEY": "",
+        "XIAOMI_APPID": "",
+        "XIAOMI_APPKEY": "",
+        "OPPO_APPID": "",
+        "OPPO_APPKEY": "",
+        "OPPO_APPSECRET": "",
+        "VIVO_APPID": "",
+        "VIVO_APPKEY": ""
+      }
+    }
+  },
   "expo": {
     "name": "rnshell",
     "slug": "rnshell-dev",
