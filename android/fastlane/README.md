@@ -25,7 +25,12 @@ Runs all the tests
 ```
 fastlane android beta
 ```
-Submit a new Beta Build to Crashlytics Beta
+Submit a new Beta Build to Beta
+### android debug
+```
+fastlane android debug
+```
+
 ### android gofir
 ```
 fastlane android gofir
