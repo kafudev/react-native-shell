@@ -54,7 +54,11 @@ platform :ios do
       scheme: "rnshell")
     # 还原构建号
     increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
-    firim(firim_api_token:"644fa3d8f235883fc8a62a6e66a2edbf")
+    # fir上传
+    file_path =  lane_context[SharedValues::IPA_OUTPUT_PATH]
+    answer = fir_cli api_token: "644fa3d8f235883fc8a62a6e66a2edbf", specify_file_path: "#{file_path}", need_release_id: true, changelog: ""
+    # 获取更新下载二维码图片链接
+    puts "fir上传后的结果： #{answer} "
     pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
   end
 
@@ -90,7 +94,11 @@ platform :ios do
       display_name: "#{app_name}",
       app_identifier: "#{identifier}"
     )
-    firim(firim_api_token:"644fa3d8f235883fc8a62a6e66a2edbf")
+    # fir上传
+    file_path =  lane_context[SharedValues::IPA_OUTPUT_PATH]
+    answer = fir_cli api_token: "644fa3d8f235883fc8a62a6e66a2edbf", specify_file_path: "#{file_path}", need_release_id: true, changelog: ""
+    # 获取更新下载二维码图片链接
+    puts "fir上传后的结果： #{answer} "
     pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
   end
 

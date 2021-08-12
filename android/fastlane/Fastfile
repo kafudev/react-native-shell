@@ -27,14 +27,21 @@ platform :android do
     # crashlytics
     # sh "your_script.sh"
     # You can also use other beta testing services here
-    firim(firim_api_token:"644fa3d8f235883fc8a62a6e66a2edbf")
+    # fir上传
+    file_path =  lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+    answer = fir_cli api_token: "644fa3d8f235883fc8a62a6e66a2edbf", specify_file_path: "#{file_path}", need_release_id: true, changelog: ""
+    # 获取更新下载二维码图片链接
+    puts "fir上传后的结果： #{answer} "
     pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
   end
 
   lane :debug do
     gradle(task: "app:assembleDebug --profile")
-    # 多个参数 可以使用逗号(, )分离
-    firim(firim_api_token:"644fa3d8f235883fc8a62a6e66a2edbf")
+    # fir上传
+    file_path =  lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+    answer = fir_cli api_token: "644fa3d8f235883fc8a62a6e66a2edbf", specify_file_path: "#{file_path}", need_release_id: true, changelog: ""
+    # 获取更新下载二维码图片链接
+    puts "fir上传后的结果： #{answer} "
     pgyer(api_key: "469f2987b4bb1eb2d826df2c31624ffc", user_key: "3e98a606c3614770b06b044af8ec8c1d")
   end
 
