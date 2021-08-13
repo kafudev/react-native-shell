@@ -13211,6 +13211,11 @@ react-native-background-timer@^2.4.1:
   resolved "https://registry.npm.taobao.org/react-native-background-timer/download/react-native-background-timer-2.4.1.tgz#a3bc1cafa8c1e3aeefd0611de120298b67978a0f"
   integrity sha1-o7wcr6jB467v0GEd4SApi2eXig8=
 
+react-native-barcode-zxing@^1.0.26:
+  version "1.0.26"
+  resolved "https://registry.npmjs.org/react-native-barcode-zxing/-/react-native-barcode-zxing-1.0.26.tgz#d6e700ec10315ec9dc7a73847072cbe70b3a2b7a"
+  integrity sha512-fo/IwjGBRl00esIHPUc08LRI/1JkJHhTNcXm5h0NHDipI7geIalpyjAAgsdv0RyZHW/RQ2rrsHI9YNXM9lvy3w==
+
 react-native-ble-manager@^7.6.0:
   version "7.6.0"
   resolved "https://registry.nlark.com/react-native-ble-manager/download/react-native-ble-manager-7.6.0.tgz#9874a96efe026f4241894e565b2f656ac18cdebe"
@@ -14618,6 +14623,11 @@ rn-fetch-blob@^0.12.0:
   dependencies:
     base-64 "0.1.0"
     glob "7.0.6"
+
+rn-qr-generator@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.npmjs.org/rn-qr-generator/-/rn-qr-generator-1.1.7.tgz#b962fff2c123f3fa891e274c9b65c5c5777eb3a8"
+  integrity sha512-6Wi4xqO0K2BojwLVVW9Qxyh5TzfZNsoFlZ8sMbwMdz+5qJzk3qAPwmB5s8LqmOMVeY2RZNuOmk//Emq5zn5xWg==
 
 rollup-plugin-typescript2@^0.25.2:
   version "0.25.3"
