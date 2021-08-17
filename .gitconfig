@@ -1,2 +1,2 @@
-autocrlf = true
+autocrlf = input
 safecrlf = true
