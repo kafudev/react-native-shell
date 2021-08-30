@@ -1133,13 +1133,6 @@
     core-js "^2.6.5"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.13.10":
-  version "7.13.10"
-  resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
-  integrity sha1-R9QqV7YJX0Ro2kQDiP262L6/DX0=
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.14.5", "@babel/runtime@^7.14.8", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.14.8"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
@@ -1429,7 +1422,7 @@
     xcode "^3.0.1"
     xml2js "^0.4.23"
 
-"@expo/config-plugins@3.0.7", "@expo/config-plugins@^3.0.0", "@expo/config-plugins@^3.0.2", "@expo/config-plugins@^3.0.5":
+"@expo/config-plugins@3.0.7", "@expo/config-plugins@^3.0.0", "@expo/config-plugins@^3.0.5":
   version "3.0.7"
   resolved "https://registry.nlark.com/@expo/config-plugins/download/@expo/config-plugins-3.0.7.tgz#50870e26d34b11740a5841076c921729381d4319"
   integrity sha1-UIcOJtNLEXQKWEEHbJIXKTgdQxk=
@@ -1437,6 +1430,26 @@
     "@expo/config-types" "^42.0.0"
     "@expo/json-file" "8.2.33"
     "@expo/plist" "0.0.13"
+    debug "^4.3.1"
+    find-up "~5.0.0"
+    fs-extra "9.0.0"
+    getenv "^1.0.0"
+    glob "7.1.6"
+    resolve-from "^5.0.0"
+    semver "^7.3.5"
+    slash "^3.0.0"
+    xcode "^3.0.1"
+    xml2js "^0.4.23"
+
+"@expo/config-plugins@^3.0.7":
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-3.1.0.tgz#0752ff33c5eab21cf42034a44e79df97f0f867f8"
+  integrity sha512-V5qxaxCAExBM0TXmbU1QKiZcAGP3ecu7KXede8vByT15cro5PkcWu2sSdJCYbHQ/gw6Vf/i8sr8gKlN8V8TSLg==
+  dependencies:
+    "@expo/config-types" "^42.0.0"
+    "@expo/json-file" "8.2.33"
+    "@expo/plist" "0.0.14"
+    chalk "^4.1.2"
     debug "^4.3.1"
     find-up "~5.0.0"
     fs-extra "9.0.0"
@@ -1564,6 +1577,15 @@
     xmlbuilder "^14.0.0"
     xmldom "~0.5.0"
 
+"@expo/plist@0.0.14":
+  version "0.0.14"
+  resolved "https://registry.npmjs.org/@expo/plist/-/plist-0.0.14.tgz#a756903bd28aabe0a961222df2e7858a39a218c9"
+  integrity sha512-bb4Ua1M/OdNgS8KiGdSDUjZ/bbPfv3xdPY/lz8Ctp/adlj/QgB8xA7tVPeqSSfJPZqFRwU0qLCnRhpUOnP51VQ==
+  dependencies:
+    "@xmldom/xmldom" "~0.7.0"
+    base64-js "^1.2.3"
+    xmlbuilder "^14.0.0"
+
 "@expo/prebuild-config@^2.0.0":
   version "2.0.7"
   resolved "https://registry.nlark.com/@expo/prebuild-config/download/@expo/prebuild-config-2.0.7.tgz#eb8de324315b9f49350acfe255632d4359968419"
@@ -1643,24 +1665,6 @@
   integrity sha1-pK3mkLEizHGbZpgIBj4qBEFGIvc=
   dependencies:
     tslib "^2.1.0"
-
-"@gorhom/bottom-sheet@3.6.4":
-  version "3.6.4"
-  resolved "https://registry.nlark.com/@gorhom/bottom-sheet/download/@gorhom/bottom-sheet-3.6.4.tgz#9f8c590493e1067dd638b69d7d7f1e86089844fc"
-  integrity sha1-n4xZBJPhBn3WOLadfX8ehgiYRPw=
-  dependencies:
-    "@gorhom/portal" "^1.0.4"
-    invariant "^2.2.4"
-    nanoid "^3.1.20"
-    react-native-redash "^16.0.10"
-
-"@gorhom/portal@^1.0.4":
-  version "1.0.7"
-  resolved "https://registry.nlark.com/@gorhom/portal/download/@gorhom/portal-1.0.7.tgz#e27cd40f8e2b6cb742050bcaa00fdcf94f3dfca8"
-  integrity sha1-4nzUD44rbLdCBQvKoA/c+U89/Kg=
-  dependencies:
-    immer "^9.0.3"
-    nanoid "^3.1.23"
 
 "@hapi/hoek@^9.0.0":
   version "9.2.0"
@@ -2256,11 +2260,6 @@
   resolved "https://registry.nlark.com/@kafudev/react-native-qiyu/download/@kafudev/react-native-qiyu-0.1.43.tgz#6413313dd3d99d0236b94c0fef3e4038b70408d9"
   integrity sha1-ZBMxPdPZnQI2uUwP7z5AOLcECNk=
 
-"@kafudev/react-native-txlive@^0.1.38":
-  version "0.1.38"
-  resolved "https://registry.nlark.com/@kafudev/react-native-txlive/download/@kafudev/react-native-txlive-0.1.38.tgz#9cca6856aa7432e963e9860026641429d27a6b76"
-  integrity sha1-nMpoVqp0Mulj6YYAJmQUKdJ6a3Y=
-
 "@koale/useworker@^3.2.1":
   version "3.4.0"
   resolved "https://registry.nlark.com/@koale/useworker/download/@koale/useworker-3.4.0.tgz#773ac623212bfaed377ff5e6cd44240ed52e40ff"
@@ -2268,6 +2267,21 @@
   dependencies:
     dequal "^1.0.0"
     isoworker "^0.1.1"
+
+"@mapbox/node-pre-gyp@^1.0.4":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.5.tgz#2a0b32fcb416fb3f2250fd24cb2a81421a4f5950"
+  integrity sha512-4srsKPXWlIxp5Vbqz5uLfBN+du2fJChBoYn/f2h991WLdk7jUvcSk/McVLSv/X+xQIPI8eGD5GjrnygdyHnhPA==
+  dependencies:
+    detect-libc "^1.0.3"
+    https-proxy-agent "^5.0.0"
+    make-dir "^3.1.0"
+    node-fetch "^2.6.1"
+    nopt "^5.0.0"
+    npmlog "^4.1.2"
+    rimraf "^3.0.2"
+    semver "^7.3.4"
+    tar "^6.1.0"
 
 "@mobily/stacks@^1.2.1":
   version "1.2.1"
@@ -2749,11 +2763,12 @@
     "@react-aria/utils" "^3.6.0"
     "@react-native-aria/utils" "^0.2.6"
 
-"@react-native-aria/listbox@^0.2.4-alpha.0":
-  version "0.2.4-alpha.2"
-  resolved "https://registry.nlark.com/@react-native-aria/listbox/download/@react-native-aria/listbox-0.2.4-alpha.2.tgz#2ed94e862c4dea041e406b61d8d92af446513e4c"
-  integrity sha1-LtlOhixN6gQeQGth2Nkq9EZRPkw=
+"@react-native-aria/listbox@^0.2.4-alpha.3":
+  version "0.2.4-alpha.3"
+  resolved "https://registry.npmjs.org/@react-native-aria/listbox/-/listbox-0.2.4-alpha.3.tgz#1a8df0de6c932c8143ea73e43713a5d37070203c"
+  integrity sha512-e/y+Wdoyy/PbpFj4DVYDYMsKI+uUqnZ/0yLByqHQvzs8Ys8o69CQkyEYzHhxvFT5lCLegkLbuQN2cJd8bYNQsA==
   dependencies:
+    "@react-aria/interactions" "^3.3.2"
     "@react-aria/label" "^3.1.1"
     "@react-aria/listbox" "^3.2.4"
     "@react-aria/selection" "^3.3.2"
@@ -2825,12 +2840,12 @@
   resolved "https://registry.nlark.com/@react-native-aria/utils/download/@react-native-aria/utils-0.2.7.tgz#53d1f4a44cad382bd9d1a6b5af6cb86624e70f76"
   integrity sha1-U9H0pEytOCvZ0aa1r2y4ZiTnD3Y=
 
-"@react-native-async-storage/async-storage@^1.13.4", "@react-native-async-storage/async-storage@^1.15.5":
-  version "1.15.5"
-  resolved "https://registry.nlark.com/@react-native-async-storage/async-storage/download/@react-native-async-storage/async-storage-1.15.5.tgz#0d221a5ef1cd7a6494a42fcaad43136d68379afb"
-  integrity sha1-DSIaXvHNemSUpC/KrUMTbWg3mvs=
+"@react-native-async-storage/async-storage@^1.15.7":
+  version "1.15.7"
+  resolved "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.15.7.tgz#736ac5cfe211b081e70389e80c237398d1451f08"
+  integrity sha512-ctD51BxjBxSSZ/3xCxQ//e10nP3rWFuOABsOGCGCqCXO4ypznK+fcWONHI6fIZubfV5KdyBJnNXcKtXRjocE5Q==
   dependencies:
-    deep-assign "^3.0.0"
+    merge-options "^3.0.4"
 
 "@react-native-clipboard/clipboard@^1.8.4":
   version "1.8.4"
@@ -3024,15 +3039,17 @@
   resolved "https://registry.nlark.com/@react-native-community/image-editor/download/@react-native-community/image-editor-2.3.0.tgz#8ac6c3691fd2c762d2abeb84c01a3b201bac3b1e"
   integrity sha1-isbDaR/Sx2LSq+uEwBo7IBusOx4=
 
-"@react-native-community/netinfo@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.npm.taobao.org/@react-native-community/netinfo/download/@react-native-community/netinfo-6.0.0.tgz#2a4d7190b508dd0c2293656c9c1aa068f6f60a71"
-  integrity sha1-Kk1xkLUI3Qwik2VsnBqgaPb2CnE=
+"@react-native-community/netinfo@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/@react-native-community/netinfo/-/netinfo-6.0.1.tgz#7d0adaf5cd8b7f77561a8e2d534cc61d6c25a0f6"
+  integrity sha512-hajGhBGr4QsC6/mclyb2TlBBY8D3wiMxskO4u7zcQoYtX3CHrYjRJjgQFOwOIxLU+HaK1d7Kdk+kSxMlnMs4Kg==
 
-"@react-native-community/slider@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.npm.taobao.org/@react-native-community/slider/download/@react-native-community/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
-  integrity sha1-gwFn/XV7pwrGOHR7oxabLbrmAzA=
+"@react-native-community/slider@^4.1.6":
+  version "4.1.6"
+  resolved "https://registry.npmjs.org/@react-native-community/slider/-/slider-4.1.6.tgz#5e6d886b8369b532bf4b91c3cda50ba43b8952ad"
+  integrity sha512-WI7VUWKQlj0LPK453RmpOEKj6gpe4gmSL5B6cDnhO6mqytlCCz92hVja5ZG6X/2NsHLTCl99GLVKXvCfkaY5xw==
+  dependencies:
+    flow-bin "0.113.0"
 
 "@react-native-community/toolbar-android@^0.1.0-rc.2":
   version "0.1.0-rc.2"
@@ -3044,12 +3061,19 @@
   resolved "https://registry.npm.taobao.org/@react-native-community/viewpager/download/@react-native-community/viewpager-2.0.2.tgz#622b190294b1310c4825c98daeaee1c8443f7124"
   integrity sha1-YisZApSxMQxIJcmNrq7hyEQ/cSQ=
 
-"@react-native-firebase/app@^12.4.0":
-  version "12.4.0"
-  resolved "https://registry.nlark.com/@react-native-firebase/app/download/@react-native-firebase/app-12.4.0.tgz#879ce26be46a8d3e40fbd371eacdef28c608c59e"
-  integrity sha1-h5zia+RqjT5A+9Nx6s3vKMYIxZ4=
+"@react-native-cookies/cookies@^6.0.10":
+  version "6.0.10"
+  resolved "https://registry.npmjs.org/@react-native-cookies/cookies/-/cookies-6.0.10.tgz#19e88760dde2d801069cd097c8adb64fa26187b4"
+  integrity sha512-a5Scgrs2VvWeCH2jVNWtuTjq77kDS0bJ2KJ6Qav4i+4h1McGkBWJsGBEX7jd4is4T+Jukx8/jnEOzvJCfLjjTQ==
   dependencies:
-    "@expo/config-plugins" "^3.0.2"
+    invariant "^2.2.4"
+
+"@react-native-firebase/app@^12.7.3":
+  version "12.7.3"
+  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.7.3.tgz#80c1519380abc26dbbf170c916529fe6689e04b4"
+  integrity sha512-dp4lbLM0xJsR8mT5PHrCGSoCMCZ0KrXFIt69pAsjaQ22AEr2ETeBrCxbwHQjXylfPrg1PudqADzMIifS44Qq9g==
+  dependencies:
+    "@expo/config-plugins" "^3.0.7"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
@@ -3649,13 +3673,6 @@
   resolved "https://registry.nlark.com/@stream-io/browser-request/download/@stream-io/browser-request-0.3.2.tgz#b63a5304b544ab671689c9fa1e46cb290328034f"
   integrity sha1-tjpTBLVEq2cWicn6HkbLKQMoA08=
 
-"@stream-io/flat-list-mvcp@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.nlark.com/@stream-io/flat-list-mvcp/download/@stream-io/flat-list-mvcp-0.10.1.tgz#ee7058c247729556959b19a281ae9e74e20f3e65"
-  integrity sha1-7nBYwkdylVaVmxmiga6edOIPPmU=
-  dependencies:
-    lodash.debounce "^4.0.8"
-
 "@stripe/stripe-react-native@^0.2.0":
   version "0.2.0"
   resolved "https://registry.nlark.com/@stripe/stripe-react-native/download/@stripe/stripe-react-native-0.2.0.tgz#dcfefc0b24412620ae3bbeb5f8b26d6330cda453"
@@ -3792,7 +3809,7 @@
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
 
-"@types/json-schema@^7.0.7", "@types/json-schema@^7.0.8":
+"@types/json-schema@^7.0.7":
   version "7.0.9"
   resolved "https://registry.nlark.com/@types/json-schema/download/@types/json-schema-7.0.9.tgz?cache=0&sync_timestamp=1627999424913&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha1-l+3JA36gw4WFMgsolk3eOznkZg0=
@@ -3888,7 +3905,7 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react@*", "@types/react@>=16.0.0", "@types/react@^17.0.17":
+"@types/react@*", "@types/react@^17.0.17":
   version "17.0.17"
   resolved "https://registry.nlark.com/@types/react/download/@types/react-17.0.17.tgz#1772d3d5425128e0635a716f49ef57c2955df055"
   integrity sha1-F3LT1UJRKOBjWnFvSe9XwpVd8FU=
@@ -3925,13 +3942,6 @@
   version "1.19.16"
   resolved "https://registry.nlark.com/@types/urijs/download/@types/urijs-1.19.16.tgz#156658c47438fa867db5dce4d2949fe1ca0878e2"
   integrity sha1-FWZYxHQ4+oZ9tdzk0pSf4coIeOI=
-
-"@types/ws@^7.4.0":
-  version "7.4.7"
-  resolved "https://registry.nlark.com/@types/ws/download/@types/ws-7.4.7.tgz#f7c390a36f7a0679aa69de2d501319f4f8d9b702"
-  integrity sha1-98OQo296Bnmqad4tUBMZ9PjZtwI=
-  dependencies:
-    "@types/node" "*"
 
 "@types/yargs-parser@*":
   version "20.2.1"
@@ -4064,6 +4074,11 @@
     expo-modules-autolinking "^0.0.3"
     invariant "^2.2.4"
 
+"@xmldom/xmldom@~0.7.0":
+  version "0.7.3"
+  resolved "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.7.3.tgz#55de695f77afd3cc0e5bee0aa900040bc63c0f63"
+  integrity sha512-8XmJdPut2XGtfFcsNsqEsvMUmAwk7xLq7m+E/GcsU9b5qyFFIsiX4Fvnb5UoQ4wo12Wlm07YFJERoyWUYdbIpw==
+
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/@yarnpkg/lockfile/download/@yarnpkg/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
@@ -4081,6 +4096,11 @@ abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
   resolved "https://registry.npm.taobao.org/abab/download/abab-2.0.5.tgz?cache=0&sync_timestamp=1599850271460&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fabab%2Fdownload%2Fabab-2.0.5.tgz#c0b678fb32d60fc1219c784d6a826fe385aeb79a"
   integrity sha1-wLZ4+zLWD8EhnHhNaoJv44Wut5o=
+
+abbrev@1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
+  integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -4167,12 +4187,7 @@ airbnb-prop-types@^2.16.0:
     prop-types-exact "^1.2.0"
     react-is "^16.13.1"
 
-ajv-keywords@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.npm.taobao.org/ajv-keywords/download/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
-  integrity sha1-MfKdpatuANHC0yms97WSlhTVAU0=
-
-ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5:
+ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
   version "6.12.6"
   resolved "https://registry.nlark.com/ajv/download/ajv-6.12.6.tgz?cache=0&sync_timestamp=1626380134544&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fajv%2Fdownload%2Fajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha1-uvWmLoArB9l3A0WG+MO69a3ybfQ=
@@ -4191,11 +4206,6 @@ ajv@^8.0.1:
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
-
-anchorme@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.nlark.com/anchorme/download/anchorme-1.1.2.tgz#86112384219e530a531e5b380f16b2fe54ada08a"
-  integrity sha1-hhEjhCGeUwpTHls4Dxay/lStoIo=
 
 animated-pose@^1.0.0, animated-pose@^1.2.0:
   version "1.2.3"
@@ -4502,11 +4512,6 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.nlark.com/arrify/download/arrify-1.0.1.tgz?cache=0&sync_timestamp=1619599497996&other_urls=https%3A%2F%2Fregistry.nlark.com%2Farrify%2Fdownload%2Farrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
-
-art@^0.10.1:
-  version "0.10.3"
-  resolved "https://registry.npm.taobao.org/art/download/art-0.10.3.tgz#b01d84a968ccce6208df55a733838c96caeeaea2"
-  integrity sha1-sB2EqWjMzmII31WnM4OMlsrurqI=
 
 asap@*, asap@~2.0.3, asap@~2.0.6:
   version "2.0.6"
@@ -4959,11 +4964,6 @@ big-integer@^1.6.44:
   resolved "https://registry.npm.taobao.org/big-integer/download/big-integer-1.6.48.tgz#8fd88bd1632cba4a1c8c3e3d7159f08bb95b4b9e"
   integrity sha1-j9iL0WMsukocjD49cVnwi7lbS54=
 
-big.js@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.nlark.com/big.js/download/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
-  integrity sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=
-
 bl@^4.1.0:
   version "4.1.0"
   resolved "https://registry.nlark.com/bl/download/bl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
@@ -5298,10 +5298,10 @@ chalk@1.1.3, chalk@^1.0.0, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@4.1.2, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
+chalk@4.1.2, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1, chalk@^4.1.2:
   version "4.1.2"
-  resolved "https://registry.nlark.com/chalk/download/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
-  integrity sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=
+  resolved "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
+  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
@@ -5417,6 +5417,11 @@ cheerio@^1.0.0-rc.3:
     parse5 "^6.0.1"
     parse5-htmlparser2-tree-adapter "^6.0.1"
     tslib "^2.2.0"
+
+chownr@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
+  integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
 ci-info@^2.0.0:
   version "2.0.0"
@@ -5678,6 +5683,13 @@ commander@^7.2.0:
   version "7.2.0"
   resolved "https://registry.nlark.com/commander/download/commander-7.2.0.tgz?cache=0&sync_timestamp=1627359190297&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcommander%2Fdownload%2Fcommander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
   integrity sha1-o2y1fQtQHOEI5NIFWaFQo5HZerc=
+
+commander@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/commander/-/commander-1.1.1.tgz#50d1651868ae60eccff0a2d9f34595376bc6b041"
+  integrity sha1-UNFlGGiuYOzP8KLZ80WVN2vGsEE=
+  dependencies:
+    keypress "0.1.x"
 
 commander@~2.13.0:
   version "2.13.0"
@@ -6332,11 +6344,6 @@ dateformat@^3.0.0:
   resolved "https://registry.nlark.com/dateformat/download/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha1-puN0maTZqc+F71hyBE1ikByYia4=
 
-dayjs@1.10.5:
-  version "1.10.5"
-  resolved "https://registry.nlark.com/dayjs/download/dayjs-1.10.5.tgz#5600df4548fc2453b3f163ebb2abbe965ccfb986"
-  integrity sha1-VgDfRUj8JFOz8WPrsqu+llzPuYY=
-
 dayjs@^1.10.6, dayjs@^1.8.15, dayjs@^1.8.23, dayjs@^1.8.26, dayjs@^1.8.29:
   version "1.10.6"
   resolved "https://registry.nlark.com/dayjs/download/dayjs-1.10.6.tgz#288b2aa82f2d8418a6c9d4df5898c0737ad02a63"
@@ -6349,7 +6356,7 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@4.3.2, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@~4.3.1:
+debug@4, debug@4.3.2, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@~4.3.1, debug@~4.3.2:
   version "4.3.2"
   resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz?cache=0&sync_timestamp=1625374675284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdebug%2Fdownload%2Fdebug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
@@ -6411,13 +6418,6 @@ dedent@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npm.taobao.org/dedent/download/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
   integrity sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=
-
-deep-assign@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/deep-assign/download/deep-assign-3.0.0.tgz#c8e4c4d401cba25550a2f0f486a2e75bc5f219a2"
-  integrity sha1-yOTE1AHLolVQovD0hqLnW8XyGaI=
-  dependencies:
-    is-obj "^1.0.0"
 
 deep-diff@^0.3.5:
   version "0.3.8"
@@ -6558,6 +6558,11 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.npm.taobao.org/destroy/download/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
+
+detect-libc@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
+  integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
 
 detect-newline@^3.0.0:
   version "3.1.0"
@@ -6790,11 +6795,6 @@ emoji-regex@^8.0.0:
   resolved "https://registry.nlark.com/emoji-regex/download/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
   integrity sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=
 
-emojis-list@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.nlark.com/emojis-list/download/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
-  integrity sha1-VXBmIEatKeLpFucariYKvf9Pang=
-
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/encodeurl/download/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -6814,10 +6814,10 @@ end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-engine.io-client@~5.1.2:
-  version "5.1.2"
-  resolved "https://registry.nlark.com/engine.io-client/download/engine.io-client-5.1.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fengine.io-client%2Fdownload%2Fengine.io-client-5.1.2.tgz#27108da9b39ae03262443d945caf2caa3655c4cb"
-  integrity sha1-JxCNqbOa4DJiRD2UXK8sqjZVxMs=
+engine.io-client@~5.2.0:
+  version "5.2.0"
+  resolved "https://registry.npmjs.org/engine.io-client/-/engine.io-client-5.2.0.tgz#ae38c79a4af16258c0300e6819c0ea8ecc1597cd"
+  integrity sha512-BcIBXGBkT7wKecwnfrSV79G2X5lSUSgeAGgoo60plXf8UsQEvCQww/KMwXSMhVjb98fFYNq20CC5eo8IOAPqsg==
   dependencies:
     base64-arraybuffer "0.1.4"
     component-emitter "~1.3.0"
@@ -6827,6 +6827,7 @@ engine.io-client@~5.1.2:
     parseqs "0.0.6"
     parseuri "0.0.6"
     ws "~7.4.2"
+    xmlhttprequest-ssl "~2.0.0"
     yeast "0.1.2"
 
 engine.io-parser@~4.0.1:
@@ -7004,7 +7005,7 @@ es6-iterator@~2.0.3:
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
 
-es6-symbol@^3.1.1, es6-symbol@^3.1.3, es6-symbol@~3.1.3:
+es6-symbol@^3.1.1, es6-symbol@~3.1.3:
   version "3.1.3"
   resolved "https://registry.nlark.com/es6-symbol/download/es6-symbol-3.1.3.tgz#bad5d3c1bcdac28269f4cb331e431c78ac705d18"
   integrity sha1-utXTwbzawoJp9MszHkMceKxwXRg=
@@ -7609,14 +7610,13 @@ expo-image-loader@~2.2.0:
   resolved "https://registry.nlark.com/expo-image-loader/download/expo-image-loader-2.2.0.tgz#b5d49ec65e576c033823050b223ef462c5ec5711"
   integrity sha1-tdSexl5XbAM4IwULIj70YsXsVxE=
 
-expo-image-picker@^10.2.2:
-  version "10.2.2"
-  resolved "https://registry.nlark.com/expo-image-picker/download/expo-image-picker-10.2.2.tgz#7501a13306029f672a165f53545ee5dc5f5dc009"
-  integrity sha1-dQGhMwYCn2cqFl9TVF7l3F9dwAk=
+expo-image-picker@^10.2.3:
+  version "10.2.3"
+  resolved "https://registry.npmjs.org/expo-image-picker/-/expo-image-picker-10.2.3.tgz#204c83ba0731f2ccdbc42e13f9bf6e37be21c354"
+  integrity sha512-8VXLYjclXoQJHbdNLI21rdbnxFisBpZ6TgIifHf9kZ/momFBegUNqEKCjosvxVGVM8f7qaQxJV/znNtW0rDM/w==
   dependencies:
     "@expo/config-plugins" "^3.0.0"
     expo-modules-core "~0.2.0"
-    expo-permissions "~12.1.1"
     uuid "7.0.2"
 
 expo-keep-awake@^9.2.0, expo-keep-awake@~9.2.0:
@@ -7650,7 +7650,7 @@ expo-modules-core@~0.2.0:
   resolved "https://registry.nlark.com/expo-modules-core/download/expo-modules-core-0.2.0.tgz#68e5b6e53d0afbf8d131578831aed657589a2d42"
   integrity sha1-aOW25T0K+/jRMVeIMa7WV1iaLUI=
 
-expo-permissions@^12.1.1, expo-permissions@~12.1.1:
+expo-permissions@^12.1.1:
   version "12.1.1"
   resolved "https://registry.nlark.com/expo-permissions/download/expo-permissions-12.1.1.tgz#93fd8569d4106ff9dd66d67619cb69a0aa895482"
   integrity sha1-k/2FadQQb/ndZtZ2GctpoKqJVII=
@@ -7929,14 +7929,6 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-loader@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.nlark.com/file-loader/download/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
-  integrity sha1-uu98+OGEDfMl5DkLRISHlIDuvk0=
-  dependencies:
-    loader-utils "^2.0.0"
-    schema-utils "^3.0.0"
-
 file-type@^9.0.0:
   version "9.0.0"
   resolved "https://registry.nlark.com/file-type/download/file-type-9.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffile-type%2Fdownload%2Ffile-type-9.0.0.tgz#a68d5ad07f486414dfb2c8866f73161946714a18"
@@ -8070,6 +8062,11 @@ flatted@^3.1.0:
   version "3.2.2"
   resolved "https://registry.nlark.com/flatted/download/flatted-3.2.2.tgz#64bfed5cb68fe3ca78b3eb214ad97b63bedce561"
   integrity sha1-ZL/tXLaP48p4s+shStl7Y77c5WE=
+
+flow-bin@0.113.0:
+  version "0.113.0"
+  resolved "https://registry.npmjs.org/flow-bin/-/flow-bin-0.113.0.tgz#6457d250dbc6f71ca51e75f00a96d23cde5d987a"
+  integrity sha512-76uE2LGNe50wm+Jup8Np4FBcMbyy5V2iE+K25PPIYLaEMGHrL1jnQfP9L0hTzA5oh2ZJlexRLMlaPqIYIKH9nw==
 
 flow-parser@0.*:
   version "0.157.0"
@@ -8234,6 +8231,13 @@ fs-extra@^9.0.0, fs-extra@^9.1.0:
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
     universalify "^2.0.0"
+
+fs-minipass@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/fs-minipass/-/fs-minipass-2.1.0.tgz#7f5036fdbf12c63c169190cbe4199c852271f9fb"
+  integrity sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==
+  dependencies:
+    minipass "^3.0.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -8900,13 +8904,6 @@ i18n-js@^3.8.0:
   resolved "https://registry.nlark.com/i18n-js/download/i18n-js-3.8.0.tgz#b8fd6b12e1d88cb71f9806c29bca7c31c012e504"
   integrity sha1-uP1rEuHYjLcfmAbCm8p8McAS5QQ=
 
-i18next@20.2.4:
-  version "20.2.4"
-  resolved "https://registry.nlark.com/i18next/download/i18next-20.2.4.tgz?cache=0&sync_timestamp=1628587129691&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fi18next%2Fdownload%2Fi18next-20.2.4.tgz#972220f19dfef0075a70890d3e8b1f7cf64c5bd6"
-  integrity sha1-lyIg8Z3+8AdacIkNPosffPZMW9Y=
-  dependencies:
-    "@babel/runtime" "^7.12.0"
-
 i18next@^19.3.4:
   version "19.9.2"
   resolved "https://registry.nlark.com/i18next/download/i18next-19.9.2.tgz?cache=0&sync_timestamp=1628587129691&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fi18next%2Fdownload%2Fi18next-19.9.2.tgz#ea5a124416e3c5ab85fddca2c8e3c3669a8da397"
@@ -8964,11 +8961,6 @@ immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.npm.taobao.org/immediate/download/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
   integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
-
-immer@^9.0.3:
-  version "9.0.5"
-  resolved "https://registry.nlark.com/immer/download/immer-9.0.5.tgz?cache=0&sync_timestamp=1625499692644&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fimmer%2Fdownload%2Fimmer-9.0.5.tgz#a7154f34fe7064f15f00554cc94c66cc0bf453ec"
-  integrity sha1-pxVPNP5wZPFfAFVMyUxmzAv0U+w=
 
 immutable@^4.0.0-rc.12, immutable@^4.0.0-rc.9:
   version "4.0.0-rc.14"
@@ -9413,11 +9405,6 @@ is-number@^7.0.0:
   resolved "https://registry.npm.taobao.org/is-number/download/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha1-dTU0W4lnNNX4DE0GxQlVUnoU8Ss=
 
-is-obj@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/is-obj/download/is-obj-1.0.1.tgz?cache=0&sync_timestamp=1618600242427&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-obj%2Fdownload%2Fis-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
-  integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
-
 is-obj@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/is-obj/download/is-obj-2.0.0.tgz?cache=0&sync_timestamp=1618600242427&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-obj%2Fdownload%2Fis-obj-2.0.0.tgz#473fb05d973705e3fd9620545018ca8e22ef4982"
@@ -9432,6 +9419,11 @@ is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/is-plain-obj/download/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
   integrity sha1-caUMhCnfync8kqOQpKA7OfzVHT4=
+
+is-plain-obj@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
+  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
 
 is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
@@ -9597,11 +9589,6 @@ isomorphic-fetch@^2.1.1:
   dependencies:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
-
-isomorphic-ws@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npm.taobao.org/isomorphic-ws/download/isomorphic-ws-4.0.1.tgz#55fd4cd6c5e6491e76dc125938dd863f5cd4f2dc"
-  integrity sha1-Vf1M1sXmSR523BJZON2GP1zU8tw=
 
 isoworker@^0.1.1:
   version "0.1.3"
@@ -10468,6 +10455,11 @@ keymirror@^0.1.1:
   resolved "https://registry.npm.taobao.org/keymirror/download/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
   integrity sha1-kYiJ6hP40KQufFVyUO7nE63JXDU=
 
+keypress@0.1.x:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/keypress/-/keypress-0.1.0.tgz#4a3188d4291b66b4f65edb99f806aa9ae293592a"
+  integrity sha1-SjGI1CkbZrT2XtuZ+AaqmuKTWSo=
+
 keyv@^3.0.0:
   version "3.1.0"
   resolved "https://registry.nlark.com/keyv/download/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
@@ -10589,15 +10581,6 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-loader-utils@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.taobao.org/loader-utils/download/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
-  integrity sha1-5MrOW4FtQloWa18JfhDNErNgZLA=
-  dependencies:
-    big.js "^5.2.2"
-    emojis-list "^3.0.0"
-    json5 "^2.1.2"
-
 localforage@^1.8.1:
   version "1.9.0"
   resolved "https://registry.npm.taobao.org/localforage/download/localforage-1.9.0.tgz#f3e4d32a8300b362b4634cc4e066d9d00d2f09d1"
@@ -10635,7 +10618,7 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
-lodash-es@4.17.21, lodash-es@^4.17.21:
+lodash-es@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
   integrity sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=
@@ -10913,7 +10896,7 @@ make-dir@^2.0.0, make-dir@^2.1.0:
     pify "^4.0.1"
     semver "^5.6.0"
 
-make-dir@^3.0.0, make-dir@^3.0.2:
+make-dir@^3.0.0, make-dir@^3.0.2, make-dir@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/make-dir/download/make-dir-3.1.0.tgz#415e967046b3a7f1d185277d84aa58203726a13f"
   integrity sha1-QV6WcEazp/HRhSd9hKpYIDcmoT8=
@@ -11013,6 +10996,13 @@ meow@^8.0.0:
     trim-newlines "^3.0.0"
     type-fest "^0.18.0"
     yargs-parser "^20.2.3"
+
+merge-options@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
+  integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
+  dependencies:
+    is-plain-obj "^2.1.0"
 
 merge-stream@^2.0.0:
   version "2.0.0"
@@ -11179,52 +11169,6 @@ metro-react-native-babel-preset@0.64.0:
     "@babel/plugin-syntax-nullish-coalescing-operator" "^7.0.0"
     "@babel/plugin-syntax-optional-chaining" "^7.0.0"
     "@babel/plugin-transform-arrow-functions" "^7.0.0"
-    "@babel/plugin-transform-block-scoping" "^7.0.0"
-    "@babel/plugin-transform-classes" "^7.0.0"
-    "@babel/plugin-transform-computed-properties" "^7.0.0"
-    "@babel/plugin-transform-destructuring" "^7.0.0"
-    "@babel/plugin-transform-exponentiation-operator" "^7.0.0"
-    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
-    "@babel/plugin-transform-for-of" "^7.0.0"
-    "@babel/plugin-transform-function-name" "^7.0.0"
-    "@babel/plugin-transform-literals" "^7.0.0"
-    "@babel/plugin-transform-modules-commonjs" "^7.0.0"
-    "@babel/plugin-transform-object-assign" "^7.0.0"
-    "@babel/plugin-transform-parameters" "^7.0.0"
-    "@babel/plugin-transform-react-display-name" "^7.0.0"
-    "@babel/plugin-transform-react-jsx" "^7.0.0"
-    "@babel/plugin-transform-react-jsx-self" "^7.0.0"
-    "@babel/plugin-transform-react-jsx-source" "^7.0.0"
-    "@babel/plugin-transform-regenerator" "^7.0.0"
-    "@babel/plugin-transform-runtime" "^7.0.0"
-    "@babel/plugin-transform-shorthand-properties" "^7.0.0"
-    "@babel/plugin-transform-spread" "^7.0.0"
-    "@babel/plugin-transform-sticky-regex" "^7.0.0"
-    "@babel/plugin-transform-template-literals" "^7.0.0"
-    "@babel/plugin-transform-typescript" "^7.5.0"
-    "@babel/plugin-transform-unicode-regex" "^7.0.0"
-    "@babel/template" "^7.0.0"
-    react-refresh "^0.4.0"
-
-metro-react-native-babel-preset@0.66.0:
-  version "0.66.0"
-  resolved "https://registry.nlark.com/metro-react-native-babel-preset/download/metro-react-native-babel-preset-0.66.0.tgz?cache=0&sync_timestamp=1626784205130&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmetro-react-native-babel-preset%2Fdownload%2Fmetro-react-native-babel-preset-0.66.0.tgz#a4495df4b24a2eb9f82705e0a53f4cbbd36d983e"
-  integrity sha1-pEld9LJKLrn4JwXgpT9Mu9NtmD4=
-  dependencies:
-    "@babel/core" "^7.0.0"
-    "@babel/plugin-proposal-class-properties" "^7.0.0"
-    "@babel/plugin-proposal-export-default-from" "^7.0.0"
-    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.0.0"
-    "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
-    "@babel/plugin-proposal-optional-catch-binding" "^7.0.0"
-    "@babel/plugin-proposal-optional-chaining" "^7.0.0"
-    "@babel/plugin-syntax-dynamic-import" "^7.0.0"
-    "@babel/plugin-syntax-export-default-from" "^7.0.0"
-    "@babel/plugin-syntax-flow" "^7.2.0"
-    "@babel/plugin-syntax-nullish-coalescing-operator" "^7.0.0"
-    "@babel/plugin-syntax-optional-chaining" "^7.0.0"
-    "@babel/plugin-transform-arrow-functions" "^7.0.0"
-    "@babel/plugin-transform-async-to-generator" "^7.0.0"
     "@babel/plugin-transform-block-scoping" "^7.0.0"
     "@babel/plugin-transform-classes" "^7.0.0"
     "@babel/plugin-transform-computed-properties" "^7.0.0"
@@ -11497,22 +11441,10 @@ micromatch@^4.0.2, micromatch@^4.0.4:
     braces "^3.0.1"
     picomatch "^2.2.3"
 
-mime-db@1.47.0:
-  version "1.47.0"
-  resolved "https://registry.nlark.com/mime-db/download/mime-db-1.47.0.tgz#8cb313e59965d3c05cfbf898915a267af46a335c"
-  integrity sha1-jLMT5Zll08Bc+/iYkVomevRqM1w=
-
 mime-db@1.49.0, "mime-db@>= 1.43.0 < 2":
   version "1.49.0"
   resolved "https://registry.nlark.com/mime-db/download/mime-db-1.49.0.tgz#f3dfde60c99e9cf3bc9701d687778f537001cbed"
   integrity sha1-89/eYMmenPO8lwHWh3ePU3ABy+0=
-
-mime-types@2.1.30:
-  version "2.1.30"
-  resolved "https://registry.nlark.com/mime-types/download/mime-types-2.1.30.tgz?cache=0&sync_timestamp=1627407819001&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmime-types%2Fdownload%2Fmime-types-2.1.30.tgz#6e7be8b4c479825f85ed6326695db73f9305d62d"
-  integrity sha1-bnvotMR5gl+F7WMmaV23P5MF1i0=
-  dependencies:
-    mime-db "1.47.0"
 
 mime-types@2.1.32, mime-types@^2.1.12, mime-types@^2.1.21, mime-types@^2.1.27, mime-types@~2.1.19, mime-types@~2.1.24:
   version "2.1.32"
@@ -11589,6 +11521,21 @@ minimist@1.2.5, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2
   resolved "https://registry.nlark.com/minimist/download/minimist-1.2.5.tgz?cache=0&sync_timestamp=1618847003091&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fminimist%2Fdownload%2Fminimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
+minipass@^3.0.0:
+  version "3.1.3"
+  resolved "https://registry.npmjs.org/minipass/-/minipass-3.1.3.tgz#7d42ff1f39635482e15f9cdb53184deebd5815fd"
+  integrity sha512-Mgd2GdMVzY+x3IJ+oHnVM+KG3lA5c8tnabyJKmHSaG2kAGpudxuOf8ToDkhumF7UzME7DecbQE9uOZhNm7PuJg==
+  dependencies:
+    yallist "^4.0.0"
+
+minizlib@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/minizlib/-/minizlib-2.1.2.tgz#e90d3466ba209b932451508a11ce3d3632145931"
+  integrity sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==
+  dependencies:
+    minipass "^3.0.0"
+    yallist "^4.0.0"
+
 mixin-deep@^1.2.0:
   version "1.3.2"
   resolved "https://registry.nlark.com/mixin-deep/download/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
@@ -11619,7 +11566,7 @@ mkdirp@^0.5.1, mkdirp@^0.5.5:
   dependencies:
     minimist "^1.2.5"
 
-mkdirp@^1.0.4:
+mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.nlark.com/mkdirp/download/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
@@ -11707,10 +11654,15 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nanoid@^3.1.15, nanoid@^3.1.20, nanoid@^3.1.23:
+nanoid@^3.1.15:
   version "3.1.23"
   resolved "https://registry.nlark.com/nanoid/download/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
   integrity sha1-90QIbOfCvEfuCoRyV01ceOQYOoE=
+
+nanoid@^3.1.25:
+  version "3.1.25"
+  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.25.tgz#09ca32747c0e543f0e1814b7d3793477f9c8e152"
+  integrity sha512-rdwtIXaXCLFAQbnfqDRnI6jaRHp9fTcYBjtFKE8eezcZ7LuLjhUaQGNeMXf1HmRoCH32CLz6XwX0TtxEOS/A3Q==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -11729,18 +11681,20 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@^3.0.7:
-  version "3.0.7"
-  resolved "https://registry.nlark.com/native-base/download/native-base-3.0.7.tgz#21069be0b3c32e151f3e4b5183a05f33615159c6"
-  integrity sha1-IQab4LPDLhUfPktRg6BfM2FRWcY=
+native-base@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/native-base/-/native-base-3.1.0.tgz#8cc9d796a67b8f52dc78ac2983c8ba09a4ceb4f9"
+  integrity sha512-7ow2QyICOonkDgEiHl/clShLPHI17KoLRb8JERzqwsntAGVneFisvz/r/bWvapSNe1aBSGPyHanPZE49detTWw==
   dependencies:
+    "@react-aria/focus" "^3.2.3"
+    "@react-aria/utils" "^3.6.0"
     "@react-aria/visually-hidden" "^3.2.1"
     "@react-native-aria/button" "^0.2.4"
     "@react-native-aria/checkbox" "^0.2.2"
     "@react-native-aria/combobox" "^0.2.4-alpha.0"
     "@react-native-aria/focus" "^0.2.4"
     "@react-native-aria/interactions" "^0.2.2"
-    "@react-native-aria/listbox" "^0.2.4-alpha.0"
+    "@react-native-aria/listbox" "^0.2.4-alpha.3"
     "@react-native-aria/overlays" "^0.2.9"
     "@react-native-aria/radio" "^0.2.4"
     "@react-native-aria/slider" "^0.2.5-alpha.1"
@@ -11793,7 +11747,7 @@ neo-async@^2.5.0, neo-async@^2.6.0:
 
 net@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.npm.taobao.org/net/download/net-1.0.2.tgz#d1757ec9a7fb2371d83cf4755ce3e27e10829388"
+  resolved "https://registry.npmjs.org/net/-/net-1.0.2.tgz#d1757ec9a7fb2371d83cf4755ce3e27e10829388"
   integrity sha1-0XV+yaf7I3HYPPR1XOPifhCCk4g=
 
 netmask@^2.0.1:
@@ -11833,6 +11787,11 @@ nocache@^2.1.0:
   version "2.1.0"
   resolved "https://registry.nlark.com/nocache/download/nocache-2.1.0.tgz?cache=0&sync_timestamp=1624370886146&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnocache%2Fdownload%2Fnocache-2.1.0.tgz#120c9ffec43b5729b1d5de88cd71aa75a0ba491f"
   integrity sha1-Egyf/sQ7Vymx1d6IzXGqdaC6SR8=
+
+node-addon-api@^3.0.2:
+  version "3.2.1"
+  resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz#81325e0a2117789c0128dab65e7e38f07ceba161"
+  integrity sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==
 
 node-dir@^0.1.17:
   version "0.1.17"
@@ -11903,6 +11862,14 @@ node-stream-zip@^1.9.1:
   resolved "https://registry.nlark.com/node-stream-zip/download/node-stream-zip-1.14.0.tgz#fdf9b86d10d55c1e50aa1be4fea88bae256c4eba"
   integrity sha1-/fm4bRDVXB5Qqhvk/qiLriVsTro=
 
+nodejieba@^2.2.1:
+  version "2.5.2"
+  resolved "https://registry.npmjs.org/nodejieba/-/nodejieba-2.5.2.tgz#fc929ee29f93c28c639696bac0319bac116a296a"
+  integrity sha512-ByskJvaBrQ2eV+5M0OeD80S5NKoGaHc9zi3Z/PTKl/95eac2YF8RmWduq9AknLpkQLrLAIcqurrtC6BzjpKwwg==
+  dependencies:
+    "@mapbox/node-pre-gyp" "^1.0.4"
+    node-addon-api "^3.0.2"
+
 nomnom@^1.8.1:
   version "1.8.1"
   resolved "https://registry.npm.taobao.org/nomnom/download/nomnom-1.8.1.tgz#2151f722472ba79e50a76fc125bb8c8f2e4dc2a7"
@@ -11910,6 +11877,13 @@ nomnom@^1.8.1:
   dependencies:
     chalk "~0.4.0"
     underscore "~1.6.0"
+
+nopt@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/nopt/-/nopt-5.0.0.tgz#530942bb58a512fccafe53fe210f13a25355dc88"
+  integrity sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ==
+  dependencies:
+    abbrev "1"
 
 normalize-css-color@^1.0.2:
   version "1.0.2"
@@ -12631,7 +12605,7 @@ path-type@^4.0.0:
   resolved "https://registry.nlark.com/path-type/download/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha1-hO0BwKe6OAr+CdkKjBgNzZ0DBDs=
 
-path@0.12.7, path@^0.12.7:
+path@^0.12.7:
   version "0.12.7"
   resolved "https://registry.npm.taobao.org/path/download/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
   integrity sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
@@ -12680,6 +12654,16 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.nlark.com/pinkie/download/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
+
+pinyin@^2.10.2:
+  version "2.10.2"
+  resolved "https://registry.npmjs.org/pinyin/-/pinyin-2.10.2.tgz#93e3b3cb4430009925163bad10c741778c85b013"
+  integrity sha512-qAcp7+2vnjm6sAd0B9pp5JpyvHbYoQO1v9zCeJQMEgyw2VeRi02l0gR22ZBgfjjvZ1c2EGoVjJHJ1h0rwr34Ug==
+  dependencies:
+    commander "~1.1.1"
+    object-assign "^4.0.1"
+  optionalDependencies:
+    nodejieba "^2.2.1"
 
 pirates@^4.0.0, pirates@^4.0.1:
   version "4.0.1"
@@ -13093,17 +13077,6 @@ react-addons-shallow-compare@15.6.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-art@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.nlark.com/react-art/download/react-art-17.0.2.tgz#ea1b972e0ee19c08f15e2d2cec522f0d992351cc"
-  integrity sha1-6huXLg7hnAjxXi0s7FIvDZkjUcw=
-  dependencies:
-    art "^0.10.1"
-    create-react-class "^15.6.2"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    scheduler "^0.20.2"
-
 react-async-hook@3.6.1:
   version "3.6.1"
   resolved "https://registry.nlark.com/react-async-hook/download/react-async-hook-3.6.1.tgz#aed3e492d87319392865c83ed7cef3609e2a7fef"
@@ -13136,10 +13109,10 @@ react-fast-compare@^2.0.0, react-fast-compare@^2.0.1:
   resolved "https://registry.npm.taobao.org/react-fast-compare/download/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
 
-react-hook-form@^7.12.2:
-  version "7.12.2"
-  resolved "https://registry.nlark.com/react-hook-form/download/react-hook-form-7.12.2.tgz#2660afbf03c4ef360a9314ebf46ce3d972296c77"
-  integrity sha1-JmCvvwPE7zYKkxTr9Gzj2XIpbHc=
+react-hook-form@^7.14.1:
+  version "7.14.1"
+  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.14.1.tgz#e52d346d1e436f299cd6d08598b6f2d2edcc7ee9"
+  integrity sha512-NcKsxUokZhvpKBdxjnpIn/9v6IlmML63I3PI5aWlnI75ptswYvQeIaaOK8fMohr9Z2HZeeiYBjYDlv+ooffI4Q==
 
 react-i18next@^11.11.4:
   version "11.11.4"
@@ -13211,15 +13184,10 @@ react-native-background-timer@^2.4.1:
   resolved "https://registry.npm.taobao.org/react-native-background-timer/download/react-native-background-timer-2.4.1.tgz#a3bc1cafa8c1e3aeefd0611de120298b67978a0f"
   integrity sha1-o7wcr6jB467v0GEd4SApi2eXig8=
 
-react-native-barcode-zxing@^1.0.26:
-  version "1.0.26"
-  resolved "https://registry.npmjs.org/react-native-barcode-zxing/-/react-native-barcode-zxing-1.0.26.tgz#d6e700ec10315ec9dc7a73847072cbe70b3a2b7a"
-  integrity sha512-fo/IwjGBRl00esIHPUc08LRI/1JkJHhTNcXm5h0NHDipI7geIalpyjAAgsdv0RyZHW/RQ2rrsHI9YNXM9lvy3w==
-
-react-native-ble-manager@^7.6.0:
-  version "7.6.0"
-  resolved "https://registry.nlark.com/react-native-ble-manager/download/react-native-ble-manager-7.6.0.tgz#9874a96efe026f4241894e565b2f656ac18cdebe"
-  integrity sha1-mHSpbv4Cb0JBiU5WWy9lasGM3r4=
+react-native-ble-manager@^7.6.1:
+  version "7.6.1"
+  resolved "https://registry.npmjs.org/react-native-ble-manager/-/react-native-ble-manager-7.6.1.tgz#22a97c28fc0f19ac366e316751ce9b4a065153e7"
+  integrity sha512-tp4zibEZUCL8LGeLZlmDYfRq3CupLxcJscPdIfaYmvvsZjxBDVvITfHRzdhkh2BG18AEjZc1YqyQURN+0A1qKg==
 
 react-native-bootsplash@^3.2.4:
   version "3.2.4"
@@ -13230,10 +13198,10 @@ react-native-bootsplash@^3.2.4:
     fs-extra "^9.1.0"
     jimp "^0.16.1"
 
-react-native-calendars@^1.1264.0:
-  version "1.1264.0"
-  resolved "https://registry.nlark.com/react-native-calendars/download/react-native-calendars-1.1264.0.tgz#98d1905b7bfe9f44cba80c9c34a0b8441fe1c1a1"
-  integrity sha1-mNGQW3v+n0TLqAycNKC4RB/hwaE=
+react-native-calendars@^1.1266.0:
+  version "1.1266.0"
+  resolved "https://registry.npmjs.org/react-native-calendars/-/react-native-calendars-1.1266.0.tgz#f6426baf9774fb41ce296ace1c446b51148fc02b"
+  integrity sha512-FABZJsam2RsKpD2gTt8OGwSmHEFFbCntMWB7B8Joh6gz8U/rZZ4TCpo2ofH4tUFkF/bpqtbWMygtJzDl/paADw==
   dependencies:
     hoist-non-react-statics "^3.3.1"
     immutable "^4.0.0-rc.12"
@@ -13245,10 +13213,10 @@ react-native-calendars@^1.1264.0:
   optionalDependencies:
     moment "^2.24.0"
 
-react-native-code-push@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.npm.taobao.org/react-native-code-push/download/react-native-code-push-7.0.1.tgz#f82619ed2aa7da14633073876f3d4b8ee34d93c5"
-  integrity sha1-+CYZ7Sqn2hRjMHOHbz1LjuNNk8U=
+react-native-code-push@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.npmjs.org/react-native-code-push/-/react-native-code-push-7.0.2.tgz#da3d29bb4e286507ceb35973c94ed27db4bbcf6c"
+  integrity sha512-cZLirGuEEmPhCjZbuF+iGn+UpM71z9ll27LzlKpZBcaQ1RyZwZW6ka/UfPZsHYEayHJlX3LctA5yEse7ezS8Ow==
   dependencies:
     code-push "^4.0.4"
     glob "^7.1.6"
@@ -13289,10 +13257,10 @@ react-native-communications@^2.2.1:
   resolved "https://registry.npm.taobao.org/react-native-communications/download/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
   integrity sha1-eIO1ayCgAu63kMET+GFuqGksp5U=
 
-react-native-config@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.nlark.com/react-native-config/download/react-native-config-1.4.3.tgz#22de798ffea621c2683abfa3fc054e17dd2cf1cc"
-  integrity sha1-It55j/6mIcJoOr+j/AVOF90s8cw=
+react-native-config@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.npmjs.org/react-native-config/-/react-native-config-1.4.4.tgz#e0e10802d1e61ef051040c84dfd19f85a5984620"
+  integrity sha512-bu47sJHn/HrB7COAWBI8DieAhrbFLINHFE2HBCcVkDu0Y5ScrMs6vL+jhIm+pMSgxouseLhXG8h7xYYpxE38PA==
 
 react-native-contacts@^7.0.2:
   version "7.0.2"
@@ -13321,10 +13289,10 @@ react-native-device-info@^8.1.7:
   resolved "https://registry.nlark.com/react-native-device-info/download/react-native-device-info-8.1.7.tgz#ebd45e7ada405d9b7ee6f3b248816e3620765569"
   integrity sha1-69ReetpAXZt+5vOySIFuNiB2VWk=
 
-react-native-document-picker@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.nlark.com/react-native-document-picker/download/react-native-document-picker-6.0.2.tgz#ac9ce155978e8f9d3bd596557e74dafa857b8fc0"
-  integrity sha1-rJzhVZeOj5071ZZVfnTa+oV7j8A=
+react-native-document-picker@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.npmjs.org/react-native-document-picker/-/react-native-document-picker-6.0.4.tgz#21cbe2b3e8a1aff4aafcb81e06f09494b45e62f8"
+  integrity sha512-qFKf76M1VyiVqZscqND8wDcALfHG0BI77mJ4CzEdANqLiJUbwie7XOKtQlw5oRSAjLPgg9NjXnjbOFY3OmkIXQ==
   dependencies:
     invariant "^2.2.4"
 
@@ -13376,10 +13344,10 @@ react-native-fast-image@8.3.7:
   resolved "https://registry.nlark.com/react-native-fast-image/download/react-native-fast-image-8.3.7.tgz#c4877de17903101f6d94b6736a4f7e5d7b019224"
   integrity sha1-xId94XkDEB9tlLZzak9+XXsBkiQ=
 
-react-native-flipper@^0.102.0:
-  version "0.102.0"
-  resolved "https://registry.nlark.com/react-native-flipper/download/react-native-flipper-0.102.0.tgz#e30246399b0d09af5e363a05b0c493526fc2dcb4"
-  integrity sha1-4wJGOZsNCa9eNjoFsMSTUm/C3LQ=
+react-native-flipper@^0.104.0:
+  version "0.104.0"
+  resolved "https://registry.npmjs.org/react-native-flipper/-/react-native-flipper-0.104.0.tgz#f380a6b1c17f3d30dcefcb7767735beec16ede76"
+  integrity sha512-zzW2HiD9I9KTW+g+nIull2qkVVj0ivIYMRes38E1r+syOKIrzV1BNKlA9glX1x31gcQFmFCv/ibDv61KnC6Q2A==
 
 react-native-fs@^2.18.0:
   version "2.18.0"
@@ -13487,13 +13455,6 @@ react-native-legacy-components@^0.1.3:
     react-timer-mixin "^0.13.2"
     rebound "^0.0.13"
 
-react-native-lightbox@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.npm.taobao.org/react-native-lightbox/download/react-native-lightbox-0.7.0.tgz#e52b4d7fcc141f59d7b23f0180de535e35b20ec9"
-  integrity sha1-5StNf8wUH1nXsj8BgN5TXjWyDsk=
-  dependencies:
-    prop-types "^15.5.10"
-
 react-native-lightbox@^0.8.1:
   version "0.8.1"
   resolved "https://registry.npm.taobao.org/react-native-lightbox/download/react-native-lightbox-0.8.1.tgz#4e561ec46e61617a0f3f12c88ec2695360998878"
@@ -13506,10 +13467,10 @@ react-native-linear-gradient@^2.5.6:
   resolved "https://registry.npm.taobao.org/react-native-linear-gradient/download/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
   integrity sha1-liFcvF7HoBJHogiQiIqnW4NNRKA=
 
-react-native-localize@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.nlark.com/react-native-localize/download/react-native-localize-2.1.1.tgz#da8f8776991d2b748708c408db05152602cefb38"
-  integrity sha1-2o+HdpkdK3SHCMQI2wUVJgLO+zg=
+react-native-localize@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npmjs.org/react-native-localize/-/react-native-localize-2.1.3.tgz#935b5dd1276952fb549f7797fd1a8d4208ab069b"
+  integrity sha512-C7vwoLY1DDppfDZ/MUYnTdVGBTbTIP+UigON1EY6w/TTb30j6vrb+WOwkfERJaM7IcVUZudXReW5N4pDcpYN2Q==
 
 react-native-map-linking@^1.0.1:
   version "1.0.1"
@@ -13522,16 +13483,6 @@ react-native-maps@^0.28.0:
   integrity sha1-GRPdSXdlLd/DF9OcfLfXio5RN4Q=
   dependencies:
     "@types/geojson" "^7946.0.7"
-
-react-native-markdown-package@1.8.1:
-  version "1.8.1"
-  resolved "https://registry.nlark.com/react-native-markdown-package/download/react-native-markdown-package-1.8.1.tgz#51da74c4110dc870038ba83a8a0502d2bf2a51b8"
-  integrity sha1-Udp0xBENyHADi6g6igUC0r8qUbg=
-  dependencies:
-    lodash "^4.17.15"
-    prop-types "^15.6.0"
-    react-native-lightbox "^0.7.0"
-    simple-markdown "^0.7.1"
 
 react-native-mmkv-storage@0.6.0:
   version "0.6.0"
@@ -13546,10 +13497,10 @@ react-native-modal@^12.0.3:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
-react-native-pager-view@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.nlark.com/react-native-pager-view/download/react-native-pager-view-5.4.0.tgz#8e30a391a68da26e59f4ae724341b9208924b2ee"
-  integrity sha1-jjCjkaaNom5Z9K5yQ0G5IIkksu4=
+react-native-pager-view@^5.4.1:
+  version "5.4.1"
+  resolved "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-5.4.1.tgz#88641ff083ca4379497dc03891fdc2d5b6f82263"
+  integrity sha512-P/aGuJqRe/HaocYd8o6TsO9YQMFPQrVnkjph9vZ+yg3HCCF/7XLRlntOLEs24Vmg4M+02MjpH557WACpBADi/A==
 
 react-native-paper@^4.9.2:
   version "4.9.2"
@@ -13572,11 +13523,6 @@ react-native-pay-password@^1.0.1:
   resolved "https://registry.nlark.com/react-native-pay-password/download/react-native-pay-password-1.0.1.tgz#ecc7570e261bb6c6b5c852fd072034dac8f40c81"
   integrity sha1-7MdXDiYbtsa1yFL9ByA02sj0DIE=
 
-react-native-permissions@^2.0.2:
-  version "2.2.2"
-  resolved "https://registry.nlark.com/react-native-permissions/download/react-native-permissions-2.2.2.tgz#3d2a63f6b7d6be52fc86e30f77412a9566283028"
-  integrity sha1-PSpj9rfWvlL8huMPd0EqlWYoMCg=
-
 react-native-permissions@^3.0.5:
   version "3.0.5"
   resolved "https://registry.nlark.com/react-native-permissions/download/react-native-permissions-3.0.5.tgz#94542a343abdac801fa0a4593ea2c751cb45c41f"
@@ -13596,15 +13542,6 @@ react-native-progress@^5.0.0:
   integrity sha1-9axs6u7ifxhMZgsA8pQZ6CqdCrA=
   dependencies:
     prop-types "^15.7.2"
-
-react-native-qrcode-scanner@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.npm.taobao.org/react-native-qrcode-scanner/download/react-native-qrcode-scanner-1.5.4.tgz#5e96189260942db3287739545eb3f6a16f7c0178"
-  integrity sha1-XpYYkmCULbModzlUXrP2oW98AXg=
-  dependencies:
-    "@react-native-async-storage/async-storage" "^1.13.4"
-    prop-types "^15.5.10"
-    react-native-permissions "^2.0.2"
 
 react-native-qrcode-svg@^6.1.1:
   version "6.1.1"
@@ -13640,15 +13577,6 @@ react-native-redash@^12.0.3:
     normalize-svg-path "^1.0.1"
     parse-svg-path "^0.1.2"
     use-memo-one "^1.1.1"
-
-react-native-redash@^16.0.10:
-  version "16.2.0"
-  resolved "https://registry.nlark.com/react-native-redash/download/react-native-redash-16.2.0.tgz#72204bdcdc5c48ccd8bd630e3a954ae5174809b3"
-  integrity sha1-ciBL3NxcSMzYvWMOOpVK5RdICbM=
-  dependencies:
-    abs-svg-path "^0.1.1"
-    normalize-svg-path "^1.0.1"
-    parse-svg-path "^0.1.2"
 
 react-native-rename@^2.9.0:
   version "2.9.0"
@@ -13723,10 +13651,10 @@ react-native-safe-area-view@^0.14.9:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-react-native-screens@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.nlark.com/react-native-screens/download/react-native-screens-3.5.0.tgz#c40be78dff8e2dff1b00ba8fa670b2e429e632d2"
-  integrity sha1-xAvnjf+OLf8bALqPpnCy5CnmMtI=
+react-native-screens@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.6.0.tgz#054af728e50c06bff6b3b4fa7b4b656b70f247cd"
+  integrity sha512-emQmSu+B6cOIjJH2OIgpuxd9zCD6xz7/oo5GCetyjsM5qR3sMnVgOxqtK99xPu9XJH/8k7MplXbtJgtk/PHXwA==
   dependencies:
     warn-once "^0.1.0"
 
@@ -13745,10 +13673,10 @@ react-native-shadow-cards@^1.0.2:
   resolved "https://registry.npm.taobao.org/react-native-shadow-cards/download/react-native-shadow-cards-1.0.2.tgz#7c0f899ffa2f9143cee48d646ef87fd5c1384357"
   integrity sha1-fA+Jn/ovkUPO5I1kbvh/1cE4Q1c=
 
-react-native-share@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.nlark.com/react-native-share/download/react-native-share-7.0.0.tgz#38a1e875c216bf39564e40edcef246c7f5d95615"
-  integrity sha1-OKHodcIWvzlWTkDtzvJGx/XZVhU=
+react-native-share@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.npmjs.org/react-native-share/-/react-native-share-7.0.1.tgz#1deef27afcd8275222ba0efeac337e7cea99bc4b"
+  integrity sha512-hq7nOirgih/zIF9UU9FuYKZ3NGvasu2c/eJesvyPKYiykTtgQZM+mvDwFk/ogEsGwRtTPJBtj8/6IyIFcGa7lw==
 
 react-native-size-matters@^0.3.1:
   version "0.3.1"
@@ -13845,10 +13773,10 @@ react-native-typing-animation@^0.1.7:
   resolved "https://registry.nlark.com/react-native-typing-animation/download/react-native-typing-animation-0.1.7.tgz#8f2cf08d9400ae543a110292eb7d71523dda5528"
   integrity sha1-jyzwjZQArlQ6EQKS631xUj3aVSg=
 
-react-native-ui-lib@^5.28.4:
-  version "5.28.4"
-  resolved "https://registry.nlark.com/react-native-ui-lib/download/react-native-ui-lib-5.28.4.tgz#0264c301ae4b940c34bcab130ab5f02592ff43a2"
-  integrity sha1-AmTDAa5LlAw0vKsTCrXwJZL/Q6I=
+react-native-ui-lib@^5.30.0:
+  version "5.30.0"
+  resolved "https://registry.npmjs.org/react-native-ui-lib/-/react-native-ui-lib-5.30.0.tgz#29f0f0ad5df0e6d12eb39eea7cbcdd0b23898319"
+  integrity sha512-c+2zlw1cG4F+wpGg3EaHl4fT6e0K+Ewg4KKrXP6fpTaAZkFQS/Dq6FfkMcpKCsH+zVfSmFChySGrVGQ07P0Ayw==
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     color "^3.1.0"
@@ -14756,15 +14684,6 @@ scheduler@^0.20.1, scheduler@^0.20.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-schema-utils@^3.0.0:
-  version "3.1.1"
-  resolved "https://registry.nlark.com/schema-utils/download/schema-utils-3.1.1.tgz?cache=0&sync_timestamp=1626694740261&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fschema-utils%2Fdownload%2Fschema-utils-3.1.1.tgz#bc74c4b6b6995c1d88f76a8b77bea7219e0c8281"
-  integrity sha1-vHTEtraZXB2I92qLd76nIZ4MgoE=
-  dependencies:
-    "@types/json-schema" "^7.0.8"
-    ajv "^6.12.5"
-    ajv-keywords "^3.5.2"
-
 semver-diff@^3.1.1:
   version "3.1.1"
   resolved "https://registry.nlark.com/semver-diff/download/semver-diff-3.1.1.tgz#05f77ce59f325e00e2706afd67bb506ddb1ca32b"
@@ -14961,13 +14880,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.nlark.com/signal-exit/download/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
 
-simple-markdown@^0.7.1:
-  version "0.7.3"
-  resolved "https://registry.nlark.com/simple-markdown/download/simple-markdown-0.7.3.tgz#e32150b2ec6f8287197d09869fd928747a9c5640"
-  integrity sha1-4yFQsuxvgocZfQmGn9kodHqcVkA=
-  dependencies:
-    "@types/react" ">=16.0.0"
-
 simple-plist@^1.0.0, simple-plist@^1.1.0:
   version "1.1.1"
   resolved "https://registry.nlark.com/simple-plist/download/simple-plist-1.1.1.tgz#54367ca28bc5996a982c325c1c4a4c1a05f4047c"
@@ -15069,16 +14981,16 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-socket.io-client@^4.1.3:
-  version "4.1.3"
-  resolved "https://registry.nlark.com/socket.io-client/download/socket.io-client-4.1.3.tgz?cache=0&sync_timestamp=1625912013847&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsocket.io-client%2Fdownload%2Fsocket.io-client-4.1.3.tgz#236daa642a9f229932e00b7221e843bf74232a62"
-  integrity sha1-I22qZCqfIpky4AtyIehDv3QjKmI=
+socket.io-client@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/socket.io-client/-/socket.io-client-4.2.0.tgz#195feed3de40283b1ae3f7d02cf91d3eb2c905c1"
+  integrity sha512-3GJ2KMh7inJUNAOjgf8NaKJZJa9uRyfryh2LrVJyKyxmzoXlfW9DeDNqylJn0ovOFt4e/kRLNWzMt/YqqEWYSA==
   dependencies:
     "@types/component-emitter" "^1.2.10"
     backo2 "~1.0.2"
     component-emitter "~1.3.0"
-    debug "~4.3.1"
-    engine.io-client "~5.1.2"
+    debug "~4.3.2"
+    engine.io-client "~5.2.0"
     parseuri "0.0.6"
     socket.io-parser "~4.0.4"
 
@@ -15091,17 +15003,17 @@ socket.io-parser@~4.0.4:
     component-emitter "~1.3.0"
     debug "~4.3.1"
 
-sockjs-client@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.npm.taobao.org/sockjs-client/download/sockjs-client-1.5.1.tgz#256908f6d5adfb94dabbdbd02c66362cca0f9ea6"
-  integrity sha1-JWkI9tWt+5Tau9vQLGY2LMoPnqY=
+sockjs-client@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.5.2.tgz#4bc48c2da9ce4769f19dc723396b50f5c12330a3"
+  integrity sha512-ZzRxPBISQE7RpzlH4tKJMQbHM9pabHluk0WBaxAQ+wm/UieeBVBou0p4wVnSQGN9QmpAZygQ0cDIypWuqOFmFQ==
   dependencies:
     debug "^3.2.6"
     eventsource "^1.0.7"
     faye-websocket "^0.11.3"
     inherits "^2.0.4"
     json3 "^3.3.3"
-    url-parse "^1.5.1"
+    url-parse "^1.5.3"
 
 socks-proxy-agent@5, socks-proxy-agent@^5.0.0:
   version "5.0.1"
@@ -15308,48 +15220,6 @@ stream-buffers@~2.2.0:
   resolved "https://registry.npm.taobao.org/stream-buffers/download/stream-buffers-2.2.0.tgz#91d5f5130d1cef96dcfa7f726945188741d09ee4"
   integrity sha1-kdX1Ew0c75bc+n9yaUUYh0HQnuQ=
 
-stream-chat-react-native-core@3.7.2:
-  version "3.7.2"
-  resolved "https://registry.nlark.com/stream-chat-react-native-core/download/stream-chat-react-native-core-3.7.2.tgz#5cd97beb3349ead2b365e29343ad33c19c8641b7"
-  integrity sha1-XNl76zNJ6tKzZeKTQ60zwZyGQbc=
-  dependencies:
-    "@babel/runtime" "7.13.10"
-    "@gorhom/bottom-sheet" "3.6.4"
-    anchorme "^1.1.2"
-    dayjs "1.10.5"
-    file-loader "6.2.0"
-    i18next "20.2.4"
-    lodash-es "4.17.21"
-    metro-react-native-babel-preset "0.66.0"
-    mime-types "2.1.30"
-    path "0.12.7"
-    react-art "^17.0.2"
-    react-native-markdown-package "1.8.1"
-    stream-chat "~3.13.1"
-
-stream-chat-react-native@^3.7.2:
-  version "3.7.2"
-  resolved "https://registry.nlark.com/stream-chat-react-native/download/stream-chat-react-native-3.7.2.tgz#d86689f4e76cc2a5c81171fbf5519749046f42b5"
-  integrity sha1-2GaJ9OdswqXIEXH79VGXSQRvQrU=
-  dependencies:
-    es6-symbol "^3.1.3"
-    stream-chat-react-native-core "3.7.2"
-
-stream-chat@~3.13.1:
-  version "3.13.1"
-  resolved "https://registry.nlark.com/stream-chat/download/stream-chat-3.13.1.tgz#1692246dd74968dee7596a6a8c1e1a02656bb634"
-  integrity sha1-FpIkbddJaN7nWWpqjB4aAmVrtjQ=
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-    "@types/jsonwebtoken" "^8.5.0"
-    "@types/ws" "^7.4.0"
-    axios "^0.21.1"
-    base64-js "^1.5.1"
-    form-data "^4.0.0"
-    isomorphic-ws "^4.0.1"
-    jsonwebtoken "^8.5.1"
-    ws "^7.4.4"
-
 strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.nlark.com/strict-uri-encode/download/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
@@ -15545,10 +15415,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-styled-components@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.nlark.com/styled-components/download/styled-components-5.3.0.tgz#e47c3d3e9ddfff539f118a3dd0fd4f8f4fb25727"
-  integrity sha1-5Hw9Pp3f/1OfEYo90P1Pj0+yVyc=
+styled-components@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.npmjs.org/styled-components/-/styled-components-5.3.1.tgz#8a86dcd31bff7049c2ed408bae36fa23f03f071a"
+  integrity sha512-JThv2JRzyH0NOIURrk9iskdxMSAAtCfj/b2Sf1WJaCUsloQkblepy1jaCLX/bYE+mhYo3unmwVSI9I5d9ncSiQ==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/traverse" "^7.4.5"
@@ -15700,6 +15570,18 @@ table@^6.0.9:
     slice-ansi "^4.0.0"
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
+
+tar@^6.1.0:
+  version "6.1.11"
+  resolved "https://registry.npmjs.org/tar/-/tar-6.1.11.tgz#6760a38f003afa1b2ffd0ffe9e9abbd0eab3d621"
+  integrity sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==
+  dependencies:
+    chownr "^2.0.0"
+    fs-minipass "^2.0.0"
+    minipass "^3.0.0"
+    minizlib "^2.1.1"
+    mkdirp "^1.0.3"
+    yallist "^4.0.0"
 
 teaset@0.7.5:
   version "0.7.5"
@@ -16368,7 +16250,7 @@ url-parse-lax@^3.0.0:
   dependencies:
     prepend-http "^2.0.0"
 
-url-parse@^1.2.0, url-parse@^1.4.3, url-parse@^1.4.4, url-parse@^1.4.7, url-parse@^1.5.1:
+url-parse@^1.2.0, url-parse@^1.4.3, url-parse@^1.4.4, url-parse@^1.4.7, url-parse@^1.5.3:
   version "1.5.3"
   resolved "https://registry.nlark.com/url-parse/download/url-parse-1.5.3.tgz?cache=0&sync_timestamp=1627251248997&other_urls=https%3A%2F%2Fregistry.nlark.com%2Furl-parse%2Fdownload%2Furl-parse-1.5.3.tgz#71c1303d38fb6639ade183c2992c8cc0686df862"
   integrity sha1-ccEwPTj7Zjmt4YPCmSyMwGht+GI=
@@ -16517,91 +16399,172 @@ vfile@^2.0.0:
     unist-util-stringify-position "^1.0.0"
     vfile-message "^1.0.0"
 
-victory-area@^35.10.0, victory-area@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-area/download/victory-area-35.10.0.tgz#85f2bec53ff07ed2312f94728284f256640dd47d"
-  integrity sha1-hfK+xT/wftIxL5RygoTyVmQN1H0=
+victory-area@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-area/-/victory-area-35.11.0.tgz#888181aafc2e9abb03edbd9a43d5d9ce5f011f4e"
+  integrity sha512-FT1H0dhzxFpDrtBzZRe4DUVb+AAezCQIkL+8a46sJqeorQkpFGaSXjLly/fwmYgNctVzapiSLQLJtdXc2dI5zQ==
   dependencies:
     d3-shape "^1.2.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-axis@^35.10.0, victory-axis@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-axis/download/victory-axis-35.10.0.tgz#25fe8f9acca4e5cc14b0bcd2a3fcdd2a0e034df3"
-  integrity sha1-Jf6Pmsyk5cwUsLzSo/zdKg4DTfM=
-  dependencies:
-    lodash "^4.17.19"
-    prop-types "^15.5.8"
-    victory-core "^35.10.0"
-
-victory-bar@^35.10.0, victory-bar@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-bar/download/victory-bar-35.10.0.tgz#c9293d071a8bee0922b9af2a940ae696dcdeb933"
-  integrity sha1-ySk9BxqL7gkiua8qlArmltzeuTM=
+victory-area@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-area/-/victory-area-35.10.1.tgz#4b0903141a7c8a00216183e74887ef6eb5dbd22c"
+  integrity sha512-4XFLi6pe8ettEQxGjK4Guj7gqPocVrA9g/lWsKxoAQ+9D3X5F9LRrmiDnBGwzzA9L6R/gIg/LB3Bx/pz/ZTGyg==
   dependencies:
     d3-shape "^1.2.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.10.1"
 
-victory-box-plot@^35.10.0, victory-box-plot@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-box-plot/download/victory-box-plot-35.10.0.tgz#c33f4596316717e0c9b91c574c6c86a45de40c2a"
-  integrity sha1-wz9FljFnF+DJuRxXTGyGpF3kDCo=
+victory-axis@^35.10.1, victory-axis@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-axis/-/victory-axis-35.11.0.tgz#19cb7fa418c12e04cdcafb014b42e1e464835ed5"
+  integrity sha512-CwGuXM8D/N3LzNFf/8v2QbdmBNSBir7Rlp8ZAamN5H6VOpK7dyLvRb+F3jjLejkuyr+Ye9uwJkwTlPyuSJXM5Q==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.11.0"
+
+victory-axis@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-axis/-/victory-axis-35.10.1.tgz#d2fabacebe11756557a5d35171fead23e2aacf68"
+  integrity sha512-lJELvCevgwdJCuDkQEz1kTomlRUiJuj1KGXABBJeN4nESsLgpejs/wxnLDnEDzHZSyJMYzBZaXSXqxSIvVNmWg==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-bar@^35.10.1, victory-bar@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-bar/-/victory-bar-35.11.0.tgz#7e18abe1022ebffca0ed6c886fbfff09985fe096"
+  integrity sha512-9hvuC+FO/EvU3dJeP8H5SkilVOpX8ctaNf0Nn6mOdS+cDWErQJ9cuHDaBehEl9uvevK2hQOYTt9g7JuvgRxBSA==
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.11.0"
+
+victory-bar@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-bar/-/victory-bar-35.10.1.tgz#eb50e82ae3fc9e2e940f3a83923f3e9e792272a9"
+  integrity sha512-O5M3uOXZsJfod4aP3I4Q2rVtDNLvy6GLgmd9/buMW3RrTOzSxtGUVD5SsYv7KhqRiPQQvIzpiwg5fb3aOHI1/Q==
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-box-plot@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-box-plot/-/victory-box-plot-35.11.0.tgz#cbb729e33bbb83c16a4a2679a729268b728d32b9"
+  integrity sha512-QU9pJ8sDUMII+RBUSm9xnccZL0Z5xM2AZLjTNNh8DRVfQqPJT6fwKJb6/1Xs+JjNTlz/si/vn8RNQa0KZBCjFQ==
   dependencies:
     d3-array "^1.2.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-brush-container@^35.10.0, victory-brush-container@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-brush-container/download/victory-brush-container-35.10.0.tgz#041d29cf26a1299aff2994c157f41760490b65aa"
-  integrity sha1-BB0pzyahKZr/KZTBV/QXYEkLZao=
+victory-box-plot@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-box-plot/-/victory-box-plot-35.10.1.tgz#5f0c5c251696af768a2b9e178816d7167c2c6c82"
+  integrity sha512-KNuZLhHRXaCIR4J5gYF8xSZ7w4zBbiqpxWQf1f4LzbOZhN2FLueybh3bj31u8cT0Xj3uAuQoetSw0CSmhwE/Zw==
+  dependencies:
+    d3-array "^1.2.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-brush-container@^35.10.1, victory-brush-container@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-brush-container/-/victory-brush-container-35.11.0.tgz#54a9f0681c974227c1097dfe0062f1b88e94443d"
+  integrity sha512-Z5bmCVhcWjH5P1aAEQKa2u1NiUZPunrmmSJ4u+npOVCpa03/sdEgnLGs89TVSRHZnFptWbhN3izrKhXkd5sMrA==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-brush-line@^35.10.0, victory-brush-line@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-brush-line/download/victory-brush-line-35.10.0.tgz#d755abd407a28cdc39dd82d7e60bf2fcc1fbd2ab"
-  integrity sha1-11Wr1AeijNw53YLX5gvy/MH70qs=
+victory-brush-container@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-brush-container/-/victory-brush-container-35.10.1.tgz#32f2f4fe925341c8af8715064fba1c1d45ed5c50"
+  integrity sha512-Jz098hug5FpuvYla0YBNP2Y9ZRGNv+n2mm/jEKYXoRSN3S9bMTeaZCmWH5wIjlksEQ3hr0XO9i3Ll5ZISTzKEw==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-core "^35.10.0"
+    victory-core "^35.10.1"
 
-victory-candlestick@^35.10.0, victory-candlestick@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-candlestick/download/victory-candlestick-35.10.0.tgz#81a24ac688b5af3d7718510d546ebb23ea7f229e"
-  integrity sha1-gaJKxoi1rz13GFENVG67I+p/Ip4=
-  dependencies:
-    lodash "^4.17.19"
-    prop-types "^15.5.8"
-    victory-core "^35.10.0"
-
-victory-chart@^35.10.0, victory-chart@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-chart/download/victory-chart-35.10.0.tgz#45cbc2cef9483d8c8ca44faa2ce7cfd9c35a580b"
-  integrity sha1-RcvCzvlIPYyMpE+qLOfP2cNaWAs=
+victory-brush-line@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-brush-line/-/victory-brush-line-35.11.0.tgz#1a7e06d1f79a8cece989d34cf37f21323f8d8265"
+  integrity sha512-wROc+Dj+9GnTeZita454jEgqk5IuvUPyABZxEo7S4GTT+57PwW/FRkmcVVf6jhFYyqcNku1YQnSWX3314GsP9Q==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-axis "^35.10.0"
-    victory-core "^35.10.0"
-    victory-polar-axis "^35.10.0"
-    victory-shared-events "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-core@^35.10.0, victory-core@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-core/download/victory-core-35.10.0.tgz#2dde2d953b7776b28a93b21182c535487ca2d939"
-  integrity sha1-Ld4tlTt3drKKk7IRgsU1SHyi2Tk=
+victory-brush-line@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-brush-line/-/victory-brush-line-35.10.1.tgz#12c8308a7683ce5c4a7e3add0ad2dcfa3c353b1a"
+  integrity sha512-EjSJbheM65ceb1GH2xi1Xdv1jr2vU6Ybp6iM0Nx5TgU1XHfpOLPhBzZ0p8CkYkXHuonQDYtrqls6I3xA4B+42A==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^35.10.1"
+
+victory-candlestick@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-candlestick/-/victory-candlestick-35.11.0.tgz#8c107e082d7a03d73641fbf7511e1296552ec280"
+  integrity sha512-mkKRK2LxsYS5Ltd45JG+167YPfOAo59NfxfBO5YGmu669XpuhU7LHutuuE6iL9aIlsiHrbG8Qvyn5ogWgeUrHA==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.11.0"
+
+victory-candlestick@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-candlestick/-/victory-candlestick-35.10.1.tgz#70c3925c48dd3e59ffef0a85f61e673c72b02c41"
+  integrity sha512-k47XCw2B8joUOpcmm/e6Le90FbO/mhLlaERTJhOFLMRhPgIhDecjldMGNrJyjkCkcINrHfYr4gcCTZXUxZWRxw==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-chart@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-chart/-/victory-chart-35.11.0.tgz#e5cb67d5eaf690e66e1961bdff7f42122eccd147"
+  integrity sha512-TBil5iyLd+ItAfM8vAf+557JipgkvHpyvLkJJOHsgSHT47F5djNLBAZcRuboKh15l/Y2+ARV+xRnDMAvxv6aWQ==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-axis "^35.11.0"
+    victory-core "^35.11.0"
+    victory-polar-axis "^35.11.0"
+    victory-shared-events "^35.11.0"
+
+victory-chart@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-chart/-/victory-chart-35.10.1.tgz#16bf886b07ea5ce1bc763d2e270b7637c23ab263"
+  integrity sha512-TG6YizAPCKWBGxJuyErN9nDoCR3vdLaHzHY7qy/scUY+LHuqyRqdAqJpLeSL6U+WjjsuhAoRUPcI3Gcc8yaskA==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-axis "^35.10.1"
+    victory-core "^35.10.1"
+    victory-polar-axis "^35.10.1"
+    victory-shared-events "^35.10.1"
+
+victory-core@^35.10.1, victory-core@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-core/-/victory-core-35.11.0.tgz#353ad3b2c3bbb8ef442bc8522e790fb1a2b9781f"
+  integrity sha512-IU9ifAooK2dFQqVy2eMf6GQwE6e2MP+DrtxJCNZ27eLSRnUoXExH+toC+Ww/fguTmyyjTYvVH9mEnz0cswS1sA==
   dependencies:
     d3-ease "^1.0.0"
     d3-interpolate "^1.1.1"
@@ -16612,246 +16575,433 @@ victory-core@^35.10.0, victory-core@^35.6.1:
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
 
-victory-create-container@^35.10.0, victory-create-container@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-create-container/download/victory-create-container-35.10.0.tgz#90cfede9a2e468d7ca725ad9ecd9e05a7d922709"
-  integrity sha1-kM/t6aLkaNfKclrZ7NngWn2SJwk=
+victory-core@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-core/-/victory-core-35.10.1.tgz#b06cc542a3a2c50c60b22f1916e68a488b62fe0c"
+  integrity sha512-fnBqZQICtIeAeUZN65eYweG6CZJA91gMX6urVcQcRlVIOi13c0ypabgahaKQJ7hiZil8HzaTAd/H+92XztjnBA==
+  dependencies:
+    d3-ease "^1.0.0"
+    d3-interpolate "^1.1.1"
+    d3-scale "^1.0.0"
+    d3-shape "^1.2.0"
+    d3-timer "^1.0.0"
+    lodash "^4.17.21"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+
+victory-create-container@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-create-container/-/victory-create-container-35.11.0.tgz#17c4682382764339c74a784e449d32f5e80fd658"
+  integrity sha512-cy9JN4wd0osRBvUIYdkdszi8zhGJBJhuIX5BkL9PKAjdsxviBs3GHuIAnuM/Q4Y9xNszSVDb/aRKK1Mei7Ur2A==
   dependencies:
     lodash "^4.17.19"
-    victory-brush-container "^35.10.0"
-    victory-core "^35.10.0"
-    victory-cursor-container "^35.10.0"
-    victory-selection-container "^35.10.0"
-    victory-voronoi-container "^35.10.0"
-    victory-zoom-container "^35.10.0"
+    victory-brush-container "^35.11.0"
+    victory-core "^35.11.0"
+    victory-cursor-container "^35.11.0"
+    victory-selection-container "^35.11.0"
+    victory-voronoi-container "^35.11.0"
+    victory-zoom-container "^35.11.0"
 
-victory-cursor-container@^35.10.0, victory-cursor-container@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-cursor-container/download/victory-cursor-container-35.10.0.tgz#06773317c06a46666b59464ec54d1c592246074c"
-  integrity sha1-BnczF8BqRmZrWUZOxU0cWSJGB0w=
+victory-create-container@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-create-container/-/victory-create-container-35.10.1.tgz#4132698569e8fd15b349c157b56e04181218ec73"
+  integrity sha512-D6RgIBSUuOyK8efao5oo7UjFDaTeUiH5QzxBAIj5RFafyvLUdKqeTb0lo4dNucTETOHAXTVYZKCEi3yUCAfNeA==
+  dependencies:
+    lodash "^4.17.19"
+    victory-brush-container "^35.10.1"
+    victory-core "^35.10.1"
+    victory-cursor-container "^35.10.1"
+    victory-selection-container "^35.10.1"
+    victory-voronoi-container "^35.10.1"
+    victory-zoom-container "^35.10.1"
+
+victory-cursor-container@^35.10.1, victory-cursor-container@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-cursor-container/-/victory-cursor-container-35.11.0.tgz#2c9a51a70e3fdf7c9a35ebe012af51d17a17e934"
+  integrity sha512-SSWb8XH1hJDC1SbolcHWAJLKO8pHCCNqTYrQrQtkZhXEJU8+e02aluRmWCXY9gzSm1zUL/uz3XcTgtPBZnECsA==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-errorbar@^35.10.0, victory-errorbar@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-errorbar/download/victory-errorbar-35.10.0.tgz#c929281f42e90bf8ed83cd829074c001b11025ca"
-  integrity sha1-ySkoH0LpC/jtg82CkHTAAbEQJco=
+victory-cursor-container@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-cursor-container/-/victory-cursor-container-35.10.1.tgz#8cd69ebf4e6da5f5b2b602943a3267c6a6241d76"
+  integrity sha512-fc8KJkd6QRzX/6urkdacaJPRlCOfhxE34KECsnFgqRNAJD12jB49yCOrZOXW7omQ7cyLHS3fKOmza/Ep6HQYMA==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.10.1"
 
-victory-group@^35.10.0, victory-group@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-group/download/victory-group-35.10.0.tgz#be815e0c3fe336116c3de1a9a6a2ecdf385ef025"
-  integrity sha1-voFeDD/jNhFsPeGppqLs3zhe8CU=
+victory-errorbar@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-errorbar/-/victory-errorbar-35.11.0.tgz#2c16fd502679c3882bc8e7cda891fde132dd570a"
+  integrity sha512-pAcMKCWcWztT5MX5Oc9m6CLFxwFyWO/tNI2M/IcJ7gvp7sPEE5PeCnkgIH4TiqIk83BHDdnAgoGdIVWcMKUfZw==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.11.0"
+
+victory-errorbar@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-errorbar/-/victory-errorbar-35.10.1.tgz#e5b320be740d8d2986b9f6af8f0f94bca216f94a"
+  integrity sha512-sIJH48DlTEuXbr10B3Igz6JNpOPL8nd58KzKRgtGf3GrzyMKRL6FUdREEFOLG61SuwC2vDQiJQtPBBnAPAMOxA==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-group@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-group/-/victory-group-35.11.0.tgz#71bb350393a3aa71b8becc07e0ca2a09b6e0008f"
+  integrity sha512-8HD3CGnUHj8jLVWbutBvh8rlLB+J94jx+ZBESDW7glRXNnp/kKOn9CeCgrxEiabZnd3s6kIYpeA0CLJJM+QbkQ==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-core "^35.10.0"
-    victory-shared-events "^35.10.0"
+    victory-core "^35.11.0"
+    victory-shared-events "^35.11.0"
 
-victory-histogram@^35.10.0, victory-histogram@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-histogram/download/victory-histogram-35.10.0.tgz#f88a8d6dc65e1234493c1559d30a3b037bad2ee2"
-  integrity sha1-+IqNbcZeEjRJPBVZ0wo7A3utLuI=
+victory-group@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-group/-/victory-group-35.10.1.tgz#5c250ae78f05aafd1c11fdc32887393a0f64f861"
+  integrity sha512-oJ8QzU1ojS3bw3lS85wHQiZxEyhYGZCaCVgNZgaixqUmn70ZMnGQsSsZr4HOVDDFEix0k+2LLaN1WwsHzTlPzw==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^35.10.1"
+    victory-shared-events "^35.10.1"
+
+victory-histogram@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-histogram/-/victory-histogram-35.11.0.tgz#6edf4e102be621302ef8aaca341bbb69f109b573"
+  integrity sha512-UbT08nXCe+kWO3muyOgIbcfOC/Hk9t4+qQSw+4vkI1jzcRlLBLefdAHeSlWay34I+S+xvBEJ1IpIqSrFZb1IjQ==
   dependencies:
     d3-array "~2.3.0"
     d3-scale "^1.0.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-bar "^35.10.0"
-    victory-core "^35.10.0"
+    victory-bar "^35.11.0"
+    victory-core "^35.11.0"
 
-victory-legend@^35.10.0, victory-legend@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-legend/download/victory-legend-35.10.0.tgz#7f6290e3b503a7b363e3788fd69564600566ca8a"
-  integrity sha1-f2KQ47UDp7Nj43iP1pVkYAVmyoo=
+victory-histogram@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-histogram/-/victory-histogram-35.10.1.tgz#f8ba38d70afb743ea0dc20f15d211aa0aef459fe"
+  integrity sha512-rFKGqQjF8eLdkruy6FczCscFUwq0lvLwbS6FJEnV1DS5c5Zugl99bB+RTvXfcge8rwuuT3p2GZwvKX61bNK1fw==
+  dependencies:
+    d3-array "~2.3.0"
+    d3-scale "^1.0.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-bar "^35.10.1"
+    victory-core "^35.10.1"
+
+victory-legend@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-legend/-/victory-legend-35.11.0.tgz#f519f99e336a7d2a0aada738d5a50b2d8916e710"
+  integrity sha512-8eOHzB+K4WCXZJQiv3Kx5ihMa5+li+PjN4qw9f/oAtXG6zeTCK22WV5doll7clbAwwzljTDTrzjssuaXbq2EAg==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-line@^35.10.0, victory-line@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-line/download/victory-line-35.10.0.tgz#f30ce90c7655a481525c2984ccb1759ade204487"
-  integrity sha1-8wzpDHZVpIFSXCmEzLF1mt4gRIc=
+victory-legend@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-legend/-/victory-legend-35.10.1.tgz#26ba789dbf035cfb7624540f033d781bfaabcfb6"
+  integrity sha512-bzeICXB5BLU0vJ4AgI40XGIuZPGL8hyn7FKtB2NGeWspkOHPYocxmU76ZuyWumcGFFcTzWRR335txYOCFNkawg==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-line@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-line/-/victory-line-35.11.0.tgz#745474ff0772aae76d47677b3eebc523b2e5eb74"
+  integrity sha512-A48QXeo3q0b5+WawR/Btbw08jm2RKdcD6uoTQKXTTSB/pf+TDh3RLqynwI21SmYA9a6HgO3ekqYReX40e4h9Gw==
   dependencies:
     d3-shape "^1.2.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-native@^35.3.3:
-  version "35.3.3"
-  resolved "https://registry.nlark.com/victory-native/download/victory-native-35.3.3.tgz#7782bbc5780e542530911af4ac8847bf00ae2368"
-  integrity sha1-d4K7xXgOVCUwkRr0rIhHvwCuI2g=
+victory-line@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-line/-/victory-line-35.10.1.tgz#1c0be882a4de40f5ded865aaec578a2932871e49"
+  integrity sha512-qxJWOSea+QJU6dCTPPQ7maGOCyEigjnYplEVLuU/X6yGECMD+uyLn2FsPXQTc0sOji0SD0qeCjsq6joJkHFAVg==
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-native@^35.5.4:
+  version "35.5.4"
+  resolved "https://registry.npmjs.org/victory-native/-/victory-native-35.5.4.tgz#7e718acc8bab7908ef5d1597a177c44a3fde47b3"
+  integrity sha512-BSK2LXFn08fv1QOUX/JvhE3nRrVI1KxPBa9JKUFEF8hV8ZiBCNWbO/PPSx9291oAzrk/8I/EP5n00IrWv++WcQ==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.10"
     react-fast-compare "^2.0.0"
-    victory "^35.6.1"
-    victory-area "^35.6.1"
-    victory-axis "^35.6.1"
-    victory-bar "^35.6.1"
-    victory-box-plot "^35.6.1"
-    victory-brush-container "^35.6.1"
-    victory-brush-line "^35.6.1"
-    victory-candlestick "^35.6.1"
-    victory-chart "^35.6.1"
-    victory-core "^35.6.1"
-    victory-create-container "^35.6.1"
-    victory-cursor-container "^35.6.1"
-    victory-errorbar "^35.6.1"
-    victory-group "^35.6.1"
-    victory-histogram "^35.6.1"
-    victory-legend "^35.6.1"
-    victory-line "^35.6.1"
-    victory-pie "^35.6.1"
-    victory-polar-axis "^35.6.1"
-    victory-scatter "^35.6.1"
-    victory-selection-container "^35.6.1"
-    victory-shared-events "^35.6.1"
-    victory-stack "^35.6.1"
-    victory-tooltip "^35.6.1"
-    victory-voronoi "^35.6.1"
-    victory-voronoi-container "^35.6.1"
-    victory-zoom-container "^35.6.1"
+    victory "~35.10.0"
+    victory-area "~35.10.0"
+    victory-axis "~35.10.0"
+    victory-bar "~35.10.0"
+    victory-box-plot "~35.10.0"
+    victory-brush-container "~35.10.0"
+    victory-brush-line "~35.10.0"
+    victory-candlestick "~35.10.0"
+    victory-chart "~35.10.0"
+    victory-core "~35.10.0"
+    victory-create-container "~35.10.0"
+    victory-cursor-container "~35.10.0"
+    victory-errorbar "~35.10.0"
+    victory-group "~35.10.0"
+    victory-histogram "~35.10.0"
+    victory-legend "~35.10.0"
+    victory-line "~35.10.0"
+    victory-pie "~35.10.0"
+    victory-polar-axis "~35.10.0"
+    victory-scatter "~35.10.0"
+    victory-selection-container "~35.10.0"
+    victory-shared-events "~35.10.0"
+    victory-stack "~35.10.0"
+    victory-tooltip "~35.10.0"
+    victory-voronoi "~35.10.0"
+    victory-voronoi-container "~35.10.0"
+    victory-zoom-container "~35.10.0"
 
-victory-pie@^35.10.0, victory-pie@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-pie/download/victory-pie-35.10.0.tgz#f2a48ed0e773292242b45780c4813cd1c26a488c"
-  integrity sha1-8qSO0OdzKSJCtFeAxIE80cJqSIw=
+victory-pie@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-pie/-/victory-pie-35.11.0.tgz#9f3584585b368a166e4f3c25a7640057170d8e15"
+  integrity sha512-YPQ/ij0ENc5lV3jHabtGjz/GwG2ZFOZLZWbTGBEL/pvysIQF/TB6jyUsdnRxyJiOGHs63+L81Zcsc2NL92MGNg==
   dependencies:
     d3-shape "^1.0.0"
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-polar-axis@^35.10.0, victory-polar-axis@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-polar-axis/download/victory-polar-axis-35.10.0.tgz#bdc81ff3fea2358b009410dbe50b8a526ba1a8c5"
-  integrity sha1-vcgf8/6iNYsAlBDb5QuKUmuhqMU=
+victory-pie@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-pie/-/victory-pie-35.10.1.tgz#a43c2efa9507a34594033d5471e5e3fe65d20bea"
+  integrity sha512-3TlJooApPWvC4rLJodUI/4tNRj7J7UaY75TraJkC3eOuDiiiG7rk9Q9SB52LhAhG5M65KWABwZtRNSCDmwaxsw==
+  dependencies:
+    d3-shape "^1.0.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-polar-axis@^35.10.1, victory-polar-axis@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-polar-axis/-/victory-polar-axis-35.11.0.tgz#58665db3d8e71fa28d8a10f276e4ce33012a7ad2"
+  integrity sha512-98iDKBOoTqQKmay2diC+HdM7hLknjNXJ1umxdBkNE4oD2lfF67eW7dNgEFxBvZDh8B8YVqq1asIlLmCvetAq2w==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-scatter@^35.10.0, victory-scatter@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-scatter/download/victory-scatter-35.10.0.tgz#d0fdd7da4ff08a4ac8975d635c392684cfa25a95"
-  integrity sha1-0P3X2k/wikrIl11jXDkmhM+iWpU=
+victory-polar-axis@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-polar-axis/-/victory-polar-axis-35.10.1.tgz#c9a0130aa71545e2d0caa806c1c1fe2f2d48830c"
+  integrity sha512-wxbtSKaHztYNz8HMQEwj9kz7f3XMSo/Tuv8GDTv9r0FHK3qXFbzUGJ1EGTT4OgtTHMBYZdtPq6PPwl2SKUKSjA==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.10.1"
 
-victory-selection-container@^35.10.0, victory-selection-container@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-selection-container/download/victory-selection-container-35.10.0.tgz#91817419a29cb7311fba04b55cbb830c00180d81"
-  integrity sha1-kYF0GaKctzEfugS1XLuDDAAYDYE=
+victory-scatter@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-scatter/-/victory-scatter-35.11.0.tgz#5167d43dea869e400f233b111007bc70f007b61a"
+  integrity sha512-oX2TgvlXpIkP4Bza+i7s0VziPhSdYi0+Q/bYYuYJdz+17jCseHBIjVww0jWC8wI0J5qVmD6eUA/u1W5Iz5Ml8A==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-shared-events@^35.10.0, victory-shared-events@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-shared-events/download/victory-shared-events-35.10.0.tgz#45aeee3a242bca08e0e0e9362ae9f4d5211abdf3"
-  integrity sha1-Ra7uOiQrygjg4Ok2Kun01SEavfM=
+victory-scatter@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-scatter/-/victory-scatter-35.10.1.tgz#f072499f5d65a024f804a14a7d15b844b62d4e34"
+  integrity sha512-SbgYCFFb1yeLcl1AlkBkdp+Lss95d6UEoHrRTbnnl6ImAM8X5iq6ERDUqSzQZOp8sVqHIdLOROaOawFgHAmlGA==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-selection-container@^35.10.1, victory-selection-container@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-selection-container/-/victory-selection-container-35.11.0.tgz#b2086f9feaa223149236d8ca7a35af8f9a2ec575"
+  integrity sha512-ANxAAWwSrK4fbLcWKWrSkqHKDcrqSZicvy/AFIVqOIO/xzhZAJG8APIhMfJcpsxjjfq4qgeh/lcnSZmsqhslwA==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.11.0"
+
+victory-selection-container@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-selection-container/-/victory-selection-container-35.10.1.tgz#c0370aa0cba885b0a99de6f6f49018aa497468e0"
+  integrity sha512-j23TNj/CFbwu4tLxJt7B+PLpe3Hm+kVcYlxLabdu3bllYjbD856CdKDT9rGB9jR1v5nfUb/NdD2/G/XG41WuDg==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-shared-events@^35.10.1, victory-shared-events@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-shared-events/-/victory-shared-events-35.11.0.tgz#cbca357aca533ab6fad5149d07052e141edbb184"
+  integrity sha512-c+2scIqtvOOTd8UxGaX5AGLvXn+Cdv2zuSpyKK0Rczo0H2sFYeghBXfQSwYWgZucyTB45uJ6YXjJYmwxChjjZA==
   dependencies:
     json-stringify-safe "^5.0.1"
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-stack@^35.10.0, victory-stack@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-stack/download/victory-stack-35.10.0.tgz#57ed716e3d9d54afdfe01e84b584b259e550a804"
-  integrity sha1-V+1xbj2dVK/f4B6EtYSyWeVQqAQ=
+victory-shared-events@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-shared-events/-/victory-shared-events-35.10.1.tgz#f5eeab4833f5c5ab816e55c6f8b5e520cdcd44e4"
+  integrity sha512-yv6Lafq/Uq9PbAEMvWFdIurDRWBkqIxoxwfwp+qXSKjTLqb/yf3oyNJ09U+areLd42XHfP5qQIyFeY683rDOGA==
+  dependencies:
+    json-stringify-safe "^5.0.1"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^35.10.1"
+
+victory-stack@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-stack/-/victory-stack-35.11.0.tgz#5559cdeb3786340443e036a257eb11843705a568"
+  integrity sha512-QYr4XR2bywqg5m7rwyLBANrAXrH9D+Dk/qZrzIdPy+X+wzTnxLle0cPFh4AyDKx5UcX9V9ZjkkT2i5HM6+CObw==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-core "^35.10.0"
-    victory-shared-events "^35.10.0"
+    victory-core "^35.11.0"
+    victory-shared-events "^35.11.0"
 
-victory-tooltip@^35.10.0, victory-tooltip@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-tooltip/download/victory-tooltip-35.10.0.tgz#8eb85727e0bf73c2c03d04603e3f5dc5652a02de"
-  integrity sha1-jrhXJ+C/c8LAPQRgPj9dxWUqAt4=
+victory-stack@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-stack/-/victory-stack-35.10.1.tgz#7cec9fb1256e08c9a82ec22294e105f4718f8a17"
+  integrity sha512-QrixUuwaQc5bLcHnsGvY7thcbAz8uOO2nICFB/piKuy43na2dhfnAsCY8+ivbQTcBtNNIqab0DUii4SJ8Mti8w==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    react-fast-compare "^2.0.0"
+    victory-core "^35.10.1"
+    victory-shared-events "^35.10.1"
 
-victory-voronoi-container@^35.10.0, victory-voronoi-container@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-voronoi-container/download/victory-voronoi-container-35.10.0.tgz#f2bed57307f031fed1546c6804c72c4b38cc38af"
-  integrity sha1-8r7VcwfwMf7RVGxoBMcsSzjMOK8=
+victory-tooltip@^35.10.1, victory-tooltip@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-tooltip/-/victory-tooltip-35.11.0.tgz#ddd6dc90b932f2725f8b2acf53455a933127ae02"
+  integrity sha512-P7U44HsFtQ8/F2DEyGNXM+WdIm1uf/4qAzA8/B9rZi9x5f1coPk7GoBNScMfcKYMN0hw1XyPGy10npKb5PfPRw==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.11.0"
+
+victory-tooltip@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-tooltip/-/victory-tooltip-35.10.1.tgz#f9d19f6ecb643585c5530f930b6c53b95959c589"
+  integrity sha512-VLz6Ek2jk0QTltbVrYcZIMCPHwMj2ysXqUNIsO0WecoMeXY7UITd/HzjqrroOmXrbXWRtL8FxQIXs46U5Mnwmg==
+  dependencies:
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-voronoi-container@^35.10.1, victory-voronoi-container@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-voronoi-container/-/victory-voronoi-container-35.11.0.tgz#b6fca0a538eba5cd3f3997a7107d418f8ffe18c5"
+  integrity sha512-T2bvpNpkDXtSI+RMdRymvdmmIDH07udLt2LiICzVqVbj61Nr0BHh4KJlSMqQluao0Oo3cmiEabNiPv0DMfUGDQ==
   dependencies:
     delaunay-find "0.0.6"
     lodash "^4.17.19"
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
-    victory-core "^35.10.0"
-    victory-tooltip "^35.10.0"
+    victory-core "^35.11.0"
+    victory-tooltip "^35.11.0"
 
-victory-voronoi@^35.10.0, victory-voronoi@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-voronoi/download/victory-voronoi-35.10.0.tgz#b19141621ffae63a8631d91c4bb442bccc64d922"
-  integrity sha1-sZFBYh/65jqGMdkcS7RCvMxk2SI=
+victory-voronoi-container@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-voronoi-container/-/victory-voronoi-container-35.10.1.tgz#bcb70efe339198367a61c5330340799e9265a194"
+  integrity sha512-uyIIqylrn7BkDrOg6u7+9socLOAZHlmOUnpq5YYFhaGLcQeztn390nO3Cqw0TqjDyXTZfwZeoTHUnn+F6e1bQg==
+  dependencies:
+    delaunay-find "0.0.6"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-core "^35.10.1"
+    victory-tooltip "^35.10.1"
+
+victory-voronoi@^35.10.1:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-voronoi/-/victory-voronoi-35.11.0.tgz#6ff5d7a05ecdff7a217fe894acf7694ca7733f53"
+  integrity sha512-i99NebfhyLD2aOQtdjjHIaig3AlZkh3810F3/zHhKXWLMJN658JTHP36joUWxoJ5MzWC+sKMFcYNC7C6Pl58aA==
   dependencies:
     d3-voronoi "^1.1.2"
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory-zoom-container@^35.10.0, victory-zoom-container@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory-zoom-container/download/victory-zoom-container-35.10.0.tgz#1e73d757f7ace5c6ffa7bb68f66bd0b088e3ac72"
-  integrity sha1-HnPXV/es5cb/p7to9mvQsIjjrHI=
+victory-voronoi@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-voronoi/-/victory-voronoi-35.10.1.tgz#064d9bb5bba0d441500dc5f0c0ed54970b145a1d"
+  integrity sha512-0kylH+/IyqHcRmZfF5fzIzmwZQ2L6RoGdhBcrEPI+jSProFap69BV0tAE5XBkIb49Qt1n09sm0RY6Vv4N78cfA==
+  dependencies:
+    d3-voronoi "^1.1.2"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory-zoom-container@^35.10.1, victory-zoom-container@^35.11.0:
+  version "35.11.0"
+  resolved "https://registry.npmjs.org/victory-zoom-container/-/victory-zoom-container-35.11.0.tgz#c510a14f7feb5796fab051c08a9709895aa49fad"
+  integrity sha512-NogTtrgK53CD8IFW1I3mLw/bbX9VzPmRUgW4we9oUV3tSYKkQjKkao0qOeZAarrWcSUeuKH0qGLghOMQEGvsyA==
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.5.8"
-    victory-core "^35.10.0"
+    victory-core "^35.11.0"
 
-victory@^35.6.1:
-  version "35.10.0"
-  resolved "https://registry.nlark.com/victory/download/victory-35.10.0.tgz#3b43f18ec0251da5acfe844eeaea5954f088ec29"
-  integrity sha1-O0PxjsAlHaWs/oRO6upZVPCI7Ck=
+victory-zoom-container@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory-zoom-container/-/victory-zoom-container-35.10.1.tgz#b180cf68e490a19ea9cd545b38ce6726bea17de2"
+  integrity sha512-NKeT7x/HaXmlY9/+uWcGm5Nk4EQbQRuTNfUUvbil+S3tI4vQoRNdPOOIeVcHVbLmgfbuhKr477Yoym63spcavA==
   dependencies:
-    victory-area "^35.10.0"
-    victory-axis "^35.10.0"
-    victory-bar "^35.10.0"
-    victory-box-plot "^35.10.0"
-    victory-brush-container "^35.10.0"
-    victory-brush-line "^35.10.0"
-    victory-candlestick "^35.10.0"
-    victory-chart "^35.10.0"
-    victory-core "^35.10.0"
-    victory-create-container "^35.10.0"
-    victory-cursor-container "^35.10.0"
-    victory-errorbar "^35.10.0"
-    victory-group "^35.10.0"
-    victory-histogram "^35.10.0"
-    victory-legend "^35.10.0"
-    victory-line "^35.10.0"
-    victory-pie "^35.10.0"
-    victory-polar-axis "^35.10.0"
-    victory-scatter "^35.10.0"
-    victory-selection-container "^35.10.0"
-    victory-shared-events "^35.10.0"
-    victory-stack "^35.10.0"
-    victory-tooltip "^35.10.0"
-    victory-voronoi "^35.10.0"
-    victory-voronoi-container "^35.10.0"
-    victory-zoom-container "^35.10.0"
+    lodash "^4.17.19"
+    prop-types "^15.5.8"
+    victory-core "^35.10.1"
+
+victory@~35.10.0:
+  version "35.10.1"
+  resolved "https://registry.npmjs.org/victory/-/victory-35.10.1.tgz#6c0e4db8ac28617d60b3663407c023f2ad1b00fa"
+  integrity sha512-ta6pHjmNTpNlok3h03tcoYpehVNKmkgEbk5jBmZ/8fh/NcaEBtk49DY+/RVWm6EVPVxT/PHDMCIgfmvKsRa7CQ==
+  dependencies:
+    victory-area "^35.10.1"
+    victory-axis "^35.10.1"
+    victory-bar "^35.10.1"
+    victory-box-plot "^35.10.1"
+    victory-brush-container "^35.10.1"
+    victory-brush-line "^35.10.1"
+    victory-candlestick "^35.10.1"
+    victory-chart "^35.10.1"
+    victory-core "^35.10.1"
+    victory-create-container "^35.10.1"
+    victory-cursor-container "^35.10.1"
+    victory-errorbar "^35.10.1"
+    victory-group "^35.10.1"
+    victory-histogram "^35.10.1"
+    victory-legend "^35.10.1"
+    victory-line "^35.10.1"
+    victory-pie "^35.10.1"
+    victory-polar-axis "^35.10.1"
+    victory-scatter "^35.10.1"
+    victory-selection-container "^35.10.1"
+    victory-shared-events "^35.10.1"
+    victory-stack "^35.10.1"
+    victory-tooltip "^35.10.1"
+    victory-voronoi "^35.10.1"
+    victory-voronoi-container "^35.10.1"
+    victory-zoom-container "^35.10.1"
 
 vlq@^1.0.0:
   version "1.0.1"
@@ -17115,7 +17265,7 @@ ws@^6.1.4:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^7, ws@^7.4.4, ws@^7.4.6:
+ws@^7, ws@^7.4.6:
   version "7.5.3"
   resolved "https://registry.nlark.com/ws/download/ws-7.5.3.tgz?cache=0&sync_timestamp=1627496096076&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fws%2Fdownload%2Fws-7.5.3.tgz#160835b63c7d97bfab418fc1b8a9fced2ac01a74"
   integrity sha1-Fgg1tjx9l7+rQY/BuKn87SrAGnQ=
@@ -17235,6 +17385,11 @@ xmldom@~0.5.0:
   version "0.5.0"
   resolved "https://registry.nlark.com/xmldom/download/xmldom-0.5.0.tgz#193cb96b84aa3486127ea6272c4596354cb4962e"
   integrity sha1-GTy5a4SqNIYSfqYnLEWWNUy0li4=
+
+xmlhttprequest-ssl@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/xmlhttprequest-ssl/-/xmlhttprequest-ssl-2.0.0.tgz#91360c86b914e67f44dce769180027c0da618c67"
+  integrity sha512-QKxVRxiRACQcVuQEYFsI1hhkrMlrXHPegbbd1yn9UHOmRxY+si12nQYzri3vbzt8VdTTRviqcKxcyllFas5z2A==
 
 xregexp@2.0.0:
   version "2.0.0"
