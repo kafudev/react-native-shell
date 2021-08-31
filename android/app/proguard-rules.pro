@@ -60,3 +60,5 @@
 
 #Okio
 -dontwarn org.codehaus.mojo.animal_sniffer.*
+
+-keep public class com.horcrux.svg.** {*;}
