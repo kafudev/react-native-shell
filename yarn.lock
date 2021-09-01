@@ -13189,6 +13189,11 @@ react-native-ble-manager@^7.6.1:
   resolved "https://registry.npmjs.org/react-native-ble-manager/-/react-native-ble-manager-7.6.1.tgz#22a97c28fc0f19ac366e316751ce9b4a065153e7"
   integrity sha512-tp4zibEZUCL8LGeLZlmDYfRq3CupLxcJscPdIfaYmvvsZjxBDVvITfHRzdhkh2BG18AEjZc1YqyQURN+0A1qKg==
 
+react-native-blob-courier@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.nlark.com/react-native-blob-courier/download/react-native-blob-courier-2.0.4.tgz#87b37aa38cbb2dacd5faf41ae223aeee70e8da9e"
+  integrity sha1-h7N6o4y7LazV+vQa4iOu7nDo2p4=
+
 react-native-bootsplash@^3.2.4:
   version "3.2.4"
   resolved "https://registry.nlark.com/react-native-bootsplash/download/react-native-bootsplash-3.2.4.tgz#73d3b38606ddc7e1d489012f007c1fbd26fc68d1"
