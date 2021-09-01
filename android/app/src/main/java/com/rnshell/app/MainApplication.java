@@ -8,7 +8,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-// import com.arialyy.aria.core.Aria;
+import com.arialyy.aria.core.Aria;
 import com.rnshell.app.generated.BasePackageList;
 
 import com.facebook.react.PackageList;
@@ -130,7 +130,7 @@ public class MainApplication extends Application implements ReactApplication {
     }
 
     // 下载器初始化
-    // Aria.init(this);
+    Aria.init(this);
   }
 
   /**
