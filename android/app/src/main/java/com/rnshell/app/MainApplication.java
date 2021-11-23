@@ -8,9 +8,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-import com.arialyy.aria.core.Aria;
-import com.rnshell.app.generated.BasePackageList;
-
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -21,13 +18,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Arrays;
 
+import android.content.res.Configuration;
+import androidx.annotation.NonNull;
+import expo.modules.ApplicationLifecycleDispatcher;
+import expo.modules.ReactNativeHostWrapper;
+
 import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.rnshell.app.jsi.CommonJSIModulePackage;
-
-import org.unimodules.adapters.react.ModuleRegistryAdapter;
-import org.unimodules.adapters.react.ReactModuleRegistryProvider;
-import org.unimodules.core.interfaces.SingletonModule;
 
 import com.didichuxing.doraemonkit.DoKit;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -39,10 +37,8 @@ import com.qiyukf.unicorn.api.YSFOptions;
 
 public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
-
   private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
+  new ReactNativeHostWrapper(this, new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
@@ -55,11 +51,6 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           packages.add(new CommonPackage());  // 加载通用模块
-          // Add unimodules
-          List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
-            new ModuleRegistryAdapter(mModuleRegistryProvider)
-          );
-          packages.addAll(unimodules);
           return packages;
         }
 
@@ -81,7 +72,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSBundleFile() {
             return CodePush.getJSBundleFile();
         }
-      };
+      });
 
   @Override
   public ReactNativeHost getReactNativeHost() {
@@ -94,14 +85,13 @@ public class MainApplication extends Application implements ReactApplication {
     Log.v("MainApplication", "app onCreate");
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    ApplicationLifecycleDispatcher.onApplicationCreate(this);
 
     // 获取配置
     String jpush_appkey = this.getMetaDataValue("JPUSH_APPKEY", "");
     String dokit_appid = this.getMetaDataValue("DOKIT_APPID", "");
     String bugly_appid = this.getMetaDataValue("BUGLY_APPID", "");
     String qiyu_appkey = this.getMetaDataValue("QIYU_APPKEY", "");
-    String txlive_licence_key = this.getMetaDataValue("TXLIVE_LICENCE_KEY", "");
-    String txlive_licence_url = this.getMetaDataValue("TXLIVE_LICENCE_URL", "");
 
     // dokit开发工具
     if(BuildConfig.DEBUG){
@@ -120,17 +110,15 @@ public class MainApplication extends Application implements ReactApplication {
     // 七鱼客服
     if(!qiyu_appkey.isEmpty()){
       // appKey 可以在七鱼管理系统->设置->App 接入 页面找到
-      Unicorn.init(this, qiyu_appkey, new YSFOptions(), null);
+      Unicorn.config(this, qiyu_appkey, new YSFOptions(), null);
     }
 
-    // 腾讯直播
-    if(!txlive_licence_key.isEmpty()){
-      // TXLiveBase.setConsoleEnabled(true);
-      // TXLiveBase.getInstance().setLicence(this, txlive_licence_url, txlive_licence_key);
-    }
+  }
 
-    // 下载器初始化
-    Aria.init(this);
+  @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
   }
 
   /**

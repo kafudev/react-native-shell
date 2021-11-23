@@ -6,13 +6,16 @@ project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '..
 include ':jpush-react-native'
 project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jpush-react-native/android')
 
-apply from: '../node_modules/react-native-unimodules/gradle.groovy'; includeUnimodulesProjects()
-
 include ':watermelondb-jsi'
 project(':watermelondb-jsi').projectDir =
     new File(rootProject.projectDir, '../node_modules/@nozbe/watermelondb/native/android-jsi')
 
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesSettingsGradle(settings)
 
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute().text.trim(), "../scripts/autolinking.gradle")
+useExpoModules()
+
+// code-push必须放在底部，否则提示找不到
 include ':app', ':react-native-code-push'
 project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')

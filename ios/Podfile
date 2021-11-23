@@ -1,11 +1,12 @@
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
-source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-platform :ios, '11.0'
+platform :ios, '12.0'
 project './rnshell.xcodeproj'
 
 target 'rnshell' do
+  use_expo_modules!
   config = use_native_modules!
 
   use_react_native!(
@@ -50,11 +51,9 @@ target 'rnshell' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  pod 'QY_iOS_SDK', '~> 5.14.0'
+  pod 'QY_iOS_SDK', '~> 6.9.2'
 
   pod 'Bugly'
-
-  pod 'TXLiteAVSDK_Professional'
 
   pod 'DoraemonKit/Core', '~> 3.0.4', :configurations => ['Debug'] #必选
   pod 'DoraemonKit/WithGPS', '~> 3.0.4', :configurations => ['Debug'] #可选

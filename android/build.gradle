@@ -27,7 +27,6 @@ buildscript {
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
         mavenLocal()
-        jcenter()
         mavenCentral()
         google()
     }
@@ -68,7 +67,6 @@ allprojects {
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
         mavenLocal()
-        jcenter()
         mavenCentral()
         google()
     }

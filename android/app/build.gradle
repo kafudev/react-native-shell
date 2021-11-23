@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.didi.dokit'
 apply plugin: 'bugly'
-apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
@@ -434,8 +433,6 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
-    addUnimodulesDependencies()
-
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
@@ -470,10 +467,8 @@ dependencies {
     implementation 'com.tencent.bugly:crashreport:3.3.9'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.0'
 
-    implementation 'com.qiyukf.unicorn:unicorn:5.14.1'
+    implementation 'com.qiyukf.unicorn:unicorn:6.9.2'
 
-    implementation 'me.laoyuyu.aria:core:3.8.16'
-    annotationProcessor 'me.laoyuyu.aria:compiler:3.8.16'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.google.code.gson:gson:2.8.5'
 
