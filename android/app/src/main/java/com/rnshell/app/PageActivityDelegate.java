@@ -30,12 +30,12 @@ public class PageActivityDelegate extends ReactActivityDelegate {
   private final @Nullable String mMainComponentName;
 
   private ReactActivity activity;
-  private String bundleName;
+  private @Nullable String bundleName;
 
-  public PageActivityDelegate(Activity _activity, @Nullable String _bundleName) {
-    super(_activity, _bundleName);
-    activity = _activity;
-    bundleName = _bundleName;
+  public PageActivityDelegate(Activity activity, @Nullable String bundleName) {
+    super(activity, bundleName);
+    activity = activity;
+    bundleName = bundleName;
     mActivity = activity;
     mMainComponentName = bundleName;
     Toast.makeText(activity, "模块"+bundleName+"委托", Toast.LENGTH_SHORT).show();
