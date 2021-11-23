@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactApplication;
-import com.rnshell.app.generated.BasePackageList;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactActivityDelegate;
