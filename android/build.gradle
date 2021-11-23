@@ -14,7 +14,8 @@ buildscript {
         googlePlayServicesVersion = '16.+'
         excludeAppGlideModule = true
         glideVersion = "4.11.0"
-        pictureVersion = "2.6.1"
+        pictureVersion = "v2.6.1"
+        pickerUcropVersion = "2.6.1"
         ucropVersion = "2.2.6"
     }
     repositories {

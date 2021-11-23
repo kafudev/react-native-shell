@@ -22,10 +22,6 @@ import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.rnshell.app.jsi.CommonJSIModulePackage;
 
-import org.unimodules.adapters.react.ModuleRegistryAdapter;
-import org.unimodules.adapters.react.ReactModuleRegistryProvider;
-import org.unimodules.core.interfaces.SingletonModule;
-
 /**
  * PageActivityDelegate
  */
@@ -34,15 +30,13 @@ public class PageActivityDelegate extends ReactActivityDelegate {
   private final @Nullable Activity mActivity;
   private final @Nullable String mMainComponentName;
 
-//  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
-
   private ReactActivity activity;
   private String bundleName;
 
-  public PageActivityDelegate(Activity activity, @Nullable String bundleName) {
-    super(activity, bundleName);
-    activity = activity;
-    bundleName = bundleName;
+  public PageActivityDelegate(Activity _activity, @Nullable String _bundleName) {
+    super(_activity, _bundleName);
+    activity = _activity;
+    bundleName = _bundleName;
     mActivity = activity;
     mMainComponentName = bundleName;
     Toast.makeText(activity, "模块"+bundleName+"委托", Toast.LENGTH_SHORT).show();
