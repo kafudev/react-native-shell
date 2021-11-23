@@ -15,6 +15,7 @@ import com.arialyy.annotations.Download;
 import com.arialyy.aria.core.Aria;
 import com.arialyy.aria.core.task.DownloadTask;
 import com.arialyy.aria.util.CommonUtil;
+import com.facebook.react.ReactApplication;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.Promise;
@@ -80,6 +81,30 @@ public class CommonModule extends ReactContextBaseJavaModule {
   }
 
   /**
+   * 显示开发工具弹窗
+   *
+   */
+  @ReactMethod
+  public void showDevDialog() {
+    ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
+    if (reactApplication.getReactNativeHost().hasInstance() && reactApplication.getReactNativeHost().getUseDeveloperSupport()) {
+      reactApplication.getReactNativeHost().getReactInstanceManager().showDevOptionsDialog();
+    }
+  }
+
+  /**
+   * 重新加载js
+   *
+   */
+  @ReactMethod
+  public void reloadJS() {
+    ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
+    if (reactApplication.getReactNativeHost().hasInstance() && reactApplication.getReactNativeHost().getUseDeveloperSupport()) {
+      reactApplication.getReactNativeHost().getReactInstanceManager().getDevSupportManager().handleReloadJS();
+    }
+  }
+
+  /**
    * 跳转加载bundle打开页面
    *
    * 判断是否已下载，未下载则先下载再加载
@@ -106,15 +131,15 @@ public class CommonModule extends ReactContextBaseJavaModule {
    * @param bundleName
    */
   private void openActivity(String bundleName) {
-    try{
+    try {
       PageActivity.start(getCurrentActivity(), bundleName);
-//      PageActivity.bundleName = bundleName;
-//      Activity activity = getCurrentActivity();
-//      Intent intent = new Intent(activity, PageActivity.class);
-//      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//      activity.startActivity(intent);
+      // PageActivity.bundleName = bundleName;
+      // Activity activity = getCurrentActivity();
+      // Intent intent = new Intent(activity, PageActivity.class);
+      // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      // activity.startActivity(intent);
     } catch (Exception e) {
-      Toast.makeText(getReactApplicationContext(), "无法加载模块页面"+e.getMessage(), Toast.LENGTH_SHORT).show();
+      Toast.makeText(getReactApplicationContext(), "无法加载模块页面" + e.getMessage(), Toast.LENGTH_SHORT).show();
     }
   }
 
@@ -131,8 +156,8 @@ public class CommonModule extends ReactContextBaseJavaModule {
     if (!destDir.exists()) {
       destDir.mkdirs();
     }
-    long mTaskId = Aria.download(this).load(bundleUrl).setFilePath(filename).ignoreFilePathOccupy().ignoreCheckPermissions()
-        .setExtendField(bundleName).resetState().create();
+    long mTaskId = Aria.download(this).load(bundleUrl).setFilePath(filename).ignoreFilePathOccupy()
+        .ignoreCheckPermissions().setExtendField(bundleName).resetState().create();
   }
 
   @Download.onWait
@@ -154,9 +179,9 @@ public class CommonModule extends ReactContextBaseJavaModule {
   @Download.onTaskRunning
   protected void running(DownloadTask task) {
     Log.d(TAG + " file DownloadTask", "running");
-    //    if (task.getKey().eques(url)) {
-    //      // 可以通过url判断是否是指定任务的回调
-    //    }
+    // if (task.getKey().eques(url)) {
+    // // 可以通过url判断是否是指定任务的回调
+    // }
     int p = task.getPercent(); // 任务进度百分比
     String speed = task.getConvertSpeed(); // 转换单位后的下载速度，单位转换需要在配置文件中打开
     long speed1 = task.getSpeed(); // 原始byte长度速度
