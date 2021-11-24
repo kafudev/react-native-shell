@@ -1,6 +1,6 @@
 {
   "name": "@kafudev/react-native-shell",
-  "version": "0.64.3-beta.1",
+  "version": "0.64.3-beta.2",
   "description": "react-native-shell壳应用",
   "main": "index.js",
   "files": [
