@@ -1,10 +1,11 @@
 .env
 .npmrc
 .vscode
+*.zip
 # OSX
 #
 .DS_Store
-*.zip
+
 # Xcode
 #
 build/

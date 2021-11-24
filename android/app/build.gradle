@@ -6,6 +6,7 @@ apply plugin: 'bugly'
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
+import com.android.build.OutputFile
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -137,6 +138,11 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
+
+/**
+ * Architectures to build native code for in debug.
+ */
+def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
 
 //getTimeZone(id)这个id可以是GMT+8：北京时间
 def releaseTime() {
@@ -310,6 +316,11 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            if (nativeArchitectures) {
+                ndk {
+                    abiFilters nativeArchitectures.split(',')
+                }
+            }
             resValue "string", "app_name", project.env.get("APP_NAME")+"dev"
             applicationIdSuffix "dev"
             minifyEnabled false
@@ -459,10 +470,10 @@ dependencies {
     implementation files('./libs/com.heytap.msp-push-2.1.0.aar')
     //oppo_dependencies_end
 
-    debugImplementation 'io.github.didi.dokit:dokitx:3.4.3.1'
-    debugImplementation 'io.github.didi.dokit:dokitx-ft:3.4.3.1'
-    debugImplementation 'io.github.didi.dokit:dokitx-mc:3.4.3.1'
-    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.4.3.1'
+    debugImplementation 'io.github.didi.dokit:dokitx:3.5.0.1'
+    debugImplementation 'io.github.didi.dokit:dokitx-ft:3.5.0.1'
+    debugImplementation 'io.github.didi.dokit:dokitx-mc:3.5.0.1'
+    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.5.0.1'
 
     implementation 'com.tencent.bugly:crashreport:3.3.9'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.0'
@@ -497,7 +508,7 @@ dependencies {
 // Run this once to be able to run the application with BUCK
 // puts all compile dependencies into folder libs for BUCK to use
 task copyDownloadableDepsToLibs(type: Copy) {
-    from configurations.compile
+    from configurations.implementation
     into 'libs'
 }
 
