@@ -99,6 +99,21 @@ public class CommonModule extends ReactContextBaseJavaModule {
     }
   }
 
+  /**
+   * 显示FPS
+   *
+   */
+  @ReactMethod
+  public void showFps(Boolean isShow) {
+    if(isShow == null) {
+      isShow = true;
+    }
+    ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
+    if (reactApplication.getReactNativeHost().hasInstance() && reactApplication.getReactNativeHost().getUseDeveloperSupport()) {
+      reactApplication.getReactNativeHost().getReactInstanceManager().getDevSupportManager().setFpsDebugEnabled(isShow);
+    }
+  }
+
   // /**
   //  * 跳转加载bundle打开页面
   //  *
