@@ -76,11 +76,11 @@ public class CommonModule extends ReactContextBaseJavaModule {
   }
 
   /**
-   * 显示开发工具弹窗
+   * 显示开发工具目录
    *
    */
   @ReactMethod
-  public void showDevDialog() {
+  public void showDevMenu() {
     ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
     if (reactApplication.getReactNativeHost().hasInstance() && reactApplication.getReactNativeHost().getUseDeveloperSupport()) {
       reactApplication.getReactNativeHost().getReactInstanceManager().showDevOptionsDialog();
@@ -92,7 +92,7 @@ public class CommonModule extends ReactContextBaseJavaModule {
    *
    */
   @ReactMethod
-  public void reloadJS() {
+  public void reloadJs() {
     ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
     if (reactApplication.getReactNativeHost().hasInstance() && reactApplication.getReactNativeHost().getUseDeveloperSupport()) {
       reactApplication.getReactNativeHost().getReactInstanceManager().getDevSupportManager().handleReloadJS();
