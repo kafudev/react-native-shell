@@ -15,15 +15,15 @@ import java.util.List;
 import java.util.Arrays;
 
 // TODO: Remove all of this when MMKV and Reanimated can be autoinstalled (maybe RN 0.65)
-public class CommonJSIModulePackage extends  JSIModulePackage {
+public class CommonJSIModulePackage extends  ReanimatedJSIModulePackage {
     @Override
     public List<JSIModuleSpec> getJSIModules(ReactApplicationContext reactApplicationContext, JavaScriptContextHolder jsContext) {
-        super.getJSIModules(reactApplicationContext, jsContext);
-        List<JSIModuleSpec> modules = Arrays.asList();
-        // MmkvModule.install(jsContext, reactApplicationContext.getFilesDir().getAbsolutePath() + "/mmkv");
-        // reactApplicationContext.getNativeModule(RNMMKVModule.class).installLib(jsContext, reactApplicationContext.getFilesDir().getAbsolutePath() + "/mmkv");
+      super.getJSIModules(reactApplicationContext, jsContext);
+      List<JSIModuleSpec> modules = Arrays.asList();
+      // MmkvModule.install(jsContext, reactApplicationContext.getFilesDir().getAbsolutePath() + "/mmkv");
+      // reactApplicationContext.getNativeModule(RNMMKVModule.class).installLib(jsContext, reactApplicationContext.getFilesDir().getAbsolutePath() + "/mmkv");
+        // modules.addAll(new ReanimatedJSIModulePackage().getJSIModules(reactApplicationContext, jsContext));
         modules.addAll(new WatermelonDBJSIPackage().getJSIModules(reactApplicationContext, jsContext)); // ⬅️ This!
-        modules.addAll(new ReanimatedJSIModulePackage().getJSIModules(reactApplicationContext, jsContext));
         modules.addAll(new MmkvModulePackage().getJSIModules(reactApplicationContext, jsContext));
         return modules;
     }
