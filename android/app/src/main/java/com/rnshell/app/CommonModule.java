@@ -109,7 +109,7 @@ public class CommonModule extends ReactContextBaseJavaModule {
       isShow = true;
     }
     ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
-    if (reactApplication.getReactNativeHost().hasInstance() && reactApplication.getReactNativeHost().getUseDeveloperSupport()) {
+    if (reactApplication.getReactNativeHost().hasInstance()) {
       reactApplication.getReactNativeHost().getReactInstanceManager().getDevSupportManager().setFpsDebugEnabled(isShow);
     }
   }
