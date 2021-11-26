@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-public class PageActivity extends ReactActivity {
+public class PageActivity extends ReactActivity implements DefaultHardwareBackBtnHandler {
 
   public static String bundleName = "index";
   public static void start(Activity activity, String moduleName){
@@ -44,6 +45,11 @@ public class PageActivity extends ReactActivity {
   protected ReactActivityDelegate createReactActivityDelegate() {
     Log.i("PageActivity", "createReactActivityDelegate "+bundleName);
     return new PageActivityDelegate(this, getMainComponentName());
+  }
+
+  @Override
+  public void invokeDefaultOnBackPressed() {
+    super.onBackPressed();
   }
 
 }
