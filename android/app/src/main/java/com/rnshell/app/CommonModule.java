@@ -114,44 +114,44 @@ public class CommonModule extends ReactContextBaseJavaModule {
     }
   }
 
-  // /**
-  //  * 跳转加载bundle打开页面
-  //  *
-  //  * 判断是否已下载，未下载则先下载再加载
-  //  *
-  //  * @param bundleName
-  //  * @param promise
-  //  */
-  // @ReactMethod
-  // public void openPageActivity(String bundleName, String bundleUrl, final Promise promise) {
-  //   // 检查是否下载过，如果已经下载过则直接打开，暂不考虑各种版本问题
-  //   String f = getReactApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName
-  //       + ".bundle";
-  //   File file = new File((f));
-  //   if (file.exists()) {
-  //     openActivity(bundleName);
-  //   } else {
-  //     downloadBundle(bundleName, bundleUrl);
-  //   }
-  // }
+  /**
+   * 跳转加载bundle打开页面
+   *
+   * 判断是否已下载，未下载则先下载再加载
+   *
+   * @param bundleName
+   * @param promise
+   */
+  @ReactMethod
+  public void openPageActivity(String bundleName, String bundleUrl, final Promise promise) {
+    // 检查是否下载过，如果已经下载过则直接打开，暂不考虑各种版本问题
+    String f = getReactApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName
+        + ".bundle";
+    File file = new File((f));
+    if (file.exists()) {
+      openActivity(bundleName);
+    } else {
+//      downloadBundle(bundleName, bundleUrl);
+    }
+  }
 
-  // /**
-  //  * 打开跳转到RN的展示页面
-  //  *
-  //  * @param bundleName
-  //  */
-  // private void openActivity(String bundleName) {
-  //   try {
-  //     PageActivity.start(getCurrentActivity(), bundleName);
-  //     // PageActivity.bundleName = bundleName;
-  //     // Activity activity = getCurrentActivity();
-  //     // Intent intent = new Intent(activity, PageActivity.class);
-  //     // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-  //     // activity.startActivity(intent);
-  //   } catch (Exception e) {
-  //     Toast.makeText(getReactApplicationContext(), "无法加载模块页面" + e.getMessage(), Toast.LENGTH_SHORT).show();
-  //   }
-  // }
+  /**
+   * 打开跳转到RN的展示页面
+   *
+   * @param bundleName
+   */
+  private void openActivity(String bundleName) {
+    try {
+      PageActivity.start(getCurrentActivity(), bundleName);
+      // PageActivity.bundleName = bundleName;
+      // Activity activity = getCurrentActivity();
+      // Intent intent = new Intent(activity, PageActivity.class);
+      // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      // activity.startActivity(intent);
+    } catch (Exception e) {
+      Toast.makeText(getReactApplicationContext(), "无法加载模块页面" + e.getMessage(), Toast.LENGTH_SHORT).show();
+    }
+  }
 
   // /**
   //  * 下载对应的bundle

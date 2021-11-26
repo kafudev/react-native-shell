@@ -19,7 +19,6 @@ buildscript {
         ucropVersion = "2.2.6"
     }
     repositories {
-        mavenCentral()
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -29,6 +28,7 @@ buildscript {
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
         mavenLocal()
+        mavenCentral()
         google()
     }
     dependencies {
@@ -47,7 +47,6 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
-        mavenCentral()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")
@@ -69,6 +68,7 @@ allprojects {
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
         mavenLocal()
+        mavenCentral()
         google()
     }
 }

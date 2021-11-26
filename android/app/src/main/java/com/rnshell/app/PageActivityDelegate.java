@@ -20,6 +20,7 @@ import java.util.List;
 import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.rnshell.app.jsi.CommonJSIModulePackage;
+import com.rnshell.app.MainApplication;
 
 /**
  * PageActivityDelegate
@@ -45,59 +46,60 @@ public class PageActivityDelegate extends ReactActivityDelegate {
   @Override
   protected ReactNativeHost getReactNativeHost() {
 
-    ReactNativeHost mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
-      @Override
-      public boolean getUseDeveloperSupport() {
-        // return BuildConfig.DEBUG;
-        return false;
-      }
+//     ReactNativeHost mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
+//       @Override
+//       public boolean getUseDeveloperSupport() {
+//         // return BuildConfig.DEBUG;
+//         return false;
+//       }
 
-      @Override
-      protected List<ReactPackage> getPackages() {
-        return null;
-      }
+//       @Override
+//       protected List<ReactPackage> getPackages() {
+//         return null;
+//       }
 
-//      // 注册原生模块
-//      @Override
-//      protected List<ReactPackage> getPackages() {
-//        // @SuppressWarnings("UnnecessaryLocalVariable")
-//        List<ReactPackage> packages = new PackageList(this).getPackages();
-//        // Packages that cannot be autolinked yet can be added manually here, for
-//        // example:
-//        packages.add(new MainReactPackage());
-//        // packages.add(new CommonPackage()); // 加载通用模块
-//        // // Add unimodules
-//        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
-//        // packages.addAll(unimodules);
-//        return packages;
-//      }
+// //      // 注册原生模块
+// //      @Override
+// //      protected List<ReactPackage> getPackages() {
+// //        // @SuppressWarnings("UnnecessaryLocalVariable")
+// //        List<ReactPackage> packages = new PackageList(this).getPackages();
+// //        // Packages that cannot be autolinked yet can be added manually here, for
+// //        // example:
+// //        packages.add(new MainReactPackage());
+// //        // packages.add(new CommonPackage()); // 加载通用模块
+// //        // // Add unimodules
+// //        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
+// //        // packages.addAll(unimodules);
+// //        return packages;
+// //      }
 
-      // @Override
-      // protected JSIModulePackage getJSIModulePackage() {
-      //   // return new ReanimatedJSIModulePackage(); // <- add
-      //   return new CommonJSIModulePackage(); // <- add
-      // }
+//       // @Override
+//       // protected JSIModulePackage getJSIModulePackage() {
+//       //   // return new ReanimatedJSIModulePackage(); // <- add
+//       //   return new CommonJSIModulePackage(); // <- add
+//       // }
 
-      @Nullable
-      @Override
-      protected String getJSBundleFile() {
-        // 读取已经解压的bundle文件
-        String file = getPlainActivity().getApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName + ".bundle";
-        Log.i("PageActivityDelegate", "getJSBundleFile:"+file);
-        return file;
-      }
+//       @Nullable
+//       @Override
+//       protected String getJSBundleFile() {
+//         // 读取已经解压的bundle文件
+//         String file = getPlainActivity().getApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName + ".bundle";
+//         Log.i("PageActivityDelegate", "getJSBundleFile:"+file);
+//         return file;
+//       }
 
-      @Nullable
-      @Override
-      protected String getBundleAssetName() {
-        return bundleName + ".bundle";
-      }
+//       @Nullable
+//       @Override
+//       protected String getBundleAssetName() {
+//         return bundleName + ".bundle";
+//       }
 
-      @Override
-      protected String getJSMainModuleName() {
-        return "index.android";
-      }
-    };
-    return mReactNativeHost;
+//       @Override
+//       protected String getJSMainModuleName() {
+//         return "index.android";
+//       }
+//     };
+//     return mReactNativeHost;
+    return ((MainApplication)getPlainActivity().getApplication()).getReactNativeHost();
   }
 }
