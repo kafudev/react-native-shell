@@ -1,6 +1,7 @@
 package com.rnshell.app;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.util.Log;
 import androidx.annotation.Nullable;
 import android.widget.Toast;
@@ -10,8 +11,12 @@ import com.facebook.react.ReactApplication;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactDelegate;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.Callback;
+import com.facebook.react.modules.core.PermissionListener;
 import com.facebook.react.shell.MainReactPackage;
 
 import java.util.Arrays;
@@ -29,77 +34,118 @@ public class PageActivityDelegate extends ReactActivityDelegate {
 
   private final @Nullable Activity mActivity;
   private final @Nullable String mMainComponentName;
+  private final @Nullable String mBundleFile;
 
-  private ReactActivity activity;
-  private @Nullable String bundleName;
+  private @Nullable
+  PermissionListener mPermissionListener;
+  private @Nullable
+  Callback mPermissionsCallback;
+  private ReactDelegate mReactDelegate;
+  private ReactNativeHost  mReactNativeHost;
 
-  public PageActivityDelegate(Activity activity, @Nullable String bundleName) {
-    super(activity, bundleName);
-    activity = activity;
-    bundleName = bundleName;
+  public PageActivityDelegate(ReactActivity activity, @Nullable String mainComponentName, @Nullable String bundleFile) {
+    super(activity, mainComponentName);
     mActivity = activity;
-    mMainComponentName = bundleName;
-    Toast.makeText(activity, "模块"+bundleName+"委托", Toast.LENGTH_SHORT).show();
-    Log.i("PageActivityDelegate", "bundleName: " + bundleName);
+    mMainComponentName = mainComponentName;
+    mBundleFile = bundleFile;
+  }
+
+  public String getMainComponentName() {
+    if(mActivity instanceof PageActivity) {
+      String mName = ((PageActivity) mActivity).getMainComponentName();
+      if(mName != null && !mName.isEmpty()){
+        return mName;
+      }
+    }
+    return mMainComponentName;
+  }
+
+  public String getJSBundleFile() {
+    if(mActivity instanceof PageActivity) {
+      String mName = ((PageActivity) mActivity).getJSBundleFile();
+      if(mName != null && !mName.isEmpty()){
+        return mName;
+      }
+    }
+    return mBundleFile;
+  }
+
+  protected void onCreate(Bundle savedInstanceState) {
+    String mainComponentName = getMainComponentName();
+    String bundleFile = getJSBundleFile();
+    Log.w("PageActivityDelegate", "mMainComponentName " + mainComponentName + " mBundleFile " + bundleFile);
+    mReactDelegate =
+        new ReactDelegate(
+            getPlainActivity(), getReactNativeHost(), mainComponentName, getLaunchOptions()) {
+          @Override
+          protected ReactRootView createRootView() {
+            return PageActivityDelegate.this.createRootView();
+          }
+        };
+    if (mainComponentName != null) {
+      loadApp(mainComponentName);
+    }
+  }
+
+  protected void loadApp(String appKey) {
+    mReactDelegate.loadApp(appKey);
+    getPlainActivity().setContentView(mReactDelegate.getReactRootView());
+  }
+
+  protected void onPause() {
+    mReactDelegate.onHostPause();
+  }
+
+  protected void onResume() {
+    mReactDelegate.onHostResume();
+
+    if (mPermissionsCallback != null) {
+      mPermissionsCallback.invoke();
+      mPermissionsCallback = null;
+    }
+  }
+
+  protected void onDestroy() {
+    mReactDelegate.onHostDestroy();
   }
 
   @Override
   protected ReactNativeHost getReactNativeHost() {
+    if(mReactNativeHost != null) {
+      return mReactNativeHost;
+    }
+    mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
+      @Override
+      public boolean getUseDeveloperSupport() {
+        return BuildConfig.DEBUG;
+      }
 
-//     ReactNativeHost mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
-//       @Override
-//       public boolean getUseDeveloperSupport() {
-//         // return BuildConfig.DEBUG;
-//         return false;
-//       }
+      @Override
+      protected List<ReactPackage> getPackages() {
+        @SuppressWarnings("UnnecessaryLocalVariable")
+        List<ReactPackage> packages = new PackageList(this).getPackages();
+        packages.add(new CommonPackage()); // 加载通用模块
+        return packages;
+      }
 
-//       @Override
-//       protected List<ReactPackage> getPackages() {
-//         return null;
-//       }
+      @Override
+      protected String getJSMainModuleName() {
+        return "index";
+      }
 
-// //      // 注册原生模块
-// //      @Override
-// //      protected List<ReactPackage> getPackages() {
-// //        // @SuppressWarnings("UnnecessaryLocalVariable")
-// //        List<ReactPackage> packages = new PackageList(this).getPackages();
-// //        // Packages that cannot be autolinked yet can be added manually here, for
-// //        // example:
-// //        packages.add(new MainReactPackage());
-// //        // packages.add(new CommonPackage()); // 加载通用模块
-// //        // // Add unimodules
-// //        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
-// //        // packages.addAll(unimodules);
-// //        return packages;
-// //      }
+      @Override
+      protected @Nullable JSIModulePackage getJSIModulePackage() {
+        return new CommonJSIModulePackage(); // <- add
+      }
 
-//       // @Override
-//       // protected JSIModulePackage getJSIModulePackage() {
-//       //   // return new ReanimatedJSIModulePackage(); // <- add
-//       //   return new CommonJSIModulePackage(); // <- add
-//       // }
+      @Override
+      protected @Nullable String getJSBundleFile() {
+        String bundleFile = ((PageActivity)getPlainActivity()).getJSBundleFile();
+        Log.w("PageActivityDelegate", "getReactNativeHost getJSBundleFile " + bundleFile);
+        return bundleFile;
+      }
 
-//       @Nullable
-//       @Override
-//       protected String getJSBundleFile() {
-//         // 读取已经解压的bundle文件
-//         String file = getPlainActivity().getApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName + ".bundle";
-//         Log.i("PageActivityDelegate", "getJSBundleFile:"+file);
-//         return file;
-//       }
-
-//       @Nullable
-//       @Override
-//       protected String getBundleAssetName() {
-//         return bundleName + ".bundle";
-//       }
-
-//       @Override
-//       protected String getJSMainModuleName() {
-//         return "index.android";
-//       }
-//     };
-//     return mReactNativeHost;
-    return ((MainApplication)getPlainActivity().getApplication()).getReactNativeHost();
+    };
+    return mReactNativeHost;
   }
 }

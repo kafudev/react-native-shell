@@ -132,7 +132,7 @@ const App: () => Node = () => {
           title="打开远程bundle页面"
           onPress={() => {
             NativeModules.Common &&
-              NativeModules.Common.openPageActivity(bundleName, bundleUrl);
+              NativeModules.Common.openActivity(bundleUrl,bundleName);
           }}
         />
         <View
