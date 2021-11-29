@@ -52,11 +52,11 @@ class ContainerActivity : ReactActivity(), CoroutineScope by MainScope(),
           it.setDefaultHardwareBackBtnHandler(this@ContainerActivity)
 //                    it.setUseDeveloperSupport(BuildConfig.DEBUG)
         }
-        val reactRootView = findViewById<ReactRootView>(R.id.containerRn)
-        reactRootView?.startReactApplication(
-          manager,
-          methodName,
-        )
+//        val reactRootView = findViewById<ReactRootView>(R.id.containerRn)
+//        reactRootView?.startReactApplication(
+//          manager,
+//          methodName,
+//        )
       }
     }
   }

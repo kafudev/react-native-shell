@@ -35,7 +35,7 @@ import java.util.HashMap;
 
 /**
  * 通用模块
- *
+ * <p>
  * 常量导出，新页面打开，三方服务页面打开
  */
 public class CommonModule extends ReactContextBaseJavaModule {
@@ -77,7 +77,6 @@ public class CommonModule extends ReactContextBaseJavaModule {
 
   /**
    * 显示开发工具目录
-   *
    */
   @ReactMethod
   public void showDevMenu() {
@@ -89,7 +88,6 @@ public class CommonModule extends ReactContextBaseJavaModule {
 
   /**
    * 重新加载js
-   *
    */
   @ReactMethod
   public void reloadJs() {
@@ -101,11 +99,10 @@ public class CommonModule extends ReactContextBaseJavaModule {
 
   /**
    * 显示FPS
-   *
    */
   @ReactMethod
   public void showFps(Boolean isShow) {
-    if(isShow == null) {
+    if (isShow == null) {
       isShow = true;
     }
     ReactApplication reactApplication = (ReactApplication) getCurrentActivity().getApplication();
@@ -116,7 +113,7 @@ public class CommonModule extends ReactContextBaseJavaModule {
 
   /**
    * 跳转加载bundle打开页面
-   *
+   * <p>
    * 判断是否已下载，未下载则先下载再加载
    *
    * @param bundleName
@@ -126,10 +123,10 @@ public class CommonModule extends ReactContextBaseJavaModule {
   public void openPageActivity(String bundleName, String bundleUrl, final Promise promise) {
     // 检查是否下载过，如果已经下载过则直接打开，暂不考虑各种版本问题
     String f = getReactApplicationContext().getFilesDir().getAbsolutePath() + "/" + bundleName + "/" + bundleName
-        + ".bundle";
+      + ".bundle";
     File file = new File((f));
     if (file.exists()) {
-      openActivity(bundleName);
+      openActivity(bundleUrl, bundleName);
     } else {
 //      downloadBundle(bundleName, bundleUrl);
     }
@@ -140,14 +137,18 @@ public class CommonModule extends ReactContextBaseJavaModule {
    *
    * @param bundleName
    */
-  private void openActivity(String bundleName) {
+  @ReactMethod
+  public void openActivity(String bundleUrl, String bundleName) {
     try {
-      PageActivity.start(getCurrentActivity(), bundleName);
-      // PageActivity.bundleName = bundleName;
-      // Activity activity = getCurrentActivity();
-      // Intent intent = new Intent(activity, PageActivity.class);
-      // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-      // activity.startActivity(intent);
+      Toast.makeText(getCurrentActivity(), bundleName, Toast.LENGTH_SHORT).show();
+      PageActivity.start(getCurrentActivity(), bundleUrl, bundleName, "1", bundleName);
+//       PageActivity.bundleName = bundleName;
+//      Activity activity = getCurrentActivity();
+//      Intent intent = new Intent(activity, PageActivity.class);
+//      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//      intent.putExtra("url", bundleUrl);
+//      intent.putExtra("name", bundleName);
+//      activity.startActivity(intent);
     } catch (Exception e) {
       Toast.makeText(getReactApplicationContext(), "无法加载模块页面" + e.getMessage(), Toast.LENGTH_SHORT).show();
     }
