@@ -12,6 +12,7 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactDelegate;
+import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
@@ -81,6 +82,15 @@ public class PageActivityDelegate extends ReactActivityDelegate {
           protected ReactRootView createRootView() {
             return PageActivityDelegate.this.createRootView();
           }
+
+          private ReactNativeHost getReactNativeHost() {
+            return getReactNativeHost();
+          }
+
+          @Override
+          public ReactInstanceManager getReactInstanceManager() {
+            return getReactNativeHost().getReactInstanceManager();
+          }
         };
     if (mainComponentName != null) {
       loadApp(mainComponentName);
@@ -109,7 +119,6 @@ public class PageActivityDelegate extends ReactActivityDelegate {
     mReactDelegate.onHostDestroy();
   }
 
-  @Override
   protected ReactNativeHost getReactNativeHost() {
     if(mReactNativeHost != null) {
       return mReactNativeHost;
