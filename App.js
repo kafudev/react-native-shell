@@ -67,8 +67,10 @@ let bfirstTime = Date.parse(new Date());
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  let [bundleName, setBundleName] = React.useState('');
-  let [bundleUrl, setBundleUrl] = React.useState('');
+  let [bundleName, setBundleName] = React.useState('rnshell');
+  let [bundleUrl, setBundleUrl] = React.useState(
+    'http://192.168.110.20:8081/index.bundle?platform=android&dev=false&minify=false'
+  );
 
   setTimeout(() => {
     NativeModules.RNBootSplash.hide(true); // 隐藏启动屏
@@ -132,7 +134,28 @@ const App: () => Node = () => {
           title="打开远程bundle页面"
           onPress={() => {
             NativeModules.Common &&
-              NativeModules.Common.openActivity(bundleUrl,bundleName);
+              NativeModules.Common.openPageActivity({
+                isReload: false,
+                bundleUrl: bundleUrl,
+                moduleName: bundleName,
+                moduleVersion: '1.0.0',
+                appName: 'RN测试页面',
+                appLogo: '',
+              });
+          }}
+        />
+        <Button
+          title="重新加载远程bundle页面"
+          onPress={() => {
+            NativeModules.Common &&
+              NativeModules.Common.openPageActivity({
+                isReload: true,
+                bundleUrl: bundleUrl,
+                moduleName: bundleName,
+                moduleVersion: '1.0.0',
+                appName: 'RN测试页面',
+                appLogo: '',
+              });
           }}
         />
         <View
