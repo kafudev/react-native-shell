@@ -150,6 +150,7 @@ const App: () => Node = () => {
           onPress={() => {
             NativeModules.Common &&
               NativeModules.Common.openPageActivity({
+                style: 1,
                 isReload: true,
                 bundleUrl: bundleUrl,
                 moduleName: bundleName,

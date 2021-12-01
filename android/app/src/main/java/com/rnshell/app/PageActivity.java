@@ -64,7 +64,7 @@ public class PageActivity extends ReactActivity {
         @Override
         public void onDownloadSuccess() {
           Log.w("OnDownloadListener", "download success " + bundleFile);
-          Toast.makeText(activity.getApplication(), moduleName + "模块下载成功", Toast.LENGTH_SHORT).show();
+//          Toast.makeText(activity, moduleName + "模块下载成功", Toast.LENGTH_SHORT).show();
           startActivity(activity, style, isReload, bundleUrl, bundleFile, moduleName, moduleVersion, appName, appLogo);
         }
 
@@ -76,7 +76,7 @@ public class PageActivity extends ReactActivity {
         @Override
         public void onDownloadFailed(Exception e) {
           Log.w("OnDownloadListener", "download failed " + e.getMessage());
-          Toast.makeText(activity.getApplication(), moduleName + "模块下载失败error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//          Toast.makeText(activity, moduleName + "模块下载失败error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
       });
     } else {
