@@ -14,12 +14,15 @@ import androidx.annotation.Nullable;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactDelegate;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.CatalystInstance;
 import com.facebook.react.bridge.JSIModulePackage;
+import com.facebook.react.bridge.ReactContext;
 import com.rnshell.app.jsi.CommonJSIModulePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
@@ -37,12 +40,13 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class PageActivity extends ReactActivity {
-  public final PageActivityDelegate mDelegate;
-  public static String mBundleFile = "";
-  public static String mMainComponentName = "";
+  public PageActivityDelegate mDelegate = createReactActivityDelegate();
+  public static String mMainComponentName;
+  public static String mJSBundleFile;
+  public static int mStyle;
 
   // 启动
-  public static void start(Activity activity, Boolean isReload, String bundleUrl, String moduleName,
+  public static void start(Activity activity, int style, Boolean isReload, String bundleUrl, String moduleName,
                            String moduleVersion,
                            String appName,
                            String appLogo) {
@@ -60,7 +64,8 @@ public class PageActivity extends ReactActivity {
         @Override
         public void onDownloadSuccess() {
           Log.w("OnDownloadListener", "download success " + bundleFile);
-          startActivity(activity, isReload, bundleFile, moduleName, moduleVersion, appName, appLogo);
+          Toast.makeText(activity.getApplication(), moduleName + "模块下载成功", Toast.LENGTH_SHORT).show();
+          startActivity(activity, style, isReload, bundleUrl, bundleFile, moduleName, moduleVersion, appName, appLogo);
         }
 
         @Override
@@ -71,23 +76,27 @@ public class PageActivity extends ReactActivity {
         @Override
         public void onDownloadFailed(Exception e) {
           Log.w("OnDownloadListener", "download failed " + e.getMessage());
-          Toast.makeText(activity, "下载失败error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+          Toast.makeText(activity.getApplication(), moduleName + "模块下载失败error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
       });
     } else {
-      startActivity(activity, isReload, bundleFile, moduleName, moduleVersion, appName, appLogo);
+      startActivity(activity, style, isReload, bundleUrl, bundleFile, moduleName, moduleVersion, appName, appLogo);
     }
   }
 
   // 启动activity
-  public static void startActivity(Activity activity, Boolean isReload, String bundleFile, String moduleName,
+  public static void startActivity(Activity activity, int style, Boolean isReload, String bundleUrl, String bundleFile, String moduleName,
                                    String moduleVersion,
                                    String appName, String appLogo) {
     mMainComponentName = moduleName;
-    mBundleFile = bundleFile;
+    mJSBundleFile = bundleFile;
+    mStyle = style;
+
     Intent intent = new Intent(activity, PageActivity.class);
-//    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.putExtra("style", style);
     intent.putExtra("isReload", isReload);
+    intent.putExtra("bundleUrl", bundleUrl);
     intent.putExtra("bundleFile", bundleFile);
     intent.putExtra("moduleName", moduleName);
     intent.putExtra("moduleVersion", moduleVersion);
@@ -98,10 +107,10 @@ public class PageActivity extends ReactActivity {
 
   @Nullable
   public String getMainComponentName() {
-    // if (!mMainComponentName.isEmpty()) {
-    // return mMainComponentName;
-    // }
     if (getIntent() == null) {
+      if (mMainComponentName != null) {
+        return mMainComponentName;
+      }
       return null;
     }
     String mName = getIntent().getStringExtra("moduleName");
@@ -114,10 +123,10 @@ public class PageActivity extends ReactActivity {
 
   @Nullable
   public String getJSBundleFile() {
-    // if (!mBundleFile.isEmpty()) {
-    // return mBundleFile;
-    // }
     if (getIntent() == null) {
+      if (mJSBundleFile != null) {
+        return mJSBundleFile;
+      }
       return null;
     }
     String mName = getIntent().getStringExtra("bundleFile");
@@ -128,13 +137,24 @@ public class PageActivity extends ReactActivity {
     return mName;
   }
 
-  public PageActivity() {
-    this.mDelegate = (PageActivityDelegate) createReactActivityDelegate();
+  @Nullable
+  public int getStyle() {
+    if (getIntent() == null) {
+      if (mStyle >= 0) {
+        return mStyle;
+      }
+      return 0;
+    }
+    int mName = getIntent().getIntExtra("style", 0);
+    return mName;
   }
 
   @Override
-  protected ReactActivityDelegate createReactActivityDelegate() {
-    return new PageActivityDelegate(this, getMainComponentName(), getJSBundleFile());
+  protected PageActivityDelegate createReactActivityDelegate() {
+    if (mDelegate == null) {
+      mDelegate = new PageActivityDelegate(this, getMainComponentName(), getJSBundleFile());
+    }
+    return mDelegate;
   }
 
   @Override
@@ -145,8 +165,26 @@ public class PageActivity extends ReactActivity {
 
     // 启动页全屏，状态栏覆盖启动页
     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
+    Intent intent = getIntent();
+    String bundleUrl = intent.getStringExtra("bundleUrl");
+    String bundleFile = intent.getStringExtra("bundleFile");
+    String moduleName = intent.getStringExtra("moduleName");
+    int style = intent.getIntExtra("style", 0);
+    if (style == 2) {
+      // 采用注册模块加载
+      ReactNativeHost aa = ((ReactApplication) getApplication()).getReactNativeHost();
+      ReactInstanceManager bb = aa.getReactInstanceManager();
+      ReactContext cc = bb.getCurrentReactContext();
+      CatalystInstance dd = cc.getCatalystInstance();
+      dd.loadScriptFromFile(bundleFile, bundleFile, true);
+      // ReactRootView mReactRootView = new ReactRootView(this);
+      // mReactRootView.startReactApplication(bb, moduleName, null);
+      // etContentView(mReactRootView);
+    }
+
     super.onCreate(savedInstanceState);
-    this.mDelegate.onCreate(savedInstanceState);
+    Log.w("PageActivity", "onCreate");
   }
 
   // protected void onCreate(Bundle savedInstanceState) {
@@ -226,35 +264,6 @@ public class PageActivity extends ReactActivity {
     super.onSaveInstanceState(outState);
   }
 
-  @Override
-  public boolean onKeyDown(int keyCode, KeyEvent event) {
-    return this.mDelegate.onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
-  }
-
-  @Override
-  public boolean onKeyUp(int keyCode, KeyEvent event) {
-    return this.mDelegate.onKeyUp(keyCode, event) || super.onKeyUp(keyCode, event);
-  }
-
-  @Override
-  public boolean onKeyLongPress(int keyCode, KeyEvent event) {
-    return this.mDelegate.onKeyLongPress(keyCode, event) || super.onKeyLongPress(keyCode, event);
-  }
-
-  @Override
-  public void onBackPressed() {
-    Toast.makeText(this, "onBackPressed", Toast.LENGTH_SHORT).show();
-    if (!this.mDelegate.onBackPressed()) {
-      super.onBackPressed();
-    }
-  }
-
-  @Override
-  public void invokeDefaultOnBackPressed() {
-    Toast.makeText(this, "invokeDefaultOnBackPressed", Toast.LENGTH_SHORT).show();
-    super.onBackPressed();
-  }
-
   // 下载文件
   public static void downloadFile(Activity activity, final String url, final String bundleFile,
                                   final OnDownloadListener listener) {
@@ -297,10 +306,10 @@ public class PageActivity extends ReactActivity {
           }
           fos.flush();
           Log.i("DOWNLOAD", "download file " + file.getPath());
-          Log.i("DOWNLOAD", "download success");
           Log.i("DOWNLOAD", "totalTime=" + (System.currentTimeMillis() - startTime));
           // 下载完成
           listener.onDownloadSuccess();
+          Log.i("DOWNLOAD", "download success");
         } catch (Exception e) {
           e.printStackTrace();
           listener.onDownloadFailed(e);

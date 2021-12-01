@@ -1,11 +1,14 @@
 package com.rnshell.app;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
@@ -19,6 +22,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.ReactMarker;
+import com.facebook.react.bridge.ReactMarkerConstants;
 import com.facebook.react.modules.core.PermissionListener;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -38,29 +43,26 @@ import expo.modules.ReactNativeHostWrapper;
  */
 public class PageActivityDelegate extends ReactActivityDelegate {
 
-  private final @Nullable
+  public final @Nullable
   Activity mActivity;
-  private final @Nullable
-  String mMainComponentName;
-  private final @Nullable
-  String mBundleFile;
+  public String mMainComponentName;
+  public String mJSBundleFile;
 
-  private @Nullable
-  Callback mPermissionsCallback;
-  private ReactDelegate mReactDelegate;
   private ReactNativeHost mReactNativeHost;
 
-  public PageActivityDelegate(ReactActivity activity, @Nullable String mainComponentName, @Nullable String bundleFile) {
+  public PageActivityDelegate(ReactActivity activity, @Nullable String mainComponentName, @Nullable String JSBundleFile) {
     super(activity, mainComponentName);
     mActivity = activity;
     mMainComponentName = mainComponentName;
-    mBundleFile = bundleFile;
+    mJSBundleFile = JSBundleFile;
   }
 
+  @Override
   public String getMainComponentName() {
     if (mActivity instanceof PageActivity) {
       String mName = ((PageActivity) mActivity).getMainComponentName();
       if (mName != null && !mName.isEmpty()) {
+        mMainComponentName = mName;
         return mName;
       }
     }
@@ -71,49 +73,67 @@ public class PageActivityDelegate extends ReactActivityDelegate {
     if (mActivity instanceof PageActivity) {
       String mName = ((PageActivity) mActivity).getJSBundleFile();
       if (mName != null && !mName.isEmpty()) {
+        mJSBundleFile = mName;
         return mName;
       }
     }
-    return mBundleFile;
+    return mJSBundleFile;
+  }
+
+  public int getStyle() {
+    if (mActivity instanceof PageActivity) {
+      int mName = ((PageActivity) mActivity).getStyle();
+      return mName;
+    }
+    return 0;
   }
 
   @Override
   protected ReactRootView createRootView() {
+    Log.w("PageActivityDelegate", "createRootView");
     return new RNGestureHandlerEnabledRootView(mActivity);
   }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    String mainComponentName = getMainComponentName();
-    String bundleFile = getJSBundleFile();
-    Log.i("PageActivityDelegate", "mMainComponentName " + mainComponentName + " mBundleFile " + bundleFile);
-    mReactDelegate = new PageDelegate(
-      getPlainActivity(), getReactNativeHost(), mainComponentName, getLaunchOptions());
-    if (mainComponentName != null) {
-      loadApp(mainComponentName);
-    }
+    Log.i("PageActivityDelegate", "mMainComponentName " + getMainComponentName() + " mBundleFile " + getJSBundleFile() + " mStyle " + getStyle());
+    super.onCreate(savedInstanceState);
+    Log.w("PageActivityDelegate", "onCreate");
   }
 
-  protected void loadApp(String appKey) {
-    mReactDelegate.loadApp(appKey);
-    getPlainActivity().setContentView(mReactDelegate.getReactRootView());
-  }
+//  @Override
+//  protected void onCreate(Bundle savedInstanceState) {
+//    String mainComponentName = getMainComponentName();
+//    String bundleFile = getJSBundleFile();
+//    Log.i("PageActivityDelegate", "mMainComponentName " + mainComponentName + " mBundleFile " + bundleFile);
+//    this.mReactDelegate = new ReactDelegate(
+//      getPlainActivity(), getReactNativeHost(), mainComponentName, getLaunchOptions());
+//    if (mainComponentName != null) {
+//      loadApp(mainComponentName);
+//    }
+//  }
 
+//  protected void loadApp(String appKey) {
+//    this.mReactDelegate.loadApp(appKey);
+//    this.getPlainActivity().setContentView(this.mReactDelegate.getReactRootView());
+//  }
+
+
+  @Override
   public ReactNativeHost getReactNativeHost() {
+    Log.w("PageActivityDelegate", "ReactNativeHost getReactNativeHost");
     if (mReactNativeHost != null) {
       return mReactNativeHost;
     }
-    mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
-      private @Nullable
-      ReactInstanceManager mReactInstanceManager;
 
-      @Override
-      public ReactInstanceManager getReactInstanceManager() {
-        if (mReactInstanceManager == null) {
-          mReactInstanceManager = createReactInstanceManager();
-        }
-        return mReactInstanceManager;
-      }
+    // 判断加载方式
+    if (getStyle() == 2) {
+      // 注册方式加载
+      mReactNativeHost = super.getReactNativeHost();
+      return mReactNativeHost;
+    }
+
+    mReactNativeHost = new ReactNativeHost(getPlainActivity().getApplication()) {
 
       @Override
       public boolean getUseDeveloperSupport() {
@@ -122,7 +142,6 @@ public class PageActivityDelegate extends ReactActivityDelegate {
 
       @Override
       protected List<ReactPackage> getPackages() {
-        @SuppressWarnings("UnnecessaryLocalVariable")
         List<ReactPackage> packages = new PackageList(this).getPackages();
         packages.add(new CommonPackage()); // 加载通用模块
         return packages;
@@ -136,14 +155,14 @@ public class PageActivityDelegate extends ReactActivityDelegate {
       @Override
       protected @Nullable
       JSIModulePackage getJSIModulePackage() {
-        return new CommonJSIModulePackage(); // <- add
+        return new CommonJSIModulePackage();
       }
 
       @Override
       protected @Nullable
       String getJSBundleFile() {
         String bundleFile = ((PageActivity) getPlainActivity()).getJSBundleFile();
-        Log.w("PageActivityDelegate", "getReactNativeHost getJSBundleFile " + bundleFile);
+        Log.w("ReactNativeHost", "getReactNativeHost getJSBundleFile " + bundleFile);
         return bundleFile;
       }
     };
@@ -151,22 +170,11 @@ public class PageActivityDelegate extends ReactActivityDelegate {
     return mReactNativeHost;
   }
 
-  protected void onPause() {
-    mReactDelegate.onHostPause();
-  }
-
-  protected void onResume() {
-    mReactDelegate.onHostResume();
-
-    if (mPermissionsCallback != null) {
-      mPermissionsCallback.invoke();
-      mPermissionsCallback = null;
-    }
-  }
 
   protected void onDestroy() {
-    mReactDelegate.onHostDestroy();
+    super.onDestroy();
+    mReactNativeHost.clear();
+    mReactNativeHost = null;
   }
-
 
 }

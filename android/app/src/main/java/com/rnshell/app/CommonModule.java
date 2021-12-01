@@ -126,7 +126,8 @@ public class CommonModule extends ReactContextBaseJavaModule {
         promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "readableMap isEmpty");
         return;
       }
-      Boolean isReload = readableMap.getBoolean("isReload");
+      int style = readableMap.getInt("style");
+      Boolean isReload = readableMap.getBoolean("isReload") || false;
       String bundleUrl = readableMap.getString("bundleUrl");
       String moduleName = readableMap.getString("moduleName");
       String moduleVersion = readableMap.getString("moduleVersion");
@@ -142,9 +143,9 @@ public class CommonModule extends ReactContextBaseJavaModule {
         promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "moduleName isEmpty");
         return;
       }
-      Toast.makeText(getCurrentActivity(), appName + ":" + moduleName, Toast.LENGTH_SHORT).show();
+      Toast.makeText(getCurrentActivity(), moduleName+"模块加载中", Toast.LENGTH_SHORT).show();
       // 启动加载页面
-      PageActivity.start(getCurrentActivity(), isReload, bundleUrl, moduleName, moduleVersion, appName, appLogo);
+      PageActivity.start(getCurrentActivity(), style, isReload, bundleUrl, moduleName, moduleVersion, appName, appLogo);
     } catch (Exception e) {
       Toast.makeText(getReactApplicationContext(), "无法加载模块页面" + e.getMessage(), Toast.LENGTH_SHORT).show();
     }
