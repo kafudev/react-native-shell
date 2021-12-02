@@ -64,17 +64,19 @@ const Section = ({ children, title }): Node => {
 };
 
 let bfirstTime = Date.parse(new Date());
-const App: () => Node = () => {
+const App = (props) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   let [bundleName, setBundleName] = React.useState('rnshell');
   let [bundleUrl, setBundleUrl] = React.useState(
-    'http://192.168.110.20:8081/index.bundle?platform=android&dev=false&minify=false'
+    'http://192.168.110.20:8081/index.bundle?platform=android&minify=true'
   );
 
   setTimeout(() => {
     NativeModules.RNBootSplash.hide(true); // 隐藏启动屏
   }, 1500);
+
+  console.log('App props', props);
 
   // android双击退出
   useBackHandler(() => {
@@ -140,8 +142,15 @@ const App: () => Node = () => {
                 bundleUrl: bundleUrl,
                 moduleName: bundleName,
                 moduleVersion: '1.0.0',
-                appName: 'RN测试页面',
+                appName: bundleName.toLocaleUpperCase(),
                 appLogo: '',
+                extraData: {
+                  cc: 1,
+                  xxx: 'xxxx',
+                  abc: {
+                    ccc: 'xx',
+                  },
+                },
               });
           }}
         />
@@ -155,8 +164,15 @@ const App: () => Node = () => {
                 bundleUrl: bundleUrl,
                 moduleName: bundleName,
                 moduleVersion: '1.0.0',
-                appName: 'RN测试页面',
+                appName: bundleName.toLocaleUpperCase(),
                 appLogo: '',
+                extraData: {
+                  cc: 1,
+                  xxx: 'xxxx',
+                  abc: {
+                    ccc: 'xx',
+                  },
+                },
               });
           }}
         />

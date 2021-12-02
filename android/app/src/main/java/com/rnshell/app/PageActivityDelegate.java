@@ -80,12 +80,21 @@ public class PageActivityDelegate extends ReactActivityDelegate {
     return mJSBundleFile;
   }
 
-  public int getStyle() {
+  public Integer getStyle() {
     if (mActivity instanceof PageActivity) {
       int mName = ((PageActivity) mActivity).getStyle();
       return mName;
     }
-    return 0;
+    return 1;
+  }
+
+  @Override
+  protected Bundle getLaunchOptions() {
+    if (mActivity instanceof PageActivity) {
+      Bundle mBundle = ((PageActivity) mActivity).getExtraData();
+      return mBundle;
+    }
+    return null;
   }
 
   @Override

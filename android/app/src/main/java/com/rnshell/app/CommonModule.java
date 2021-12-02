@@ -122,32 +122,51 @@ public class CommonModule extends ReactContextBaseJavaModule {
   public void openPageActivity(ReadableMap readableMap, final Promise promise) {
     try {
       if (readableMap == null) {
-        Toast.makeText(getCurrentActivity(), "readableMap isEmpty", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getCurrentActivity(), "模块参数错误", Toast.LENGTH_SHORT).show();
         promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "readableMap isEmpty");
         return;
       }
-      int style = readableMap.getInt("style");
-      Boolean isReload = readableMap.getBoolean("isReload") || false;
+      // 获取参数
+      Integer style = readableMap.getInt("style");
+      Boolean isReload = readableMap.getBoolean("isReload");
       String bundleUrl = readableMap.getString("bundleUrl");
       String moduleName = readableMap.getString("moduleName");
       String moduleVersion = readableMap.getString("moduleVersion");
       String appName = readableMap.getString("appName");
       String appLogo = readableMap.getString("appLogo");
-      if (bundleUrl == null || bundleUrl.isEmpty()) {
-        Toast.makeText(getCurrentActivity(), "bundleUrl isEmpty", Toast.LENGTH_SHORT).show();
-        promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "bundleUrl isEmpty");
-        return;
-      }
+      ReadableMap extraData = readableMap.getMap("extraData");
+      // 参数默认值
+      style = style == null ? 1 : style;
+      isReload = isReload == null ? false : isReload;
+      bundleUrl = bundleUrl == null || bundleUrl.isEmpty() ? "" : bundleUrl;
+      moduleName = moduleName == null || moduleName.isEmpty() ? "" : moduleName;
+      moduleVersion = moduleVersion == null || moduleVersion.isEmpty() ? "" : moduleVersion;
+      appName = appName == null || appName.isEmpty() ? "" : appName;
+      appLogo = appLogo == null || appLogo.isEmpty() ? "" : appLogo;
+      extraData = extraData == null ? null : extraData;
       if (moduleName == null || moduleName.isEmpty()) {
-        Toast.makeText(getCurrentActivity(), "moduleName isEmpty", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getReactApplicationContext(), "模块名称不能为空", Toast.LENGTH_SHORT).show();
         promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "moduleName isEmpty");
         return;
       }
-      Toast.makeText(getCurrentActivity(), moduleName+"模块加载中", Toast.LENGTH_SHORT).show();
+      if (bundleUrl == null || bundleUrl.isEmpty()) {
+        Toast.makeText(getReactApplicationContext(), "模块加载地址不能为空", Toast.LENGTH_SHORT).show();
+        promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "bundleUrl isEmpty");
+        return;
+      }
+      Toast.makeText(getReactApplicationContext(), (!appName.isEmpty() ? appName : moduleName) + "模块启动中", Toast.LENGTH_SHORT).show();
+
+      // 传递额外参数序列化
+      Bundle extraBundle = new Bundle();
+      if (extraData != null) {
+        extraBundle = Arguments.toBundle(extraData);
+      }
       // 启动加载页面
-      PageActivity.start(getCurrentActivity(), style, isReload, bundleUrl, moduleName, moduleVersion, appName, appLogo);
+      PageActivity.start(getCurrentActivity(), style, isReload, bundleUrl, moduleName, moduleVersion, appName, appLogo, extraBundle);
+      promise.resolve(true);
+      return;
     } catch (Exception e) {
-      Toast.makeText(getReactApplicationContext(), "无法加载模块页面" + e.getMessage(), Toast.LENGTH_SHORT).show();
+      Toast.makeText(getReactApplicationContext(), "加载模块异常" + e.getMessage(), Toast.LENGTH_SHORT).show();
     }
   }
 
