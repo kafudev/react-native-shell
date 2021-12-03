@@ -274,7 +274,7 @@ public class PageActivity extends ReactActivity {
                 if (dd != null) {
                   while (dd.hasRunJSBundle()) {
                       try {
-                        Thread.sleep(100);
+                        Thread.sleep(200);
                         // 通知移除初始化加载页面
                         Message msg = new Message();
                         msg.what = sCOMPLETED;
