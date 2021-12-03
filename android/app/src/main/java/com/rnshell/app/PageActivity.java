@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -55,6 +57,17 @@ public class PageActivity extends ReactActivity {
   public static Integer mStyle;
 
   public PageStartView sView = null;
+  public static int sCOMPLETED = 1;
+  private Handler sHandler = new Handler() {
+    @Override
+    public void handleMessage(Message msg) {
+      if (msg.what == sCOMPLETED) {
+        if (sView != null) {
+          sView.removeLayoutBox();
+        }
+      }
+    }
+  };
 
   // 启动
   public static void start(Activity activity, int style, Boolean isReload, String bundleUrl, String appModule,
@@ -233,7 +246,7 @@ public class PageActivity extends ReactActivity {
     sView = new PageStartView(this, bundle) {
       @Override
       public void onLeftClick() {
-         this.restartActivity();
+        this.restartActivity();
 //        this.removeLayoutBox();
       }
 
@@ -249,7 +262,7 @@ public class PageActivity extends ReactActivity {
     new Thread() {
       public void run() {
         int i = 1;
-        while (i >= 10) {
+        while (i <= 50) {
           // 判断jsbundle是否加载完成
           ReactNativeHost aa = getReactNativeHost();
           if (aa != null) {
@@ -260,29 +273,29 @@ public class PageActivity extends ReactActivity {
                 CatalystInstance dd = cc.getCatalystInstance();
                 if (dd != null) {
                   while (dd.hasRunJSBundle()) {
-                    // 移除初始化加载页面
-                    if (sView != null) {
                       try {
-                        Thread.sleep(1000);
-                        sView.removeLayoutBox();
+                        Thread.sleep(100);
+                        // 通知移除初始化加载页面
+                        Message msg = new Message();
+                        msg.what = sCOMPLETED;
+                        sHandler.sendMessage(msg);
+                        i = 100;
                         return;
                       } catch (InterruptedException e) {
                         e.printStackTrace();
                       }
-                    }
                   }
                 }
               }
             }
           }
           try {
-            Thread.sleep(300);
+            Thread.sleep(100);
           } catch (InterruptedException e) {
             e.printStackTrace();
           }
           i++;
         }
-
       }
     }.start();
 

@@ -247,6 +247,7 @@ public class PageStartView extends RelativeLayout {
       Activity aa = ((Activity) context);
       Context cc = context.getApplicationContext();
       Intent intent = aa.getIntent();
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       aa.overridePendingTransition(0, 0);
       ((Activity) context).finish();
       aa.overridePendingTransition(0, 0);
