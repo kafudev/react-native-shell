@@ -470,6 +470,9 @@ dependencies {
     implementation files('./libs/com.heytap.msp-push-2.1.0.aar')
     //oppo_dependencies_end
 
+    implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
+
     debugImplementation 'io.github.didi.dokit:dokitx:3.5.0.1'
     debugImplementation 'io.github.didi.dokit:dokitx-ft:3.5.0.1'
     debugImplementation 'io.github.didi.dokit:dokitx-mc:3.5.0.1'

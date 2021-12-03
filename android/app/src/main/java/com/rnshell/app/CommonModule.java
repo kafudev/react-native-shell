@@ -130,21 +130,23 @@ public class CommonModule extends ReactContextBaseJavaModule {
       Integer style = readableMap.getInt("style");
       Boolean isReload = readableMap.getBoolean("isReload");
       String bundleUrl = readableMap.getString("bundleUrl");
-      String moduleName = readableMap.getString("moduleName");
-      String moduleVersion = readableMap.getString("moduleVersion");
+      String appModule = readableMap.getString("appModule");
       String appName = readableMap.getString("appName");
       String appLogo = readableMap.getString("appLogo");
+      String appVersion = readableMap.getString("appVersion");
+      String appText = readableMap.getString("appText");
       ReadableMap extraData = readableMap.getMap("extraData");
       // 参数默认值
       style = style == null ? 1 : style;
       isReload = isReload == null ? false : isReload;
       bundleUrl = bundleUrl == null || bundleUrl.isEmpty() ? "" : bundleUrl;
-      moduleName = moduleName == null || moduleName.isEmpty() ? "" : moduleName;
-      moduleVersion = moduleVersion == null || moduleVersion.isEmpty() ? "" : moduleVersion;
+      appModule = appModule == null || appModule.isEmpty() ? "" : appModule;
       appName = appName == null || appName.isEmpty() ? "" : appName;
       appLogo = appLogo == null || appLogo.isEmpty() ? "" : appLogo;
+      appVersion = appVersion == null || appVersion.isEmpty() ? "" : appVersion;
+      appText = appText == null || appText.isEmpty() ? "" : appText;
       extraData = extraData == null ? null : extraData;
-      if (moduleName == null || moduleName.isEmpty()) {
+      if (appModule == null || appModule.isEmpty()) {
         Toast.makeText(getReactApplicationContext(), "模块名称不能为空", Toast.LENGTH_SHORT).show();
         promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "moduleName isEmpty");
         return;
@@ -154,7 +156,6 @@ public class CommonModule extends ReactContextBaseJavaModule {
         promise.reject("RN_OPEN_PAGE_ACTIVITY_ERROR", "bundleUrl isEmpty");
         return;
       }
-      Toast.makeText(getReactApplicationContext(), (!appName.isEmpty() ? appName : moduleName) + "模块启动中", Toast.LENGTH_SHORT).show();
 
       // 传递额外参数序列化
       Bundle extraBundle = new Bundle();
@@ -162,7 +163,8 @@ public class CommonModule extends ReactContextBaseJavaModule {
         extraBundle = Arguments.toBundle(extraData);
       }
       // 启动加载页面
-      PageActivity.start(getCurrentActivity(), style, isReload, bundleUrl, moduleName, moduleVersion, appName, appLogo, extraBundle);
+      PageActivity.start(getCurrentActivity(), style, isReload, bundleUrl, appModule, appName, appLogo, appVersion,
+        appText, extraBundle);
       promise.resolve(true);
       return;
     } catch (Exception e) {

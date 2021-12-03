@@ -54,20 +54,23 @@ public class PageActivity extends ReactActivity {
   public static String mJSBundleFile;
   public static Integer mStyle;
 
+  public PageStartView sView = null;
+
   // 启动
-  public static void start(Activity activity, int style, Boolean isReload, String bundleUrl, String moduleName,
-                           String moduleVersion,
+  public static void start(Activity activity, int style, Boolean isReload, String bundleUrl, String appModule,
                            String appName,
                            String appLogo,
+                           String appVersion,
+                           String appText,
                            Bundle extraData) {
     // 下载文件
-    String filepath = activity.getApplication().getFilesDir().getAbsolutePath() + "/" + moduleName;
-    String bundleFile = filepath + "/" + moduleName + "_" + moduleVersion + ".bundle";
+    String filepath = activity.getApplication().getFilesDir().getAbsolutePath() + "/" + appModule;
+    String bundleFile = filepath + "/" + appModule + "_" + appVersion + ".bundle";
     File destDir = new File(filepath);
     if (!destDir.exists()) {
       destDir.mkdirs();
     }
-    Log.w("PageActivity", "start " + moduleName + " " + moduleVersion + " " + appName + " " + appLogo);
+    Log.w("PageActivity", "start " + appModule + " " + appVersion + " " + appName + " " + appLogo);
     File file = new File(bundleFile);
     if (!file.exists() || isReload) {
       downloadFile(activity, bundleUrl, bundleFile, new OnDownloadListener() {
@@ -77,8 +80,11 @@ public class PageActivity extends ReactActivity {
           if (Looper.myLooper() == null) {
             Looper.prepare();
           }
-          Toast.makeText(activity.getApplicationContext(), (!appName.isEmpty() ? appName : moduleName) + "模块加载成功", Toast.LENGTH_SHORT).show();
-          startActivity(activity, style, isReload, bundleUrl, bundleFile, moduleName, moduleVersion, appName, appLogo, extraData);
+          Toast.makeText(activity.getApplicationContext(), (!appName.isEmpty() ? appName : appModule) + "模块加载成功",
+            Toast.LENGTH_SHORT).show();
+          startActivity(activity, style, isReload, bundleUrl, bundleFile, appModule, appName, appLogo, appVersion,
+            appText,
+            extraData);
           Looper.loop();
         }
 
@@ -93,33 +99,38 @@ public class PageActivity extends ReactActivity {
           if (Looper.myLooper() == null) {
             Looper.prepare();
           }
-          Toast.makeText(activity.getApplicationContext(), (!appName.isEmpty() ? appName : moduleName) + "模块加载失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
+          Toast.makeText(activity.getApplicationContext(),
+            (!appName.isEmpty() ? appName : appModule) + "模块加载失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
           Looper.loop();
         }
       });
     } else {
-      startActivity(activity, style, isReload, bundleUrl, bundleFile, moduleName, moduleVersion, appName, appLogo, extraData);
+      startActivity(activity, style, isReload, bundleUrl, bundleFile, appModule, appName, appLogo, appVersion,
+        appText,
+        extraData);
     }
   }
 
   // 启动activity
-  public static void startActivity(Activity activity, int style, Boolean isReload, String bundleUrl, String bundleFile, String moduleName,
-                                   String moduleVersion,
-                                   String appName, String appLogo, Bundle extraData) {
-    mMainComponentName = moduleName;
+  public static void startActivity(Activity activity, int style, Boolean isReload, String bundleUrl, String bundleFile,
+                                   String appModule,
+                                   String appName, String appLogo,
+                                   String appVersion, String appText, Bundle extraData) {
+    mMainComponentName = appModule;
     mJSBundleFile = bundleFile;
     mStyle = style;
 
     Intent intent = new Intent(activity, PageActivity.class);
-//    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     intent.putExtra("style", style);
     intent.putExtra("isReload", isReload);
     intent.putExtra("bundleUrl", bundleUrl);
     intent.putExtra("bundleFile", bundleFile);
-    intent.putExtra("moduleName", moduleName);
-    intent.putExtra("moduleVersion", moduleVersion);
+    intent.putExtra("appModule", appModule);
     intent.putExtra("appName", appName);
     intent.putExtra("appLogo", appLogo);
+    intent.putExtra("appVersion", appVersion);
+    intent.putExtra("appText", appText);
     intent.putExtra("extraData", extraData);
     activity.startActivity(intent);
   }
@@ -186,55 +197,68 @@ public class PageActivity extends ReactActivity {
   protected void onCreate(Bundle savedInstanceState) {
     Log.w("PageActivity",
       "onCreate mMainComponentName " + getMainComponentName() + " mBundleFile " + getJSBundleFile());
+    // todo拦截下载加载
+
     // 启动页全屏，状态栏覆盖启动页
     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     // 获取数据
     Intent intent = getIntent();
     String bundleUrl = intent.getStringExtra("bundleUrl");
     String bundleFile = intent.getStringExtra("bundleFile");
-    String moduleName = intent.getStringExtra("moduleName");
+    String appModule = intent.getStringExtra("appModule");
     String appName = intent.getStringExtra("appName");
     String appLogo = intent.getStringExtra("appLogo");
+    String appVersion = intent.getStringExtra("appVersion");
+    String appText = intent.getStringExtra("appText");
     Integer style = intent.getIntExtra("style", 1);
-    // 拦截下载加载
 
-    super.onCreate(savedInstanceState);
-    // 初始化加载页面
-    ViewGroup boxview = new ViewGroup(this) {
-      @Override
-      protected void onLayout(boolean b, int i, int i1, int i2, int i3) {
-        int childCount = getChildCount();
-        for (i = 0; i < childCount; i++) {
-          View childView = getChildAt(i);
-          childView.layout(i * getWidth(), i1, (i + 1) * getWidth(), i3);
-        }
-      }
-    };
-    RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-    TextView tv = new TextView(this);
-    tv.setText(appName);
-    tv.setTextSize(18);
-    Button btn = new Button(this);
-    btn.setBackgroundColor(Color.RED);
-    btn.setText(appName);
-    btn.setTextColor(Color.BLACK);
-    btn.setTextSize(20);
-    boxview.addView(tv);
-    boxview.addView(btn, params);
-    addContentView(boxview, params);
-
-    // 判断加载方式
+    // 初始化加载 判断加载方式
     if (style == 2) {
       // todo !采用注册模块加载-有问题待处理
-//      ReactNativeHost aa = ((ReactApplication) getApplication()).getReactNativeHost();
-//      ReactInstanceManager bb = aa.getReactInstanceManager();
-//      ReactContext cc = bb.getCurrentReactContext();
-//      CatalystInstance dd = cc.getCatalystInstance();
-//      dd.loadScriptFromFile(bundleFile, "", false);
-//      bb.recreateReactContextInBackground();
+      // ReactNativeHost aa = ((ReactApplication)
+      // getApplication()).getReactNativeHost();
+      // ReactInstanceManager bb = aa.getReactInstanceManager();
+      // ReactContext cc = bb.getCurrentReactContext();
+      // CatalystInstance dd = cc.getCatalystInstance();
+      // dd.loadScriptFromFile(bundleFile, "", false);
+      // bb.recreateReactContextInBackground();
     }
+    super.onCreate(savedInstanceState);
 
-//    super.onCreate(savedInstanceState);
+    // 初始化加载页面
+    Bundle bundle = new Bundle();
+    bundle.putString("appName", appName);
+    bundle.putString("appLogo", appLogo);
+    bundle.putString("appVersion", appVersion);
+    bundle.putString("appText", appText);
+    sView = new PageStartView(this, bundle) {
+      @Override
+      public void onLeftClick() {
+        this.restartActivity();
+      }
+
+      @Override
+      public void onRightClick() {
+        this.finishActivity();
+      }
+    };
+    addContentView(sView, sView.getLayoutParams());
+
+//    // 新线程判断js加载情况
+//    new Thread() {
+//      public void run() {
+//        // 判断jsbundle是否加载完成
+//        ReactNativeHost aa = getReactNativeHost();
+//        ReactInstanceManager bb = aa.getReactInstanceManager();
+//        ReactContext cc = bb.getCurrentReactContext();
+//        CatalystInstance dd = cc.getCatalystInstance();
+//        while (dd.hasRunJSBundle()) {
+//          // 移除初始化加载页面
+//          sView.removeLayoutBox();
+//        }
+//      }
+//    }.start();
+
     Log.w("PageActivity", "onCreate");
   }
 
