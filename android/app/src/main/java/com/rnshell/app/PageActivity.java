@@ -143,7 +143,7 @@ public class PageActivity extends ReactActivity {
       }
       return null;
     }
-    String mName = getIntent().getStringExtra("moduleName");
+    String mName = getIntent().getStringExtra("appName");
     if (mName == null || mName.isEmpty()) {
       finish();
       return "";
@@ -235,6 +235,7 @@ public class PageActivity extends ReactActivity {
       @Override
       public void onLeftClick() {
         this.restartActivity();
+        this.removeLayoutBox();
       }
 
       @Override
@@ -244,20 +245,20 @@ public class PageActivity extends ReactActivity {
     };
     addContentView(sView, sView.getLayoutParams());
 
-//    // 新线程判断js加载情况
-//    new Thread() {
-//      public void run() {
-//        // 判断jsbundle是否加载完成
-//        ReactNativeHost aa = getReactNativeHost();
-//        ReactInstanceManager bb = aa.getReactInstanceManager();
-//        ReactContext cc = bb.getCurrentReactContext();
-//        CatalystInstance dd = cc.getCatalystInstance();
-//        while (dd.hasRunJSBundle()) {
-//          // 移除初始化加载页面
-//          sView.removeLayoutBox();
-//        }
-//      }
-//    }.start();
+    // 新线程判断js加载情况
+    // new Thread() {
+    //   public void run() {
+    //     // 判断jsbundle是否加载完成
+    //     ReactNativeHost aa = getReactNativeHost();
+    //     ReactInstanceManager bb = aa.getReactInstanceManager();
+    //     ReactContext cc = bb.getCurrentReactContext();
+    //     CatalystInstance dd = cc.getCatalystInstance();
+    //     while (dd.hasRunJSBundle()) {
+    //       // 移除初始化加载页面
+    //       sView.removeLayoutBox();
+    //     }
+    //   }
+    // }.start();
 
     Log.w("PageActivity", "onCreate");
   }

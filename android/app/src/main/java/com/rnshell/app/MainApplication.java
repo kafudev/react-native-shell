@@ -99,7 +99,9 @@ public class MainApplication extends Application implements ReactApplication {
     }
 
     // bugly异常上报
-    CrashReport.initCrashReport(this, bugly_appid, BuildConfig.DEBUG);
+    if(!BuildConfig.DEBUG){
+      CrashReport.initCrashReport(this, bugly_appid, BuildConfig.DEBUG);
+    }
 
     // 极光推送
     if(!jpush_appkey.isEmpty()){
