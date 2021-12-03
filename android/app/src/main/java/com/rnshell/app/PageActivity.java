@@ -80,8 +80,7 @@ public class PageActivity extends ReactActivity {
           if (Looper.myLooper() == null) {
             Looper.prepare();
           }
-          Toast.makeText(activity.getApplicationContext(), (!appName.isEmpty() ? appName : appModule) + "模块加载成功",
-            Toast.LENGTH_SHORT).show();
+//          Toast.makeText(activity.getApplicationContext(), (!appName.isEmpty() ? appName : appModule) + "模块加载成功", Toast.LENGTH_SHORT).show();
           startActivity(activity, style, isReload, bundleUrl, bundleFile, appModule, appName, appLogo, appVersion,
             appText,
             extraData);
@@ -143,7 +142,7 @@ public class PageActivity extends ReactActivity {
       }
       return null;
     }
-    String mName = getIntent().getStringExtra("appName");
+    String mName = getIntent().getStringExtra("appModule");
     if (mName == null || mName.isEmpty()) {
       finish();
       return "";
@@ -234,8 +233,8 @@ public class PageActivity extends ReactActivity {
     sView = new PageStartView(this, bundle) {
       @Override
       public void onLeftClick() {
-        this.restartActivity();
-        this.removeLayoutBox();
+         this.restartActivity();
+//        this.removeLayoutBox();
       }
 
       @Override
@@ -245,20 +244,47 @@ public class PageActivity extends ReactActivity {
     };
     addContentView(sView, sView.getLayoutParams());
 
+
     // 新线程判断js加载情况
-    // new Thread() {
-    //   public void run() {
-    //     // 判断jsbundle是否加载完成
-    //     ReactNativeHost aa = getReactNativeHost();
-    //     ReactInstanceManager bb = aa.getReactInstanceManager();
-    //     ReactContext cc = bb.getCurrentReactContext();
-    //     CatalystInstance dd = cc.getCatalystInstance();
-    //     while (dd.hasRunJSBundle()) {
-    //       // 移除初始化加载页面
-    //       sView.removeLayoutBox();
-    //     }
-    //   }
-    // }.start();
+    new Thread() {
+      public void run() {
+        int i = 1;
+        while (i >= 10) {
+          // 判断jsbundle是否加载完成
+          ReactNativeHost aa = getReactNativeHost();
+          if (aa != null) {
+            ReactInstanceManager bb = aa.getReactInstanceManager();
+            if (bb != null) {
+              ReactContext cc = bb.getCurrentReactContext();
+              if (cc != null) {
+                CatalystInstance dd = cc.getCatalystInstance();
+                if (dd != null) {
+                  while (dd.hasRunJSBundle()) {
+                    // 移除初始化加载页面
+                    if (sView != null) {
+                      try {
+                        Thread.sleep(1000);
+                        sView.removeLayoutBox();
+                        return;
+                      } catch (InterruptedException e) {
+                        e.printStackTrace();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          try {
+            Thread.sleep(300);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+          i++;
+        }
+
+      }
+    }.start();
 
     Log.w("PageActivity", "onCreate");
   }
