@@ -1,31 +1,19 @@
 package com.rnshell.app;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import android.view.KeyEvent;
-import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
-import com.facebook.react.ReactApplication;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactActivityDelegate;
-import com.facebook.react.ReactDelegate;
-import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
-import com.facebook.react.bridge.Callback;
-import com.facebook.react.bridge.ReactMarker;
-import com.facebook.react.bridge.ReactMarkerConstants;
-import com.facebook.react.modules.core.PermissionListener;
-import com.facebook.react.shell.MainReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,6 +35,7 @@ public class PageActivityDelegate extends ReactActivityDelegate {
   Activity mActivity;
   public String mMainComponentName;
   public String mJSBundleFile;
+  public Bundle mSavedInstanceState = new Bundle();
 
   private ReactNativeHost mReactNativeHost;
 
@@ -105,6 +94,7 @@ public class PageActivityDelegate extends ReactActivityDelegate {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    mSavedInstanceState = savedInstanceState;
     Log.i("PageActivityDelegate", "mMainComponentName " + getMainComponentName() + " mBundleFile " + getJSBundleFile() + " mStyle " + getStyle());
     super.onCreate(savedInstanceState);
     Log.w("PageActivityDelegate", "onCreate");
@@ -122,11 +112,10 @@ public class PageActivityDelegate extends ReactActivityDelegate {
 //    }
 //  }
 
-//  protected void loadApp(String appKey) {
-//    this.mReactDelegate.loadApp(appKey);
-//    this.getPlainActivity().setContentView(this.mReactDelegate.getReactRootView());
-//  }
-
+  @Override
+  protected void loadApp(String appKey) {
+    super.loadApp(appKey);
+  }
 
   @Override
   public ReactNativeHost getReactNativeHost() {

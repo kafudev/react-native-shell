@@ -32,7 +32,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 StatusBar.setBackgroundColor('rgba(0,0,0,0.3)');
-StatusBar.setTranslucent(true);
+// StatusBar.setTranslucent(true);
 StatusBar.setHidden(false);
 
 const Section = ({ children, title }): Node => {
@@ -97,7 +97,7 @@ const App = (props) => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    paddingTop: 10,
+    paddingTop: 0,
   };
 
   return (
@@ -165,6 +165,53 @@ const App = (props) => {
                 bundleUrl: bundleUrl,
                 appModule: bundleName,
                 appName: 'APP子程序应用',
+                appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
+                appVersion: '1.0.0',
+                appText: '本应用由卡服科技提供技术支持',
+                extraData: {
+                  cc: 1,
+                  xxx: 'xxxx',
+                  abc: {
+                    ccc: 'xx',
+                  },
+                },
+              });
+          }}
+        />
+        <View style={{margin: 20}}></View>
+        <Button
+          title="打开RNSHELL子程序应用"
+          onPress={() => {
+            NativeModules.Common &&
+              NativeModules.Common.openPageActivity({
+                style: 1,
+                isReload: false,
+                bundleUrl: bundleUrl,
+                appModule: 'rnshell',
+                appName: 'RNSHELL子程序应用',
+                appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
+                appVersion: '1.0.0',
+                appText: '本应用由卡服科技提供技术支持',
+                extraData: {
+                  cc: 1,
+                  xxx: 'xxxx',
+                  abc: {
+                    ccc: 'xx',
+                  },
+                },
+              });
+          }}
+        />
+        <Button
+          title="打开RNSHELL1子程序应用"
+          onPress={() => {
+            NativeModules.Common &&
+              NativeModules.Common.openPageActivity({
+                style: 1,
+                isReload: false,
+                bundleUrl: bundleUrl,
+                appModule: 'rnshell1',
+                appName: 'RNSHELL1子程序应用',
                 appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
                 appVersion: '1.0.0',
                 appText: '本应用由卡服科技提供技术支持',

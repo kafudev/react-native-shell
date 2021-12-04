@@ -3,28 +3,17 @@ package com.rnshell.app;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.text.TextPaint;
-import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -33,15 +22,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.material.snackbar.Snackbar;
 
-import java.net.URL;
 
 /**
  * TODO: document your custom view class.
@@ -58,6 +43,8 @@ public class PageStartView extends RelativeLayout {
   public ImageButton leftBtn;
   public ImageButton rightBtn;
 
+  public int bgColor = Color.WHITE;
+  public int statusBarColor;
   public Integer screenWidth = 0;
   public Integer screenHeight = 0;
   public Integer boxTop = 0;
@@ -70,13 +57,20 @@ public class PageStartView extends RelativeLayout {
     screenWidth = dm.widthPixels;
     screenHeight = dm.heightPixels;
     boxTop = screenHeight / 4;
-
-    initLayoutBox();
-    initBtnBox();
+    //获取前页状态栏背景色
+    statusBarColor = ((Activity)context).getWindow().getStatusBarColor();
+    // 初始化视图
+    initLayout();
   }
 
   public FrameLayout.LayoutParams getLayoutParams() {
     return new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+  }
+
+  // 初始化应用启动视图
+  public void initLayout() {
+    initLayoutBox();
+    initBtnBox();
   }
 
   // 初始化应用加载信息框
@@ -85,6 +79,8 @@ public class PageStartView extends RelativeLayout {
     if (layoutBox != null) {
       return;
     }
+    // 设置启动视图状态栏颜色
+    ((Activity)context).getWindow().setStatusBarColor(bgColor);
 
     // 初始化加载页面
     String appName = "";
@@ -99,7 +95,7 @@ public class PageStartView extends RelativeLayout {
     }
     RelativeLayout.LayoutParams boxParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     layoutBox = new RelativeLayout(context);
-    layoutBox.setBackgroundColor(Color.WHITE);
+    layoutBox.setBackgroundColor(bgColor);
 
     // 初始化应用图标
     layoutBox.addView(this.renderIconView(context, appLogo));
@@ -111,18 +107,21 @@ public class PageStartView extends RelativeLayout {
     layoutBox.addView(this.renderFooterView(context, appText));
 
     this.addView(layoutBox, boxParams);
-
-    removeLayoutBtnBox();
-    initBtnBox();
     return;
   }
 
   // 移除应用加载信息框
   public void removeLayoutBox() {
-    if (layoutBox != null) {
-      this.removeView(layoutBox);
-    }
-    layoutBox = null;
+    RelativeLayout _view = this;
+    ((Activity)context).runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        if (layoutBox != null) {
+          _view.removeView(layoutBox);
+          layoutBox = null;
+        }
+      }
+    });
   }
 
   // 初始化应用右上角按钮框
@@ -143,16 +142,22 @@ public class PageStartView extends RelativeLayout {
 
   // 移除应用右上角按钮框
   public void removeLayoutBtnBox() {
-    if (layoutBtnBox != null) {
-      this.removeView(layoutBtnBox);
-    }
-    layoutBtnBox = null;
+    RelativeLayout _view = this;
+    ((Activity)context).runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        if (layoutBtnBox != null) {
+          _view.removeView(layoutBtnBox);
+          layoutBtnBox = null;
+        }
+      }
+    });
   }
 
 
   // 渲染按钮组合
   private LinearLayout renderBtnBoxView(Context context) {
-    int bgColor = Color.parseColor("#80ffffff");
+    int btnBgColor = Color.parseColor("#80ffffff");
     int btnBorderColor = Color.parseColor("#dddddd");
     int btnLineColor = Color.parseColor("#999999");
     int btnWidth = pxToDip(context, 44);
@@ -222,7 +227,7 @@ public class PageStartView extends RelativeLayout {
     layoutBtn.setLayoutParams(layoutBtnParams);
     layoutBtn.setGravity(Gravity.LEFT);
 //        layoutBtn.setBackgroundColor(Color.BLACK);
-    GradientDrawable bg_box = createRectangleDrawable(0, btnBorderColor, 1, new float[]{btnHeight / 2, btnHeight / 2, btnHeight / 2, btnHeight / 2});
+    GradientDrawable bg_box = createRectangleDrawable(btnBgColor, btnBorderColor, 1, new float[]{btnHeight / 2, btnHeight / 2, btnHeight / 2, btnHeight / 2});
     layoutBtn.setBackground(bg_box);
     layoutBtn.addView(leftBtn);
     layoutBtn.addView(centerLine);
@@ -237,8 +242,7 @@ public class PageStartView extends RelativeLayout {
 
   // 右边点击事件
   public void onRightClick() {
-    removeLayoutBox();
-    removeLayoutBtnBox();
+    finishActivity();
   }
 
   // 重启activity
@@ -259,7 +263,11 @@ public class PageStartView extends RelativeLayout {
   // 结束activity
   public void finishActivity() {
     if (context != null) {
-      ((Activity) context).finish();
+      Activity aa = ((Activity) context);
+      aa.overridePendingTransition(0, 0);
+      aa.finish();
+      // 设置状态栏颜色
+      ((Activity)context).getWindow().setStatusBarColor(statusBarColor);
     }
   }
 
@@ -359,7 +367,7 @@ public class PageStartView extends RelativeLayout {
     tv.setWidth(screenWidth);
     LinearLayout layoutText = new LinearLayout(context);
     LinearLayout.LayoutParams layoutTextParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, pxToDip(context, 40));
-    layoutTextParams.topMargin = screenHeight - pxToDip(context, 40) - pxToDip(context, 40);
+    layoutTextParams.topMargin = screenHeight - pxToDip(context, 40) - pxToDip(context, 20);
     layoutText.setLayoutParams(layoutTextParams);
     layoutText.setGravity(Gravity.CENTER);
 //        layoutText.setBackgroundColor(Color.GREEN);
