@@ -116,6 +116,13 @@ const App = (props) => {
               NativeModules.Common.toast('显示toast内容', 0);
           }}
         />
+        <Button
+          title="重新加载JS"
+          onPress={() => {
+            NativeModules.Common &&
+              NativeModules.Common.reloadJs();
+          }}
+        />
         <TextInput
           defaultValue={bundleName}
           style={{ backgroundColor: '#fff' }}
