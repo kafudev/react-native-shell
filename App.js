@@ -20,6 +20,7 @@ import {
   Button,
   NativeModules,
   TextInput,
+  LogBox,
   View,
 } from 'react-native';
 
@@ -31,8 +32,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+LogBox.ignoreAllLogs();
 StatusBar.setBackgroundColor('rgba(0,0,0,0.3)');
-// StatusBar.setTranslucent(true);
+StatusBar.setTranslucent(true);
 StatusBar.setHidden(false);
 
 const Section = ({ children, title }): Node => {

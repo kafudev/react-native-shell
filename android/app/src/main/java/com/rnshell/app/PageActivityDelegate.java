@@ -95,9 +95,9 @@ public class PageActivityDelegate extends ReactActivityDelegate {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     mSavedInstanceState = savedInstanceState;
-    Log.i("PageActivityDelegate", "mMainComponentName " + getMainComponentName() + " mBundleFile " + getJSBundleFile() + " mStyle " + getStyle());
+    Log.i("PageActivityDelegate", "onCreate start mMainComponentName " + getMainComponentName() + " mBundleFile " + getJSBundleFile() + " mStyle " + getStyle());
     super.onCreate(savedInstanceState);
-    Log.w("PageActivityDelegate", "onCreate");
+    Log.w("PageActivityDelegate", "onCreate end");
   }
 
 //  @Override
@@ -112,10 +112,10 @@ public class PageActivityDelegate extends ReactActivityDelegate {
 //    }
 //  }
 
-  @Override
-  protected void loadApp(String appKey) {
-    super.loadApp(appKey);
-  }
+//  @Override
+//  protected void loadApp(String appKey) {
+//    super.loadApp(appKey);
+//  }
 
   @Override
   public ReactNativeHost getReactNativeHost() {

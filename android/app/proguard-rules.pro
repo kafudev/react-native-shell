@@ -74,3 +74,7 @@
     @Upload.* <methods>;
     @DownloadGroup.* <methods>;
 }
+
+-keep class com.facebook.crypto.** {
+   *;
+}

@@ -323,6 +323,10 @@ android {
             }
             resValue "string", "app_name", project.env.get("APP_NAME")+"dev"
             applicationIdSuffix "dev"
+            // 重置极光推送的provider,一样会安装失败
+            manifestPlaceholders = [
+              JPUSH_PKGNAME : project.env.get("APP_PACKAGE")+"dev",
+            ]
             minifyEnabled false
             zipAlignEnabled true
         }

@@ -1,5 +1,6 @@
 package com.rnshell.app;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -156,6 +158,7 @@ public class PageStartView extends RelativeLayout {
 
 
   // 渲染按钮组合
+  @SuppressLint("ClickableViewAccessibility")
   private LinearLayout renderBtnBoxView(Context context) {
     int btnBgColor = Color.parseColor("#80ffffff");
     int btnBorderColor = Color.parseColor("#dddddd");
@@ -196,6 +199,18 @@ public class PageStartView extends RelativeLayout {
         onLeftClick();
       }
     });
+    leftBtn.setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View v, MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_UP){
+          leftBtn.getDrawable().setAlpha(255);
+        }
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+          leftBtn.getDrawable().setAlpha(50);
+        }
+        return false;
+      }
+    });
     GradientDrawable bg_left = createRectangleDrawable(0, btnBorderColor, 0, new float[]{btnHeight / 2, 0, 0, btnHeight / 2});
     leftBtn.setBackground(bg_left);
 
@@ -208,6 +223,18 @@ public class PageStartView extends RelativeLayout {
       @Override
       public void onClick(View view) {
         onRightClick();
+      }
+    });
+    rightBtn.setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View v, MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_UP){
+          rightBtn.getDrawable().setAlpha(255);
+        }
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+          rightBtn.getDrawable().setAlpha(50);
+        }
+        return false;
       }
     });
     GradientDrawable bg_right = createRectangleDrawable(0, btnBorderColor, 0, new float[]{0, btnHeight / 2, btnHeight / 2, 0});
