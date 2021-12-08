@@ -144,8 +144,8 @@ const App = (props) => {
         <Button
           title="打开远程bundle页面"
           onPress={() => {
-            NativeModules.Page &&
-              NativeModules.Page.openPage({
+            NativeModules.Pack &&
+              NativeModules.Pack.openPage({
                 style: 1,
                 isReload: false,
                 bundleUrl: bundleUrl,
@@ -167,8 +167,8 @@ const App = (props) => {
         <Button
           title="重新加载远程bundle页面"
           onPress={() => {
-            NativeModules.Page &&
-              NativeModules.Page.openPage({
+            NativeModules.Pack &&
+              NativeModules.Pack.openPage({
                 style: 1,
                 isReload: true,
                 bundleUrl: bundleUrl,
@@ -191,8 +191,8 @@ const App = (props) => {
         <Button
           title="打开RNSHELL子程序应用"
           onPress={() => {
-            NativeModules.Page &&
-              NativeModules.Page.openPage({
+            NativeModules.Pack &&
+              NativeModules.Pack.openPage({
                 style: 1,
                 isReload: false,
                 bundleUrl: bundleUrl,
@@ -214,15 +214,15 @@ const App = (props) => {
         <Button
           title="打开RNSHELL1子程序应用"
           onPress={() => {
-            NativeModules.Page &&
-              NativeModules.Page.openPage({
+            NativeModules.Pack &&
+              NativeModules.Pack.openPage({
                 style: 1,
                 isReload: false,
                 bundleUrl: bundleUrl,
-                appModule: 'rnshell1',
-                appName: 'RNSHELL1子程序应用',
+                appModule: 'rnshell',
+                appName: 'RNSHELL子程序应用',
                 appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
-                appVersion: '1.0.0',
+                appVersion: '1.2.0',
                 appText: '本应用由卡服科技提供技术支持',
                 extraData: {
                   cc: 1,

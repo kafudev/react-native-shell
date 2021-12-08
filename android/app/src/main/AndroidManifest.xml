@@ -54,10 +54,7 @@
         </intent-filter>
       </activity>
 
-      <activity
-        android:name=".PageActivity"
-        android:exported="true"
-      />
+
 
       <meta-data android:name="JPUSH_PKGNAME" android:value="${JPUSH_PKGNAME}"/>
       <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}"/>
