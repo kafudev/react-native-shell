@@ -35,6 +35,7 @@ import okhttp3.Response;
 
 public class PageActivity extends ReactActivity {
   public PageActivityDelegate mDelegate = createReactActivityDelegate();
+  public Thread.UncaughtExceptionHandler originalHandler;
   public static String mMainComponentName;
   public static String mJSBundleFile;
   public static Boolean mIsReload;
@@ -286,7 +287,7 @@ public class PageActivity extends ReactActivity {
 
       // 捕获异常并显示
       // 获取原有的异常处理器
-      Thread.UncaughtExceptionHandler originalHandler = Thread.getDefaultUncaughtExceptionHandler();
+      originalHandler = Thread.getDefaultUncaughtExceptionHandler();
       // 实例化异常处理器后，利用 setDefaultUncaughtExceptionHandler 重置异常处理器
       Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
         // 重写 uncaughtException 方法，当程序中有未捕获的异常时，会调用该方法
@@ -296,13 +297,11 @@ public class PageActivity extends ReactActivity {
           Log.w("PageActivity", "uncaughtException " + throwable.getMessage());
           // 允许执行且已存在异常处理函数时，执行原异常处理函数
           // if (originalHandler != null) {
-          // originalHandler.uncaughtException(thread, throwable);
+          //    originalHandler.uncaughtException(thread, throwable);
           // }
           // 提示错误信息
           Toast.makeText(getApplicationContext(), "模块运行异常" + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-          finish();
-          // 异常捕获重置
-          Thread.setDefaultUncaughtExceptionHandler(originalHandler);
+           finish();
         }
       });
 
@@ -336,6 +335,15 @@ public class PageActivity extends ReactActivity {
   @Override
   public void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    // 异常捕获重置
+    if(originalHandler !=null) {
+      Thread.setDefaultUncaughtExceptionHandler(originalHandler);
+    }
   }
 
   // 重启activity
