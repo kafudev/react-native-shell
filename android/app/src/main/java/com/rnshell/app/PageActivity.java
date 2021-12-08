@@ -51,13 +51,13 @@ public class PageActivity extends ReactActivity {
                            String appText,
                            Bundle extraData) {
     // 下载文件路径
-    String filepath = activity.getApplication().getFilesDir().getAbsolutePath() + "/" + appModule;
-    String bundleFile = filepath + "/" + appModule + "_" + appVersion + ".bundle";
-    File destDir = new File(filepath);
+    String bundlePath = activity.getApplication().getFilesDir().getAbsolutePath() + "/modules/" + appModule + "/" + appVersion + "/";
+    String bundleFile = bundlePath + "index.android.bundle"; // 模块名称/版本号/文件
+    File destDir = new File(bundlePath);
     if (!destDir.exists()) {
       destDir.mkdirs();
     }
-    Log.w("PageActivity", "start " + appModule + " " + appVersion + " " + appName + " " + appLogo);
+    Log.w("PageActivity", "start " + appModule + " " + appVersion + " " + appName + " " + appLogo + " " + bundleFile);
 
     // 设置默认变量
     mMainComponentName = appModule;
@@ -71,6 +71,7 @@ public class PageActivity extends ReactActivity {
     intent.putExtra("style", style);
     intent.putExtra("isReload", isReload);
     intent.putExtra("bundleUrl", bundleUrl);
+    intent.putExtra("bundlePath", bundlePath);
     intent.putExtra("bundleFile", bundleFile);
     intent.putExtra("appModule", appModule);
     intent.putExtra("appName", appName);
@@ -170,6 +171,7 @@ public class PageActivity extends ReactActivity {
       // 获取数据
       Intent intent = getIntent();
       String bundleUrl = intent.getStringExtra("bundleUrl");
+      String bundlePath = intent.getStringExtra("bundlePath");
       String bundleFile = intent.getStringExtra("bundleFile");
       String appModule = intent.getStringExtra("appModule");
       String appName = intent.getStringExtra("appName");
@@ -196,7 +198,7 @@ public class PageActivity extends ReactActivity {
       new Thread() {
         public void run() {
           // 加载并下载文件
-          loadFileOrDownFile(getApplicationContext(), intent, new OnDownloadListener() {
+          loadFileOrDownFile(getApplicationContext(), intent, new PageUtil.OnDownloadListener() {
             @Override
             public void onLoadSuccess() {
               Log.w("loadFileOrDownFile", "download loadSuccess ");
@@ -204,12 +206,26 @@ public class PageActivity extends ReactActivity {
             }
 
             @Override
-            public void onDownloadSuccess() {
+            public void onDownloadSuccess(String filePath) {
               Log.w("loadFileOrDownFile", "download success ");
               isLoadSuccess = true;
               runOnUiThread(new Runnable() {
                 public void run() {
                   try {
+                    // 下载完成进行判断是否zip文件需要解压
+                    if (filePath.endsWith(".bundle") || filePath.endsWith(".js")) {
+                      if (!filePath.equals(bundleFile)) {
+                        // 路径不同，则复制下载文件到加载路径
+                        File file = new File(filePath);
+                        file.renameTo(new File(bundleFile));
+                      }
+                    } else if (filePath.endsWith(".zip")) {
+                      // 进行解压到加载路径
+                      PageUtil.unZipFile(new File(filePath), bundlePath);
+                    } else {
+                      Toast.makeText(getApplicationContext(), "加载模块格式仅支持bundle、js、zip", Toast.LENGTH_SHORT).show();
+                      return;
+                    }
                     // 下载完成进行重新加载
                     Log.w("loadFileOrDownFile", "loadApp mMainComponentName " + getMainComponentName());
                     // 重新加载
@@ -322,9 +338,27 @@ public class PageActivity extends ReactActivity {
     super.onSaveInstanceState(outState);
   }
 
+  // 重启activity
+  public void restartActivity() {
+    Context cc = getApplicationContext();
+    Intent intent = this.getIntent();
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    overridePendingTransition(0, 0);
+    this.finish();
+    overridePendingTransition(0, 0);
+    cc.startActivity(intent);
+  }
+
+  // 结束activity
+  public void finishActivity() {
+    overridePendingTransition(0, 0);
+    finish();
+  }
+
   // 加载或者下载文件
-  public void loadFileOrDownFile(Context context, final Intent intent, final OnDownloadListener listener) {
+  private void loadFileOrDownFile(Context context, final Intent intent, final PageUtil.OnDownloadListener listener) {
     String bundleUrl = intent.getStringExtra("bundleUrl");
+    String bundlePath = intent.getStringExtra("bundlePath");
     String bundleFile = intent.getStringExtra("bundleFile");
     String appModule = intent.getStringExtra("appModule");
     String appName = intent.getStringExtra("appName");
@@ -337,104 +371,13 @@ public class PageActivity extends ReactActivity {
     Log.w("PageActivity", "loadFileOrDownFile " + appModule + " " + appVersion + " " + appName + " " + appText + " " + appLogo);
     File file = new File(bundleFile);
     if (!file.exists() || isReload) {
-      downloadFile(context, bundleUrl, bundleFile, listener);
+      String savePath = context.getApplicationContext().getCacheDir().getAbsolutePath() + "/modules/" + appModule + "/" + appVersion + "/";
+      PageUtil.downloadFile(context, bundleUrl, savePath, listener);
     } else {
       // 通知已下载成功
       listener.onLoadSuccess();
     }
   }
 
-  // 下载文件
-  public static void downloadFile(Context context, final String url, final String bundleFile,
-                                  final OnDownloadListener listener) {
-    final long startTime = System.currentTimeMillis();
-    Log.i("DOWNLOAD", "startTime=" + startTime);
-    OkHttpClient okHttpClient = new OkHttpClient();
 
-    Request request = new Request.Builder().url(url).build();
-    okHttpClient.newCall(request).enqueue(new Callback() {
-      @Override
-      public void onFailure(Call call, IOException e) {
-        Log.i("DOWNLOAD", "download failed " + e.getMessage());
-        // 下载失败
-        e.printStackTrace();
-        listener.onDownloadFailed(e);
-      }
-
-      @Override
-      public void onResponse(Call call, Response response) throws IOException {
-        InputStream is = null;
-        byte[] buf = new byte[2048];
-        int len = 0;
-        FileOutputStream fos = null;
-        // 储存下载文件的目录
-        String savePath = Environment.getDownloadCacheDirectory().getAbsolutePath();
-        savePath = context.getApplicationContext().getFilesDir().getAbsolutePath();
-        try {
-          is = response.body().byteStream();
-          long total = response.body().contentLength();
-          File file = new File(bundleFile);
-          Log.i("DOWNLOAD", "download file " + file.getPath() + " total:" + total);
-          fos = new FileOutputStream(file);
-          long sum = 0;
-          while ((len = is.read(buf)) != -1) {
-            fos.write(buf, 0, len);
-            sum += len;
-            int progress = (int) (sum * 1.0f / total * 100);
-            // 下载中
-//            listener.onDownloading(progress);
-          }
-          Log.i("DOWNLOAD", "download file " + file.getPath());
-          Log.i("DOWNLOAD", "totalTime=" + (System.currentTimeMillis() - startTime));
-          fos.flush();
-          // 下载完成
-          listener.onDownloadSuccess();
-          Log.i("DOWNLOAD", "download success ");
-        } catch (IOException e) {
-          Log.i("DOWNLOAD", "download failed IOException " + e.getMessage());
-          e.printStackTrace();
-          listener.onDownloadFailed(e);
-        } catch (Exception e) {
-          Log.i("DOWNLOAD", "download failed Exception " + e.getMessage());
-          e.printStackTrace();
-          listener.onDownloadFailed(e);
-        } finally {
-          try {
-            if (is != null)
-              is.close();
-          } catch (IOException e) {
-            Log.i("DOWNLOAD", "is.close() failed " + e.getMessage());
-          }
-          try {
-            if (fos != null)
-              fos.close();
-          } catch (IOException e) {
-            Log.i("DOWNLOAD", "fos.close() failed " + e.getMessage());
-          }
-        }
-      }
-    });
-  }
-
-  public interface OnDownloadListener {
-    /**
-     * 加载成功
-     */
-    void onLoadSuccess();
-
-    /**
-     * 下载成功
-     */
-    void onDownloadSuccess();
-
-    /**
-     * @param progress 下载进度
-     */
-    void onDownloading(int progress);
-
-    /**
-     * 下载失败
-     */
-    void onDownloadFailed(Exception e);
-  }
 }

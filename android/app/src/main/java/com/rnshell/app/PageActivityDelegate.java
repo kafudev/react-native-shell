@@ -142,6 +142,7 @@ public class PageActivityDelegate extends ReactActivityDelegate {
       protected List<ReactPackage> getPackages() {
         List<ReactPackage> packages = new PackageList(this).getPackages();
         packages.add(new CommonPackage()); // 加载通用模块
+        packages.add(new PagePackage());  // 加载页面模块
         return packages;
       }
 

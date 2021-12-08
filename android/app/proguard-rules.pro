@@ -78,3 +78,5 @@
 -keep class com.facebook.crypto.** {
    *;
 }
+
+-keep class com.nozbe.watermelondb.** { *; }

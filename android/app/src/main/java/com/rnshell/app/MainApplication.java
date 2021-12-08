@@ -51,6 +51,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           packages.add(new CommonPackage());  // 加载通用模块
+          packages.add(new PagePackage());  // 加载页面模块
           return packages;
         }
 

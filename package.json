@@ -57,6 +57,7 @@
     "log": "adb logcat | findstr com.rnshell.app",
     "test": "jest",
     "lint": "eslint .",
+    "analyze-bundle": "npx react-native-bundle-visualizer",
     "release": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease",
     "release-ci": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease --ci",
     "postinstall": "patch-package"
