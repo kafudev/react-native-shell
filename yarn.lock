@@ -1998,10 +1998,10 @@
     buffer "^6.0.3"
     jsrsasign "^10.3.0"
 
-"@kafudev/react-native-orientation@0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@kafudev/react-native-orientation/-/react-native-orientation-0.1.8.tgz#09b52efb0727ce9c960bb890eb09ae7e37b3ea27"
-  integrity sha512-0gff0Zi8r7tSBziq6y4NV+X3d1EC+c5yidTAWCGqiyTjU5xVAwjuidt98GuRQICR1fChiiB3MrJ2+7vDGMjHww==
+"@kafudev/react-native-orientation@0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@kafudev/react-native-orientation/-/react-native-orientation-0.1.9.tgz#07195ca88e6fb3deebbfd8582a4803692c6499a5"
+  integrity sha512-PXZNsgImmoRl0CNumKOk5yINV38ZpAjkKJ79B+8RRl0BUULuco1TJq5qDl5/urwfppBaSiKh75pqHmpITKa+VA==
 
 "@kafudev/react-native-qiyu@0.1.47":
   version "0.1.47"
@@ -2426,10 +2426,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.2.1.tgz#32b9f540d8e88a73d8856f73cca88251cecb9614"
   integrity sha512-EC7yv22QLHlTfnbC1ez9IUdXTOh1W31x96Oir0PfskSGFFJMWWdLTg4VrcE2DsGLzbfjjkBk123c173vf2a5MQ==
 
-"@react-native-plugin/pack@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@react-native-plugin/pack/-/pack-0.1.2.tgz#a29e2ad48c62e7786114672ed67dd683acac828a"
-  integrity sha512-sLmmDm2adXn4tGfjWs+gYGSvYDfmr+xlyeUooYsXp3BCd9g3xeQN9inM+wPmt0ajj5kQyZ2qa8TkmgwI8b432Q==
+"@react-native-plugin/pack@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@react-native-plugin/pack/-/pack-0.1.5.tgz#eacd51f51d8c02794206d4c1e99ef657b2d61e81"
+  integrity sha512-9e2tidcMCOG9oC/p3tnUpww24Ekb3PEo5kdDyAV1heHbU/z1/7I9pIF+6HHAE1TJ0rdv0dD94y9N7eU4HYAyuw==
 
 "@react-native-segmented-control/segmented-control@2.4.0":
   version "2.4.0"
@@ -11212,10 +11212,10 @@ react-native-maps@0.29.4:
   dependencies:
     "@types/geojson" "^7946.0.7"
 
-react-native-mmkv@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-1.5.3.tgz#106fae1322bb86d36e70f436da656b165d8f9d1e"
-  integrity sha512-WAw4amVA+fhHc1X/G+Khx+kBFFQMZVDjtMTCi55nsojlmBcq99eqm8v7yzzsUT1K2znvd/ptjZ0eDIuYGKCkOQ==
+react-native-mmkv@1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-1.5.4.tgz#41336c147c7190d2fea87c4de0be4c9b72a0c881"
+  integrity sha512-nmS5RO0tfH+KdJ0uVUPahsqw1IVXQOt+Kk6cI1/FMJz5dmvoKVC03XGYh91wmiFJFYqlKA+XFlKAhZUsLZqBYQ==
 
 react-native-pager-view@5.4.9:
   version "5.4.9"
