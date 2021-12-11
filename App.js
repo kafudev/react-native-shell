@@ -22,6 +22,7 @@ import {
   TextInput,
   LogBox,
   View,
+  DeviceEventEmitter,
 } from 'react-native';
 
 import {
@@ -74,9 +75,14 @@ const App = (props) => {
     'http://192.168.110.20:8081/index.bundle?platform=android&minify=true'
   );
 
-  setTimeout(() => {
-    NativeModules.RNBootSplash.hide(true); // 隐藏启动屏
-  }, 1500);
+  React.useEffect(() => {
+    setTimeout(() => {
+      NativeModules.RNBootSplash.hide(true); // 隐藏启动屏
+    }, 1500);
+    DeviceEventEmitter.addListener('main', (res) => {
+      console.log('主main监听', res, typeof res);
+    });
+  }, []);
 
   console.log('App props', props);
 
@@ -121,8 +127,17 @@ const App = (props) => {
         <Button
           title="重新加载JS"
           onPress={() => {
-            NativeModules.Common &&
-              NativeModules.Common.reloadJs();
+            NativeModules.Common && NativeModules.Common.reloadJs();
+          }}
+        />
+        <Button
+          title="触发Event"
+          onPress={() => {
+            // 主页面触发
+            console.log('emit from mainPage')
+            NativeModules.Pack.emit('main',{
+              from: "Pack Emit",
+            });
           }}
         />
         <TextInput
@@ -151,7 +166,8 @@ const App = (props) => {
                 bundleUrl: bundleUrl,
                 appModule: bundleName,
                 appName: 'APP子程序应用',
-                appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
+                appLogo:
+                  'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
                 appVersion: '1.0.0',
                 appText: '本应用由卡服科技提供技术支持',
                 extraData: {
@@ -174,7 +190,8 @@ const App = (props) => {
                 bundleUrl: bundleUrl,
                 appModule: bundleName,
                 appName: 'APP子程序应用',
-                appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
+                appLogo:
+                  'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
                 appVersion: '1.0.0',
                 appText: '本应用由卡服科技提供技术支持',
                 extraData: {
@@ -187,7 +204,7 @@ const App = (props) => {
               });
           }}
         />
-        <View style={{margin: 20}}></View>
+        <View style={{ margin: 20 }}></View>
         <Button
           title="打开RNSHELL子程序应用"
           onPress={() => {
@@ -198,7 +215,8 @@ const App = (props) => {
                 bundleUrl: bundleUrl,
                 appModule: 'rnshell',
                 appName: 'RNSHELL子程序应用',
-                appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
+                appLogo:
+                  'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
                 appVersion: '1.0.0',
                 appText: '本应用由卡服科技提供技术支持',
                 extraData: {
@@ -221,7 +239,8 @@ const App = (props) => {
                 bundleUrl: bundleUrl,
                 appModule: 'rnshell',
                 appName: 'RNSHELL子程序应用',
-                appLogo: 'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
+                appLogo:
+                  'https://www.logosc.cn/uploads/icon/2021/11/12//9ef97a99-a866-4fee-946e-81c2a310b797.png',
                 appVersion: '1.2.0',
                 appText: '本应用由卡服科技提供技术支持',
                 extraData: {
