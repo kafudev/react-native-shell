@@ -3,22 +3,21 @@
   "displayName": "APP开发",
   "config": {
     "framework": "react-native",
-    "platform": [
-      "ios",
-      "android",
-      "web",
-      "miniapp"
-    ],
+    "platform": ["ios", "android", "web", "miniapp"],
     "info": {
       "ios": {
         "bundleId": "com.rnshell.app",
         "versionCode": "1",
-        "versionName": "1.1.0"
+        "versionName": "1.1.0",
+        "icon": "./src/kitten/src/assets/images/image-app-icon.png",
+        "splash": "./src/kitten/src/assets/images/image-app-icon.png"
       },
       "android": {
         "package": "com.rnshell.app",
         "versionCode": "1",
-        "versionName": "1.1.0"
+        "versionName": "1.1.0",
+        "icon": "./src/kitten/src/assets/images/image-app-icon.png",
+        "splash": "./src/kitten/src/assets/images/image-app-icon.png"
       }
     },
     "build": {
@@ -29,7 +28,7 @@
         "build-android": "react-native build android"
       }
     },
-    "account":{
+    "account": {
       "ios": {
         "DOKIT_APPID": "",
         "BUGLY_APPID": "",
@@ -61,7 +60,8 @@
         "VIVO_APPID": "",
         "VIVO_APPKEY": ""
       }
-    }
+    },
+    "dependencies": {}
   },
   "expo": {
     "name": "rnshell",
@@ -80,11 +80,7 @@
       "versionCode": 3
     },
     "privacy": "public",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "icon": "./src/kitten/src/assets/images/image-app-icon.png",
