@@ -3,7 +3,7 @@
   "displayName": "APP开发",
   "config": {
     "pack_style": "merge",
-    "image": "@kafudev/react-native-shell@0.66.3-beta.7",
+    "image": "@kafudev/react-native-shell@0.66.3-beta.8",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
