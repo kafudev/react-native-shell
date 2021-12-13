@@ -204,6 +204,29 @@ def setAppcenterConfig() {
 }
 setAppcenterConfig()
 
+// 读取签名配置文件
+def debug_keystoreStoreFilePath = "$rootDir/" + project.env.get("DEBUG_STORE_FILE", "./keystores/debug.keystore")
+def debug_keystoreProperties = new Properties()
+def debug_keystoreStoreFile = new File(debug_keystoreStoreFilePath)
+def debug_keystorePropertiesFilePath = debug_keystoreStoreFilePath + '.properties'
+def debug_keystorePropertiesFile = new File(debug_keystorePropertiesFilePath)
+if (debug_keystorePropertiesFile.exists()) {
+  debug_keystoreProperties.load(new FileInputStream(debug_keystorePropertiesFilePath));
+}
+def release_keystoreStoreFilePath = "$rootDir/" + project.env.get("RELEASE_STORE_FILE", "./keystores/release.keystore")
+def release_keystoreStoreFile = new File(release_keystoreStoreFilePath)
+def release_keystoreProperties = new Properties()
+def release_keystorePropertiesFilePath = release_keystoreStoreFilePath + '.properties'
+def release_keystorePropertiesFile = new File(release_keystorePropertiesFilePath)
+if (release_keystorePropertiesFile.exists()) {
+  release_keystoreProperties.load(new FileInputStream(release_keystorePropertiesFilePath));
+}
+// release不存在则用debug证书签名
+if (!release_keystoreStoreFile.exists()) {
+  release_keystoreStoreFile = debug_keystoreStoreFile;
+  release_keystoreProperties = debug_keystoreProperties;
+}
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -228,7 +251,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode increasedVersionCode()
-        versionName project.env.get("versionName")
+        versionName project.env.get("VERSION_NAME")
 
         manifestPlaceholders = [
             APP_NAME: project.env.get("APP_NAME"),
@@ -300,16 +323,16 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file("$rootDir/"+project.env.get("debug_storeFile"))
-            storePassword project.env.get("debug_storePassword")
-            keyAlias project.env.get("debug_keyAlias")
-            keyPassword project.env.get("debug_keyPassword")
+            storeFile debug_keystoreStoreFile
+            storePassword debug_keystoreProperties["key.store.password"]
+            keyAlias debug_keystoreProperties["key.alias"]
+            keyPassword debug_keystoreProperties["key.alias.password"]
         }
         release {
-            storeFile file("$rootDir/"+project.env.get("release_storeFile"))
-            storePassword project.env.get("release_storePassword")
-            keyAlias project.env.get("release_keyAlias")
-            keyPassword project.env.get("release_keyPassword")
+            storeFile release_keystoreStoreFile
+            storePassword release_keystoreProperties["key.store.password"]
+            keyAlias release_keystoreProperties["key.alias"]
+            keyPassword release_keystoreProperties["key.alias.password"]
         }
     }
 

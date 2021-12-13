@@ -2,20 +2,21 @@
   "name": "rnshell",
   "displayName": "APP开发",
   "config": {
+    "image": "@kafudev/react-native-shell@0.66.3-beta.6",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
       "ios": {
-        "bundleId": "com.rnshell.app",
-        "versionCode": "1",
-        "versionName": "1.1.0",
+        "bundle_id": "com.rnshell.app",
+        "version_code": "",
+        "version_name": "1.2.0",
         "icon": "./src/kitten/src/assets/images/image-app-icon.png",
         "splash": "./src/kitten/src/assets/images/image-app-icon.png"
       },
       "android": {
-        "package": "com.rnshell.app",
-        "versionCode": "1",
-        "versionName": "1.1.0",
+        "package_id": "com.rnshell.app",
+        "version_code": "",
+        "version_name": "1.2.0",
         "icon": "./src/kitten/src/assets/images/image-app-icon.png",
         "splash": "./src/kitten/src/assets/images/image-app-icon.png"
       }
@@ -28,37 +29,104 @@
         "build-android": "react-native build android"
       }
     },
-    "account": {
-      "ios": {
-        "DOKIT_APPID": "",
-        "BUGLY_APPID": "",
-        "BUGLY_APPKEY": "",
-        "JPUSH_APPKEY": "",
-        "JPUSH_CHANNEL": "",
-        "QIYU_APPKEY": "",
-        "TXLIVE_LICENCE_KEY": "",
-        "TXLIVE_LICENCE_URL": "",
-        "CODEPUSH_KEY": "",
-        "APPCENTER_KEY": ""
+    "modules": {
+      "dokit": {
+        "enable": true,
+        "config": {
+          "appid": ""
+        }
       },
-      "android": {
-        "DOKIT_APPID": "",
-        "BUGLY_APPID": "",
-        "BUGLY_APPKEY": "",
-        "JPUSH_APPKEY": "",
-        "JPUSH_CHANNEL": "",
-        "QIYU_APPKEY": "",
-        "TXLIVE_LICENCE_KEY": "",
-        "TXLIVE_LICENCE_URL": "",
-        "CODEPUSH_KEY": "",
-        "APPCENTER_KEY": "",
-        "XIAOMI_APPID": "",
-        "XIAOMI_APPKEY": "",
-        "OPPO_APPID": "",
-        "OPPO_APPKEY": "",
-        "OPPO_APPSECRET": "",
-        "VIVO_APPID": "",
-        "VIVO_APPKEY": ""
+      "bugly": {
+        "enable": true,
+        "config": {
+          "ios": {
+            "appid": "",
+            "appkey": ""
+          },
+          "android": {
+            "appid": "",
+            "appkey": ""
+          }
+        }
+      },
+      "jpush": {
+        "enable": true,
+        "config": {
+          "appkey": "",
+          "channel": "",
+          "production": false
+        }
+      },
+      "qiyu": {
+        "enable": false,
+        "config": {
+          "appKey": ""
+        }
+      },
+      "txlive": {
+        "enable": false,
+        "config": {
+          "licence_key": "",
+          "licence_url": ""
+        }
+      },
+      "codepush": {
+        "enable": false,
+        "config": {
+          "ios": {
+            "key": ""
+          },
+          "android": {
+            "key": ""
+          }
+        }
+      },
+      "appcenter": {
+        "enable": false,
+        "config": {
+          "ios": {
+            "key": ""
+          },
+          "android": {
+            "key": ""
+          }
+        }
+      },
+      "xiaomi": {
+        "enable": true,
+        "config": {
+          "appid": "",
+          "appkey": ""
+        }
+      },
+      "oppo": {
+        "enable": true,
+        "config": {
+          "appid": "",
+          "appkey": "",
+          "appsecret": ""
+        }
+      },
+      "vivo": {
+        "enable": true,
+        "config": {
+          "appid": "",
+          "appkey": ""
+        }
+      },
+      "firim": {
+        "enable": true,
+        "config": {
+          "api_key": "",
+          "api_user": ""
+        }
+      },
+      "pgyer": {
+        "enable": true,
+        "config": {
+          "api_key": "",
+          "api_user": ""
+        }
       }
     },
     "dependencies": {}
