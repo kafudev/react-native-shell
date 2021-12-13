@@ -87,13 +87,16 @@ project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
 ]
 
-apply from: "../../node_modules/react-native/react.gradle"
+// react-native-config 2nd line, add a new apply:
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+// 默认打包方式，会自动打包bundle.js
+if(project.env.get("PACK_STYLE", "bundle")){
+  apply from: "../../node_modules/react-native/react.gradle"
+}
 apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
-// react-native-config 2nd line, add a new apply:
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 bugly {
     debug = false

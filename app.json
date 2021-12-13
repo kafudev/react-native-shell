@@ -2,7 +2,8 @@
   "name": "rnshell",
   "displayName": "APP开发",
   "config": {
-    "image": "@kafudev/react-native-shell@0.66.3-beta.6",
+    "pack_style": "merge",
+    "image": "@kafudev/react-native-shell@0.66.3-beta.7",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {

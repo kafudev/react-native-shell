@@ -307,10 +307,11 @@ function _handleAndroid(mainName, appName, appConfig, envConfig) {
   shell.cp('-Rf', sPath, tPath);
 
   // 合并配置项
-  let aConfig = appConfig?.info?.android || {};
-  let bConfig = appConfig?.account?.android || {};
+  let aConfig = { pack_style: appConfig.pack_style }; // 通用参数，打包方式
+  let bConfig = appConfig?.info?.android || {};
+  let cConfig = appConfig?.account?.android || {};
   let modulesConfig = appConfig?.modules || {};
-  let infoConfig = { ...aConfig, ...bConfig };
+  let infoConfig = { ...aConfig, ...bConfig, ...cConfig };
   // 修改编译配置
   _overEditEnv('android', infoConfig, envConfig, modulesConfig);
 }
@@ -338,10 +339,11 @@ function _handleIos(mainName, appName, appConfig, envConfig) {
   shell.cp('-Rf', sPath, tPath);
 
   // 合并配置项
-  let aConfig = appConfig?.info?.ios || {};
-  let bConfig = appConfig?.account?.ios || {};
+  let aConfig = { pack_style: appConfig.pack_style }; // 通用参数，打包方式
+  let bConfig = appConfig?.info?.ios || {};
+  let cConfig = appConfig?.account?.ios || {};
   let modulesConfig = appConfig?.modules || {};
-  let infoConfig = { ...aConfig, ...bConfig };
+  let infoConfig = { ...aConfig, ...bConfig, ...cConfig };
   // 修改编译配置
   _overEditEnv('ios', infoConfig, envConfig, modulesConfig);
 }
