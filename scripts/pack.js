@@ -83,9 +83,13 @@ try {
       true
     );
     console.log('cli doing outputPackage end.', outputRes);
+  } else {
+    console.error('cli build failed');
+    process.exit(-1);
   }
 } catch (error) {
   console.error('cli error: ', error.message);
+  process.exit(-1);
 }
 
 // 结束退出

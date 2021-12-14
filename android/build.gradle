@@ -19,14 +19,14 @@ buildscript {
         ucropVersion = "2.2.6"
     }
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://repo1.maven.org/maven2/' }
-        maven { url "https://www.jitpack.io" }
-        maven { url 'https://repo.huaweicloud.com/repository/maven' }
-        maven { url 'https://developer.huawei.com/repo/' }
+        // maven { url 'https://maven.aliyun.com/repository/central' }
+        // maven { url 'https://maven.aliyun.com/repository/public' }
+        // maven { url 'https://maven.aliyun.com/repository/google' }
+        // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // maven { url 'https://repo1.maven.org/maven2/' }
+        // maven { url "https://www.jitpack.io" }
+        // maven { url 'https://repo.huaweicloud.com/repository/maven' }
+        // maven { url 'https://developer.huawei.com/repo/' }
         mavenLocal()
         mavenCentral()
         google()
@@ -59,14 +59,14 @@ allprojects {
             // expo-camera bundles a custom com.google.android:cameraview
             url "$rootDir/../node_modules/expo-camera/android/maven"
         }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://repo1.maven.org/maven2/' }
-        maven { url "https://www.jitpack.io" }
-        maven { url 'https://repo.huaweicloud.com/repository/maven' }
-        maven { url 'https://developer.huawei.com/repo/' }
+        // maven { url 'https://maven.aliyun.com/repository/central' }
+        // maven { url 'https://maven.aliyun.com/repository/public' }
+        // maven { url 'https://maven.aliyun.com/repository/google' }
+        // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // maven { url 'https://repo1.maven.org/maven2/' }
+        // maven { url "https://www.jitpack.io" }
+        // maven { url 'https://repo.huaweicloud.com/repository/maven' }
+        // maven { url 'https://developer.huawei.com/repo/' }
         mavenLocal()
         mavenCentral()
         google()
