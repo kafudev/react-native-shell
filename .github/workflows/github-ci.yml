@@ -11,4 +11,4 @@ jobs:
     - name: Envinfo
       run: npx envinfo
     - name: Build application
-      run: yarn install && yarn pack-android
+      run: yarn install && cd android && chmod +x gradlew && cd ../ && yarn pack-android
