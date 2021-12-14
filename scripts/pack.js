@@ -85,11 +85,11 @@ try {
     console.log('cli doing outputPackage end.', outputRes);
   } else {
     console.error('cli build failed');
-    process.exit(-1);
+    process.exit(1);
   }
 } catch (error) {
   console.error('cli error: ', error.message);
-  process.exit(-1);
+  process.exit(1);
 }
 
 // 结束退出
@@ -267,10 +267,13 @@ function execBuild(platform, mainName, appName, appConfig, envConfig) {
   let cmdStr = '';
   switch (platform) {
     case 'android':
-      cmdStr = DEBUG ? 'yarn build-android-debug' : 'yarn build-android';
+      if(OS_TYPE !== 'win32'){
+        cmdStr = `cd android && chmod +x gradlew && cd ../ && `;
+      }
+      cmdStr += DEBUG ? 'yarn build-android-debug' : 'yarn build-android';
       break;
     case 'ios':
-      cmdStr = DEBUG ? 'yarn build-ios-debug' : 'yarn build-ios';
+      cmdStr += DEBUG ? 'yarn build-ios-debug' : 'yarn build-ios';
       break;
     default:
       return false;

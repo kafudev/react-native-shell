@@ -105,8 +105,8 @@ apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 bugly {
     debug = false
     upload = false
-    appId = project.env.get("BUGLY_APPID_ANDROID") // 注册时分配的App ID
-    appKey = project.env.get("BUGLY_APPKEY_ANDROID") // 注册时分配的App Key
+    appId = project.env.get("BUGLY_APPID_ANDROID","") // 注册时分配的App ID
+    appKey = project.env.get("BUGLY_APPKEY_ANDROID","") // 注册时分配的App Key
 }
 
 /**
@@ -162,10 +162,10 @@ def increasedVersionCode() {
     // 通过时间戳打包
     def ttime = new Date().getTime();
     def versionCode = "$ttime".substring(2,8)
-    println "APP_NAME:" + project.env.get("APP_NAME")
-    println "applicationId:" + project.env.get("APP_PACKAGE")
+    println "APP_NAME:" + project.env.get("APP_NAME","")
+    println "applicationId:" + project.env.get("APP_PACKAGE","")
     println "versionCode:" + versionCode
-    println "versionName:" + project.env.get("versionName")
+    println "versionName:" + project.env.get("versionName","")
     println "timestamp:" + ttime
     return versionCode.toInteger()
 
@@ -197,7 +197,7 @@ def increasedVersionCode() {
 
 // 设置APPCENTER配置文件
 def setAppcenterConfig() {
-    def APPCENTER_KEY_ANDROID = project.env.get("APPCENTER_KEY_ANDROID")
+    def APPCENTER_KEY_ANDROID = project.env.get("APPCENTER_KEY_ANDROID","")
     if(APPCENTER_KEY_ANDROID){
       def con = {
           app_secret APPCENTER_KEY_ANDROID
@@ -250,56 +250,56 @@ android {
     }
 
     defaultConfig {
-        resValue "string", "app_name", project.env.get("APP_NAME")
+        resValue "string", "app_name", project.env.get("APP_NAME", "")
         resValue "string", "build_config_package", 'com.rnshell.app'   // react-native-config配置用,跟AndroidManifest包名保持一致
-        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID")
+        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID", "")
         resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
-        applicationId project.env.get("APP_PACKAGE")
+        applicationId project.env.get("APP_PACKAGE", "")
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode increasedVersionCode()
-        versionName project.env.get("VERSION_NAME")
+        versionName project.env.get("VERSION_NAME", "1.0.0")
 
         manifestPlaceholders = [
-            APP_NAME: project.env.get("APP_NAME"),
-            APP_PACKAGE: project.env.get("APP_PACKAGE"),
+            APP_NAME: project.env.get("APP_NAME", ""),
+            APP_PACKAGE: project.env.get("APP_PACKAGE", ""),
 
             JPUSH_PKGNAME : applicationId,
-            JPUSH_APPKEY: project.env.get("JPUSH_APPKEY"),
-            JPUSH_CHANNEL: project.env.get("JPUSH_CHANNEL"),
+            JPUSH_APPKEY: project.env.get("JPUSH_APPKEY", ""),
+            JPUSH_CHANNEL: project.env.get("JPUSH_CHANNEL", ""),
 
             // 开发工具
-            DOKIT_APPID: project.env.get("DOKIT_APPID"),
-            BUGLY_APPID: project.env.get("BUGLY_APPID_ANDROID"),
+            DOKIT_APPID: project.env.get("DOKIT_APPID", ""),
+            BUGLY_APPID: project.env.get("BUGLY_APPID_ANDROID", ""),
 
             // 七鱼客服
-            QIYU_APPKEY: project.env.get("QIYU_APPKEY"),
+            QIYU_APPKEY: project.env.get("QIYU_APPKEY", ""),
 
             // 腾讯直播
-            TXLIVE_LICENCE_KEY: project.env.get("TXLIVE_LICENCE_KEY"),
-            TXLIVE_LICENCE_URL: project.env.get("TXLIVE_LICENCE_URL"),
+            TXLIVE_LICENCE_KEY: project.env.get("TXLIVE_LICENCE_KEY", ""),
+            TXLIVE_LICENCE_URL: project.env.get("TXLIVE_LICENCE_URL", ""),
 
             //xiaomi_config_start
-            XIAOMI_APPID  : project.env.get("XIAOMI_APPID"),
-            XIAOMI_APPKEY : project.env.get("XIAOMI_APPKEY"),
+            XIAOMI_APPID  : project.env.get("XIAOMI_APPID", ""),
+            XIAOMI_APPKEY : project.env.get("XIAOMI_APPKEY", ""),
             //xiaomi_config_end
             //oppo_config_start
-            OPPO_APPKEY   : project.env.get("OPPO_APPKEY"),
-            OPPO_APPID    : project.env.get("OPPO_APPID"),
-            OPPO_APPSECRET: project.env.get("OPPO_APPSECRET"),
+            OPPO_APPKEY   : project.env.get("OPPO_APPKEY", ""),
+            OPPO_APPID    : project.env.get("OPPO_APPID", ""),
+            OPPO_APPSECRET: project.env.get("OPPO_APPSECRET", ""),
             //oppo_config_end
             //vivo_config_start
-            VIVO_APPKEY   : project.env.get("VIVO_APPKEY"),
-            VIVO_APPID    : project.env.get("VIVO_APPID"),
+            VIVO_APPKEY   : project.env.get("VIVO_APPKEY", ""),
+            VIVO_APPID    : project.env.get("VIVO_APPID", ""),
             //vivo_config_end
 
-            UMENG_APPKEY: project.env.get("UMENG_APPKEY"),
-            QQ_APPID: project.env.get("QQ_APPID"),
-            QQ_APPKEY: project.env.get("QQ_APPKEY"),
-            WECHAT_APPID: project.env.get("WECHAT_APPID"),
-            WECHAT_APPKEY: project.env.get("WECHAT_APPKEY"),
-            WEIBO_APPID: project.env.get("WEIBO_APPID"),
-            WEIBO_APPKEY: project.env.get("WEIBO_APPKEY"),
+            UMENG_APPKEY: project.env.get("UMENG_APPKEY", ""),
+            QQ_APPID: project.env.get("QQ_APPID", ""),
+            QQ_APPKEY: project.env.get("QQ_APPKEY", ""),
+            WECHAT_APPID: project.env.get("WECHAT_APPID", ""),
+            WECHAT_APPKEY: project.env.get("WECHAT_APPKEY", ""),
+            WEIBO_APPID: project.env.get("WEIBO_APPID", ""),
+            WEIBO_APPKEY: project.env.get("WEIBO_APPKEY", ""),
         ]
 
         vectorDrawables.useSupportLibrary  true
@@ -351,11 +351,11 @@ android {
                     abiFilters nativeArchitectures.split(',')
                 }
             }
-            resValue "string", "app_name", project.env.get("APP_NAME")+"dev"
+            resValue "string", "app_name", project.env.get("APP_NAME","")+"dev"
             applicationIdSuffix "dev"
             // 重置极光推送的provider,一样会安装失败
             manifestPlaceholders = [
-              JPUSH_PKGNAME : project.env.get("APP_PACKAGE")+"dev",
+              JPUSH_PKGNAME : project.env.get("APP_PACKAGE","")+"dev",
             ]
             minifyEnabled false
             zipAlignEnabled true
