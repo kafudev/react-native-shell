@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 const process = require('process');
 const dotenv = require('dotenv');
+const os = require('os');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -267,7 +268,7 @@ function execBuild(platform, mainName, appName, appConfig, envConfig) {
   let cmdStr = '';
   switch (platform) {
     case 'android':
-      if(OS_TYPE !== 'win32'){
+      if(os.platform() !== 'win32') {
         cmdStr = `cd android && chmod +x gradlew && cd ../ && `;
       }
       cmdStr += DEBUG ? 'yarn build-android-debug' : 'yarn build-android';
