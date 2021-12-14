@@ -145,17 +145,17 @@ function installDep(platform, mainName, appName, appConfig, envConfig) {
       upDepStr += '  ' + `${key}@${element}`;
     }
   }
-  // 进行安装
+  // 默认安装依赖，新增库进行安装
+  let cmdStr = 'yarn install';
   if (upDepStr) {
-    let cmdStr = 'yarn add ' + upDepStr;
-    console.log('shell.exec ', cmdStr);
-    let { code, stdout, stderr } = shell.exec(cmdStr, { silent: false });
-    console.log(`shell.exec [${cmdStr}] :`, code, stdout, stderr);
-    if (code !== 0) {
-      shell.echo(`shell.exec [${cmdStr}] Error: failed`); // shell.exit(1);
-      return false;
-    }
-    return true;
+    cmdStr = 'yarn add ' + upDepStr;
+  }
+  console.log('shell.exec ', cmdStr);
+  let { code, stdout, stderr } = shell.exec(cmdStr, { silent: false });
+  console.log(`shell.exec [${cmdStr}] :`, code, stdout, stderr);
+  if (code !== 0) {
+    shell.echo(`shell.exec [${cmdStr}] Error: failed`); // shell.exit(1);
+    return false;
   }
   return true;
 }
