@@ -2,6 +2,7 @@
 .npmrc
 .vscode
 *.zip
+dist/
 # OSX
 #
 .DS_Store

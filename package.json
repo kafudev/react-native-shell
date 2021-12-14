@@ -62,8 +62,10 @@
     "release": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease",
     "release-ci": "dotenv -- release-it prepatch --preRelease=beta --npm.tag=beta --github.preRelease --ci",
     "postinstall": "patch-package",
-    "pack-ios": "node ./scripts/pack.js --platform ios",
-    "pack-android": "node ./scripts/pack.js --platform android"
+    "pack-ios": "yarn kafu-cli pack build -p ios -m release -f react-native",
+    "pack-android": "yarn kafu-cli pack build -p android -m release -f react-native",
+    "zip-ios": "yarn kafu-cli pack zip -p ios -m release -f react-native",
+    "zip-android": "yarn kafu-cli pack zip -p android -m release -f react-native"
   },
   "keywords": [
     "react-native",
@@ -196,6 +198,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.16.3",
     "@commitlint/config-conventional": "^15.0.0",
+    "@kafudev/cli": "^1.0.22",
     "@react-native-community/eslint-config": "^3.0.1",
     "@release-it/conventional-changelog": "^3.3.0",
     "@types/jest": "^27.0.3",
@@ -203,7 +206,6 @@
     "@types/react-native": "0.66.8",
     "babel-jest": "^27.4.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
-    "commander": "^8.3.0",
     "commitlint": "^15.0.0",
     "copy-files-from-to": "^3.2.2",
     "dotenv": "^10.0.0",
@@ -229,7 +231,6 @@
     "react-native-rename": "^2.9.0",
     "react-test-renderer": "17.0.2",
     "release-it": "^14.11.8",
-    "shelljs": "^0.8.4",
     "sinon": "^12.0.1",
     "typescript": "^4.5.3"
   },
