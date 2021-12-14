@@ -311,7 +311,11 @@ function _handleAndroid(mainName, appName, appConfig, envConfig) {
   shell.cp('-Rf', sPath, tPath);
 
   // 合并配置项
-  let aConfig = { pack_style: appConfig.pack_style }; // 通用参数，打包方式
+  let aConfig = {
+    pack_style: appConfig.pack_style,
+    app_name: appName,
+    app_package: appConfig?.info?.android?.package_id || '',
+  }; // 通用参数，打包方式
   let bConfig = appConfig?.info?.android || {};
   let cConfig = appConfig?.account?.android || {};
   let modulesConfig = appConfig?.modules || {};
@@ -343,7 +347,11 @@ function _handleIos(mainName, appName, appConfig, envConfig) {
   shell.cp('-Rf', sPath, tPath);
 
   // 合并配置项
-  let aConfig = { pack_style: appConfig.pack_style }; // 通用参数，打包方式
+  let aConfig = {
+    pack_style: appConfig.pack_style,
+    app_name: appName,
+    app_package: appConfig?.info?.ios?.bundle_id || '',
+  }; // 通用参数，打包方式
   let bConfig = appConfig?.info?.ios || {};
   let cConfig = appConfig?.account?.ios || {};
   let modulesConfig = appConfig?.modules || {};
