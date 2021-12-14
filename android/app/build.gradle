@@ -429,7 +429,11 @@ android {
     }
 
     packagingOptions {
-     pickFirst '**/libc++_shared.so' // ⬅️ This (if missing)
+      pickFirst '**/libc++_shared.so' // ⬅️ This (if missing)
+      pickFirst '**/libreactnativejni.so'
+      pickFirst '**/libjsi.so'
+      pickFirst '**/libhermes.so'
+      pickFirst '**/libjsc.so'
     }
 }
 
