@@ -1,6 +1,6 @@
 name: Github Actions
 
-on: [push, pull_request]
+on: [page_build]
 
 jobs:
   build:
