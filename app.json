@@ -3,7 +3,7 @@
   "displayName": "APP开发",
   "config": {
     "pack_style": "bundle",
-    "image": "@kafudev/react-native-shell@0.66.4-beta.3",
+    "image": "@kafudev/react-native-shell@0.66.4-beta.6",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
