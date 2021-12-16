@@ -2147,10 +2147,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@kafudev/cli@^1.0.26":
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/@kafudev/cli/-/cli-1.0.26.tgz#5ea1bef910cebecdf6776e666580ceb3e60a1c2b"
-  integrity sha512-TzLwQJ2liDvg5fJtrqfj6WE/gFlxQLq0bnnHBb3xM2U/Tktf/Pm/scVE14EJkzjOha2DdGVxImXOONX5o9CA2g==
+"@kafudev/cli@^1.0.35":
+  version "1.0.35"
+  resolved "https://registry.yarnpkg.com/@kafudev/cli/-/cli-1.0.35.tgz#6eb75e095ff795016b062d6c70e14b32c514e667"
+  integrity sha512-VdFfhzdf9rl1cKVEKhjBBbfVZ0uEnKaSPDGn9Ywt7tJReQtEKRtBuqB5crJv2G5lDMtPNQpJnhXoNJQ7R+/2Eg==
   dependencies:
     adm-zip "^0.5.9"
     archiver "^5.3.0"
@@ -3349,10 +3349,10 @@
   dependencies:
     invariant "^2.2.4"
 
-"@react-native-firebase/app@14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-14.0.0.tgz#e2af033dda1d7d8c2d28d7464cfe8abd0196d404"
-  integrity sha512-noP4bBn+7ODvViy/MbmeLcH55K3vqJgyOLqTWC93lqlQOtWQB1QrTrZ/iJtxhrUcZLrVfjnxrVWsxLW+VzXfWQ==
+"@react-native-firebase/app@14.0.1":
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-14.0.1.tgz#bdac886dae85628eedbb2cf91c31b3681e4562fc"
+  integrity sha512-LDudsR9OGKqf9wqaYKeYujmPRMY4pI/zWva/WAH0gzLNR7RuSrwFVpzxXx3wQw8f6ruJ8h8VJw0h3P2vhV1jgw==
   dependencies:
     "@expo/config-plugins" "^4.0.12"
     opencollective-postinstall "^2.0.1"
@@ -12831,10 +12831,10 @@ react-native-bootsplash@3.2.5:
     fs-extra "^10.0.0"
     jimp "^0.16.1"
 
-react-native-calendars@1.1273.0:
-  version "1.1273.0"
-  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.1273.0.tgz#11c0a8e18d2f6a0982cf971163f58a4d65a5052b"
-  integrity sha512-qZOVai0NFz++V9rrqehv1pbQRO9SLIfdjz+lYx3QrAhKGYhHFDFZXWwKx+kChJOqPXadvQVectbmRdgCdPbqjQ==
+react-native-calendars@1.1274.0:
+  version "1.1274.0"
+  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.1274.0.tgz#a2c74d3cadc0b37c32b85247f30bd18c8266e86a"
+  integrity sha512-Dt+0Juscm3+bllriT4xYSYAb0bG8+z4/w7yQoydyqEotjB0UA+XZx4WBWVkJ10jm7H8PO1UmLlboJEaIq5s/sw==
   dependencies:
     hoist-non-react-statics "^3.3.1"
     immutable "^4.0.0-rc.12"
@@ -13120,10 +13120,10 @@ react-native-text-size@4.0.0-rc.1:
   resolved "https://registry.yarnpkg.com/react-native-text-size/-/react-native-text-size-4.0.0-rc.1.tgz#1e048d345dd6a5a8e1269e0585c1a5948c478da5"
   integrity sha512-CysqjU2jK6Yc+a+kEI222pUyTY2ywcU2HqbFqf1KHymW6OPTdvBBHqbEJKL0QiLhQaFYDbqicM+h990s9TP00g==
 
-react-native-ui-lib@6.5.4:
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-6.5.4.tgz#736806a842fed79c5bf9c4e6c5b96458dba86903"
-  integrity sha512-7W0Nv0fM725WsuyIhzv9cdrYtLz+h9UfvUrmw5CARI1+KqMtI5XocpNbiGG0gQu4V8uWL/YenPZ3yX+wxoBG8w==
+react-native-ui-lib@6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-6.6.0.tgz#4a4c3c95ca34ae2f32fdc72795acef69c224e62d"
+  integrity sha512-SRCIStNwaGCk9v2vsPr7goS2cJ4w2+ceWecWIJ7y2cpZZbe+x8hXaQzSChoaucNKcdzzYXiNj5jf7zBgI06wsQ==
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     color "^3.1.0"
