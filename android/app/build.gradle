@@ -165,7 +165,7 @@ def increasedVersionCode() {
     println "APP_NAME:" + project.env.get("APP_NAME","")
     println "applicationId:" + project.env.get("APP_PACKAGE","")
     println "versionCode:" + versionCode
-    println "versionName:" + project.env.get("versionName","")
+    println "versionName:" + project.env.get("VERSION_NAME","")
     println "timestamp:" + ttime
     return versionCode.toInteger()
 
@@ -412,7 +412,7 @@ android {
             output.outputFileName = filename
 
             // 输出文件-build
-            def outputFileDir2 = "${project.projectDir.absolutePath}/../../build/android/${variant.buildType.name}/${variant.flavorName}/${variant.versionName}"
+            // def outputFileDir2 = "${project.projectDir.absolutePath}/../../build/android/${variant.buildType.name}/${variant.flavorName}/${variant.versionName}"
             // variant.packageApplicationProvider.get().outputDirectory = new File(outputFileDir)
             // output.outputFileName = filename
 

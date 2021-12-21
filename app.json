@@ -24,10 +24,12 @@
     },
     "build": {
       "ios": {
-        "build-ios": "react-native build ios"
+        "release": "yarn build-ios",
+        "debug": "yarn build-ios-debug"
       },
       "android": {
-        "build-android": "react-native build android"
+        "release": "yarn build-android",
+        "debug": "yarn build-android-debug"
       }
     },
     "modules": {

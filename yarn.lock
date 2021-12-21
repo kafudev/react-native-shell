@@ -21,7 +21,7 @@
   resolved "https://registry.npmmirror.com/@babel/compat-data/download/@babel/compat-data-7.16.4.tgz?cache=0&sync_timestamp=1637105418856&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fcompat-data%2Fdownload%2F%40babel%2Fcompat-data-7.16.4.tgz#081d6bbc336ec5c2435c6346b2ae1fb98b5ac68e"
   integrity sha512-1o/jo7D+kC9ZjHX5v+EHrdjl3PhxMrLSOTGsOdHJ+KL8HCaEK6ehrVL2RS6oHDZp+L7xLirLrPmQtEng769J/Q==
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.12.3", "@babel/core@^7.14.0", "@babel/core@^7.16.5", "@babel/core@^7.7.2", "@babel/core@^7.7.5":
+"@babel/core@7.16.5", "@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.12.3", "@babel/core@^7.14.0", "@babel/core@^7.7.2", "@babel/core@^7.7.5":
   version "7.16.5"
   resolved "https://registry.npmmirror.com/@babel/core/download/@babel/core-7.16.5.tgz#924aa9e1ae56e1e55f7184c8bf073a50d8677f5c"
   integrity sha512-wUcenlLzuWMZ9Zt8S0KmFwGlH6QKRh3vsm/dhDA3CHkiTA45YuG1XkHRcNRl73EFPXDp/d5kVOU0/y7x2w6OaQ==
@@ -314,7 +314,7 @@
     "@babel/helper-plugin-utils" "^7.16.5"
     "@babel/plugin-syntax-class-static-block" "^7.14.5"
 
-"@babel/plugin-proposal-decorators@^7.12.9", "@babel/plugin-proposal-decorators@^7.16.5":
+"@babel/plugin-proposal-decorators@7.16.5", "@babel/plugin-proposal-decorators@^7.12.9":
   version "7.16.5"
   resolved "https://registry.npmmirror.com/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.16.5.tgz#4617420d3685078dfab8f68f859dca1448bbb3c7"
   integrity sha512-XAiZll5oCdp2Dd2RbXA3LVPlFyIRhhcQy+G34p9ePpl6mjFkbqHAYHovyw2j5mqUrlBf0/+MtOIJ3JGYtz8qaw==
@@ -897,7 +897,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.16.0"
     "@babel/helper-plugin-utils" "^7.16.5"
 
-"@babel/polyfill@^7.12.1":
+"@babel/polyfill@7.12.1":
   version "7.12.1"
   resolved "https://registry.npmmirror.com/@babel/polyfill/download/@babel/polyfill-7.12.1.tgz#1f2d6371d1261bbd961f3c5d5909150e12d0bd96"
   integrity sha1-Hy1jcdEmG72WHzxdWQkVDhLQvZY=
@@ -1025,7 +1025,7 @@
     pirates "^4.0.0"
     source-map-support "^0.5.16"
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.14.0", "@babel/runtime@^7.16.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@7.16.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.14.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.16.5"
   resolved "https://registry.npmmirror.com/@babel/runtime/download/@babel/runtime-7.16.5.tgz#7f3e34bf8bdbbadf03fbb7b1ea0d929569c9487a"
   integrity sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA==
@@ -1102,7 +1102,7 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@^15.0.0":
+"@commitlint/config-conventional@15.0.0":
   version "15.0.0"
   resolved "https://registry.npmmirror.com/@commitlint/config-conventional/download/@commitlint/config-conventional-15.0.0.tgz#3bf1adf319e3b431de12ba82dc399524038b2d8f"
   integrity sha512-eZBRL8Lk3hMNHp1wUMYj0qrZQEsST1ai7KHR8J1IDD9aHgT7L2giciibuQ+Og7vxVhR5WtYDvh9xirXFVPaSkQ==
@@ -1997,10 +1997,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@kafudev/cli@^1.0.35":
-  version "1.0.35"
-  resolved "https://registry.npmmirror.com/@kafudev/cli/download/@kafudev/cli-1.0.35.tgz#6eb75e095ff795016b062d6c70e14b32c514e667"
-  integrity sha512-VdFfhzdf9rl1cKVEKhjBBbfVZ0uEnKaSPDGn9Ywt7tJReQtEKRtBuqB5crJv2G5lDMtPNQpJnhXoNJQ7R+/2Eg==
+"@kafudev/cli@1.0.38":
+  version "1.0.38"
+  resolved "https://registry.npmmirror.com/@kafudev/cli/download/@kafudev/cli-1.0.38.tgz#b725b70b4ca2fdb5ddceb200f2653d4dbbb692b1"
+  integrity sha512-Bksa7DQW0f1UEoNed1v0ZyrDaVX7fVSdmj7EAzw95rbfTn09xYzwvJ8JqWUNQnSqIbrUYuJxmUTJYdKGn90v+A==
   dependencies:
     adm-zip "^0.5.9"
     archiver "^5.3.0"
@@ -3138,7 +3138,7 @@
   dependencies:
     invariant "^2.2.4"
 
-"@react-native-community/eslint-config@^3.0.1":
+"@react-native-community/eslint-config@3.0.1":
   version "3.0.1"
   resolved "https://registry.npmmirror.com/@react-native-community/eslint-config/download/@react-native-community/eslint-config-3.0.1.tgz#c45968f1214139fe747a7aebdba06c4fa2a4d018"
   integrity sha1-xFlo8SFBOf50enrr26BsT6Kk0Bg=
@@ -3218,7 +3218,7 @@
   resolved "https://registry.npmmirror.com/@react-native-picker/picker/download/@react-native-picker/picker-2.2.1.tgz#32b9f540d8e88a73d8856f73cca88251cecb9614"
   integrity sha512-EC7yv22QLHlTfnbC1ez9IUdXTOh1W31x96Oir0PfskSGFFJMWWdLTg4VrcE2DsGLzbfjjkBk123c173vf2a5MQ==
 
-"@react-native-plugin/pack@^0.1.5":
+"@react-native-plugin/pack@0.1.5":
   version "0.1.5"
   resolved "https://registry.npmmirror.com/@react-native-plugin/pack/download/@react-native-plugin/pack-0.1.5.tgz#eacd51f51d8c02794206d4c1e99ef657b2d61e81"
   integrity sha512-9e2tidcMCOG9oC/p3tnUpww24Ekb3PEo5kdDyAV1heHbU/z1/7I9pIF+6HHAE1TJ0rdv0dD94y9N7eU4HYAyuw==
@@ -3248,7 +3248,7 @@
   resolved "https://registry.npmmirror.com/@react-native/polyfills/download/@react-native/polyfills-2.0.0.tgz#4c40b74655c83982c8cf47530ee7dc13d957b6aa"
   integrity sha1-TEC3RlXIOYLIz0dTDufcE9lXtqo=
 
-"@release-it/conventional-changelog@^3.3.0":
+"@release-it/conventional-changelog@3.3.0":
   version "3.3.0"
   resolved "https://registry.npmmirror.com/@release-it/conventional-changelog/download/@release-it/conventional-changelog-3.3.0.tgz#0f79e4b736412040d37c2b84bf433e393268c08e"
   integrity sha1-D3nktzZBIEDTfCuEv0M+OTJowI4=
@@ -3543,7 +3543,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^27.0.3":
+"@types/jest@27.0.3":
   version "27.0.3"
   resolved "https://registry.npmmirror.com/@types/jest/download/@types/jest-27.0.3.tgz#0cf9dfe9009e467f70a342f0f94ead19842a783a"
   integrity sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg==
@@ -3610,7 +3610,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.37":
+"@types/react@*", "@types/react@17.0.37":
   version "17.0.37"
   resolved "https://registry.npmmirror.com/@types/react/download/@types/react-17.0.37.tgz#6884d0aa402605935c397ae689deed115caad959"
   integrity sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==
@@ -4322,7 +4322,7 @@ babel-eslint@^10.1.0:
     eslint-visitor-keys "^1.0.0"
     resolve "^1.12.0"
 
-babel-jest@^27.4.5:
+babel-jest@27.4.5, babel-jest@^27.4.5:
   version "27.4.5"
   resolved "https://registry.npmmirror.com/babel-jest/download/babel-jest-27.4.5.tgz#d38bd0be8ea71d8b97853a5fc9f76deeb095c709"
   integrity sha512-3uuUTjXbgtODmSv/DXO9nZfD52IyC2OYTFaXGRzL0kpykzroaquCrD5+lZNafTvZlnNqZHt5pb0M08qVBZnsnA==
@@ -4421,7 +4421,7 @@ babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   resolved "https://registry.npmmirror.com/babel-plugin-syntax-trailing-function-commas/download/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
   integrity sha1-qiE8FDXiv/62/KhCKH71NK0F1c8=
 
-babel-plugin-transform-decorators-legacy@^1.3.5:
+babel-plugin-transform-decorators-legacy@1.3.5:
   version "1.3.5"
   resolved "https://registry.npmmirror.com/babel-plugin-transform-decorators-legacy/download/babel-plugin-transform-decorators-legacy-1.3.5.tgz#0e492dffa0edd70529072887f8aa86d4dd8b40a1"
   integrity sha1-Dkkt/6Dt1wUpByiH+KqG1N2LQKE=
@@ -5323,7 +5323,7 @@ commander@~2.13.0:
   resolved "https://registry.npmmirror.com/commander/download/commander-2.13.0.tgz?cache=0&sync_timestamp=1634886396986&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2Fdownload%2Fcommander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
   integrity sha1-aWS8pnaF33wfFDDFhPB9dZeIW5w=
 
-commitlint@^15.0.0:
+commitlint@15.0.0:
   version "15.0.0"
   resolved "https://registry.npmmirror.com/commitlint/download/commitlint-15.0.0.tgz#51eb8bdaa04b780db12207fc56245c32a827a635"
   integrity sha512-I0lJLzR4h5iswM6pVFizMz3vlTfCkd1orOpg/7s0Ug+sx2htbZo5TU1gGsd5C1v8MSA98sqY2zprRRLnxs7DaA==
@@ -6245,7 +6245,7 @@ dotenv-expand@^5.1.0:
   resolved "https://registry.npmmirror.com/dotenv-expand/download/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
   integrity sha1-P7rwIL/XlIhAcuomsel5HUWmKfA=
 
-dotenv@^10.0.0:
+dotenv@10.0.0, dotenv@^10.0.0:
   version "10.0.0"
   resolved "https://registry.npmmirror.com/dotenv/download/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
   integrity sha1-PUInuPuV+BCWzdK2ZlP7LHCFuoE=
@@ -6344,7 +6344,7 @@ envinfo@^7.7.2, envinfo@^7.7.4:
   resolved "https://registry.npmmirror.com/envinfo/download/envinfo-7.8.1.tgz#06377e3e5f4d379fea7ac592d5ad8927e0c4d475"
   integrity sha1-Bjd+Pl9NN5/qesWS1a2JJ+DE1HU=
 
-enzyme-adapter-react-16@^1.15.6:
+enzyme-adapter-react-16@1.15.6:
   version "1.15.6"
   resolved "https://registry.npmmirror.com/enzyme-adapter-react-16/download/enzyme-adapter-react-16-1.15.6.tgz#fd677a658d62661ac5afd7f7f541f141f8085901"
   integrity sha1-/Wd6ZY1iZhrFr9f39UHxQfgIWQE=
@@ -6380,7 +6380,7 @@ enzyme-shallow-equal@^1.0.1, enzyme-shallow-equal@^1.0.4:
     has "^1.0.3"
     object-is "^1.1.2"
 
-enzyme@^3.11.0:
+enzyme@3.11.0:
   version "3.11.0"
   resolved "https://registry.npmmirror.com/enzyme/download/enzyme-3.11.0.tgz#71d680c580fe9349f6f5ac6c775bc3e6b7a79c28"
   integrity sha1-cdaAxYD+k0n29axsd1vD5rennCg=
@@ -6536,7 +6536,7 @@ eslint-config-prettier@^6.10.1:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-standard@^16.0.3:
+eslint-config-standard@16.0.3:
   version "16.0.3"
   resolved "https://registry.npmmirror.com/eslint-config-standard/download/eslint-config-standard-16.0.3.tgz#6c8761e544e96c531ff92642eeb87842b8488516"
   integrity sha1-bIdh5UTpbFMf+SZC7rh4QrhIhRY=
@@ -6581,9 +6581,9 @@ eslint-plugin-flowtype@2.50.3:
   dependencies:
     lodash "^4.17.10"
 
-eslint-plugin-import@^2.25.3:
+eslint-plugin-import@2.25.3:
   version "2.25.3"
-  resolved "https://registry.npmmirror.com/eslint-plugin-import/download/eslint-plugin-import-2.25.3.tgz?cache=0&sync_timestamp=1636529260674&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.25.3.tgz#a554b5f66e08fb4f6dc99221866e57cfff824766"
+  resolved "https://registry.npmmirror.com/eslint-plugin-import/download/eslint-plugin-import-2.25.3.tgz#a554b5f66e08fb4f6dc99221866e57cfff824766"
   integrity sha512-RzAVbby+72IB3iOEL8clzPLzL3wpDrlwjsTBAQXgyp5SeTqqY+0bFubwuo+y/HLhNZcXV4XqTBO4LGsfyHIDXg==
   dependencies:
     array-includes "^3.1.4"
@@ -6605,7 +6605,7 @@ eslint-plugin-jest@22.4.1:
   resolved "https://registry.npmmirror.com/eslint-plugin-jest/download/eslint-plugin-jest-22.4.1.tgz#a5fd6f7a2a41388d16f527073b778013c5189a9c"
   integrity sha1-pf1veipBOI0W9ScHO3eAE8UYmpw=
 
-eslint-plugin-node@^11.1.0:
+eslint-plugin-node@11.1.0:
   version "11.1.0"
   resolved "https://registry.npmmirror.com/eslint-plugin-node/download/eslint-plugin-node-11.1.0.tgz#c95544416ee4ada26740a30474eefc5402dc671d"
   integrity sha1-yVVEQW7kraJnQKMEdO78VALcZx0=
@@ -6624,7 +6624,7 @@ eslint-plugin-prettier@3.1.2:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-promise@^6.0.0:
+eslint-plugin-promise@6.0.0:
   version "6.0.0"
   resolved "https://registry.npmmirror.com/eslint-plugin-promise/download/eslint-plugin-promise-6.0.0.tgz#017652c07c9816413a41e11c30adc42c3d55ff18"
   integrity sha512-7GPezalm5Bfi/E22PnQxDWH2iW9GTvAlUNTztemeHb6c1BniSyoeTrM87JkC0wYdi6aQrZX9p2qEiAno8aTcbw==
@@ -6639,6 +6639,14 @@ eslint-plugin-react-native-globals@^0.1.1:
   resolved "https://registry.npmmirror.com/eslint-plugin-react-native-globals/download/eslint-plugin-react-native-globals-0.1.2.tgz#ee1348bc2ceb912303ce6bdbd22e2f045ea86ea2"
   integrity sha1-7hNIvCzrkSMDzmvb0i4vBF6obqI=
 
+eslint-plugin-react-native@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmmirror.com/eslint-plugin-react-native/download/eslint-plugin-react-native-4.0.0.tgz#eec41984abe4970bdd7c6082dff7a98a5e34d0bb"
+  integrity sha512-kMmdxrSY7A1WgdqaGC+rY/28rh7kBGNBRsk48ovqkQmdg5j4K+DaFmegENDzMrdLkoufKGRNkKX6bgSwQTCAxQ==
+  dependencies:
+    "@babel/traverse" "^7.7.4"
+    eslint-plugin-react-native-globals "^0.1.1"
+
 eslint-plugin-react-native@^3.10.0:
   version "3.11.0"
   resolved "https://registry.npmmirror.com/eslint-plugin-react-native/download/eslint-plugin-react-native-3.11.0.tgz#c73b0886abb397867e5e6689d3a6a418682e6bac"
@@ -6647,15 +6655,7 @@ eslint-plugin-react-native@^3.10.0:
     "@babel/traverse" "^7.7.4"
     eslint-plugin-react-native-globals "^0.1.1"
 
-eslint-plugin-react-native@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmmirror.com/eslint-plugin-react-native/download/eslint-plugin-react-native-4.0.0.tgz#eec41984abe4970bdd7c6082dff7a98a5e34d0bb"
-  integrity sha512-kMmdxrSY7A1WgdqaGC+rY/28rh7kBGNBRsk48ovqkQmdg5j4K+DaFmegENDzMrdLkoufKGRNkKX6bgSwQTCAxQ==
-  dependencies:
-    "@babel/traverse" "^7.7.4"
-    eslint-plugin-react-native-globals "^0.1.1"
-
-eslint-plugin-react@^7.20.0, eslint-plugin-react@^7.27.1:
+eslint-plugin-react@7.27.1, eslint-plugin-react@^7.20.0:
   version "7.27.1"
   resolved "https://registry.npmmirror.com/eslint-plugin-react/download/eslint-plugin-react-7.27.1.tgz#469202442506616f77a854d91babaae1ec174b45"
   integrity sha512-meyunDjMMYeWr/4EBLTV1op3iSG3mjT/pz5gti38UzfM4OPpNc2m0t2xvKCOMU5D6FSdd34BIMFOvQbW+i8GAA==
@@ -6675,7 +6675,7 @@ eslint-plugin-react@^7.20.0, eslint-plugin-react@^7.27.1:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
 
-eslint-plugin-standard@^5.0.0:
+eslint-plugin-standard@5.0.0:
   version "5.0.0"
   resolved "https://registry.npmmirror.com/eslint-plugin-standard/download/eslint-plugin-standard-5.0.0.tgz#c43f6925d669f177db46f095ea30be95476b1ee4"
   integrity sha1-xD9pJdZp8XfbRvCV6jC+lUdrHuQ=
@@ -8361,7 +8361,7 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^7.0.4:
+husky@7.0.4:
   version "7.0.4"
   resolved "https://registry.npmmirror.com/husky/download/husky-7.0.4.tgz#242048245dc49c8fb1bf0cc7cfb98dd722531535"
   integrity sha1-JCBIJF3EnI+xvwzHz7mN1yJTFTU=
@@ -9527,7 +9527,7 @@ jest-worker@^27.4.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^27.4.5:
+jest@27.4.5:
   version "27.4.5"
   resolved "https://registry.npmmirror.com/jest/download/jest-27.4.5.tgz#66e45acba44137fac26be9d3cc5bb031e136dc0f"
   integrity sha512-uT5MiVN3Jppt314kidCk47MYIRilJjA/l2mxwiuzzxGUeJIvA8/pDaJOAX5KWvjAo7SCydcW0/4WEtgbLMiJkg==
@@ -10527,7 +10527,7 @@ metro-react-native-babel-preset@0.59.0:
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"
 
-metro-react-native-babel-preset@0.66.2, metro-react-native-babel-preset@^0.66.2:
+metro-react-native-babel-preset@0.66.2:
   version "0.66.2"
   resolved "https://registry.npmmirror.com/metro-react-native-babel-preset/download/metro-react-native-babel-preset-0.66.2.tgz#fddebcf413ad4ea617d4f47f7c1da401052de734"
   integrity sha1-/d689BOtTqYX1PR/fB2kAQUt5zQ=
@@ -12247,7 +12247,7 @@ pngjs@^5.0.0:
   resolved "https://registry.npmmirror.com/pngjs/download/pngjs-5.0.0.tgz?cache=0&sync_timestamp=1632754068320&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fpngjs%2Fdownload%2Fpngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
   integrity sha1-553SshV2f9nARWHAEjbflgvOf7s=
 
-pod-install@^0.1.29:
+pod-install@0.1.29:
   version "0.1.29"
   resolved "https://registry.npmmirror.com/pod-install/download/pod-install-0.1.29.tgz#43222b5ebe9006ebf13134b25495bcede7de2f7a"
   integrity sha512-fSU1bciYWXEvcDFwTKj8gBL8dYNvxPgibxhT5Z4I67AsHXH56uyPk2hE/HiH1pSkQ7ECWMAR1E0HX066T0RZ8Q==
@@ -12257,7 +12257,7 @@ posix-character-classes@^0.1.0:
   resolved "https://registry.npmmirror.com/posix-character-classes/download/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
 
-postinstall-postinstall@^2.1.0:
+postinstall-postinstall@2.1.0:
   version "2.1.0"
   resolved "https://registry.npmmirror.com/postinstall-postinstall/download/postinstall-postinstall-2.1.0.tgz#4f7f77441ef539d1512c40bd04c71b06a4704ca3"
   integrity sha1-T393RB71OdFRLEC9BMcbBqRwTKM=
@@ -12292,7 +12292,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.0.2, prettier@^2.5.1:
+prettier@2.5.1, prettier@^2.0.2:
   version "2.5.1"
   resolved "https://registry.npmmirror.com/prettier/download/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
   integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
@@ -12844,7 +12844,7 @@ react-native-redash@^12.0.3:
     parse-svg-path "^0.1.2"
     use-memo-one "^1.1.1"
 
-react-native-rename@^2.9.0:
+react-native-rename@2.9.0:
   version "2.9.0"
   resolved "https://registry.npmmirror.com/react-native-rename/download/react-native-rename-2.9.0.tgz#3e8c20f048204e9ac77ff098aeb976cce9e45244"
   integrity sha1-Powg8EggTprHf/CYrrl2zOnkUkQ=
@@ -13337,7 +13337,7 @@ regjsparser@^0.7.0:
   dependencies:
     jsesc "~0.5.0"
 
-release-it@^14.11.8:
+release-it@14.11.8:
   version "14.11.8"
   resolved "https://registry.npmmirror.com/release-it/download/release-it-14.11.8.tgz#6da25daa93286d832cae4f10008a3bf0c08c2725"
   integrity sha512-951DJ0kwjwU7CwGU3BCvRBgLxuJsOPRrZkqx0AsugJdSyPpUdwY9nlU0RAoSKqgh+VTerzecXLIIwgsGIpNxlA==
@@ -13899,7 +13899,7 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sinon@^12.0.1:
+sinon@12.0.1:
   version "12.0.1"
   resolved "https://registry.npmmirror.com/sinon/download/sinon-12.0.1.tgz?cache=0&sync_timestamp=1637180362667&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsinon%2Fdownload%2Fsinon-12.0.1.tgz#331eef87298752e1b88a662b699f98e403c859e9"
   integrity sha1-Mx7vhymHUuG4imYraZ+Y5APIWek=
@@ -14895,7 +14895,7 @@ typedarray@^0.0.6:
   resolved "https://registry.npmmirror.com/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.4.3, typescript@^4.5.4:
+typescript@4.5.4, typescript@^4.4.3:
   version "4.5.4"
   resolved "https://registry.npmmirror.com/typescript/download/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
   integrity sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
