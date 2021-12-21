@@ -1,9 +1,9 @@
-name: Android Build- Github Actions
+name: Android Build
 
 on:
   push:
     branches:
-        - master
+      - main
 
 jobs:
   build-release:

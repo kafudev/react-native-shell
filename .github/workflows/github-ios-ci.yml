@@ -1,9 +1,9 @@
-name: iOS Build- Github Actions
+name: iOS Build
 
 on:
   push:
     branches:
-        - master
+      - main
 
 jobs:
   build-release:
