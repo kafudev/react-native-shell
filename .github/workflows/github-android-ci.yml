@@ -1,6 +1,9 @@
-name: Github Actions
+name: Android Build- Github Actions
 
-on: [push]
+on:
+  push:
+    branches:
+        - master
 
 jobs:
   build-release:

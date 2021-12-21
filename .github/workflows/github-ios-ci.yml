@@ -1,0 +1,24 @@
+name: iOS Build- Github Actions
+
+on:
+  push:
+    branches:
+        - master
+
+jobs:
+  build-release:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Envinfo
+      run: npx envinfo
+    - name: Build application
+      run: yarn install && yarn pack-ios
+  build-debug:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Envinfo
+      run: npx envinfo
+    - name: Build application
+      run: yarn install && yarn pack-ios --mode debug
