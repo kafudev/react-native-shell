@@ -13,7 +13,7 @@ jobs:
     - name: Envinfo
       run: npx envinfo
     - name: Build application
-      run: yarn install && yarn pack-ios --api_secret ${{ secrets.IOS_API_SECRET_FASTLANE }}
+      run: yarn install && yarn pack-ios --api_secret "${{ secrets.IOS_API_SECRET_FASTLANE }}"
   build-debug:
     runs-on: macos-latest
     steps:
@@ -21,4 +21,4 @@ jobs:
     - name: Envinfo
       run: npx envinfo
     - name: Build application
-      run: yarn install && yarn pack-ios --mode debug --api_secret ${{ secrets.IOS_API_SECRET_FASTLANE }}
+      run: yarn install && yarn pack-ios --mode debug --api_secret "${{ secrets.IOS_API_SECRET_FASTLANE }}"
