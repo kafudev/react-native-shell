@@ -52,7 +52,6 @@ platform :ios do
   desc "To a new beta Release build"
   lane :release do
     build_type = "Release"
-    pilot( api_key_path: api_key_path )
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     build_app(
       configuration: build_type,
@@ -64,6 +63,7 @@ platform :ios do
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
+    pilot( api_key_path: api_key_path )
     # 还原构建号
     increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
     # fir上传
@@ -77,7 +77,6 @@ platform :ios do
   desc "To a new dev Debug build"
   lane :debug do
     build_type = "Debug"
-    pilot( api_key_path: api_key_path )
     obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     # 设置开发信息
@@ -99,6 +98,7 @@ platform :ios do
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
+    pilot( api_key_path: api_key_path )
     # 还原构建号
     increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
     # 设置开发信息
