@@ -15,7 +15,7 @@ jobs:
     - name: Build application
       env:
         API_SECRET: ${{ secrets.IOS_API_SECRET_FASTLANE }}
-      run: yarn install && yarn pack-ios --api_secret "$API_SECRET"
+      run: yarn install && yarn pack-ios --api_secret="$API_SECRET"
   build-debug:
     runs-on: macos-latest
     steps:
@@ -25,4 +25,4 @@ jobs:
     - name: Build application
       env:
         API_SECRET: ${{ secrets.IOS_API_SECRET_FASTLANE }}
-      run: yarn install && yarn pack-ios --api_secret "$API_SECRET" --mode debug
+      run: yarn install && yarn pack-ios --api_secret="$API_SECRET" --mode debug
