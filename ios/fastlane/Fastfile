@@ -23,7 +23,7 @@ default_platform(:ios)
 #   "duration": 1200,
 #   "in_house": false
 # }
-pilot( api_key_path: "./key.json" )
+pilot( api_key_path: "key.json" )
 
 # 获取当前的时间
 today = Time.new;
