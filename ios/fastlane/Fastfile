@@ -53,7 +53,8 @@ platform :ios do
   lane :release do
     build_type = "Release"
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
-    sync_code_signing(type: "development", api_key_path: api_key_path)
+    get_provisioning_profile(api_key_path: api_key_path)
+    # sync_code_signing(type: "development", api_key_path: api_key_path)
     build_app(
       configuration: build_type,
       clean: true,
@@ -64,7 +65,6 @@ platform :ios do
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
-    pilot( api_key_path: api_key_path )
     # 还原构建号
     increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
     # fir上传
@@ -80,7 +80,8 @@ platform :ios do
     build_type = "Debug"
     obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
-    sync_code_signing(type: "development", api_key_path: api_key_path)
+    get_provisioning_profile(api_key_path: api_key_path)
+    # sync_code_signing(type: "development", api_key_path: api_key_path)
     # 设置开发信息
     update_info_plist(
       plist_path: "./rnshell/Info.plist",
@@ -100,7 +101,6 @@ platform :ios do
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell")
-    pilot( api_key_path: api_key_path )
     # 还原构建号
     increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
     # 设置开发信息
