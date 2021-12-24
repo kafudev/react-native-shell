@@ -87,6 +87,12 @@ project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
 ]
 
+// !判断操作系统，windows需要设置ssl,因为mmkv国内网络下载报错
+if(System.properties['os.name'].contains('windows')){
+  systemProp.javax.net.ssl.trustStore=NUL
+  systemProp.javax.net.ssl.trustStoreType=Windows-ROOT
+}
+
 // react-native-config 2nd line, add a new apply:
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 // 默认打包方式，会自动打包bundle.js
