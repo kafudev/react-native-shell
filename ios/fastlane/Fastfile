@@ -23,7 +23,7 @@ default_platform(:ios)
 #   "duration": 1200,
 #   "in_house": false
 # }
-pilot( api_key_path: "./fastlane/key.json" )
+api_key_path = "./fastlane/key.json";
 
 # 获取当前的时间
 today = Time.new;
@@ -52,13 +52,14 @@ platform :ios do
   desc "To a new beta Release build"
   lane :release do
     build_type = "Release"
+    pilot( api_key_path: api_key_path )
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     build_app(
       configuration: build_type,
       clean: true,
       include_symbols: true,
       include_bitcode: false,
-      output_directory: "../build/ios/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
+      output_directory: "./build/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
       output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
@@ -76,6 +77,7 @@ platform :ios do
   desc "To a new dev Debug build"
   lane :debug do
     build_type = "Debug"
+    pilot( api_key_path: api_key_path )
     obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     # 设置开发信息
@@ -92,7 +94,7 @@ platform :ios do
       skip_archive: false,
       include_symbols: false,
       include_bitcode: false,
-      output_directory: "../build/ios/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
+      output_directory: "./build/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
       output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       workspace: "rnshell.xcworkspace",
