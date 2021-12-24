@@ -1,8 +1,11 @@
-app_identifier("com.rnshell.app") # The bundle identifier of your app
-apple_id("zpd106@sina.com") # Your Apple email address
+app_identifier("com.rnshell.appdev") # The bundle identifier of your app
+# apple_id("kafudev@sina.com") # Your Apple email address
 
-itc_team_id("123109911") # App Store Connect Team ID
-team_id("ZAPY43R5FB") # Developer Portal Team ID
+apple_dev_portal_id("kafudev@sina.com")  # Apple Developer Account
+itunes_connect_id("kafudev@sina.com")     # App Store Connect Account
+
+team_id("U85FLLXDVM") # Developer Portal Team ID
+itc_team_id("U85FLLXDVM") # App Store Connect Team ID
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile

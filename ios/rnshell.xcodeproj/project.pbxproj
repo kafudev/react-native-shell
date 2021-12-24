@@ -506,7 +506,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rnshell.appdev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rnshell.app/rnshell";
 			};
@@ -531,7 +531,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rnshell.appdev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rnshell.app/rnshell";
 			};
@@ -560,7 +560,7 @@
 					"-lstdc++",
 				);
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.appdev;
 				PRODUCT_NAME = rnshell;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -592,7 +592,7 @@
 					"-lstdc++",
 				);
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnshell.appdev;
 				PRODUCT_NAME = rnshell;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/rnshell/rnshell-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

@@ -27,6 +27,7 @@ DerivedData
 *.xcuserstate
 ios/tmp.xcconfig
 ios/assets/*
+ios/fastlane/key.json
 
 # Android/IntelliJ
 #

@@ -15,6 +15,16 @@
 
 default_platform(:ios)
 
+# 配置信息
+# {
+#   "key_id": "223576V89G",
+#   "issuer_id": "6bcbdcb8-7dba-46e2-810a-f3475add5cf6",
+#   "key": "",
+#   "duration": 1200,
+#   "in_house": false
+# }
+pilot( api_key_path: "./key.json" )
+
 # 获取当前的时间
 today = Time.new;
 now_time = today.strftime("%Y%m%d%H%M%S");
@@ -37,9 +47,10 @@ puts "nowtime: #{now_time}"
 # 原构建号信息
 o_build_number =  get_build_number(xcodeproj: "rnshell.xcodeproj")
 
+
 platform :ios do
   desc "To a new beta Release build"
-  lane :beta do
+  lane :release do
     build_type = "Release"
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     build_app(
@@ -63,7 +74,7 @@ platform :ios do
   end
 
   desc "To a new dev Debug build"
-  lane :dev do
+  lane :debug do
     build_type = "Debug"
     obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
