@@ -53,6 +53,7 @@ platform :ios do
   lane :release do
     build_type = "Release"
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
+    sync_code_signing(type: "appstore")
     build_app(
       configuration: build_type,
       clean: true,
@@ -79,6 +80,7 @@ platform :ios do
     build_type = "Debug"
     obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
+    sync_code_signing(type: "appstore")
     # 设置开发信息
     update_info_plist(
       plist_path: "./rnshell/Info.plist",
