@@ -16,8 +16,8 @@
 
 #import <Bugly/Bugly.h>
 #import <QYSDK/QYSDK.h>
-#import <TXLiteAVSDK_Professional/TXLiteAVSDK.h>
-#import <TXLiteAVSDK_Professional/TXLiveBase.h>
+//#import <TXLiteAVSDK_Professional/TXLiteAVSDK.h>
+//#import <TXLiteAVSDK_Professional/TXLiveBase.h>
 
 #import "ReactNativeConfig.h"
 #import "RNBootSplash.h"
@@ -82,12 +82,12 @@ static void InitializeFlipper(UIApplication *application) {
     [[QYSDK sharedSDK] registerWithOption:option];
   }
 
-  // TXLive初始化 SDK
-  NSString *TXLIVE_LICENCE_KEY = [ReactNativeConfig envFor:@"TXLIVE_LICENCE_KEY"];
-  NSString *TXLIVE_LICENCE_URL = [ReactNativeConfig envFor:@"TXLIVE_LICENCE_URL"];
-  if(TXLIVE_LICENCE_KEY != nil && TXLIVE_LICENCE_URL != nil) {
-    [TXLiveBase setLicenceURL:TXLIVE_LICENCE_URL key:TXLIVE_LICENCE_KEY];
-  }
+//  // TXLive初始化 SDK
+//  NSString *TXLIVE_LICENCE_KEY = [ReactNativeConfig envFor:@"TXLIVE_LICENCE_KEY"];
+//  NSString *TXLIVE_LICENCE_URL = [ReactNativeConfig envFor:@"TXLIVE_LICENCE_URL"];
+//  if(TXLIVE_LICENCE_KEY != nil && TXLIVE_LICENCE_URL != nil) {
+//    [TXLiveBase setLicenceURL:TXLIVE_LICENCE_URL key:TXLIVE_LICENCE_KEY];
+//  }
 
 
   // JPush初始化配置

@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* rnshellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rnshellTests.m */; };
+		055CD4415E92DBAA81FF3A6C /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2A2204C4D157CB0883EDF /* ExpoModulesProvider.swift */; };
+		0BFBD637435153F08DBE7F4F /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD8A9A9BB09A4C01740EDA /* ExpoModulesProvider.swift */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D9C0150210CC4AFED332704 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B253236610A4C0A00C934 /* ExpoModulesProvider.swift */; };
 		5A749EF66945CCECA9311583 /* libPods-rnshell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3719B742112D7D629377D3 /* libPods-rnshell.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		85284B3826AEC8CC0017E1FB /* mtopsdk_configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85284B3426AEC8CC0017E1FB /* mtopsdk_configuration.plist */; };
@@ -25,7 +26,6 @@
 		85B370AF26AF0D5600FB7257 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B370AE26AF0D5600FB7257 /* libresolv.tbd */; };
 		85B370B926AF12B100FB7257 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85B370B826AF12B100FB7257 /* Config.xcconfig */; };
 		B25F4C977469FEA95A135FE5 /* libPods-rnshell-rnshellTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */; };
-		E8A7B722C6185CB41A4C3F30 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039C369DF2D8036E8C6AA42 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rnshell/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rnshell/main.m; sourceTree = "<group>"; };
 		18016096D62572FDB6ACEA01 /* Pods-rnshell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnshell.debug.xcconfig"; path = "Target Support Files/Pods-rnshell/Pods-rnshell.debug.xcconfig"; sourceTree = "<group>"; };
-		4039C369DF2D8036E8C6AA42 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-rnshell/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		6E7B253236610A4C0A00C934 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-rnshell-rnshellTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		21DD8A9A9BB09A4C01740EDA /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-rnshell/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		74E498C69759417ACF91BFCB /* Pods-rnshell-rnshellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnshell-rnshellTests.debug.xcconfig"; path = "Target Support Files/Pods-rnshell-rnshellTests/Pods-rnshell-rnshellTests.debug.xcconfig"; sourceTree = "<group>"; };
 		791339F060D0F3654E85BFEF /* Pods-rnshell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnshell.release.xcconfig"; path = "Target Support Files/Pods-rnshell/Pods-rnshell.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rnshell/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		BE3719B742112D7D629377D3 /* libPods-rnshell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnshell.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC90DF672051948A1810EB85 /* libPods-rnshell-rnshellTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnshell-rnshellTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EFA2A2204C4D157CB0883EDF /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-rnshell-rnshellTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,15 +113,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		07A11089682A02C8138B9517 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				A7E1ED60CC95D9CEA6F9C110 /* rnshell */,
-				3BD74986F12A2EA8B151F42F /* rnshellTests */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* rnshell */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +134,23 @@
 			name = rnshell;
 			sourceTree = "<group>";
 		};
+		1BC19307C25CA3764308FF01 /* rnshell */ = {
+			isa = PBXGroup;
+			children = (
+				21DD8A9A9BB09A4C01740EDA /* ExpoModulesProvider.swift */,
+			);
+			name = rnshell;
+			sourceTree = "<group>";
+		};
+		2A48FACE8A7E63638BD125C9 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				1BC19307C25CA3764308FF01 /* rnshell */,
+				4E1896E0CD25AE7F119DDFEB /* rnshellTests */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,10 +165,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3BD74986F12A2EA8B151F42F /* rnshellTests */ = {
+		4E1896E0CD25AE7F119DDFEB /* rnshellTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E7B253236610A4C0A00C934 /* ExpoModulesProvider.swift */,
+				EFA2A2204C4D157CB0883EDF /* ExpoModulesProvider.swift */,
 			);
 			name = rnshellTests;
 			sourceTree = "<group>";
@@ -181,7 +189,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				B379BE3900BB153DCBCE19D7 /* Pods */,
-				07A11089682A02C8138B9517 /* ExpoModulesProviders */,
+				2A48FACE8A7E63638BD125C9 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -195,14 +203,6 @@
 				00E356EE1AD99517003FC87E /* rnshellTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A7E1ED60CC95D9CEA6F9C110 /* rnshell */ = {
-			isa = PBXGroup;
-			children = (
-				4039C369DF2D8036E8C6AA42 /* ExpoModulesProvider.swift */,
-			);
-			name = rnshell;
 			sourceTree = "<group>";
 		};
 		B379BE3900BB153DCBCE19D7 /* Pods */ = {
@@ -490,7 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* rnshellTests.m in Sources */,
-				2D9C0150210CC4AFED332704 /* ExpoModulesProvider.swift in Sources */,
+				055CD4415E92DBAA81FF3A6C /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +501,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				85435A0126BFDCED00B4C3BC /* Fix.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				E8A7B722C6185CB41A4C3F30 /* ExpoModulesProvider.swift in Sources */,
+				0BFBD637435153F08DBE7F4F /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +527,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = rnshellTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,7 +552,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = rnshellTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,7 +579,7 @@
 				DEVELOPMENT_TEAM = U85FLLXDVM;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = rnshell/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,7 +611,7 @@
 				DEVELOPMENT_TEAM = U85FLLXDVM;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = rnshell/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,7 +681,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -735,7 +735,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
