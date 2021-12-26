@@ -1,4 +1,4 @@
-app_identifier("com.rnshell.appdev") # The bundle identifier of your app
+app_identifier("com.rnshell.dev") # The bundle identifier of your app
 # apple_id("kafudev@sina.com") # Your Apple email address
 
 apple_dev_portal_id("kafudev@sina.com")  # Apple Developer Account

@@ -8,7 +8,7 @@
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
       "ios": {
-        "bundle_id": "com.rnshell.app",
+        "bundle_id": "com.rnshell.dev",
         "version_code": "",
         "version_name": "1.2.0",
         "icon": "./src/kitten/src/assets/images/image-app-icon.png",
