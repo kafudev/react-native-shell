@@ -16,8 +16,6 @@
 
 #import <Bugly/Bugly.h>
 #import <QYSDK/QYSDK.h>
-//#import <TXLiteAVSDK_Professional/TXLiteAVSDK.h>
-//#import <TXLiteAVSDK_Professional/TXLiveBase.h>
 
 #import "ReactNativeConfig.h"
 #import "RNBootSplash.h"

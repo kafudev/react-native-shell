@@ -540,6 +540,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rnshell.dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rnshell.app/rnshell";
 			};
 			name = Debug;
@@ -565,6 +566,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rnshell.dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rnshell.app/rnshell";
 			};
 			name = Release;
