@@ -21,7 +21,6 @@
 #import "RNBootSplash.h"
 #import <RCTJPushModule.h>
 #import <WXApi.h>
-#import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import "Orientation.h"
 
 #ifdef DEBUG
@@ -236,11 +235,12 @@ continueUserActivity:(NSUserActivity *)userActivity
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
   [RCTLinkingManager application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-  // 如果百川处理过会返回YES
-  if (![[AlibcTradeSDK sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation]) {
-      // 处理其他app跳转到自己的app
-    [WXApi handleOpenURL:url delegate:self];
-  }
+//  // 如果百川处理过会返回YES
+//  if (![[AlibcTradeSDK sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation]) {
+//      // 处理其他app跳转到自己的app
+//    [WXApi handleOpenURL:url delegate:self];
+//  }
+  [WXApi handleOpenURL:url delegate:self];
   return YES;
 }
 
@@ -251,10 +251,11 @@ continueUserActivity:(NSUserActivity *)userActivity
   // Triggers a callback event.
   // 触发回调事件
   [RCTLinkingManager application:application openURL:url options:options];
-  __unused BOOL isHandledByALBBSDK=[[AlibcTradeSDK sharedInstance] application:application openURL:url options:options];
-  if(!isHandledByALBBSDK){
-    [WXApi handleOpenURL:url delegate:self];
-  }
+//  __unused BOOL isHandledByALBBSDK=[[AlibcTradeSDK sharedInstance] application:application openURL:url options:options];
+//  if(!isHandledByALBBSDK){
+//    [WXApi handleOpenURL:url delegate:self];
+//  }
+  [WXApi handleOpenURL:url delegate:self];
   return YES;
 }
 
