@@ -28,7 +28,7 @@
   resolved "https://registry.npmmirror.com/@babel/compat-data/download/@babel/compat-data-7.16.4.tgz?cache=0&sync_timestamp=1637105418856&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fcompat-data%2Fdownload%2F%40babel%2Fcompat-data-7.16.4.tgz#081d6bbc336ec5c2435c6346b2ae1fb98b5ac68e"
   integrity sha512-1o/jo7D+kC9ZjHX5v+EHrdjl3PhxMrLSOTGsOdHJ+KL8HCaEK6ehrVL2RS6oHDZp+L7xLirLrPmQtEng769J/Q==
 
-"@babel/core@7.16.7":
+"@babel/core@7.16.7", "@babel/core@^7.8.0":
   version "7.16.7"
   resolved "https://registry.npmmirror.com/@babel/core/download/@babel/core-7.16.7.tgz#db990f931f6d40cb9b87a0dc7d2adc749f1dcbcf"
   integrity sha512-aeLaqcqThRNZYmbMqtulsetOQZ/5gbR/dWruUCJcpas4Qoyy+QeagfDsPdMrqwsPRDNxJvBlRiZxxX7THO7qtA==
@@ -1543,10 +1543,32 @@
     xcode "^3.0.1"
     xml2js "^0.4.23"
 
-"@expo/config-plugins@4.0.14", "@expo/config-plugins@^4.0.12", "@expo/config-plugins@^4.0.2":
+"@expo/config-plugins@4.0.14", "@expo/config-plugins@^4.0.2":
   version "4.0.14"
   resolved "https://registry.npmmirror.com/@expo/config-plugins/download/@expo/config-plugins-4.0.14.tgz#39353be207fe499f4e28703a6cbe7a577bc1b3bb"
   integrity sha512-3UMo9STaIAQRAvtlXXIX83mrxWAh0prQYgVG+n2JRBwI9CWiRdj35W+jyXkTChtPYXGvW1JQF2xatjB8ituSvg==
+  dependencies:
+    "@expo/config-types" "^43.0.1"
+    "@expo/json-file" "8.2.34"
+    "@expo/plist" "0.0.16"
+    "@expo/sdk-runtime-versions" "^1.0.0"
+    "@react-native/normalize-color" "^2.0.0"
+    chalk "^4.1.2"
+    debug "^4.3.1"
+    find-up "~5.0.0"
+    fs-extra "9.0.0"
+    getenv "^1.0.0"
+    glob "7.1.6"
+    resolve-from "^5.0.0"
+    semver "^7.3.5"
+    slash "^3.0.0"
+    xcode "^3.0.1"
+    xml2js "0.4.23"
+
+"@expo/config-plugins@^4.0.15":
+  version "4.0.15"
+  resolved "https://registry.npmmirror.com/@expo/config-plugins/download/@expo/config-plugins-4.0.15.tgz#cc170a0cf890973b6491cf357540e9955296019c"
+  integrity sha512-QqxVEt2bFu3ZuI1soULRJv7i0Zrg/FMZ0IxNV7Y3AjH7fhtUJH3pPo9f6MURvqNr+PLxhBlkofkWfunrVejSkw==
   dependencies:
     "@expo/config-types" "^43.0.1"
     "@expo/json-file" "8.2.34"
@@ -1796,10 +1818,10 @@
     jest-util "^27.4.2"
     slash "^3.0.0"
 
-"@jest/core@^27.4.6":
-  version "27.4.6"
-  resolved "https://registry.npmmirror.com/@jest/core/download/@jest/core-27.4.6.tgz#5cc4e714602324dc1561029224fd593e70ab4c7d"
-  integrity sha512-2XvkAguDxaSAg6+Rznq7VZeIs3eV4owk3dud0zL4FH0d8mX7whkAUnO9rb0keMGStazfekR1ec9Yf9BFt4m02Q==
+"@jest/core@^27.4.7":
+  version "27.4.7"
+  resolved "https://registry.npmmirror.com/@jest/core/download/@jest/core-27.4.7.tgz#84eabdf42a25f1fa138272ed229bcf0a1b5e6913"
+  integrity sha512-n181PurSJkVMS+kClIFSX/LLvw9ExSb+4IMtD6YnfxZVerw9ANYtW0bPrm0MJu2pfe9SY9FJ9FtQ+MdZkrZwjg==
   dependencies:
     "@jest/console" "^27.4.6"
     "@jest/reporters" "^27.4.6"
@@ -1813,7 +1835,7 @@
     exit "^0.1.2"
     graceful-fs "^4.2.4"
     jest-changed-files "^27.4.2"
-    jest-config "^27.4.6"
+    jest-config "^27.4.7"
     jest-haste-map "^27.4.6"
     jest-message-util "^27.4.6"
     jest-regex-util "^27.4.0"
@@ -3236,10 +3258,10 @@
   dependencies:
     merge-options "^3.0.4"
 
-"@react-native-clipboard/clipboard@1.9.0":
-  version "1.9.0"
-  resolved "https://registry.npmmirror.com/@react-native-clipboard/clipboard/download/@react-native-clipboard/clipboard-1.9.0.tgz#68d6a18545b1f986098d5fb1cd710b53c322e066"
-  integrity sha1-aNahhUWx+YYJjV+xzXELU8Mi4GY=
+"@react-native-clipboard/clipboard@1.8.5":
+  version "1.8.5"
+  resolved "https://registry.npmmirror.com/@react-native-clipboard/clipboard/download/@react-native-clipboard/clipboard-1.8.5.tgz#b11276e38ef288b0fd70c0a38506e2deecc5fa5a"
+  integrity sha512-o2RPDwP9JMnLece1Qq6a3Fsz/VxfA9auLckkGOor7WcI82DWaWiJ6Uiyu7H1xpaUyqWc+ypVKRX680GYS36HjA==
 
 "@react-native-community/blur@3.6.0":
   version "3.6.0"
@@ -3463,12 +3485,12 @@
   dependencies:
     invariant "^2.2.4"
 
-"@react-native-firebase/app@14.2.1":
-  version "14.2.1"
-  resolved "https://registry.npmmirror.com/@react-native-firebase/app/download/@react-native-firebase/app-14.2.1.tgz#81c549952f4f7dc7d00ad29c78b425abd2ea5e67"
-  integrity sha512-zfQ7VxeuwSgxFNXE2RFRnIlI+rc+/kNMLl0ChsQTzPJLOOm6GvliTBocph6qENDAwzQBXxJTss9s3rU4rsNjYg==
+"@react-native-firebase/app@14.2.2":
+  version "14.2.2"
+  resolved "https://registry.npmmirror.com/@react-native-firebase/app/download/@react-native-firebase/app-14.2.2.tgz#a6bd7cf0d53cabb4d548f1d4805c4bbe5c6dc725"
+  integrity sha512-kp4diBisEJVKwhPMFCj0kLoG+1ofuj3WHH4lx8OPgnSi6hsfYiyN1BrDJLTYTyouhLkNYdyoRYl6sAxFY7K62Q==
   dependencies:
-    "@expo/config-plugins" "^4.0.12"
+    "@expo/config-plugins" "^4.0.15"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
@@ -3777,11 +3799,6 @@
     "@types/keyv" "*"
     "@types/node" "*"
     "@types/responselike" "*"
-
-"@types/geojson@^7946.0.7":
-  version "7946.0.8"
-  resolved "https://registry.npmmirror.com/@types/geojson/download/@types/geojson-7946.0.8.tgz#30744afdb385e2945e22f3b033f897f76b1f12ca"
-  integrity sha1-MHRK/bOF4pReIvOwM/iX92sfEso=
 
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
@@ -9414,29 +9431,30 @@ jest-circus@^27.4.6:
     stack-utils "^2.0.3"
     throat "^6.0.1"
 
-jest-cli@^27.4.6:
-  version "27.4.6"
-  resolved "https://registry.npmmirror.com/jest-cli/download/jest-cli-27.4.6.tgz#b81e053a753111bddf0782c1a1a86b9b910f5b86"
-  integrity sha512-SFfUC7jMHPGwsNSYBnJMNtjoSDrb34T+SEH5psDeGNVuTVov5Zi1RQpfJYwzpK2ex3OmnsNsiqLe3/SCc8S01Q==
+jest-cli@^27.4.7:
+  version "27.4.7"
+  resolved "https://registry.npmmirror.com/jest-cli/download/jest-cli-27.4.7.tgz#d00e759e55d77b3bcfea0715f527c394ca314e5a"
+  integrity sha512-zREYhvjjqe1KsGV15mdnxjThKNDgza1fhDT+iUsXWLCq3sxe9w5xnvyctcYVT5PcdLSjv7Y5dCwTS3FCF1tiuw==
   dependencies:
-    "@jest/core" "^27.4.6"
+    "@jest/core" "^27.4.7"
     "@jest/test-result" "^27.4.6"
     "@jest/types" "^27.4.2"
     chalk "^4.0.0"
     exit "^0.1.2"
     graceful-fs "^4.2.4"
     import-local "^3.0.2"
-    jest-config "^27.4.6"
+    jest-config "^27.4.7"
     jest-util "^27.4.2"
     jest-validate "^27.4.6"
     prompts "^2.0.1"
     yargs "^16.2.0"
 
-jest-config@^27.4.6:
-  version "27.4.6"
-  resolved "https://registry.npmmirror.com/jest-config/download/jest-config-27.4.6.tgz#0970f6c92702ca7878120cea638791d00a3996ee"
-  integrity sha512-3SGoFbaanQVg7MK5w/z8LnCMF6aZc2I7EQxS4s8fTfZpVYnWNDN34llcaViToIB62DFMhwHWTPX9X2O+4aDL1g==
+jest-config@^27.4.7:
+  version "27.4.7"
+  resolved "https://registry.npmmirror.com/jest-config/download/jest-config-27.4.7.tgz#4f084b2acbd172c8b43aa4cdffe75d89378d3972"
+  integrity sha512-xz/o/KJJEedHMrIY9v2ParIoYSrSVY6IVeE4z5Z3i101GoA5XgfbJz+1C8EYPsv7u7f39dS8F9v46BHDhn0vlw==
   dependencies:
+    "@babel/core" "^7.8.0"
     "@jest/test-sequencer" "^27.4.6"
     "@jest/types" "^27.4.2"
     babel-jest "^27.4.6"
@@ -9856,14 +9874,14 @@ jest-worker@^27.4.6:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@27.4.6:
-  version "27.4.6"
-  resolved "https://registry.npmmirror.com/jest/download/jest-27.4.6.tgz#5557fad2ab1d2b709e86d2332ea2552dc021a4d9"
-  integrity sha512-BRbYo0MeujnnJIo206WRsfsr3gIMraR+LO9vZJsdG2/298aKYQJbS3wHG0KN3Z7SWIcf6JaSMM4E8X6cIdG9AA==
+jest@27.4.7:
+  version "27.4.7"
+  resolved "https://registry.npmmirror.com/jest/download/jest-27.4.7.tgz#87f74b9026a1592f2da05b4d258e57505f28eca4"
+  integrity sha512-8heYvsx7nV/m8m24Vk26Y87g73Ba6ueUd0MWed/NXMhSZIm62U/llVbS0PJe1SHunbyXjJ/BqG1z9bFjGUIvTg==
   dependencies:
-    "@jest/core" "^27.4.6"
+    "@jest/core" "^27.4.7"
     import-local "^3.0.2"
-    jest-cli "^27.4.6"
+    jest-cli "^27.4.7"
 
 jetifier@^1.6.2:
   version "1.6.8"
@@ -12954,10 +12972,10 @@ react-native-bootsplash@3.2.5:
     fs-extra "^10.0.0"
     jimp "^0.16.1"
 
-react-native-calendars@1.1274.0:
-  version "1.1274.0"
-  resolved "https://registry.npmmirror.com/react-native-calendars/download/react-native-calendars-1.1274.0.tgz#a2c74d3cadc0b37c32b85247f30bd18c8266e86a"
-  integrity sha512-Dt+0Juscm3+bllriT4xYSYAb0bG8+z4/w7yQoydyqEotjB0UA+XZx4WBWVkJ10jm7H8PO1UmLlboJEaIq5s/sw==
+react-native-calendars@1.1275.0:
+  version "1.1275.0"
+  resolved "https://registry.npmmirror.com/react-native-calendars/download/react-native-calendars-1.1275.0.tgz#09af9ddf4add11c6a8648bd173b1992915a6b81e"
+  integrity sha512-3/3VX1WMUXi6kzsM2HLodLKVKXqiSlxbhhwDt5Ke+WgEVsr5stdyKK4JDZwJKOEEEqlHbRl+AMBgNBmof2/cyw==
   dependencies:
     hoist-non-react-statics "^3.3.1"
     immutable "^4.0.0-rc.12"
@@ -13133,17 +13151,10 @@ react-native-map-linking@1.0.1:
   resolved "https://registry.npmmirror.com/react-native-map-linking/download/react-native-map-linking-1.0.1.tgz#c3c68e1585554e0d98c84e81cf72622eaf432d82"
   integrity sha1-w8aOFYVVTg2YyE6Bz3JiLq9DLYI=
 
-react-native-maps@0.30.1:
-  version "0.30.1"
-  resolved "https://registry.npmmirror.com/react-native-maps/download/react-native-maps-0.30.1.tgz#b227f3cbf68947bbd22fcf2b7470a7ab3a4f3fbb"
-  integrity sha512-VDgGygFcXwKLFNmdGb5DVy3DJhjP3qCe3txzDfeO6kQyNELj875ZbZMTYW84XsLUBFNpAWXKffWvMKHMQKv2Gg==
-  dependencies:
-    "@types/geojson" "^7946.0.7"
-
-react-native-mmkv@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npmmirror.com/react-native-mmkv/download/react-native-mmkv-1.6.1.tgz#2b91b40b2d66d2ed5914485d60d38d5ad226e52a"
-  integrity sha512-j5hf3Edf+C1JLlzYnpd2CwobJnmDQHwAZOfxBwMm5vKotX6JNFwm5v8AdC0Rb8awEEDK3y+Y1BfJLgbF3rdShQ==
+react-native-mmkv@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.npmmirror.com/react-native-mmkv/download/react-native-mmkv-1.6.2.tgz#2945203a3a8278f5c2cb935bf9bb789bbe5fa91e"
+  integrity sha512-sNPzTQdVHuwQsjsF8rAUYYrZQHU733TOk7FT87tJqaPYbkm6jumat8THbnk+gIWkH03DZfEDD8xsBy6G0++kBQ==
 
 react-native-pager-view@5.4.9:
   version "5.4.9"
@@ -13243,10 +13254,10 @@ react-native-text-size@4.0.0-rc.1:
   resolved "https://registry.npmmirror.com/react-native-text-size/download/react-native-text-size-4.0.0-rc.1.tgz#1e048d345dd6a5a8e1269e0585c1a5948c478da5"
   integrity sha1-HgSNNF3WpajhJp4FhcGllIxHjaU=
 
-react-native-ui-lib@6.6.2:
-  version "6.6.2"
-  resolved "https://registry.npmmirror.com/react-native-ui-lib/download/react-native-ui-lib-6.6.2.tgz#b1a918733cd07bb58b4a0a99794de039e419e949"
-  integrity sha512-tmFSUKTT0Jw0NJIFLBpZVsd+vNosyfiVfupK7TLnzJZF6uSQ8UUmBAjvlTE85kndWdCD9sTydrpfglyk8b444g==
+react-native-ui-lib@6.7.0:
+  version "6.7.0"
+  resolved "https://registry.npmmirror.com/react-native-ui-lib/download/react-native-ui-lib-6.7.0.tgz#c35a97437273aa11f48079ea97c70f1db5fae217"
+  integrity sha512-DO7Tv95jvMyfkKNiw6YfkzrFwyPWMWHhhNwHCea0epcp/b+bOoGNEb2aZ/IQkfqMpzXKLSEGH0hDgLa39ildnA==
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     color "^3.1.0"
@@ -13298,10 +13309,10 @@ react-native-view-shot@3.1.2:
   resolved "https://registry.npmmirror.com/react-native-view-shot/download/react-native-view-shot-3.1.2.tgz#8c8e84c67a4bc8b603e697dbbd59dbc9b4f84825"
   integrity sha1-jI6ExnpLyLYD5pfbvVnbybT4SCU=
 
-react-native-webview@11.15.0:
-  version "11.15.0"
-  resolved "https://registry.npmmirror.com/react-native-webview/download/react-native-webview-11.15.0.tgz#b5aea9da579ca17fb9fd324e5202b1b5b8ce9fa8"
-  integrity sha512-0Wv+8qu8XuACx1xZwzc2Yfl+rOvxUouLcPxUKdkhaMVNpwoM5/ePpczCQZ3LpiRnSoEtjaUkfyQHbJQ+x4dDJQ==
+react-native-webview@11.16.0:
+  version "11.16.0"
+  resolved "https://registry.npmmirror.com/react-native-webview/download/react-native-webview-11.16.0.tgz#51dce13480aa4f8f727307df05b8bfaf74ca3d14"
+  integrity sha512-yap3dO3adMQp4z5oDzlcgcv6XPsfHAtt1E3ort94GthrunswaZhL6AfMiDOsNnKQmlUA+o4LNJsnlAy1b10rUg==
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
