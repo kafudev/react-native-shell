@@ -1,6 +1,6 @@
 {
   "name": "@kafudev/react-native-shell",
-  "version": "0.66.4-beta.14",
+  "version": "0.66.4-beta.15",
   "description": "react-native-shell壳应用",
   "main": "index.js",
   "files": [
@@ -141,6 +141,7 @@
     "expo-sensors": "11.0.3",
     "expo-splash-screen": "0.13.5",
     "expo-web-browser": "10.0.3",
+    "jverification-react-native": "2.4.9",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.66.4",

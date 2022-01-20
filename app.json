@@ -3,7 +3,7 @@
   "displayName": "APP开发",
   "config": {
     "pack_style": "bundle",
-    "image": "@kafudev/react-native-shell@0.66.4-beta.6",
+    "image": "@kafudev/react-native-shell@0.66.4-beta.14",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
@@ -56,6 +56,7 @@
         "enable": true,
         "config": {
           "appkey": "",
+          "appsecret": "",
           "channel": "",
           "production": false
         }
@@ -64,6 +65,13 @@
         "enable": false,
         "config": {
           "appKey": ""
+        }
+      },
+      "wechat": {
+        "enable": true,
+        "config": {
+          "appid": "",
+          "universallink": ""
         }
       },
       "txlive": {

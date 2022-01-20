@@ -10143,6 +10143,11 @@ just-extend@^4.0.2:
   resolved "https://registry.npmmirror.com/just-extend/download/just-extend-4.2.1.tgz#ef5e589afb61e5d66b24eca749409a8939a8c744"
   integrity sha1-715Ymvth5dZrJOynSUCaiTmox0Q=
 
+jverification-react-native@^2.4.9:
+  version "2.4.9"
+  resolved "https://registry.npmmirror.com/jverification-react-native/download/jverification-react-native-2.4.9.tgz#59a27b41fd7cf1428b1402587ec5a92956194f69"
+  integrity sha1-WaJ7Qf188UKLFAJYfsWpKVYZT2k=
+
 keymirror@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmmirror.com/keymirror/download/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
