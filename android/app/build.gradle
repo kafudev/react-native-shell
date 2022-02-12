@@ -362,7 +362,9 @@ android {
             applicationIdSuffix "dev"
             // 重置极光推送的provider,一样会安装失败
             manifestPlaceholders = [
-              JPUSH_PKGNAME : project.env.get("APP_PACKAGE","")+"dev",
+              APP_NAME: project.env.get("APP_NAME", "")+"dev",
+              APP_PACKAGE : project.env.get("APP_PACKAGE","")+".dev",
+              JPUSH_PKGNAME : project.env.get("APP_PACKAGE","")+".dev",
             ]
             minifyEnabled false
             zipAlignEnabled true
