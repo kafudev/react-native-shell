@@ -3,21 +3,21 @@
   "displayName": "APP开发",
   "config": {
     "pack_style": "bundle",
-    "image": "@kafudev/react-native-shell@0.66.4-beta.14",
+    "image": "@kafudev/react-native-shell@0.66.4-beta.16",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
       "ios": {
         "bundle_id": "com.rnshell.dev",
         "version_code": "",
-        "version_name": "1.2.0",
+        "version_name": "1.1.0",
         "icon": "./src/kitten/src/assets/images/image-app-icon.png",
         "splash": "./src/kitten/src/assets/images/image-app-icon.png"
       },
       "android": {
         "package_id": "com.rnshell.app",
         "version_code": "",
-        "version_name": "1.2.0",
+        "version_name": "1.1.0",
         "icon": "./src/kitten/src/assets/images/image-app-icon.png",
         "splash": "./src/kitten/src/assets/images/image-app-icon.png"
       }
@@ -71,7 +71,16 @@
         "enable": true,
         "config": {
           "appid": "",
-          "universallink": ""
+          "universallink": "",
+          "gh": "",
+          "CFBundleURLSchemes": ""
+        }
+      },
+      "alipay": {
+        "enable": true,
+        "config": {
+          "appid": "",
+          "CFBundleURLSchemes": ""
         }
       },
       "txlive": {
@@ -82,10 +91,10 @@
         }
       },
       "codepush": {
-        "enable": false,
+        "enable": true,
         "config": {
           "ios": {
-            "key": ""
+            "key": "iVdvgGrK2WmwNeKLkQS-0bns__F3oloGsyFD0"
           },
           "android": {
             "key": ""
@@ -96,7 +105,7 @@
         "enable": false,
         "config": {
           "ios": {
-            "key": ""
+            "key": "2af32756-e60e-412d-8f9e-fe6423bc3538"
           },
           "android": {
             "key": ""

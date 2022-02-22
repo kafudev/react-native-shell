@@ -2283,10 +2283,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@kafudev/cli@1.0.39":
-  version "1.0.39"
-  resolved "https://registry.npmmirror.com/@kafudev/cli/download/@kafudev/cli-1.0.39.tgz#b9571831d5881362b42e184752fec1fecd101045"
-  integrity sha512-e+vtQor5+TdE4vADSRQBabhWQBqIZPFQBnbv/O8Wod0OX+Rvd9FfUUxf4Guh/laqS/x1xAHYuBOgLrwXli4W4A==
+"@kafudev/cli@1.0.40":
+  version "1.0.40"
+  resolved "https://registry.npmmirror.com/@kafudev/cli/-/cli-1.0.40.tgz#8c276516d25e6b368b8bfef3197e9ffbf7529400"
+  integrity sha512-dQmHmV5gKSEmEoLDSSKlhkRZUEFP4ZJRiXFufJPSpw7EiQTxgtzekGbDYV/NpFLaOysrh4BbchtObe/ZBy4fkg==
   dependencies:
     adm-zip "^0.5.9"
     archiver "^5.3.0"
@@ -2300,10 +2300,12 @@
     lerna "^4.0.0"
     node-fetch "^2.6.6"
     ora "^5.4.1"
+    plist "^3.0.4"
     rimraf "^3.0.2"
     semver "^7.3.5"
     shelljs "^0.8.4"
     simple-git "^2.48.0"
+    xcode "^3.0.1"
 
 "@kafudev/jcore-react-native@2.0.10":
   version "2.0.10"

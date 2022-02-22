@@ -52,7 +52,7 @@ static void InitializeFlipper(UIApplication *application) {
 {
 
   // bugly异常上报
-  NSString *BUGLY_APPID = [ReactNativeConfig envFor:@"BUGLY_APPID"];
+  NSString *BUGLY_APPID = [ReactNativeConfig envFor:@"BUGLY_APPID_IOS"];
   [Bugly startWithAppId: BUGLY_APPID];
 
   // appcenter
