@@ -33,6 +33,10 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+
 LogBox.ignoreAllLogs();
 StatusBar.setBackgroundColor('rgba(0,0,0,0.3)');
 StatusBar.setTranslucent(true);
@@ -109,6 +113,7 @@ const App = (props) => {
   };
 
   return (
+    <GestureHandlerRootView style={{flex: 1}}>
     <SafeAreaView style={backgroundStyle}>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */}
       <StatusBar />
@@ -275,6 +280,7 @@ const App = (props) => {
         </View>
       </ScrollView>
     </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 

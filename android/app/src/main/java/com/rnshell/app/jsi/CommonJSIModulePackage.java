@@ -5,9 +5,6 @@ import com.facebook.react.bridge.JSIModulePackage;
 import com.facebook.react.bridge.JavaScriptContextHolder;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
-import com.reactnativemmkv.MmkvModule; // react-native-mmkv
-import com.reactnativemmkv.MmkvModulePackage; // react-native-mmkv
-// import com.ammarahmed.mmkv.RNMMKVModule; // react-native-mmkv-storage
 import com.nozbe.watermelondb.jsi.WatermelonDBJSIPackage; // ⬅️ This!
 
 import java.util.Collections;
@@ -20,12 +17,9 @@ public class CommonJSIModulePackage extends  ReanimatedJSIModulePackage {
     public List<JSIModuleSpec> getJSIModules(ReactApplicationContext reactApplicationContext, JavaScriptContextHolder jsContext) {
       super.getJSIModules(reactApplicationContext, jsContext);
       List<JSIModuleSpec> modules = Arrays.asList();
-      // MmkvModule.install(jsContext, reactApplicationContext.getFilesDir().getAbsolutePath() + "/mmkv");
-      // reactApplicationContext.getNativeModule(RNMMKVModule.class).installLib(jsContext, reactApplicationContext.getFilesDir().getAbsolutePath() + "/mmkv");
-        // modules.addAll(new ReanimatedJSIModulePackage().getJSIModules(reactApplicationContext, jsContext));
-        modules.addAll(new WatermelonDBJSIPackage().getJSIModules(reactApplicationContext, jsContext)); // ⬅️ This!
-        modules.addAll(new MmkvModulePackage().getJSIModules(reactApplicationContext, jsContext));
-        return modules;
+      // modules.addAll(new ReanimatedJSIModulePackage().getJSIModules(reactApplicationContext, jsContext));
+      modules.addAll(new WatermelonDBJSIPackage().getJSIModules(reactApplicationContext, jsContext)); // ⬅️ This!
+      return modules;
     }
 }
 
