@@ -15,6 +15,8 @@ jobs:
     - name: Build application
       env:
         API_SECRET: ${{ secrets.IOS_API_SECRET_FASTLANE }}
+        MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       run: yarn install && yarn pack-ios --api_secret="$API_SECRET"
   build-debug:
     runs-on: macos-latest
@@ -25,4 +27,6 @@ jobs:
     - name: Build application
       env:
         API_SECRET: ${{ secrets.IOS_API_SECRET_FASTLANE }}
+        MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       run: yarn install && yarn pack-ios --api_secret="$API_SECRET" --mode debug
