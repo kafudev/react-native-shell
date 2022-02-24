@@ -25,6 +25,10 @@ default_platform(:ios)
 # }
 api_key_path = "./fastlane/key.json";
 
+# use ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = '<YOUR BASE64 KEY>'
+# use ENV['MATCH_PASSWORD'] = '<YOUR MATCH_PASSWORD>'
+# match(git_basic_authorization: '')
+
 # 获取当前的时间
 today = Time.new;
 now_time = today.strftime("%Y%m%d%H%M%S");
@@ -53,13 +57,14 @@ platform :ios do
   lane :release do
     build_type = "Release"
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
-    # get_provisioning_profile(force: true, api_key_path: api_key_path)
-    # sync_code_signing(type: "development", api_key_path: api_key_path)
+    get_provisioning_profile(force: true, api_key_path: api_key_path)
+    sync_code_signing(type: "development", api_key_path: api_key_path)
+    # sync_code_signing(type: "development")
     build_app(
       configuration: build_type,
       clean: true,
-      # include_symbols: true,
-      # include_bitcode: false,
+      include_symbols: true,
+      include_bitcode: false,
       output_directory: "./build/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
       output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
@@ -82,7 +87,7 @@ platform :ios do
     obuild_number =
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     get_provisioning_profile(force: true, api_key_path: api_key_path)
-    # sync_code_signing(type: "development", api_key_path: api_key_path)
+    sync_code_signing(type: "development", api_key_path: api_key_path)
     # 设置开发信息
     update_info_plist(
       plist_path: "./rnshell/Info.plist",

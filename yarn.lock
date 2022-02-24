@@ -12913,10 +12913,10 @@ react-native-country-picker-modal@2.0.0:
     prop-types "15.7.2"
     react-async-hook "3.6.1"
 
-react-native-date-picker@4.1.5:
-  version "4.1.5"
-  resolved "https://registry.npmmirror.com/react-native-date-picker/-/react-native-date-picker-4.1.5.tgz#d5f27c869c9d456f36038db4aaab796614983331"
-  integrity sha512-JO342dCAcUpWi8kwaji9zOnidJdHagAHyhblUDUMyUfjZmEq2ZkqNnC00M7pN9Tu+D2YNs7yeAiOupMJxev9aQ==
+react-native-date-picker@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-date-picker/-/react-native-date-picker-4.2.0.tgz#c47521112f15b9d68333602373d112fc84257d97"
+  integrity sha512-IfbK7Eh5By8rdjiu/pvqLF8NkFX9pVsY7Vn6+MkLSiFcLIGFd7NaENRJKl75/xNZuY5CkIiRVksS9abEl/II8g==
 
 react-native-device-info@8.4.9:
   version "8.4.9"
@@ -12945,10 +12945,10 @@ react-native-fast-image@8.5.11:
   resolved "https://registry.npmmirror.com/react-native-fast-image/-/react-native-fast-image-8.5.11.tgz#e3dc969d0e4e8df026646bf18194465aa55cbc2b"
   integrity sha512-cNW4bIJg3nvKaheG8vGMfqCt5LMWX9MS5+wMudgKIHbGO51spRr4sgnlhVgwHLcZ5aeNOVJ8CPRxDIWKRq/0QA==
 
-react-native-flipper@0.131.1:
-  version "0.131.1"
-  resolved "https://registry.npmmirror.com/react-native-flipper/-/react-native-flipper-0.131.1.tgz#b1a43e40a442187fa78c5ed6d478471ff4a2686c"
-  integrity sha512-X65VbZgwVRVYAc3OBdHi0h8dJR/Mgxdg8WoQLGgaYyhHcaqsF06GjOzBJLwNjN3TK5Gih228IFqLqI9Rwl2dEA==
+react-native-flipper@0.136.0:
+  version "0.136.0"
+  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.136.0.tgz#1325c5ba32038d5e1e37c4e4a1456037cfb06ee1"
+  integrity sha512-t74YZg345Fpq5EeCsNLLzuCc/xOBZsjM/mK2hWahtAvuoPGcf+HVYh4eLy8zz4tLD/XWUKb1qm9MNorag/B6sw==
 
 react-native-fs@2.19.0:
   version "2.19.0"
