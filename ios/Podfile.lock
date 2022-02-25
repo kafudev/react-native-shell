@@ -129,7 +129,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
     - nanopb (~> 2.30908.0)
-  - Flipper (0.136.0):
+  - Flipper (0.99.0):
     - Flipper-Folly (~> 2.6)
     - Flipper-RSocket (~> 1.4)
   - Flipper-Boost-iOSX (1.76.0.1.11)
@@ -146,48 +146,47 @@ PODS:
   - Flipper-PeerTalk (0.0.4)
   - Flipper-RSocket (1.4.3):
     - Flipper-Folly (~> 2.6)
-  - FlipperKit (0.136.0):
-    - FlipperKit/Core (= 0.136.0)
-  - FlipperKit/Core (0.136.0):
-    - Flipper (~> 0.136.0)
+  - FlipperKit (0.99.0):
+    - FlipperKit/Core (= 0.99.0)
+  - FlipperKit/Core (0.99.0):
+    - Flipper (~> 0.99.0)
     - FlipperKit/CppBridge
     - FlipperKit/FBCxxFollyDynamicConvert
     - FlipperKit/FBDefines
     - FlipperKit/FKPortForwarding
-    - SocketRocket (~> 0.6.0)
-  - FlipperKit/CppBridge (0.136.0):
-    - Flipper (~> 0.136.0)
-  - FlipperKit/FBCxxFollyDynamicConvert (0.136.0):
+  - FlipperKit/CppBridge (0.99.0):
+    - Flipper (~> 0.99.0)
+  - FlipperKit/FBCxxFollyDynamicConvert (0.99.0):
     - Flipper-Folly (~> 2.6)
-  - FlipperKit/FBDefines (0.136.0)
-  - FlipperKit/FKPortForwarding (0.136.0):
+  - FlipperKit/FBDefines (0.99.0)
+  - FlipperKit/FKPortForwarding (0.99.0):
     - CocoaAsyncSocket (~> 7.6)
     - Flipper-PeerTalk (~> 0.0.4)
-  - FlipperKit/FlipperKitHighlightOverlay (0.136.0)
-  - FlipperKit/FlipperKitLayoutHelpers (0.136.0):
+  - FlipperKit/FlipperKitHighlightOverlay (0.99.0)
+  - FlipperKit/FlipperKitLayoutHelpers (0.99.0):
     - FlipperKit/Core
     - FlipperKit/FlipperKitHighlightOverlay
     - FlipperKit/FlipperKitLayoutTextSearchable
-  - FlipperKit/FlipperKitLayoutIOSDescriptors (0.136.0):
+  - FlipperKit/FlipperKitLayoutIOSDescriptors (0.99.0):
     - FlipperKit/Core
     - FlipperKit/FlipperKitHighlightOverlay
     - FlipperKit/FlipperKitLayoutHelpers
     - YogaKit (~> 1.18)
-  - FlipperKit/FlipperKitLayoutPlugin (0.136.0):
+  - FlipperKit/FlipperKitLayoutPlugin (0.99.0):
     - FlipperKit/Core
     - FlipperKit/FlipperKitHighlightOverlay
     - FlipperKit/FlipperKitLayoutHelpers
     - FlipperKit/FlipperKitLayoutIOSDescriptors
     - FlipperKit/FlipperKitLayoutTextSearchable
     - YogaKit (~> 1.18)
-  - FlipperKit/FlipperKitLayoutTextSearchable (0.136.0)
-  - FlipperKit/FlipperKitNetworkPlugin (0.136.0):
+  - FlipperKit/FlipperKitLayoutTextSearchable (0.99.0)
+  - FlipperKit/FlipperKitNetworkPlugin (0.99.0):
     - FlipperKit/Core
-  - FlipperKit/FlipperKitReactPlugin (0.136.0):
+  - FlipperKit/FlipperKitReactPlugin (0.99.0):
     - FlipperKit/Core
-  - FlipperKit/FlipperKitUserDefaultsPlugin (0.136.0):
+  - FlipperKit/FlipperKitUserDefaultsPlugin (0.99.0):
     - FlipperKit/Core
-  - FlipperKit/SKIOSNetworkPlugin (0.136.0):
+  - FlipperKit/SKIOSNetworkPlugin (0.99.0):
     - FlipperKit/Core
     - FlipperKit/FlipperKitNetworkPlugin
   - FMDB (2.7.5):
@@ -515,8 +514,12 @@ PODS:
   - react-native-qiyu (0.1.47):
     - QY_iOS_SDK (~> 6.9.2)
     - React
-  - react-native-safe-area-context (3.4.1):
-    - React-Core
+  - react-native-safe-area-context (4.0.1):
+    - RCT-Folly
+    - RCTRequired
+    - RCTTypeSafety
+    - React
+    - ReactCommon/turbomodule/core
   - react-native-segmented-control (2.4.0):
     - React-Core
   - react-native-slider (4.2.0):
@@ -605,7 +608,7 @@ PODS:
     - React-Core
   - RNCAsyncStorage (1.16.1):
     - React-Core
-  - RNCCheckbox (0.5.10):
+  - RNCCheckbox (0.5.11):
     - React-Core
   - RNCClipboard (1.8.5):
     - React-Core
@@ -692,7 +695,6 @@ PODS:
     - Sentry/Core (= 7.9.0)
   - Sentry/Core (7.9.0)
   - simdjson (1.0.0)
-  - SocketRocket (0.6.0)
   - SSZipArchive (2.2.3)
   - toolbar-android (0.2.1):
     - React
@@ -754,7 +756,7 @@ DEPENDENCIES:
   - EXWebBrowser (from `../node_modules/expo-web-browser/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
-  - Flipper (= 0.136.0)
+  - Flipper (= 0.99.0)
   - Flipper-Boost-iOSX (= 1.76.0.1.11)
   - Flipper-DoubleConversion (= 3.1.7)
   - Flipper-Fmt (= 7.1.7)
@@ -762,19 +764,19 @@ DEPENDENCIES:
   - Flipper-Glog (= 0.3.6)
   - Flipper-PeerTalk (= 0.0.4)
   - Flipper-RSocket (= 1.4.3)
-  - FlipperKit (= 0.136.0)
-  - FlipperKit/Core (= 0.136.0)
-  - FlipperKit/CppBridge (= 0.136.0)
-  - FlipperKit/FBCxxFollyDynamicConvert (= 0.136.0)
-  - FlipperKit/FBDefines (= 0.136.0)
-  - FlipperKit/FKPortForwarding (= 0.136.0)
-  - FlipperKit/FlipperKitHighlightOverlay (= 0.136.0)
-  - FlipperKit/FlipperKitLayoutPlugin (= 0.136.0)
-  - FlipperKit/FlipperKitLayoutTextSearchable (= 0.136.0)
-  - FlipperKit/FlipperKitNetworkPlugin (= 0.136.0)
-  - FlipperKit/FlipperKitReactPlugin (= 0.136.0)
-  - FlipperKit/FlipperKitUserDefaultsPlugin (= 0.136.0)
-  - FlipperKit/SKIOSNetworkPlugin (= 0.136.0)
+  - FlipperKit (= 0.99.0)
+  - FlipperKit/Core (= 0.99.0)
+  - FlipperKit/CppBridge (= 0.99.0)
+  - FlipperKit/FBCxxFollyDynamicConvert (= 0.99.0)
+  - FlipperKit/FBDefines (= 0.99.0)
+  - FlipperKit/FKPortForwarding (= 0.99.0)
+  - FlipperKit/FlipperKitHighlightOverlay (= 0.99.0)
+  - FlipperKit/FlipperKitLayoutPlugin (= 0.99.0)
+  - FlipperKit/FlipperKitLayoutTextSearchable (= 0.99.0)
+  - FlipperKit/FlipperKitNetworkPlugin (= 0.99.0)
+  - FlipperKit/FlipperKitReactPlugin (= 0.99.0)
+  - FlipperKit/FlipperKitUserDefaultsPlugin (= 0.99.0)
+  - FlipperKit/SKIOSNetworkPlugin (= 0.99.0)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - "JCore (from `../node_modules/@kafudev/jcore-react-native`)"
   - "JPush (from `../node_modules/@kafudev/jpush-react-native`)"
@@ -919,7 +921,6 @@ SPEC REPOS:
     - SDWebImage
     - SDWebImageWebPCoder
     - Sentry
-    - SocketRocket
     - SSZipArchive
     - TZImagePickerController
     - YogaKit
@@ -1238,7 +1239,7 @@ SPEC CHECKSUMS:
   Firebase: 580d09e8edafc3073ebf09c03fd42e4d80d35fe9
   FirebaseCore: 8138de860a90ca7eec5e324da5788fb0ebf1d93c
   FirebaseCoreDiagnostics: 3b40dfadef5b90433a60ae01f01e90fe87aa76aa
-  Flipper: e0ec7d38f846aa29c2dc02d0e45469ea2d3210f3
+  Flipper: 30e8eeeed6abdc98edaf32af0cda2f198be4b733
   Flipper-Boost-iOSX: fd1e2b8cbef7e662a122412d7ac5f5bea715403c
   Flipper-DoubleConversion: 57ffbe81ef95306cc9e69c4aa3aeeeeb58a6a28c
   Flipper-Fmt: 60cbdd92fc254826e61d669a5d87ef7015396a9b
@@ -1246,7 +1247,7 @@ SPEC CHECKSUMS:
   Flipper-Glog: 1dfd6abf1e922806c52ceb8701a3599a79a200a6
   Flipper-PeerTalk: 116d8f857dc6ef55c7a5a75ea3ceaafe878aadc9
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
-  FlipperKit: c2d1e8001b46a01e3fcd549668f41a6aea5e22cd
+  FlipperKit: d8d346844eca5d9120c17d441a2f38596e8ed2b9
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
@@ -1313,7 +1314,7 @@ SPEC CHECKSUMS:
   react-native-pager-view: 7f00d63688f7df9fad86dfb0154814419cc5eb8d
   react-native-plugin-pack: a5142b54861245c24c7345dac16a5f9d466c0de3
   react-native-qiyu: ea206bc122f3c27180ff3e360965113d885af53f
-  react-native-safe-area-context: 9e40fb181dac02619414ba1294d6c2a807056ab9
+  react-native-safe-area-context: eec048ba481a7ec7b1bf9d7b7a78fb1103f4806d
   react-native-segmented-control: 06607462630512ff8eef652ec560e6235a30cc3e
   react-native-slider: 37e1cf275dab20d3c015e40969aa9f5c309645a8
   react-native-video: a4c2635d0802f983594b7057e1bce8f442f0ad28
@@ -1336,7 +1337,7 @@ SPEC CHECKSUMS:
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNBootSplash: 75faf048f66eebe1650e91afdb8c2205fefc1870
   RNCAsyncStorage: b49b4e38a1548d03b74b30e558a1d18465b94be7
-  RNCCheckbox: 98141263c3e9988a04a6b797e6d58f2952451864
+  RNCCheckbox: ebf3ecc7a766d8a28d4b0504ea6084757bb59bc5
   RNCClipboard: cc054ad1e8a33d2a74cd13e565588b4ca928d8fd
   RNCMaskedView: c298b644a10c0c142055b3ae24d83879ecb13ccd
   RNCPicker: c796ddf16cd93e980a5a5642eebcee9eb9da1e76
@@ -1362,7 +1363,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   Sentry: 2f7e91f247cfb05b05bd01e0b5d0692557a7687b
   simdjson: c96317b3a50dff3468a42f586ab7ed22c6ab2fd9
-  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   toolbar-android: 2a73856e98b750d7e71ce4644d3f41cc98211719
   TZImagePickerController: d8c57e56fe6990a961d03134121a091c31015aa5
@@ -1372,6 +1372,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 398167ac1545c75e888d1675dae9e03305c26f67
+PODFILE CHECKSUM: fa3ca8ae056c60fa88bd3ee8628325ad58bb4195
 
 COCOAPODS: 1.11.2

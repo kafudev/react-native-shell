@@ -57,6 +57,12 @@ platform :ios do
   lane :release do
     build_type = "Release"
     setup_ci
+    register_devices(
+      devices: {
+        # "iPhone 6" => "1234567890123456789012345678901234567890",
+      }
+    )
+    match(type: "adhoc", readonly: is_ci, force_for_new_devices: true)
     # exec("security unlock-keychain -p #{MATCH_PASSWORD} login.keychain")
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     # get_provisioning_profile(force: true, api_key_path: api_key_path)
@@ -65,17 +71,22 @@ platform :ios do
     build_app(
       configuration: build_type,
       clean: true,
+      skip_codesigning: true,
+      # skip_package_ipa: true,
       include_symbols: true,
       include_bitcode: false,
       output_directory: "./build/#{build_type.downcase}/#{version_name}/", # Destination directory. Defaults to current directory.
       output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
       workspace: "rnshell.xcworkspace",
-      # xcargs: "-allowProvisioningUpdates", # auto sign
+      # export_xcargs: "-allowProvisioningUpdates", # auto sign
       scheme: "rnshell",
-      export_method: "development", # app-store, package, ad-hoc, enterprise, development
+      export_method: "ad-hoc", # app-store, package, ad-hoc, enterprise, development
       export_options: {
-				method: "development",
-				compileBitcode: false
+				method: "ad-hoc",
+				compileBitcode: false,
+        # provisioningProfiles: {
+        #   "#{identifier}" => "match AdHoc #{identifier}"
+        # }
 			})
     # 还原构建号
     increment_build_number(build_number: "#{o_build_number}", xcodeproj: "rnshell.xcodeproj")
@@ -96,7 +107,7 @@ platform :ios do
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     # get_provisioning_profile(force: true, api_key_path: api_key_path)
     # sync_code_signing(type: "development", api_key_path: api_key_path)
-    sync_code_signing(type: "development")
+    sync_code_signing()
     # 设置开发信息
     update_info_plist(
       plist_path: "./rnshell/Info.plist",
