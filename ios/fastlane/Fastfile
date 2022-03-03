@@ -57,17 +57,22 @@ platform :ios do
   lane :release do
     build_type = "Release"
     setup_ci
-    register_devices(
-      devices: {
-        # "iPhone 6" => "1234567890123456789012345678901234567890",
-      }
-    )
+    # register_devices(
+    #   devices: {
+    #     # "iPhone 6" => "1234567890123456789012345678901234567890",
+    #   }
+    # )
     match(type: "adhoc", readonly: is_ci, force_for_new_devices: true)
     # exec("security unlock-keychain -p #{MATCH_PASSWORD} login.keychain")
     increment_build_number(build_number: "#{build_number}", xcodeproj: "rnshell.xcodeproj")
     # get_provisioning_profile(force: true, api_key_path: api_key_path)
     # sync_code_signing(type: "development", api_key_path: api_key_path)
     sync_code_signing()
+    # 设置plist信息
+    update_info_plist(
+      plist_path: "./rnshell/Info.plist",
+    )
+    update_code_signing_settings
     build_app(
       configuration: build_type,
       clean: true,
@@ -108,12 +113,13 @@ platform :ios do
     # get_provisioning_profile(force: true, api_key_path: api_key_path)
     # sync_code_signing(type: "development", api_key_path: api_key_path)
     sync_code_signing()
-    # 设置开发信息
+    # 设置plist信息
     update_info_plist(
       plist_path: "./rnshell/Info.plist",
       display_name: "#{app_name}dev",
       app_identifier: "#{identifier}dev"
     )
+    update_code_signing_settings
 
     build_app(
       configuration: build_type,
@@ -126,6 +132,7 @@ platform :ios do
       output_name: "rnshell_#{build_type.downcase}_#{version_name}_#{now_time}.ipa",
       workspace: "rnshell.xcworkspace",
       scheme: "rnshell",
+      xcargs: "GCC_PREPROCESSOR_DEFINITIONS='$(inherited) DEBUG=1'",
       export_method: "development", # app-store, package, ad-hoc, enterprise, development
       export_options: {
 				method: "development",
