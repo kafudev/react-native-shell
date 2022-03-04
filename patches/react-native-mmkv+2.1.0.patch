@@ -1,0 +1,40 @@
+diff --git a/node_modules/react-native-mmkv/android/build.gradle b/node_modules/react-native-mmkv/android/build.gradle
+index ff7eb09..38c5a84 100644
+--- a/node_modules/react-native-mmkv/android/build.gradle
++++ b/node_modules/react-native-mmkv/android/build.gradle
+@@ -193,7 +193,7 @@ task createNativeDepsDirectories {
+ }
+ 
+ task downloadBoost(dependsOn: createNativeDepsDirectories, type: Download) {
+-  src("https://github.com/react-native-community/boost-for-react-native/releases/download/v${BOOST_VERSION.replace("_", ".")}-0/boost_${BOOST_VERSION}.tar.gz")
++  src("https://gh.kafudev.workers.dev/https://github.com/react-native-community/boost-for-react-native/releases/download/v${BOOST_VERSION.replace("_", ".")}-0/boost_${BOOST_VERSION}.tar.gz")
+   onlyIfNewer(true)
+   overwrite(false)
+   dest(boost_file)
+@@ -211,7 +211,7 @@ task prepareBoost(dependsOn: downloadBoost, type: Copy) {
+ }
+ 
+ task downloadDoubleConversion(dependsOn: createNativeDepsDirectories, type: Download) {
+-  src("https://github.com/google/double-conversion/archive/v${DOUBLE_CONVERSION_VERSION}.tar.gz")
++  src("https://gh.kafudev.workers.dev/https://github.com/google/double-conversion/archive/v${DOUBLE_CONVERSION_VERSION}.tar.gz")
+   onlyIfNewer(true)
+   overwrite(false)
+   dest(double_conversion_file)
+@@ -227,7 +227,7 @@ task prepareDoubleConversion(dependsOn: downloadDoubleConversion, type: Copy) {
+ }
+ 
+ task downloadFolly(dependsOn: createNativeDepsDirectories, type: Download) {
+-  src("https://github.com/facebook/folly/archive/v${FOLLY_VERSION}.tar.gz")
++  src("https://gh.kafudev.workers.dev/https://github.com/facebook/folly/archive/v${FOLLY_VERSION}.tar.gz")
+   onlyIfNewer(true)
+   overwrite(false)
+   dest(folly_file)
+@@ -243,7 +243,7 @@ task prepareFolly(dependsOn: downloadFolly, type: Copy) {
+ }
+ 
+ task downloadGlog(dependsOn: createNativeDepsDirectories, type: Download) {
+-  src("https://github.com/google/glog/archive/v${GLOG_VERSION}.tar.gz")
++  src("https://gh.kafudev.workers.dev/https://github.com/google/glog/archive/v${GLOG_VERSION}.tar.gz")
+   onlyIfNewer(true)
+   overwrite(false)
+   dest(glog_file)

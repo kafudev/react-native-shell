@@ -3,7 +3,7 @@
   "displayName": "APP开发",
   "config": {
     "pack_style": "bundle",
-    "image": "@kafudev/react-native-shell@0.66.4-beta.16",
+    "image": "@kafudev/react-native-shell@0.66.4-beta.24",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
@@ -97,7 +97,7 @@
             "key": "iVdvgGrK2WmwNeKLkQS-0bns__F3oloGsyFD0"
           },
           "android": {
-            "key": ""
+            "key": "fiH6VA8JNguoCoDvzYNxk_FGeIdFIChSeHlVv"
           }
         }
       },
@@ -108,7 +108,7 @@
             "key": "2af32756-e60e-412d-8f9e-fe6423bc3538"
           },
           "android": {
-            "key": ""
+            "key": "2c60dc85-6713-4103-a9b1-12a4883cb899"
           }
         }
       },

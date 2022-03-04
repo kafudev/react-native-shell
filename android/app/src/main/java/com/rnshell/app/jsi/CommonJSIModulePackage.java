@@ -6,8 +6,6 @@ import com.facebook.react.bridge.JavaScriptContextHolder;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.nozbe.watermelondb.jsi.WatermelonDBJSIPackage; // ⬅️ This!
-import com.reactnativemmkv.MmkvModule; // react-native-mmkv
-import com.reactnativemmkv.MmkvModulePackage; // react-native-mmkv
 
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +19,6 @@ public class CommonJSIModulePackage extends  ReanimatedJSIModulePackage {
       List<JSIModuleSpec> modules = Arrays.asList();
       // modules.addAll(new ReanimatedJSIModulePackage().getJSIModules(reactApplicationContext, jsContext));
       modules.addAll(new WatermelonDBJSIPackage().getJSIModules(reactApplicationContext, jsContext)); // ⬅️ This!
-      modules.addAll(new MmkvModulePackage().getJSIModules(reactApplicationContext, jsContext));
       return modules;
     }
 }
