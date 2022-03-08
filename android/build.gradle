@@ -42,7 +42,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
 
-        classpath 'com.huawei.agconnect:agcp:1.2.1.301'
+        // classpath 'com.huawei.agconnect:agcp:1.2.1.301'
 
     }
 }
