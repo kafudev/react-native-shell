@@ -112,6 +112,7 @@
     "@react-native-plugin/pack": "0.1.5",
     "@react-native-segmented-control/segmented-control": "2.4.0",
     "@sentry/react-native": "3.2.13",
+    "@shopify/flash-list": "1.1.0",
     "appcenter": "4.4.3",
     "appcenter-analytics": "4.4.3",
     "appcenter-crashes": "4.4.3",
