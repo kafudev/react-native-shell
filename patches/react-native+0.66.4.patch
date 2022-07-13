@@ -1,0 +1,58 @@
+diff --git a/node_modules/react-native/ReactAndroid/build.gradle b/node_modules/react-native/ReactAndroid/build.gradle
+index edadad2..3e6a0dd 100644
+--- a/node_modules/react-native/ReactAndroid/build.gradle
++++ b/node_modules/react-native/ReactAndroid/build.gradle
+@@ -48,7 +48,7 @@ task createNativeDepsDirectories {
+ }
+ 
+ task downloadBoost(dependsOn: createNativeDepsDirectories, type: Download) {
+-    src("https://github.com/react-native-community/boost-for-react-native/releases/download/v${BOOST_VERSION.replace("_", ".")}-0/boost_${BOOST_VERSION}.tar.gz")
++    src("https://gh.kafudev.com/https://github.com/react-native-community/boost-for-react-native/releases/download/v${BOOST_VERSION.replace("_", ".")}-0/boost_${BOOST_VERSION}.tar.gz")
+     onlyIfNewer(true)
+     overwrite(false)
+     dest(new File(downloadsDir, "boost_${BOOST_VERSION}.tar.gz"))
+@@ -67,7 +67,7 @@ task prepareBoost(dependsOn: boostPath ? [] : [downloadBoost], type: Copy) {
+ }
+ 
+ task downloadDoubleConversion(dependsOn: createNativeDepsDirectories, type: Download) {
+-    src("https://github.com/google/double-conversion/archive/v${DOUBLE_CONVERSION_VERSION}.tar.gz")
++    src("https://gh.kafudev.com/https://github.com/google/double-conversion/archive/v${DOUBLE_CONVERSION_VERSION}.tar.gz")
+     onlyIfNewer(true)
+     overwrite(false)
+     dest(new File(downloadsDir, "double-conversion-${DOUBLE_CONVERSION_VERSION}.tar.gz"))
+@@ -83,7 +83,7 @@ task prepareDoubleConversion(dependsOn: dependenciesPath ? [] : [downloadDoubleC
+ }
+ 
+ task downloadFolly(dependsOn: createNativeDepsDirectories, type: Download) {
+-    src("https://github.com/facebook/folly/archive/v${FOLLY_VERSION}.tar.gz")
++    src("https://gh.kafudev.com/https://github.com/facebook/folly/archive/v${FOLLY_VERSION}.tar.gz")
+     onlyIfNewer(true)
+     overwrite(false)
+     dest(new File(downloadsDir, "folly-${FOLLY_VERSION}.tar.gz"))
+@@ -99,7 +99,7 @@ task prepareFolly(dependsOn: dependenciesPath ? [] : [downloadFolly], type: Copy
+ }
+ 
+ task downloadFmt(dependsOn: createNativeDepsDirectories, type: Download) {
+-    src("https://github.com/fmtlib/fmt/archive/${FMT_VERSION}.tar.gz")
++    src("https://gh.kafudev.com/https://github.com/fmtlib/fmt/archive/${FMT_VERSION}.tar.gz")
+     onlyIfNewer(true)
+     overwrite(false)
+     dest(new File(downloadsDir, "fmt-${FMT_VERSION}.tar.gz"))
+@@ -115,7 +115,7 @@ task prepareFmt(dependsOn: dependenciesPath ? [] : [downloadFmt], type: Copy) {
+ }
+ 
+ task downloadLibevent(dependsOn: createNativeDepsDirectories, type: Download) {
+-    src("https://github.com/libevent/libevent/releases/download/release-${LIBEVENT_VERSION}-stable/libevent-${LIBEVENT_VERSION}-stable.tar.gz")
++    src("https://gh.kafudev.com/https://github.com/libevent/libevent/releases/download/release-${LIBEVENT_VERSION}-stable/libevent-${LIBEVENT_VERSION}-stable.tar.gz")
+     onlyIfNewer(true)
+     overwrite(false)
+     dest(new File(downloadsDir, "libevent-${LIBEVENT_VERSION}.tar.gz"))
+@@ -162,7 +162,7 @@ task prepareHermes(dependsOn: createNativeDepsDirectories, type: Copy) {
+ }
+ 
+ task downloadGlog(dependsOn: createNativeDepsDirectories, type: Download) {
+-    src("https://github.com/google/glog/archive/v${GLOG_VERSION}.tar.gz")
++    src("https://gh.kafudev.com/https://github.com/google/glog/archive/v${GLOG_VERSION}.tar.gz")
+     onlyIfNewer(true)
+     overwrite(false)
+     dest(new File(downloadsDir, "glog-${GLOG_VERSION}.tar.gz"))
