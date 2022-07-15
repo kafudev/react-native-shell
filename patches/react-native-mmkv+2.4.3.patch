@@ -1,17 +1,17 @@
 diff --git a/node_modules/react-native-mmkv/android/build.gradle b/node_modules/react-native-mmkv/android/build.gradle
-index ff7eb09..3aec19f 100644
+index 0fd75c2..422ecf1 100644
 --- a/node_modules/react-native-mmkv/android/build.gradle
 +++ b/node_modules/react-native-mmkv/android/build.gradle
-@@ -193,7 +193,7 @@ task createNativeDepsDirectories {
- }
- 
- task downloadBoost(dependsOn: createNativeDepsDirectories, type: Download) {
--  src("https://github.com/react-native-community/boost-for-react-native/releases/download/v${BOOST_VERSION.replace("_", ".")}-0/boost_${BOOST_VERSION}.tar.gz")
-+  src("https://gh.kafudev.com/https://github.com/react-native-community/boost-for-react-native/releases/download/v${BOOST_VERSION.replace("_", ".")}-0/boost_${BOOST_VERSION}.tar.gz")
+@@ -206,7 +206,7 @@ task downloadBoost(dependsOn: createNativeDepsDirectories, type: Download) {
+   def transformedVersion = BOOST_VERSION.replace("_", ".")
+   def srcUrl = "https://boostorg.jfrog.io/artifactory/main/release/${transformedVersion}/source/boost_${BOOST_VERSION}.tar.gz"
+   if (REACT_NATIVE_VERSION < 69) {
+-    srcUrl = "https://github.com/react-native-community/boost-for-react-native/releases/download/v${transformedVersion}-0/boost_${BOOST_VERSION}.tar.gz"
++    srcUrl = "https://gh.kafudev.com/https://github.com/react-native-community/boost-for-react-native/releases/download/v${transformedVersion}-0/boost_${BOOST_VERSION}.tar.gz"
+   }
+   src(srcUrl)
    onlyIfNewer(true)
-   overwrite(false)
-   dest(boost_file)
-@@ -211,7 +211,7 @@ task prepareBoost(dependsOn: downloadBoost, type: Copy) {
+@@ -226,7 +226,7 @@ task prepareBoost(dependsOn: downloadBoost, type: Copy) {
  }
  
  task downloadDoubleConversion(dependsOn: createNativeDepsDirectories, type: Download) {
@@ -20,7 +20,7 @@ index ff7eb09..3aec19f 100644
    onlyIfNewer(true)
    overwrite(false)
    dest(double_conversion_file)
-@@ -227,7 +227,7 @@ task prepareDoubleConversion(dependsOn: downloadDoubleConversion, type: Copy) {
+@@ -242,7 +242,7 @@ task prepareDoubleConversion(dependsOn: downloadDoubleConversion, type: Copy) {
  }
  
  task downloadFolly(dependsOn: createNativeDepsDirectories, type: Download) {
@@ -29,7 +29,7 @@ index ff7eb09..3aec19f 100644
    onlyIfNewer(true)
    overwrite(false)
    dest(folly_file)
-@@ -243,7 +243,7 @@ task prepareFolly(dependsOn: downloadFolly, type: Copy) {
+@@ -258,7 +258,7 @@ task prepareFolly(dependsOn: downloadFolly, type: Copy) {
  }
  
  task downloadGlog(dependsOn: createNativeDepsDirectories, type: Download) {

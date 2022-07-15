@@ -4,11 +4,17 @@ apply from: rootProject.getRootDir().getAbsolutePath() + "/ext.gradle"
 
 buildscript {
     ext {
-        buildToolsVersion = "30.0.2"
+        buildToolsVersion = "31.0.0"
         minSdkVersion = 21
-        compileSdkVersion = 30
-        targetSdkVersion = 30
-        ndkVersion = "21.4.7075529"
+        compileSdkVersion = 31
+        targetSdkVersion = 31
+        if (System.properties['os.arch'] == "aarch64") {
+            // For M1 Users we need to use the NDK 24 which added support for aarch64
+            ndkVersion = "24.0.8215888"
+        } else {
+            // Otherwise we default to the side-by-side NDK version from AGP.
+            ndkVersion = "21.4.7075529"
+        }
         kotlinVersion ='1.5.20' //kotlin版本
         // 添加googlePlayServicesVersion
         googlePlayServicesVersion = '16.+'
@@ -20,7 +26,6 @@ buildscript {
     }
     repositories {
         mavenLocal()
-        mavenCentral()
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -29,11 +34,14 @@ buildscript {
         maven { url "https://www.jitpack.io" }
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'http://repo.spring.io/plugins-release/' }
+        maven { url 'https://repo.spring.io/plugins-release/' }
+        mavenCentral()
         google()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.2.2")
+        classpath("com.android.tools.build:gradle:7.1.1")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("de.undercouch:gradle-download-task:5.0.1")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 
@@ -42,7 +50,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
 
-        // classpath 'com.huawei.agconnect:agcp:1.2.1.301'
+        // classpath 'com.huawei.agconnect:agcp:1.6.0.300'
 
     }
 }
@@ -62,7 +70,6 @@ allprojects {
             // expo-camera bundles a custom com.google.android:cameraview
             url "$rootDir/../node_modules/expo-camera/android/maven"
         }
-        mavenCentral()
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -71,7 +78,14 @@ allprojects {
         maven { url "https://www.jitpack.io" }
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'http://repo.spring.io/plugins-release/' }
+        maven { url 'https://repo.spring.io/plugins-release/' }
+      mavenCentral {
+        // We don't want to fetch react-native from Maven Central as there are
+        // older versions over there.
+        content {
+          excludeGroup "com.facebook.react"
+        }
+      }
         google()
     }
 }

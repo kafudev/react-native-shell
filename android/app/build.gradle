@@ -5,8 +5,8 @@ apply plugin: 'com.didi.dokit'
 apply plugin: 'bugly'
 
 import groovy.json.JsonOutput
-//import groovy.json.JsonSlurper
 //import com.android.build.OutputFile
+//import groovy.json.JsonSlurper
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -89,10 +89,10 @@ project.ext.react = [
 
 println "System os.name:" + System.properties['os.name']
 // !判断操作系统，windows需要设置ssl,因为mmkv国内网络下载报错
-if((System.properties['os.name'].toLowerCase()).contains('windows')){
-  System.setProperty("javax.net.ssl.trustStore", "NUL")
-  System.setProperty("javax.net.ssl.trustStoreType", "Windows-ROOT")
-}
+// if((System.properties['os.name'].toLowerCase()).contains('windows')){
+//   System.setProperty("javax.net.ssl.trustStore", "NUL")
+//   System.setProperty("javax.net.ssl.trustStoreType", "Windows-ROOT")
+// }
 
 // react-native-config 2nd line, add a new apply:
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
@@ -147,16 +147,19 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 /**
  * Whether to enable the Hermes VM.
  *
- * This should be set on project.ext.react and mirrored here.  If it is not set
+ * This should be set on project.ext.react and that value will be read here. If it is not set
  * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 /**
- * Architectures to build native code for in debug.
+ * Architectures to build native code for.
  */
-def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
+def reactNativeArchitectures() {
+    def value = project.getProperties().get("reactNativeArchitectures")
+    return value ? value.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
+}
 
 //getTimeZone(id)这个id可以是GMT+8：北京时间
 def releaseTime() {
@@ -266,6 +269,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode increasedVersionCode()
         versionName project.env.get("VERSION_NAME", "1.0.0")
+        buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         manifestPlaceholders = [
             APP_NAME: project.env.get("APP_NAME", ""),
@@ -299,6 +303,9 @@ android {
             VIVO_APPKEY   : project.env.get("VIVO_APPKEY", ""),
             VIVO_APPID    : project.env.get("VIVO_APPID", ""),
             //vivo_config_end
+            //honor_config_start
+            HONOR_APPID   : project.env.get("HONOR_APPID", ""),
+            //honor_config_end
 
             UMENG_APPKEY: project.env.get("UMENG_APPKEY", ""),
             QQ_APPID: project.env.get("QQ_APPID", ""),
@@ -317,13 +324,81 @@ android {
             // 设置支持的SO库架构
             abiFilters 'armeabi-v7a', 'arm64-v8a' //'armeabi', 'x86',  'x86_64',
         }
+
+        if (isNewArchitectureEnabled()) {
+            // We configure the NDK build only if you decide to opt-in for the New Architecture.
+            externalNativeBuild {
+                ndkBuild {
+                    arguments "APP_PLATFORM=android-21",
+                        "APP_STL=c++_shared",
+                        "NDK_TOOLCHAIN_VERSION=clang",
+                        "GENERATED_SRC_DIR=$buildDir/generated/source",
+                        "PROJECT_BUILD_DIR=$buildDir",
+                        "REACT_ANDROID_DIR=$rootDir/../node_modules/react-native/ReactAndroid",
+                        "REACT_ANDROID_BUILD_DIR=$rootDir/../node_modules/react-native/ReactAndroid/build",
+                        "NODE_MODULES_DIR=$rootDir/../node_modules"
+                    cFlags "-Wall", "-Werror", "-fexceptions", "-frtti", "-DWITH_INSPECTOR=1"
+                    cppFlags "-std=c++17"
+                    // Make sure this target name is the same you specify inside the
+                    // src/main/jni/Android.mk file for the `LOCAL_MODULE` variable.
+                    targets "rn691_appmodules"
+                }
+            }
+            if (!enableSeparateBuildPerCPUArchitecture) {
+                ndk {
+                    abiFilters (*reactNativeArchitectures())
+                }
+            }
+        }
     }
+
+        if (isNewArchitectureEnabled()) {
+        // We configure the NDK build only if you decide to opt-in for the New Architecture.
+        externalNativeBuild {
+            ndkBuild {
+                path "$projectDir/src/main/jni/Android.mk"
+            }
+        }
+        def reactAndroidProjectDir = project(':ReactAndroid').projectDir
+        def packageReactNdkDebugLibs = tasks.register("packageReactNdkDebugLibs", Copy) {
+            dependsOn(":ReactAndroid:packageReactNdkDebugLibsForBuck")
+            from("$reactAndroidProjectDir/src/main/jni/prebuilt/lib")
+            into("$buildDir/react-ndk/exported")
+        }
+        def packageReactNdkReleaseLibs = tasks.register("packageReactNdkReleaseLibs", Copy) {
+            dependsOn(":ReactAndroid:packageReactNdkReleaseLibsForBuck")
+            from("$reactAndroidProjectDir/src/main/jni/prebuilt/lib")
+            into("$buildDir/react-ndk/exported")
+        }
+        afterEvaluate {
+            // If you wish to add a custom TurboModule or component locally,
+            // you should uncomment this line.
+            // preBuild.dependsOn("generateCodegenArtifactsFromSchema")
+            preDebugBuild.dependsOn(packageReactNdkDebugLibs)
+            preReleaseBuild.dependsOn(packageReactNdkReleaseLibs)
+
+            // Due to a bug inside AGP, we have to explicitly set a dependency
+            // between configureNdkBuild* tasks and the preBuild tasks.
+            // This can be removed once this is solved: https://issuetracker.google.com/issues/207403732
+            configureNdkBuildRelease.dependsOn(preReleaseBuild)
+            configureNdkBuildDebug.dependsOn(preDebugBuild)
+            reactNativeArchitectures().each { architecture ->
+                tasks.findByName("configureNdkBuildDebug[${architecture}]")?.configure {
+                    dependsOn("preDebugBuild")
+                }
+                tasks.findByName("configureNdkBuildRelease[${architecture}]")?.configure {
+                    dependsOn("preReleaseBuild")
+                }
+            }
+        }
+    }
+
     splits {
         abi {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "arm64-v8a" // , "x86", "x86_64"
+            include (*reactNativeArchitectures())
         }
     }
     productFlavors {
@@ -353,11 +428,6 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-            if (nativeArchitectures) {
-                ndk {
-                    abiFilters nativeArchitectures.split(',')
-                }
-            }
             resValue "string", "app_name", project.env.get("APP_NAME","")+"dev"
             applicationIdSuffix "dev"
             // 重置极光推送的provider,一样会安装失败
@@ -490,6 +560,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation "androidx.core:core-splashscreen:1.0.0-rc01" // Add this line
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
@@ -505,26 +576,21 @@ dependencies {
     }
 
     if (enableHermes) {
-        def hermesPath = "../../node_modules/hermes-engine/android/";
-        debugImplementation files(hermesPath + "hermes-debug.aar")
-        releaseImplementation files(hermesPath + "hermes-release.aar")
-        implementation jscFlavor
+        //noinspection GradleDynamicVersion
+        implementation("com.facebook.react:hermes-engine:+") { // From node_modules
+            exclude group:'com.facebook.fbjni'
+        }
     } else {
         implementation jscFlavor
     }
 
-    //oppo_dependencies_start
-    // oppo 厂商 aar 需要单独引入
-    implementation files('./libs/com.heytap.msp-push-2.1.0.aar')
-    //oppo_dependencies_end
-
     implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
     annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
 
-    debugImplementation 'io.github.didi.dokit:dokitx:3.5.0.1'
-    debugImplementation 'io.github.didi.dokit:dokitx-ft:3.5.0.1'
-    debugImplementation 'io.github.didi.dokit:dokitx-mc:3.5.0.1'
-    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.5.0.1'
+    debugImplementation 'io.github.didi.dokit:dokitx:3.7.1'
+    debugImplementation 'io.github.didi.dokit:dokitx-ft:3.7.1'
+    debugImplementation 'io.github.didi.dokit:dokitx-mc:3.7.1'
+    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.7.1'
 
     implementation 'com.tencent.bugly:crashreport:3.4.4'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.2'
@@ -558,6 +624,22 @@ dependencies {
 // }
 //huawei_plugin_end
 
+if (isNewArchitectureEnabled()) {
+    // If new architecture is enabled, we let you build RN from source
+    // Otherwise we fallback to a prebuilt .aar bundled in the NPM package.
+    // This will be applied to all the imported transtitive dependency.
+    configurations.all {
+        resolutionStrategy.dependencySubstitution {
+            substitute(module("com.facebook.react:react-native"))
+                    .using(project(":ReactAndroid"))
+                    .because("On New Architecture we're building React Native from source")
+            substitute(module("com.facebook.react:hermes-engine"))
+                    .using(project(":ReactAndroid:hermes-engine"))
+                    .because("On New Architecture we're building Hermes from source")
+        }
+    }
+}
+
 // Run this once to be able to run the application with BUCK
 // puts all compile dependencies into folder libs for BUCK to use
 task copyDownloadableDepsToLibs(type: Copy) {
@@ -566,3 +648,11 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+def isNewArchitectureEnabled() {
+    // To opt-in for the New Architecture, you can either:
+    // - Set `newArchEnabled` to true inside the `gradle.properties` file
+    // - Invoke gradle with `-newArchEnabled=true`
+    // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
+    return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
+}
