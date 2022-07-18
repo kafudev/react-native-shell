@@ -33,7 +33,7 @@ import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.rnshell.app.jsi.CommonJSIModulePackage;
 
-import com.didichuxing.doraemonkit.DoKit;
+//import com.didichuxing.doraemonkit.DoKit;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.microsoft.codepush.react.CodePush;
 
@@ -115,7 +115,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     // dokit开发工具
     if (BuildConfig.DEBUG) {
-      new DoKit.Builder(this).productId(dokit_appid).build();
+//      new DoKit.Builder(this).productId(dokit_appid).build();
     }
 
     // bugly异常上报

@@ -34,7 +34,7 @@ buildscript {
         maven { url "https://www.jitpack.io" }
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'https://repo.spring.io/plugins-release/' }
+//        maven { url 'https://repo.spring.io/plugins-release/' }
         mavenCentral()
         google()
     }
@@ -46,7 +46,7 @@ buildscript {
         // in the individual module build.gradle files
 
         classpath 'com.tencent.bugly:symtabfileuploader:latest.release'
-        classpath "io.github.didi.dokit:dokitx-plugin:3.5.0.1"
+//        classpath "io.github.didi.dokit:dokitx-plugin:3.7.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
 
@@ -78,7 +78,7 @@ allprojects {
         maven { url "https://www.jitpack.io" }
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'https://repo.spring.io/plugins-release/' }
+//        maven { url 'https://repo.spring.io/plugins-release/' }
       mavenCentral {
         // We don't want to fetch react-native from Maven Central as there are
         // older versions over there.
