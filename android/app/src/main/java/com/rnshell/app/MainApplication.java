@@ -18,27 +18,23 @@ import com.facebook.soloader.SoLoader;
 import com.rnshell.app.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.Arrays;
 
 import android.content.res.Configuration;
-
 import androidx.annotation.NonNull;
 
-//import expo.modules.ApplicationLifecycleDispatcher;
-//import expo.modules.ReactNativeHostWrapper;
+import expo.modules.ApplicationLifecycleDispatcher;
+import expo.modules.ReactNativeHostWrapper;
 
 import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.rnshell.app.jsi.CommonJSIModulePackage;
 
-//import com.didichuxing.doraemonkit.DoKit;
+import com.didichuxing.doraemonkit.DoKit;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.microsoft.codepush.react.CodePush;
 
 import cn.jiguang.plugins.push.JPushModule;
-// import com.tencent.rtmp.TXLiveBase;
 import com.qiyukf.unicorn.api.Unicorn;
 import com.qiyukf.unicorn.api.YSFOptions;
 
@@ -89,11 +85,11 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public ReactNativeHost getReactNativeHost() {
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-       return mNewArchitectureNativeHost;
-//      return new ReactNativeHostWrapper(this, mNewArchitectureNativeHost);
+//       return mNewArchitectureNativeHost;
+      return new ReactNativeHostWrapper(this, mNewArchitectureNativeHost);
     } else {
-       return mReactNativeHost;
-//      return new ReactNativeHostWrapper(this, mReactNativeHost);
+//       return mReactNativeHost;
+      return new ReactNativeHostWrapper(this, mReactNativeHost);
     }
   }
 
@@ -104,8 +100,8 @@ public class MainApplication extends Application implements ReactApplication {
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);
-    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
-//    ApplicationLifecycleDispatcher.onApplicationCreate(this);
+//    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    ApplicationLifecycleDispatcher.onApplicationCreate(this);
 
     // 获取配置
     String jpush_appkey = this.getMetaDataValue("JPUSH_APPKEY", "");
@@ -146,7 +142,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onConfigurationChanged(Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
-//    ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
+    ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
   }
 
   /**

@@ -6,6 +6,7 @@ apply plugin: 'bugly'
 
 import groovy.json.JsonOutput
 import com.android.build.OutputFile
+import org.apache.tools.ant.taskdefs.condition.Os
 //import groovy.json.JsonSlurper
 
 /**
@@ -341,7 +342,11 @@ android {
                     cppFlags "-std=c++17"
                     // Make sure this target name is the same you specify inside the
                     // src/main/jni/Android.mk file for the `LOCAL_MODULE` variable.
-                    targets "rn691_appmodules"
+                    targets "rnshell_appmodules"
+                    // Fix for windows limit on number of character in file paths and in command lines
+                    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                        arguments "NDK_APP_SHORT_COMMANDS=true"
+                    }
                 }
             }
             if (!enableSeparateBuildPerCPUArchitecture) {
@@ -575,10 +580,9 @@ dependencies {
     }
 
     if (enableHermes) {
-        //noinspection GradleDynamicVersion
-        implementation("com.facebook.react:hermes-engine:+") { // From node_modules
-            exclude group:'com.facebook.fbjni'
-        }
+        def hermesPath = "../../node_modules/hermes-engine/android/";
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {
         implementation jscFlavor
     }
@@ -586,10 +590,10 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
     annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
 
-//    debugImplementation 'io.github.didi.dokit:dokitx:3.7.1'
-//    debugImplementation 'io.github.didi.dokit:dokitx-ft:3.7.1'
-//    debugImplementation 'io.github.didi.dokit:dokitx-mc:3.7.1'
-//    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.7.1'
+    debugImplementation 'io.github.didi.dokit:dokitx:3.5.0'
+    debugImplementation 'io.github.didi.dokit:dokitx-ft:3.5.0'
+    debugImplementation 'io.github.didi.dokit:dokitx-mc:3.5.0'
+    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.5.0'
 
     implementation 'com.tencent.bugly:crashreport:3.4.4'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.2'
@@ -632,9 +636,6 @@ if (isNewArchitectureEnabled()) {
             substitute(module("com.facebook.react:react-native"))
                     .using(project(":ReactAndroid"))
                     .because("On New Architecture we're building React Native from source")
-            substitute(module("com.facebook.react:hermes-engine"))
-                    .using(project(":ReactAndroid:hermes-engine"))
-                    .because("On New Architecture we're building Hermes from source")
         }
     }
 }

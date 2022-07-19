@@ -32,8 +32,6 @@ useExpoModules()
 if (settings.hasProperty("newArchEnabled") && settings.newArchEnabled == "true") {
     include(":ReactAndroid")
     project(":ReactAndroid").projectDir = file('../node_modules/react-native/ReactAndroid')
-    include(":ReactAndroid:hermes-engine")
-    project(":ReactAndroid:hermes-engine").projectDir = file('../node_modules/react-native/ReactAndroid/hermes-engine')
 }
 
 // code-push必须放在底部，否则提示找不到

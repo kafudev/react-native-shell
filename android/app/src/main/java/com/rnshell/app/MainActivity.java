@@ -13,7 +13,7 @@ import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.ReactInstanceManager;
 
-//import expo.modules.ReactActivityDelegateWrapper;
+import expo.modules.ReactActivityDelegateWrapper;
 import com.zoontek.rnbootsplash.RNBootSplash;
 import com.zoontek.rnbars.RNBars; // <- add this necessary import
 
@@ -45,8 +45,8 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
-    return new MainActivityDelegate(this, getMainComponentName());
-//    return new ReactActivityDelegateWrapper(this, new MainActivityDelegate(this, getMainComponentName()));
+//    return new MainActivityDelegate(this, getMainComponentName());
+    return new ReactActivityDelegateWrapper(this, new MainActivityDelegate(this, getMainComponentName()));
   }
 
   @Override
@@ -62,7 +62,7 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void loadApp(String appKey) {
 //      RNBootSplash.init(getPlainActivity()); // <- initialize the splash screen
-      RNBars.init(getPlainActivity(), "dark-content"); // <- initialize with initial bars styles (could be light-content)
+//      RNBars.init(getPlainActivity(), "dark-content"); // <- initialize with initial bars styles (could be light-content)
       super.loadApp(appKey);
     }
 
@@ -72,13 +72,6 @@ public class MainActivity extends ReactActivity {
       // If you opted-in for the New Architecture, we enable the Fabric Renderer.
       reactRootView.setIsFabric(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED);
       return reactRootView;
-    }
-
-    @Override
-    protected boolean isConcurrentRootEnabled() {
-      // If you opted-in for the New Architecture, we enable Concurrent Root (i.e. React 18).
-      // More on this on https://reactjs.org/blog/2022/03/29/react-v18.html
-      return BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     }
   }
 }
