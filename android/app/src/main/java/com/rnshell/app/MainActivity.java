@@ -13,13 +13,15 @@ import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.ReactInstanceManager;
 
+import expo.modules.devlauncher.DevLauncherController;
+import expo.modules.devmenu.react.DevMenuAwareReactActivity;
 import expo.modules.ReactActivityDelegateWrapper;
 import com.zoontek.rnbootsplash.RNBootSplash;
 import com.zoontek.rnbars.RNBars; // <- add this necessary import
 
 import com.qiyukf.unicorn.api.Unicorn;
 
-public class MainActivity extends ReactActivity {
+public class MainActivity extends DevMenuAwareReactActivity {
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -44,9 +46,18 @@ public class MainActivity extends ReactActivity {
   }
 
   @Override
+  public void onNewIntent(Intent intent) {
+    if (DevLauncherController.tryToHandleIntent(this, intent)) {
+      return;
+    }
+    super.onNewIntent(intent);
+  }
+
+  @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
 //    return new MainActivityDelegate(this, getMainComponentName());
-    return new ReactActivityDelegateWrapper(this, new MainActivityDelegate(this, getMainComponentName()));
+    // return new ReactActivityDelegateWrapper(this, new MainActivityDelegate(this, getMainComponentName()));
+    return DevLauncherController.wrapReactActivityDelegate(this,() -> new ReactActivityDelegateWrapper(this,new ReactActivityDelegate(this, getMainComponentName())));
   }
 
   @Override
