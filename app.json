@@ -3,7 +3,7 @@
   "displayName": "APP开发",
   "config": {
     "pack_style": "bundle",
-    "image": "@kafudev/react-native-shell@0.66.4-beta.24",
+    "image": "@kafudev/react-native-shell@0.68.2-beta.1",
     "framework": "react-native",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
@@ -150,41 +150,5 @@
       }
     },
     "dependencies": {}
-  },
-  "expo": {
-    "name": "rnshell",
-    "slug": "rnshell-dev",
-    "version": "1.0.0",
-    "description": "Debug Application",
-    "githubUrl": "https://github.com/kafudev/react-native-shell",
-    "ios": {
-      "bundleIdentifier": "com.rnshell.app",
-      "appStoreUrl": "https://itunes.apple.com/us/app/kitten-tricks/id1246143230",
-      "buildNumber": "3"
-    },
-    "android": {
-      "package": "com.rnshell.app",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.rnshell.app",
-      "versionCode": 3
-    },
-    "privacy": "public",
-    "platforms": ["ios", "android", "web"],
-    "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
-    "icon": "./src/kitten/src/assets/images/image-app-icon.png",
-    "splash": {
-      "image": "src/kitten/src/assets/images/image-splash.png",
-      "resizeMode": "contain"
-    },
-    "assetBundlePatterns": [
-      "src/kitten/src/assets/images/*",
-      "src/kitten/src/assets/fonts",
-      "src/kitten/src/layouts/**/assets/*"
-    ],
-    "androidStatusBar": {
-      "barStyle": "dark-content",
-      "backgroundColor": "#F7F9FC"
-    },
-    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }

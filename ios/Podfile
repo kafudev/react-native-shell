@@ -6,7 +6,6 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '12.0'
 install! 'cocoapods', :deterministic_uuids => false
-project './rnshell.xcodeproj'
 
 require 'json'
 podfile_properties = JSON.parse(File.read('./Podfile.properties.json')) rescue {}
@@ -28,15 +27,12 @@ target 'rnshell' do
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => podfile_properties['expo.jsEngine'] == 'hermes'
+    :hermes_enabled => flags[:hermes_enabled],
     # :hermes_enabled => flags[:hermes_enabled],
     :fabric_enabled => flags[:fabric_enabled],
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
-
-  pod 'expo-dev-menu', path: '../node_modules/expo-dev-menu', :configurations => :debug
-  pod 'expo-dev-launcher', path: '../node_modules/expo-dev-launcher', :configurations => :debug
 
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi', :modular_headers => true
 

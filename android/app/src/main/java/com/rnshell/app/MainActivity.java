@@ -13,15 +13,13 @@ import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.ReactInstanceManager;
 
-import expo.modules.devlauncher.DevLauncherController;
-import expo.modules.devmenu.react.DevMenuAwareReactActivity;
 import expo.modules.ReactActivityDelegateWrapper;
 import com.zoontek.rnbootsplash.RNBootSplash;
 import com.zoontek.rnbars.RNBars; // <- add this necessary import
 
 import com.qiyukf.unicorn.api.Unicorn;
 
-public class MainActivity extends DevMenuAwareReactActivity {
+public class MainActivity extends ReactActivity {
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -36,33 +34,18 @@ public class MainActivity extends DevMenuAwareReactActivity {
   protected void onCreate(Bundle savedInstanceState) {
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
-     super.onCreate(savedInstanceState);
-//    super.onCreate(null);
+    super.onCreate(savedInstanceState);
+    // super.onCreate(null);
     // 启动页全屏，状态栏覆盖启动页
     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    // RNBootSplash.init(R.drawable.bootsplash, this);
-    Unicorn.initSdk();
+    // Unicorn.initSdk();
     Log.i("MainActivity", "onCreate executed!");
   }
 
   @Override
-  public void onNewIntent(Intent intent) {
-    if (DevLauncherController.tryToHandleIntent(this, intent)) {
-      return;
-    }
-    super.onNewIntent(intent);
-  }
-
-  @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
-//    return new MainActivityDelegate(this, getMainComponentName());
-    // return new ReactActivityDelegateWrapper(this, new MainActivityDelegate(this, getMainComponentName()));
-    return DevLauncherController.wrapReactActivityDelegate(this,() -> new ReactActivityDelegateWrapper(this,new ReactActivityDelegate(this, getMainComponentName())));
-  }
-
-  @Override
-  public void onSaveInstanceState(Bundle outState) {
-    super.onSaveInstanceState(outState);
+    // return new MainActivityDelegate(this, getMainComponentName());
+    return new ReactActivityDelegateWrapper(this, new MainActivityDelegate(this, getMainComponentName()));
   }
 
   public static class MainActivityDelegate extends ReactActivityDelegate {
@@ -72,8 +55,8 @@ public class MainActivity extends DevMenuAwareReactActivity {
 
     @Override
     protected void loadApp(String appKey) {
-//      RNBootSplash.init(getPlainActivity()); // <- initialize the splash screen
-//      RNBars.init(getPlainActivity(), "dark-content"); // <- initialize with initial bars styles (could be light-content)
+      // RNBootSplash.init(getPlainActivity()); // <- initialize the splash screen
+      RNBars.init(getPlainActivity(), "light-content"); // <- initialize with initial bars styles (could be light-content)
       super.loadApp(appKey);
     }
 

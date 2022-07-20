@@ -1,38 +1,34 @@
 rootProject.name = 'rnshell'
 
-include ':jcore-react-native'
-project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jcore-react-native/android')
+// include ':jcore-react-native'
+// project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jcore-react-native/android')
 
-include ':jpush-react-native'
-project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jpush-react-native/android')
+// include ':jpush-react-native'
+// project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@kafudev/jpush-react-native/android')
 
 include ':watermelondb-jsi'
 project(':watermelondb-jsi').projectDir = new File(rootProject.projectDir, '../node_modules/@nozbe/watermelondb/native/android-jsi')
 
-include ':expo'
-project(':expo').projectDir = new File(rootProject.projectDir, '../node_modules/expo/android')
+//  include ':expo'
+//  project(':expo').projectDir = new File(rootProject.projectDir, '../node_modules/expo/android')
 
-// expo框架
-// apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute().text.trim(), "../scripts/autolinking.gradle")
-// apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle")
-// apply from: file("../node_modules/expo/scripts/autolinking.gradle");
-// useExpoModules()
 
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
 // apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json')"].execute(null, rootDir).text.trim(), "../native_modules.gradle");
 applyNativeModulesSettingsGradle(settings)
 
-
 include ':app'
 includeBuild('../node_modules/react-native-gradle-plugin')
-
-apply from: file("../node_modules/expo/scripts/autolinking.gradle");
-useExpoModules()
 
 if (settings.hasProperty("newArchEnabled") && settings.newArchEnabled == "true") {
     include(":ReactAndroid")
     project(":ReactAndroid").projectDir = file('../node_modules/react-native/ReactAndroid')
 }
+
+// expo框架
+// apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute().text.trim(), "../scripts/autolinking.gradle")
+apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle")
+useExpoModules()
 
 // code-push必须放在底部，否则提示找不到
 include(':react-native-code-push')

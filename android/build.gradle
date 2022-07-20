@@ -65,6 +65,13 @@ allprojects {
             // Android JSC is installed from npm
             url("$rootDir/../node_modules/jsc-android/dist")
         }
+        mavenCentral {
+            // We don't want to fetch react-native from Maven Central as there are
+            // older versions over there.
+            content {
+                excludeGroup "com.facebook.react"
+            }
+        }
         maven {
             // expo-camera bundles a custom com.google.android:cameraview
             url "$rootDir/../node_modules/expo-camera/android/maven"
@@ -78,13 +85,6 @@ allprojects {
         maven { url 'https://repo.huaweicloud.com/repository/maven' }
         maven { url 'https://developer.huawei.com/repo/' }
         // maven { url 'https://repo.spring.io/plugins-release/' }
-        mavenCentral {
-          // We don't want to fetch react-native from Maven Central as there are
-          // older versions over there.
-          content {
-            excludeGroup "com.facebook.react"
-          }
-        }
         google()
     }
 }

@@ -25,7 +25,6 @@ import androidx.annotation.NonNull;
 
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
-import expo.modules.devlauncher.DevLauncherController;
 
 import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
@@ -43,7 +42,7 @@ import com.reactnativepluginpack.PackPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHostWrapper(this, new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -51,7 +50,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      // @SuppressWarnings("UnnecessaryLocalVariable")
+      @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for
       // example:
@@ -78,19 +77,16 @@ public class MainApplication extends Application implements ReactApplication {
     protected String getJSBundleFile() {
       return CodePush.getJSBundleFile();
     }
-  };
+  });
 
-  private final ReactNativeHost mNewArchitectureNativeHost =
-      new MainApplicationReactNativeHost(this);
+  private final ReactNativeHost mNewArchitectureNativeHost = new ReactNativeHostWrapper(this, new MainApplicationReactNativeHost(this));
 
   @Override
   public ReactNativeHost getReactNativeHost() {
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-//       return mNewArchitectureNativeHost;
-      return new ReactNativeHostWrapper(this, mNewArchitectureNativeHost);
+      return mNewArchitectureNativeHost;
     } else {
-//       return mReactNativeHost;
-      return new ReactNativeHostWrapper(this, mReactNativeHost);
+      return mReactNativeHost;
     }
   }
 
@@ -101,8 +97,7 @@ public class MainApplication extends Application implements ReactApplication {
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);
-    DevLauncherController.initialize(this, getReactNativeHost());
-//    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     ApplicationLifecycleDispatcher.onApplicationCreate(this);
 
     // 获取配置
@@ -113,7 +108,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     // dokit开发工具
     if (BuildConfig.DEBUG) {
-//      new DoKit.Builder(this).productId(dokit_appid).build();
+      // new DoKit.Builder(this).productId(dokit_appid).build();
     }
 
     // bugly异常上报
