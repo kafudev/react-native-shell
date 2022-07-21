@@ -38,7 +38,8 @@ public class MainActivity extends ReactActivity {
     // super.onCreate(null);
     // 启动页全屏，状态栏覆盖启动页
     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    // Unicorn.initSdk();
+    RNBootSplash.init(R.drawable.bootsplash, this);
+    Unicorn.initSdk();
     Log.i("MainActivity", "onCreate executed!");
   }
 
@@ -55,8 +56,7 @@ public class MainActivity extends ReactActivity {
 
     @Override
     protected void loadApp(String appKey) {
-      // RNBootSplash.init(getPlainActivity()); // <- initialize the splash screen
-      RNBars.init(getPlainActivity(), "light-content"); // <- initialize with initial bars styles (could be light-content)
+      // RNBars.init(getPlainActivity(), "dark-content"); // <- initialize with initial bars styles (could be light-content)
       super.loadApp(appKey);
     }
 

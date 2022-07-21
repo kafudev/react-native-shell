@@ -1,6 +1,6 @@
 {
   "name": "@kafudev/react-native-shell",
-  "version": "0.68.2-beta.1",
+  "version": "0.68.2-beta.0",
   "description": "react-native-shell壳应用",
   "main": "index.js",
   "files": [
@@ -150,7 +150,7 @@
     "react-native-bars": "1.2.0",
     "react-native-ble-manager": "8.4.1",
     "react-native-blob-courier": "3.0.11",
-    "react-native-bootsplash": "4.2.3",
+    "react-native-bootsplash": "3.2.6",
     "react-native-calendars": "1.1285.0",
     "react-native-code-push": "7.0.4",
     "react-native-config": "1.4.6",
