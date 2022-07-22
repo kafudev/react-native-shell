@@ -108,7 +108,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     // dokit开发工具
     if (BuildConfig.DEBUG) {
-      // new DoKit.Builder(this).productId(dokit_appid).build();
+      new DoKit.Builder(this).productId(dokit_appid).build();
     }
 
     // bugly异常上报

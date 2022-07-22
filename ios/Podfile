@@ -85,6 +85,8 @@ target 'rnshell' do
   # For extensions without React dependencies
   pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
 
+  pod 'react-native-blob-util', :path => '../node_modules/react-native-blob-util'
+
   target 'rnshellTests' do
     inherit! :complete
     # Pods for testing
