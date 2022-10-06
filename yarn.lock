@@ -2063,20 +2063,20 @@
     simple-git "3.2.6"
     xcode "3.0.1"
 
-"@kafudev/jcore-react-native@2.0.10":
-  version "2.0.10"
-  resolved "https://registry.npmmirror.com/@kafudev/jcore-react-native/-/jcore-react-native-2.0.10.tgz#248d1206b583e4ab644292547ef1c01a1926c4fd"
-  integrity sha512-38a97CdnS7Smwac9CSkQ7rsYcSboyMPqHyJSXTRZUvcPBXx12IzYYhv1qo/KVpiKD/2NFwOeKKvOngqf7dB5ig==
+"@kafudev/jcore-react-native@2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@kafudev/jcore-react-native/-/jcore-react-native-2.2.2.tgz#e2be9f6362dd951f8f46bd44db5fda2bb447b49d"
+  integrity sha512-AgQ2lznizg4IQ6ei8JNCi9ninH943+YVV1R3n3Ec7+iU8VvOp8L3WB0cWB/XW1rLuMkr2AYnZ/HqKZhmZ8mrkw==
 
-"@kafudev/jpush-react-native@2.8.10":
-  version "2.8.10"
-  resolved "https://registry.npmmirror.com/@kafudev/jpush-react-native/-/jpush-react-native-2.8.10.tgz#5fe7b2bef8116d75cfca80abbaf7a66b930da0f1"
-  integrity sha512-vPZdmTJzMdio5Ws9MQErFEgkmQKNa4XASV7zhvubrIuCmdaZdzJA5ThMl2yx6PM842GLCd1qHZzVx7uNivj09Q==
+"@kafudev/jpush-react-native@2.10.2":
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/@kafudev/jpush-react-native/-/jpush-react-native-2.10.2.tgz#4348785dc34621428bab4f0930d6726b4b2be689"
+  integrity sha512-s//Ro/MhMfgLNKj+Xe+9Lb72d/o49nGMKd2cTxF5l+gnZJ/FVR8CS54NF+yfyaANMQce9zvtWDiuYSWoEdKLRw==
 
-"@kafudev/react-native-alipay@0.1.10":
-  version "0.1.10"
-  resolved "https://registry.npmmirror.com/@kafudev/react-native-alipay/-/react-native-alipay-0.1.10.tgz#810d16cc199d990a426a461a4a3ecc41d1411a6e"
-  integrity sha512-/DpE9jm2SSEl2FSCUXQ6XCCCaPY5OE6a3pDZuVwsIR2bwPEtgLkDSkLicTSDyavnVXMckYtXK5Bt3zVYQFHmIA==
+"@kafudev/react-native-alipay@0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@kafudev/react-native-alipay/-/react-native-alipay-0.1.11.tgz#6876bda0b7a74ec749befbdf9131051a15afbb06"
+  integrity sha512-qqF3twb0ihfBqvsyHnlRaSZaXfMIPsZ6XRrA7tkmy934l7/o87A0r1L4YYSxJ5MUgESK/wt32dC5AYULYNX9Vg==
   dependencies:
     buffer "^6.0.3"
     jsrsasign "^10.3.0"
@@ -9899,6 +9899,11 @@ jverification-react-native@2.4.9:
   resolved "https://registry.npmmirror.com/jverification-react-native/-/jverification-react-native-2.4.9.tgz#59a27b41fd7cf1428b1402587ec5a92956194f69"
   integrity sha512-zVmkKShFtdqALwUlHHN9lFPip7GiQLSnklUe1luBDK4WU1W5dBOfxOv4GazRqbh/YKyAj11R8XXE/DeMvBdGSA==
 
+kdbush@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/kdbush/-/kdbush-3.0.0.tgz#f8484794d47004cc2d85ed3a79353dbe0abc2bf0"
+  integrity sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==
+
 keymirror@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmmirror.com/keymirror/-/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
@@ -12778,6 +12783,13 @@ react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   resolved "https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-amap3d@3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-amap3d/-/react-native-amap3d-3.1.3.tgz#907e4509f2960d2a27ab05a7cf571cc5b33e4e51"
+  integrity sha512-fCwai4RRdS3uoI+Oo9Iq5gbsE05eyu7ZhgpBS7+TycKHQfohSaA98F6GI/4b2RFIOfa/aWf4rX9r1i/uP+OVWg==
+  dependencies:
+    supercluster "^7.1.4"
+
 react-native-background-timer@2.4.1:
   version "2.4.1"
   resolved "https://registry.npmmirror.com/react-native-background-timer/-/react-native-background-timer-2.4.1.tgz#a3bc1cafa8c1e3aeefd0611de120298b67978a0f"
@@ -12819,10 +12831,10 @@ react-native-calendars@1.1278.0:
   optionalDependencies:
     moment "^2.24.0"
 
-react-native-code-push@7.0.4:
-  version "7.0.4"
-  resolved "https://registry.npmmirror.com/react-native-code-push/-/react-native-code-push-7.0.4.tgz#13a9d3cc12bee24cb317defb6560caddcb937b71"
-  integrity sha512-zBCj1vUnyLCG6tt2x5rXzoyYjvgFVEpTnwJUFbs24C5TUKjRw6BJVq1bWsOQklEUWpFYoqhAaZXz/iq3pbqa7g==
+react-native-code-push@7.0.5:
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-7.0.5.tgz#17b4fb4acc6ba6616a3cb650a7bf3be9e3075938"
+  integrity sha512-0+xqxHS7onpvE/pFvKB0rN/ijLzXgNGAnmC4THxiSPvlLY7EABzeOQh1XHCSNhIBiecnTjHG36Yb15luSuqBtQ==
   dependencies:
     code-push "^4.0.5"
     glob "^7.1.7"
@@ -14630,6 +14642,13 @@ superagent@^6.1.0:
     qs "^6.9.4"
     readable-stream "^3.6.0"
     semver "^7.3.2"
+
+supercluster@^7.1.4:
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-7.1.5.tgz#65a6ce4a037a972767740614c19051b64b8be5a3"
+  integrity sha512-EulshI3pGUM66o6ZdH3ReiFcvHpM3vAigyK+vcxdjpJyEbIIrtbmBdY23mGgnI24uXiGFvrGq9Gkum/8U7vJWg==
+  dependencies:
+    kdbush "^3.0.0"
 
 superstruct@^0.6.2:
   version "0.6.2"
