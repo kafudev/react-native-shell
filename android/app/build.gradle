@@ -299,6 +299,9 @@ android {
             VIVO_APPKEY   : project.env.get("VIVO_APPKEY", ""),
             VIVO_APPID    : project.env.get("VIVO_APPID", ""),
             //vivo_config_end
+            //honor_config_start
+            HONOR_APPID   : project.env.get("HONOR_APPID", ""),
+            //honor_config_end
 
             UMENG_APPKEY: project.env.get("UMENG_APPKEY", ""),
             QQ_APPID: project.env.get("QQ_APPID", ""),
