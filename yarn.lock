@@ -2063,10 +2063,10 @@
     simple-git "3.2.6"
     xcode "3.0.1"
 
-"@kafudev/jcore-react-native@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@kafudev/jcore-react-native/-/jcore-react-native-2.2.2.tgz#e2be9f6362dd951f8f46bd44db5fda2bb447b49d"
-  integrity sha512-AgQ2lznizg4IQ6ei8JNCi9ninH943+YVV1R3n3Ec7+iU8VvOp8L3WB0cWB/XW1rLuMkr2AYnZ/HqKZhmZ8mrkw==
+"@kafudev/jcore-react-native@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@kafudev/jcore-react-native/-/jcore-react-native-2.2.3.tgz#b0d4421dad076cbff9489efde5447b3fe279840e"
+  integrity sha512-79X9yAzlg3joLfoz7l6pMixCZ09N2gwpNA+cQJ+ouUJLMUbkoE3nd4wtxXptYokNGxiXSx6I0dmg0WkTUj1ocw==
 
 "@kafudev/jpush-react-native@2.10.2":
   version "2.10.2"

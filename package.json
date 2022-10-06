@@ -85,7 +85,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@kafudev/jcore-react-native": "2.2.2",
+    "@kafudev/jcore-react-native": "2.2.3",
     "@kafudev/jpush-react-native": "2.10.2",
     "@kafudev/react-native-alipay": "0.1.11",
     "@kafudev/react-native-orientation": "0.1.9",
