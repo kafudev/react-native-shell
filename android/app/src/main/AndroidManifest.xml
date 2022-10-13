@@ -40,7 +40,8 @@
       android:largeHeap="true"
       android:allowBackup="false"
       tools:replace="android:allowBackup"
-      android:requestLegacyExternalStorage="true">
+      android:requestLegacyExternalStorage="true"
+      android:allowNativeHeapPointerTagging="false">
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
