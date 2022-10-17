@@ -516,12 +516,6 @@ dependencies {
         implementation jscFlavor
     }
 
-    //oppo_dependencies_start
-    // oppo 厂商 aar 需要单独引入
-    implementation(name: 'com.heytap.msp-push-3.0.0', ext: 'aar')
-    // implementation files('./libs/com.heytap.msp-push-3.0.0.aar')
-    //oppo_dependencies_end
-
     implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
     annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
 

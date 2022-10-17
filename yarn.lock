@@ -2068,10 +2068,10 @@
   resolved "https://registry.yarnpkg.com/@kafudev/jcore-react-native/-/jcore-react-native-2.2.3.tgz#b0d4421dad076cbff9489efde5447b3fe279840e"
   integrity sha512-79X9yAzlg3joLfoz7l6pMixCZ09N2gwpNA+cQJ+ouUJLMUbkoE3nd4wtxXptYokNGxiXSx6I0dmg0WkTUj1ocw==
 
-"@kafudev/jpush-react-native@2.10.4":
-  version "2.10.4"
-  resolved "https://registry.yarnpkg.com/@kafudev/jpush-react-native/-/jpush-react-native-2.10.4.tgz#322a6535b01f7b4abcc6ab42f3a96fcd92ebc275"
-  integrity sha512-vbVtvtBNFNcYoMiCbpq7K8Da12AUvbSLJwxhNpMqhVBvn+xvY+qhygF1TV3dQq/LUcR/F9c+cwAFv+VgzDxx8Q==
+"@kafudev/jpush-react-native@2.10.5":
+  version "2.10.5"
+  resolved "https://registry.yarnpkg.com/@kafudev/jpush-react-native/-/jpush-react-native-2.10.5.tgz#502fa74924789f36ffb780d381259058332605a1"
+  integrity sha512-3saVvoP/OmylSGlyllCYI8dfljufzgxltEyyKLl7exetlgriBVnE7mSUl+5Q+4nGfs+wtwgVutNirNKEZOW/Kw==
 
 "@kafudev/react-native-alipay@0.1.11":
   version "0.1.11"
