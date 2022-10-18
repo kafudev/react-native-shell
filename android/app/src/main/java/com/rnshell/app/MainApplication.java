@@ -36,8 +36,8 @@ import com.microsoft.codepush.react.CodePush;
 
 import cn.jiguang.plugins.push.JPushModule;
 // import com.tencent.rtmp.TXLiveBase;
-import com.qiyukf.unicorn.api.Unicorn;
-import com.qiyukf.unicorn.api.YSFOptions;
+// import com.qiyukf.unicorn.api.Unicorn;
+// import com.qiyukf.unicorn.api.YSFOptions;
 
 import com.reactnativepluginpack.PackPackage;
 
@@ -118,7 +118,7 @@ public class MainApplication extends Application implements ReactApplication {
     // 七鱼客服
     if (!qiyu_appkey.isEmpty()) {
       // appKey 可以在七鱼管理系统->设置->App 接入 页面找到
-      Unicorn.config(this, qiyu_appkey, new YSFOptions(), null);
+      // Unicorn.config(this, qiyu_appkey, new YSFOptions(), null);
     }
 
     // !设置模块包的关联模块

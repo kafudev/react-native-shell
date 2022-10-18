@@ -527,8 +527,6 @@ dependencies {
     implementation 'com.tencent.bugly:crashreport:3.4.4'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.2'
 
-    implementation 'com.qiyukf.unicorn:unicorn:6.9.2'
-
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
     implementation 'com.google.code.gson:gson:2.8.6'
 
@@ -541,19 +539,22 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'com.google.android.material:material:1.2.1'
 
+    // implementation 'com.qiyukf.unicorn:unicorn:6.9.2'
     // implementation "com.tencent.liteav:LiteAVSDK_Professional:8.5.10028"
 }
 
 //fcm_plugin_start
 //谷歌请按照厂商文档配置根 gradle 谷歌镜像依赖和添加 google-services.json 后再打开此插件依赖
-//apply plugin: 'com.google.gms.google-services'
+if(file("./google-services.json").exists()){
+  apply plugin: 'com.google.gms.google-services'
+}
 //fcm_plugin_end
 
 //huawei_plugin_start
 //华为请按照厂商文档配置根 gradle 华为镜像依赖和添加 agconnect-services.json 后再打开此插件依赖
-// if(file("./agconnect-services.json").exists()){
-//   apply plugin: 'com.huawei.agconnect'
-// }
+if(file("./agconnect-services.json").exists()){
+  apply plugin: 'com.huawei.agconnect'
+}
 //huawei_plugin_end
 
 // Run this once to be able to run the application with BUCK

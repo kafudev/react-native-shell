@@ -1,0 +1,22 @@
+{
+  "project_info": {
+    "project_number": "rnshell",
+    "project_id": "rnshell",
+    "storage_bucket": ""
+  },
+  "client": [
+    {
+      "client_info": {
+        "android_client_info": {
+          "package_name": ""
+        }
+      },
+      "api_key": [
+        {
+          "current_key": ""
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}

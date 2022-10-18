@@ -149,7 +149,8 @@
         }
       }
     },
-    "dependencies": {}
+    "dependencies": {},
+    "removeDependencies": {}
   },
   "expo": {
     "name": "rnshell",
