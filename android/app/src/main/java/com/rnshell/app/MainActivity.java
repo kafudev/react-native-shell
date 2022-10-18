@@ -17,7 +17,7 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import expo.modules.ReactActivityDelegateWrapper;
 import com.zoontek.rnbootsplash.RNBootSplash;
 
-import com.qiyukf.unicorn.api.Unicorn;
+// import com.qiyukf.unicorn.api.Unicorn;
 
 public class MainActivity extends ReactActivity {
 
@@ -38,7 +38,7 @@ public class MainActivity extends ReactActivity {
     // 启动页全屏，状态栏覆盖启动页
     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     RNBootSplash.init(R.drawable.bootsplash, this);
-    Unicorn.initSdk();
+    // Unicorn.initSdk();
     Log.i("MainActivity", "onCreate executed!");
   }
 

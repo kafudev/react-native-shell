@@ -12858,10 +12858,10 @@ react-native-ble-manager@8.4.3:
   resolved "https://registry.yarnpkg.com/react-native-ble-manager/-/react-native-ble-manager-8.4.3.tgz#c73ee86a5c32ab6d72147c67f02d46404e81ac66"
   integrity sha512-AIfJddGslc9uWTd3KGL+tIcJwvkslL/xidGlRCowN4C5BnEf7o+1H1YHm1SMLOT9TwQWj2Cx4CLwOchs3/95Ug==
 
-react-native-blob-courier@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-blob-courier/-/react-native-blob-courier-3.1.0.tgz#0579d5e899717b874a586e96ce61a8a5bed2ef99"
-  integrity sha512-qvYwZfJJTOZIcka6SC0o5wKkbJ3c2aO7q1soLMHoXAfUPCl4jKJbHuRWyQgGYDCXFkpMTNzwZ3dirKYxVfqNUQ==
+react-native-blob-courier@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-blob-courier/-/react-native-blob-courier-3.0.2.tgz#a7c7a22dfe26897c1c4c5df3c528c06cf5367156"
+  integrity sha512-T//pJmCW97mNifKFdM4eSsIy7vUW0w7qK0DFBqphx0yKhDLU+kpcSZaQnS1S0V925qOoR4wTHg5mS5Xl55eD1A==
 
 react-native-bootsplash@3.2.5:
   version "3.2.5"
