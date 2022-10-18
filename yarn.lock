@@ -6191,7 +6191,7 @@ depd@^1.1.2, depd@~1.1.2:
   resolved "https://registry.npmmirror.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha512-7emPTl6Dpo6JRXOXjLRxck+FlLRX5847cLKEn00PLAgc3g2hTZZgr+e4c2v6QpSmLeFP3n5yUo7ft6avBK/5jQ==
 
-deprecated-react-native-prop-types@^2.2.0, deprecated-react-native-prop-types@^2.3.0:
+deprecated-react-native-prop-types@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/deprecated-react-native-prop-types/-/deprecated-react-native-prop-types-2.3.0.tgz#c10c6ee75ff2b6de94bb127f142b814e6e08d9ab"
   integrity sha512-pWD0voFtNYxrVqvBMYf5gq3NA2GCpfodS1yNynTPc93AYA/KEMGeWDqqeUB6R2Z9ZofVhks2aeJXiuQqKNpesA==
@@ -13034,10 +13034,10 @@ react-native-keyboard-aware-scroll-view@0.9.5:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
-react-native-keychain@8.1.1:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-keychain/-/react-native-keychain-8.1.1.tgz#3bb5e37946b964a7bcf7df2fe470dd244e01a340"
-  integrity sha512-8fxgeHKwGcL657eAYpdBTkDIxNhbIHI+kyyO0Yac2dgVAN184JoIwQcW2z6snahwDaCObQOu0biLFHnsH+4KSg==
+react-native-keychain@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-keychain/-/react-native-keychain-8.0.0.tgz#ff708e4dc2a5440df717179bf9b7cd50f78b61d7"
+  integrity sha512-c7Cs+YQN26UaQsRG1dmlXL7VL2ctnXwH/dl0IOMEQ7ZaL2NdN313YSAI8ZEZZjrVhNmPsyWEuvTFqWrdpItqQg==
 
 react-native-linear-gradient@2.6.2:
   version "2.6.2"
@@ -13196,12 +13196,11 @@ react-native-vector-icons@9.2.0:
     prop-types "^15.7.2"
     yargs "^16.1.1"
 
-react-native-video@5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-5.2.1.tgz#a17e856759d7e17eee9cbd9df0d05ba22e88d457"
-  integrity sha512-aJlr9MeTuQ0LpZ4n+EC9RvhoKeiPbLtI2Rxy8u7zo/wzGevbRpWHSBj9xZ5YDBXnAVXzuqyNIkGhdw7bfdIBZw==
+react-native-video@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-5.2.0.tgz#c3f2c541775f4fda7e0d26d75a6fb59819b13d5e"
+  integrity sha512-5SK1lxyzrCkZF+WuxUxLR1Pt65E0rsWB1w1GrGxSLdC9zWYBumcmuHl+wPJ7UQvznjaH2Ze7uU1R3arejI7+WQ==
   dependencies:
-    deprecated-react-native-prop-types "^2.2.0"
     keymirror "^0.1.1"
     prop-types "^15.7.2"
     shaka-player "^2.5.9"

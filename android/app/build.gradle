@@ -90,8 +90,8 @@ project.ext.react = [
 println "System os.name:" + System.properties['os.name']
 // !判断操作系统，windows需要设置ssl,因为mmkv国内网络下载报错
 if((System.properties['os.name'].toLowerCase()).contains('windows')){
-  System.setProperty("javax.net.ssl.trustStore", "NUL")
-  System.setProperty("javax.net.ssl.trustStoreType", "Windows-ROOT")
+  // System.setProperty("javax.net.ssl.trustStore", "NUL")
+  // System.setProperty("javax.net.ssl.trustStoreType", "Windows-ROOT")
 }
 
 // react-native-config 2nd line, add a new apply:
