@@ -85,6 +85,7 @@ import groovy.json.JsonOutput
 
 project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
+    deleteDebugFilesForVariant: { false }
 ]
 
 println "System os.name:" + System.properties['os.name']
@@ -440,13 +441,13 @@ android {
         }
     }
 
-    packagingOptions {
-      pickFirst '**/libc++_shared.so' // ⬅️ This (if missing)
-      pickFirst '**/libreactnativejni.so'
-      pickFirst '**/libjsi.so'
-      pickFirst '**/libhermes.so'
-      pickFirst '**/libjsc.so'
-    }
+    // packagingOptions {
+    //   pickFirst '**/libc++_shared.so' // ⬅️ This (if missing)
+    //   pickFirst '**/libreactnativejni.so'
+    //   pickFirst '**/libjsi.so'
+    //   pickFirst '**/libhermes.so'
+    //   pickFirst '**/libjsc.so'
+    // }
 }
 
 dokitExt {
@@ -511,7 +512,6 @@ dependencies {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
-        implementation jscFlavor
     } else {
         implementation jscFlavor
     }

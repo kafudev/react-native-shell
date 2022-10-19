@@ -55,9 +55,9 @@
       "jpush": {
         "enable": true,
         "config": {
-          "appkey": "",
+          "appkey": "94ea62502d2d77226d54ea5c",
           "appsecret": "",
-          "channel": "",
+          "channel": "app",
           "production": false
         }
       },
