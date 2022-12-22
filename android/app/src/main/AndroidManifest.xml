@@ -8,6 +8,8 @@
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
   <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -73,6 +75,18 @@
       <meta-data android:name="WEIBO_APPKEY" android:value="${WEIBO_APPKEY}"/>
 
       <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+      <provider
+          android:name="androidx.core.content.FileProvider"
+          android:authorities=".FileProvider"
+          android:exported="false"
+          tools:replace="android:authorities"
+          android:grantUriPermissions="true">
+          <meta-data
+              tools:replace="android:resource"
+              android:name="android.support.FILE_PROVIDER_PATHS"
+              android:resource="@xml/filepaths" />
+      </provider>
 
       <activity
         android:name="${APP_PACKAGE}.wxapi.WXEntryActivity"

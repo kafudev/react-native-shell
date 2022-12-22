@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <root-path name="root_path" path="."/>
+        <external-path name="external_path" path="Download" />
+        <external-files-path name="external_files_path" path="Download" />
+        <files-path name="files_path" path="Download" />
+        <cache-path name="cache_path" path="Download" />
+    </paths>
+</resources>
