@@ -78,7 +78,7 @@
 
       <provider
           android:name="androidx.core.content.FileProvider"
-          android:authorities=".FileProvider"
+          android:authorities="${APP_PACKAGE}.FileProvider"
           android:exported="false"
           tools:replace="android:authorities"
           android:grantUriPermissions="true">
