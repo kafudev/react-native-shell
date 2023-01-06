@@ -5,6 +5,7 @@
     "pack_style": "bundle",
     "image": "@kafudev/react-native-shell@0.66.5-beta.1",
     "framework": "react-native",
+    "js_engine": "jsc",
     "platform": ["ios", "android", "web", "miniapp"],
     "info": {
       "ios": {

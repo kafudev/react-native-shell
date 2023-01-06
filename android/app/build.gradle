@@ -103,6 +103,12 @@ if('merge'.equalsIgnoreCase(project.env.get("PACK_STYLE", "bundle"))){
 } else {
   project.ext.react.bundleInRelease = true
 }
+// 选择jsEngine引擎类型 jsc/hermes
+if('hermes'.equalsIgnoreCase(project.env.get("JS_ENGINE", "jsc"))){
+  project.ext.react.enableHermes = true
+} else {
+  project.ext.react.enableHermes = false
+}
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
