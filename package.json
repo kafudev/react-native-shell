@@ -105,7 +105,7 @@
     "@react-native-community/slider": "4.3.2",
     "@react-native-community/toolbar-android": "0.2.1",
     "@react-native-cookies/cookies": "6.2.1",
-    "@react-native-firebase/app": "15.7.0",
+    "@react-native-firebase/app": "16.5.0",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-native-picker/picker": "2.4.8",
     "@react-native-plugin/pack": "0.1.5",
