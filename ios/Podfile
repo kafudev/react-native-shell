@@ -61,7 +61,7 @@ target 'rnshell' do
 
   pod 'QY_iOS_SDK', '~> 6.9.2'
 
-  pod 'Bugly'
+  pod 'Bugly', '~> 2.5.9'
 
   pod 'DoraemonKit/Core', '~> 3.1.2', :configurations => ['Debug'] #必选
   pod 'DoraemonKit/WithGPS', '~> 3.1.2', :configurations => ['Debug'] #可选

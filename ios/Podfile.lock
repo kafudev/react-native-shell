@@ -623,7 +623,7 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBApp (15.7.0):
+  - RNFBApp (16.5.0):
     - Firebase/CoreOnly (= 8.12.1)
     - React-Core
   - RNFlashList (1.3.1):
@@ -720,7 +720,7 @@ DEPENDENCIES:
   - appcenter-core (from `../node_modules/appcenter/ios`)
   - appcenter-crashes (from `../node_modules/appcenter-crashes/ios`)
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
-  - Bugly
+  - Bugly (~> 2.5.9)
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - CodePush (from `../node_modules/react-native-code-push`)
   - DoraemonKit/Core (~> 3.1.2)
@@ -1343,7 +1343,7 @@ SPEC CHECKSUMS:
   RNDateTimePicker: 93b9659fbd0fd91a4fb568bf8f5c00b0175aa1ba
   RNDeviceInfo: 4944cf8787b9c5bffaf301fda68cc1a2ec003341
   RNFastImage: 3207b9eb17c2425d574ca40db35185db6e324f4e
-  RNFBApp: e92cc503b0931c9800e836ea641a9809b90126ea
+  RNFBApp: 5eee661610d4f9f4f081660b58d7ec67b5f51f28
   RNFlashList: 18d906a373da5ff16776e5013df9495d826edc7e
   RNFS: fc610f78fdf8bfc89a9e5cc2f898519f4dba1002
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
@@ -1372,6 +1372,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 6fb7426c75983a16152a255547b45b9689a990e3
+PODFILE CHECKSUM: 9d069aeba206a9df8a7e9ad9c2938c46fc2230cb
 
 COCOAPODS: 1.11.3
