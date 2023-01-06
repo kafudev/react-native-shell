@@ -10,6 +10,9 @@ project './rnshell.xcodeproj'
 require 'json'
 podfile_properties = JSON.parse(File.read('./Podfile.properties.json')) rescue {}
 
+# Override Firebase SDK Version
+$FirebaseSDKVersion = '8.12.1'
+
 target 'rnshell' do
   use_expo_modules!
   config = use_native_modules!
