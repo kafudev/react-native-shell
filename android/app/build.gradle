@@ -175,7 +175,7 @@ def increasedVersionCode() {
 
     // 通过时间戳打包
     def ttime = new Date().getTime();
-    def versionCode = "$ttime"
+    def versionCode = "$ttime".substring(0,10)
     println "APP_NAME:" + project.env.get("APP_NAME","")
     println "applicationId:" + project.env.get("APP_PACKAGE","")
     println "versionCode:" + versionCode
